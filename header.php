@@ -13,7 +13,7 @@
     <header class="header">
         <div class="header_inner">
             <div class="header_logo">
-                <h1><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="BISTRO CALME"></a></h1>
+                <h1><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="徳島こども食堂ナビ"></a></h1>
             </div>
             <div class="header_links">
                 <nav class="gnav">
