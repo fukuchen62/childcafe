@@ -1,9 +1,20 @@
-<div class="pagetop js-pagetop"><i class="fas fa-angle-up"></i>PAGE TOP</div>
-
 <footer class="footer">
-    <h2>フッターパーツ</h2>
-    <div class="footer_copyright">
-        <small>&copy; All rights reserved.</small>
+    <div class="container">
+        <div class="footer_inner">
+            <nav>
+                <?php
+		$hoge = array(
+		'menu' => 'footer-navigation',  //管理画面で作成したメニューの名前
+		'menu_class' => '', //メニューを構成するulタグのクラス名
+		'container' => false, //<ul>タグを囲んでいる<div>タグを削除
+		);
+		wp_nav_menu($hoge);
+		?>
+            </nav>
+            <div class="footer_copyright">
+                <small>&copy; BISTRO CALME All rights reserved.</small>
+            </div>
+        </div>
     </div>
 </footer>
 
