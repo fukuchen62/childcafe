@@ -6,6 +6,10 @@ body {
   background-color: #fff8e6;
 }
 
+.flex{
+  display: flex;
+}
+
 /* h2 */
 .title {
   font-size: 24px;
