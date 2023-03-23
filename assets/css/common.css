@@ -1,0 +1,117 @@
+@charset 'utf-8';
+
+body {
+  line-height: 1.7;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/* h2 */
+.title {
+  font-size: 24px;
+}
+
+/* h3 */
+.subtitle {
+  font-size: 20px;
+}
+
+/* pのラップ */
+.text {
+  font-size: 16px;
+}
+
+/* ボタン */
+.btn {
+  margin-top: 50px;
+  height: 45px;
+  padding: 10px 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+/* テキストとタイトルの間 */
+.title + .text {
+  margin-top: 50px;
+}
+/* h3とタイトルの間 */
+.subtitle + .text {
+  margin-top: 10px;
+}
+
+/* 詳細一覧のimgの大きさ */
+.detail_img {
+  width: 120px;
+  height: 120px;
+}
+
+/* ヘッダー */
+.header {
+  width: 360px;
+  height: 80px;
+}
+
+.humburger_span {
+  width: 45px;
+  height: 8px;
+  /* nthchild 9px */
+}
+
+/* ヘッダー */
+.header_inner {
+  width: 100%;
+}
+
+.header_rogo {
+  width: 166px;
+  height: 60px;
+}
+/* 項目の幅 */
+.header .header_li + .header_li {
+  margin-left: 0.2px;
+}
+
+/* 処理があれば外して使う 旧.header_right */
+/* .header_nav{
+
+} */
+
+/* フッター */
+.footer_nav_li + .footer_nav_li {
+  margin-top: 15px;
+}
+
+.footer_nav_ul {
+  font-size: 24;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 770px) {
+  h2 {
+    font-size: 32px;
+  }
+  .btn {
+    margin-top: 75px;
+  }
+  .title + .text {
+    margin-top: 75px;
+  }
+  h3 + .text {
+    margin-top: 40px;
+  }
+
+  .detail_img {
+    margin: 25px;
+  }
+  .header .rogo {
+    width: 226px;
+    height: 82px;
+  }
+  .footer_nav_li + .footer_nav_li {
+    margin-top: 29px;
+  }
+
+  .footer .subtitle {
+    margin-bottom: 41px;
+  }
+}
