@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/**************************
+    人的・物的・金銭的詳細
+ **************************/
+
+.support {
+    width: 100%;
+}
+
+.support_inner {
+    width: 100%;
+}
+
+.support_title {
+    width: 170px;
+    margin: 50px auto;
+}
+
+.support_content {
+    /* max-width: 650px; */
+    width: 280px;
+    height: auto;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #f7dd94;
+    border-radius: 10px;
+}
+
+.support_subtitle {
+    /* margin-top: 35px; */
+    width: 215px;
+    height: 50px;
+    padding-top: 8px;
+    background-color: #fff8e6;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.support_content p {
+    width: 195px;
+    margin: 20px auto;
+}
+
+@media screen and (min-width: 770px) {
+    .support_content {
+        width: 680px;
+    }
+
+    .support_btn {
+        margin-top: 150px;
+    }
+
+    .support_content p {
+        width: 570px;
+    }
+}

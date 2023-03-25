@@ -133,7 +133,8 @@ body {
 }
 
 .result_title {
-    /* margin-bottom: 50px; */
+    margin-bottom: 50px;
+    border-bottom: 0;
 }
 
 .result_img_wrap {
@@ -191,17 +192,7 @@ body {
     margin: 40px auto;
 }
 
-.page_triangle_left {
-    width: 0;
-    height: 0;
-    margin-top: 5px;
-    border-style: solid;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-right: 20px solid #f7dd94;
-    border-left: 0;
-}
-
+.page_triangle_left,
 .page_triangle_right {
     width: 0;
     height: 0;
@@ -209,6 +200,14 @@ body {
     border-style: solid;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
+}
+
+.page_triangle_left {
+    border-right: 20px solid #f7dd94;
+    border-left: 0;
+}
+
+.page_triangle_right {
     border-left: 20px solid #f7dd94;
     border-right: 0;
 }
