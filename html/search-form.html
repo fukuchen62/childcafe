@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>キーワード検索</title>
+        <!-- reset css -->
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <!-- common css -->
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <!-- Googlefont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- search form css -->
+        <link rel="stylesheet" href="../assets/css/search-form.css" />
+        <!-- jquery -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+            integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <main class="serch_form">
+            <div class="search_form_inner">
+                <h2 class="title search_form_title">詳細検索</h2>
+                <div class="form_area">
+                    <div class="form_area_inner">
+                        <form action="#" method="get">
+                            <p class="form_subtitle">こども食堂をしらべる</p>
+                            <section class="area_wrap flex">
+                                <p class="area_titile">住所</p>
+                                <ul class="area_list flex">
+                                    <li>
+                                        <input
+                                            type="checkbox"
+                                            name="area[]"
+                                            value="east"
+                                            class="checkbox_list"
+                                        />
+                                        <label for="east" class="search_btn"
+                                            >県東部</label
+                                        >
+                                    </li>
+                                    <li>
+                                        <input
+                                            type="checkbox"
+                                            name="area[]"
+                                            value="west"
+                                            class="checkbox_list"
+                                        />
+                                        <label for="west" class="search_btn"
+                                            >県西部</label
+                                        >
+                                    </li>
+                                    <li>
+                                        <input
+                                            type="checkbox"
+                                            name="area[]"
+                                            value="south"
+                                            class="checkbox_list"
+                                        />
+                                        <label for="south" class="search_btn"
+                                            >県南部</label
+                                        >
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <div class="entrybtns">
+                                <input type="submit" value="しらべる" />
+                                <input type="reset" value="リセット" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="../assets/js/search-form.js"></script>
+    </body>
+</html>

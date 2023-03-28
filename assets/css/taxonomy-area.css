@@ -53,7 +53,8 @@
 
 .area_list {
     /* max-width: 730px; */
-    width: 290px;
+    /* width: 290px; */
+    width: 70%;
     height: auto;
     border-radius: 10px;
     /* margin: 0 40px; */
@@ -92,6 +93,7 @@
 @media screen and (min-width: 770px) {
     .area_list {
         width: 730px;
+        /* width: 80%; */
         margin: 0 auto;
     }
 
