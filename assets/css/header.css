@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 /* ........... 
-   ヘッダー部分
+ヘッダー部分
   ........... */
 
 .header_inner {
@@ -12,13 +12,13 @@
     justify-content: space-between;
 }
 
-.header_logo img {
+.header_logo {
     width: 90px;
     height: 80px;
 }
 
-.header_nav {
-    display: none;
+.header_logo img {
+    width: 100%;
 }
 
 /* hamburgerメニュー */
@@ -29,7 +29,7 @@
 
 .hamburger {
     position: relative;
-    z-index: 3;
+    z-index: 9999;
     width: 80px;
     height: 80px;
     cursor: pointer;
@@ -37,11 +37,14 @@
 
 .hamburger span {
     position: absolute;
-    width: 80%;
+    width: 75%;
     height: 4px;
     background-color: #ffb700;
     border-radius: 3px;
     transition: all 0.3s;
+    display: block;
+
+    transition: all 0.7s;
 }
 
 .hamburger span:nth-child(1) {
@@ -57,4 +60,69 @@
 .hamburger span:nth-child(3) {
     bottom: 15px;
     left: 5px;
+}
+
+/* メニュー画面 */
+
+.menu {
+    width: 100%;
+    height: 100vh;
+    background-color: #fef4d9;
+    z-index: 999;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transition: all 0.7s;
+}
+
+.menu img {
+    width: 90px;
+    height: 80px;
+}
+
+.menu ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.menu ul li a {
+    /* display: inline-block; */
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+/* is-activeがついた時 */
+.menu.is-active {
+    top: 0;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(20px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    display: none;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-20px) rotate(-45deg);
+}
+
+/* ボタン角丸 */
+
+.btn_header {
+    width: 70vw;
+    background-color: #f7dd94;
+    border-radius: 20px;
+}
+
+.btn_header a {
+    display: block;
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer;
 }
