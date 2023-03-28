@@ -25,7 +25,8 @@
 .support_content2,
 .support_content3 {
     /* max-width: 650px; */
-    width: 280px;
+    /* width: 280px; */
+    width: 80%;
     height: auto;
     margin: 0 auto;
     padding: 35px;

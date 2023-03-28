@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/***********************
+    このサイトについて
+ **********************/
+
+.page_about {
+    width: 100%;
+}
+
+.page_about_inner {
+    width: 100%;
+    /* padding: 0 45px; */
+}
+
+.about_title {
+    width: 220px;
+    margin: 50px auto;
+}
+
+.text {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 770px) {
+    .text {
+        width: 70%;
+    }
+}
