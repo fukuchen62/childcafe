@@ -30,4 +30,8 @@ body {
     .text {
         width: 70%;
     }
+
+    .qbtn {
+        margin-top: 50px;
+    }
 }
