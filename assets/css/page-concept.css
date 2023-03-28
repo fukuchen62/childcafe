@@ -1,23 +1,22 @@
 @charset "utf-8";
 
 /***********************
-    このサイトについて
+    子供食堂とは
  **********************/
 body {
     line-height: 1.8;
 }
 
-.page_about {
+.concept {
     width: 100%;
 }
 
-.page_about_inner {
+.concept_inner {
     width: 100%;
-    /* padding: 0 45px; */
 }
 
-.about_title {
-    width: 220px;
+.concept_title {
+    width: 180px;
     margin: 50px auto;
 }
 
