@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/**************************
+    Amazonプログラムとは
+ **************************/
+
+.program {
+    width: 100%;
+}
+
+.program_inner {
+    width: 100%;
+}
+
+.program_title1,
+.program_title2 {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.program_title2 {
+    margin-bottom: 50px;
+}
+
+.text {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.program_btn {
+    background-color: #e9fcc1;
+}
+
+@media screen and (min-width: 770px) {
+    .text {
+        width: 70%;
+    }
+
+    .program_btn {
+        margin-top: 50px;
+    }
+}
