@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>キーワード検索</title>
+        <title>しらべる</title>
         <!-- reset css -->
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <!-- common css -->
@@ -16,8 +16,8 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
-        <!-- search form css -->
-        <link rel="stylesheet" href="../assets/css/search-form.css" />
+        <!-- page search css -->
+        <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- jquery -->
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
@@ -32,16 +32,27 @@
                 <h2 class="title">詳細検索</h2>
                 <form action="#" method="post">
                     <section class="form">
-                        <h3 class="subtitle">子供食堂をしらべる</h3>
+                        <h3 class="subtitle form_subtitle">
+                            子供食堂をしらべる
+                        </h3>
                         <div class="form_wrap">
                             <!-- 地域 -->
                             <div class="form_item">
                                 <p class="item_title">地域</p>
-                                <ul class="item_choice">
-                                    <li>県東部</li>
-                                    <li>県南部</li>
-                                    <li>県西部</li>
-                                </ul>
+                                <label for="east" class="checklist"
+                                    >県東部</label
+                                >
+                                <select name="select" multiple>
+                                    <option value=""></option>
+                                </select>
+
+                                <label for="west" class="checklist"
+                                    >県西部</label
+                                >
+
+                                <label for="south" class="checklist"
+                                    >県南部</label
+                                >
                             </div>
                         </div>
                     </section>
