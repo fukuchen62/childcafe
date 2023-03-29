@@ -16,7 +16,8 @@ body {
     font-weight: 500;
     margin-bottom: 50px;
     text-align: center;
-    border-bottom: dashed 3px #008000;
+    text-decoration: underline dotted 5px #008000;
+    text-underline-offset: 10px;
 }
 
 /* h3 */
