@@ -8,6 +8,10 @@ body {
     width: 100%;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 .title {
     border-bottom: 5px dotted green;
     text-align: center;
@@ -41,7 +45,7 @@ h2 {
 }
 
 .about .text {
-    background-image: url(../img/虹.png);
+    background-image: url(../images/index/虹.png);
     background-position: center;
     background-size: cover;
 }
@@ -70,7 +74,7 @@ h2 {
 }
 /* MAP */
 .map {
-    width: 306px;
+    /* width: 306px; */
     margin: 0 auto;
 }
 
@@ -127,10 +131,14 @@ h2 {
     width: 168px;
 }
 
-.mobile_pic {
+.shien_box {
     position: relative;
-    left: 180px;
-    top: -100px;
+}
+
+.mobile_pic {
+    position: absolute;
+    left: 210px;
+    top: 30px;
     opacity: 30%;
     width: 177px;
     height: 177px;
@@ -182,6 +190,15 @@ h2 {
     padding: auto;
     border: 3px solid #ffb700;
     border-radius: 35px;
+}
+
+/* お問い合わせ */
+.contact {
+    background-color: #d7f794;
+}
+
+.contact .title {
+    width: 146px;
 }
 
 /* 活動の様子 */

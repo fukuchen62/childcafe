@@ -36,7 +36,7 @@ body {
 /* ボタン */
 .btn {
     margin: 0 auto;
-    margin-top: 50;
+    margin-top: 50px;
     width: 200px;
     height: 45px;
     text-align: center;
@@ -94,7 +94,7 @@ body {
     margin-bottom: 25px;
 }
 
-@media (max-width: 770px) {
+@media (min-width: 770px) {
     h2 {
         font-size: 32px;
     }
