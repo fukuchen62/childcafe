@@ -4,10 +4,6 @@ body {
     overflow: hidden;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 .main_inner {
     width: 100%;
 }
