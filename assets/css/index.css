@@ -1,62 +1,190 @@
 @charset 'utf-8';
 /* 共通 */
+body {
+    overflow: hidden;
+}
+
 .main_inner {
-  width: 100%;
+    width: 100%;
+}
+
+.title {
+    border-bottom: 5px dotted green;
+    text-align: center;
+    margin: 0 auto 42px;
+}
+
+h2 {
+    font-size: 24px;
 }
 
 .section_inner {
-  margin: 0 auto;
-  width: 360px;
+    margin: 0 auto;
+    width: 360px;
 }
 
 /* キービジュアル */
 .main_visual {
-  width: 100%;
-  height: 480px;
-  margin: 0 auto;
-  background-color: gray;
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+    background-color: gray;
 }
 
 /* このサイトについて */
 .about {
-  background-color: #d7f794;
+    background-color: #d7f794;
+}
+
+.about .title {
+    width: 282px;
 }
 
 .about .text {
-  background-image: url(../img/虹.png);
-  background-position: center;
-  background-size: cover;
+    background-image: url(../img/虹.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* 開催情報 */
+.info .title {
+    width: 132px;
+}
+
+.info .text_box {
+    width: 242px;
+    height: 124px;
+    text-align: center;
+    background-color: white;
+    margin: 0 auto;
+    padding: auto;
+    border: 3px solid #ffb700;
+    border-radius: 35px;
+}
+/* インタビュー */
+.interviews {
+    background-color: #fdffb0;
+}
+.interviews .title {
+    width: 286px;
+}
+/* MAP */
+.map {
+    width: 306px;
+    margin: 0 auto;
+}
+
+.map .pic {
+    width: 306px;
+    height: 230px;
+}
+
+.map_serch .title {
+    width: 77px;
 }
 
 /* 子ども食堂とは */
-.onigiri {
-  width: 99px;
-  height: 95px;
+.childcafe {
+    background-color: #d7f794;
 }
+
+.childcafe .title {
+    width: 168px;
+}
+
+.with_onigiri {
+    position: relative;
+}
+
+.onigiri {
+    position: absolute;
+    width: 99px;
+    height: 95px;
+    bottom: 3px;
+    left: -30vh;
+    z-index: 1;
+    animation: korogari 6s linear infinite alternate;
+}
+
+.with_onigiri .btn {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes korogari {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: 100vw;
+        transform: rotate(1120deg);
+    }
+}
+
 /* 支援したい方へ */
+.surporters .title {
+    width: 168px;
+}
+
 .mobile_pic {
-  width: 177px;
-  height: 177px;
+    position: relative;
+    left: 180px;
+    top: -100px;
+    opacity: 30%;
+    width: 177px;
+    height: 177px;
 }
 
 .pc_pic {
-  width: 445px;
-  height: 445px;
-  display: none;
+    width: 445px;
+    height: 445px;
+    display: none;
 }
+
 /* リンク集 */
+
+.link {
+    background-color: #fdffb0;
+}
+
+.link .title {
+    width: 98px;
+}
+
 .btn_link {
-  margin: 0 auto;
-  width: 200px;
-  height: 45px;
-  text-align: center;
-  padding: 10px 0;
-  background-color: #ffdf8c;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+    margin: 0 auto;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffdf8c;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
 .btn_link + .btn_link {
-  margin-top: 20px;
+    margin-top: 20px;
+}
+
+/* お知らせ */
+.notice .title {
+    width: 104px;
+}
+
+.notice .news {
+    width: 242px;
+    height: 124px;
+    text-align: center;
+    background-color: white;
+    margin: 0 auto;
+    padding: auto;
+    border: 3px solid #ffb700;
+    border-radius: 35px;
+}
+
+/* 活動の様子 */
+.activity .title {
+    width: 146px;
 }
