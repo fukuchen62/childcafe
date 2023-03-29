@@ -13,18 +13,18 @@ html {
 }
 
 .title {
-    border-bottom: 5px dotted green;
     text-align: center;
-    margin: 0 auto 42px;
-}
-
-h2 {
-    font-size: 24px;
 }
 
 .section_inner {
     margin: 0 auto;
     width: 360px;
+}
+
+@media (min-width: 770px) {
+    .section_inner {
+        width: 100%;
+    }
 }
 
 /* キービジュアル */
@@ -40,20 +40,13 @@ h2 {
     background-color: #d7f794;
 }
 
-.about .title {
-    width: 282px;
-}
-
-.about .text {
+.about .niji {
     background-image: url(../images/index/虹.png);
     background-position: center;
     background-size: cover;
 }
 
 /* 開催情報 */
-.info .title {
-    width: 132px;
-}
 
 .info .text_box {
     width: 242px;
@@ -65,16 +58,20 @@ h2 {
     border: 3px solid #ffb700;
     border-radius: 35px;
 }
+
+@media (min-width: 770px) {
+    .info .text_box {
+        width: 663px;
+        height: 162px;
+    }
+}
 /* インタビュー */
 .interviews {
     background-color: #fdffb0;
 }
-.interviews .title {
-    width: 286px;
-}
+
 /* MAP */
 .map {
-    /* width: 306px; */
     margin: 0 auto;
 }
 
@@ -83,17 +80,19 @@ h2 {
     height: 230px;
 }
 
-.map_serch .title {
-    width: 77px;
+.map_pic {
+    text-align: center;
 }
 
+@media (min-width: 770px) {
+    .map .pic {
+        width: 781px;
+        height: 661px;
+    }
+}
 /* 子ども食堂とは */
 .childcafe {
     background-color: #d7f794;
-}
-
-.childcafe .title {
-    width: 168px;
 }
 
 .with_onigiri {
@@ -127,9 +126,6 @@ h2 {
 }
 
 /* 支援したい方へ */
-.surporters .title {
-    width: 168px;
-}
 
 .shien_box {
     position: relative;
@@ -150,14 +146,34 @@ h2 {
     display: none;
 }
 
+@media (min-width: 770px) {
+    .mobile_pic {
+        left: 55%;
+    }
+}
+@media (min-width: 1100px) {
+    .mobile_pic {
+        width: 445px;
+        height: 445px;
+        left: 65%;
+        top: -200px;
+        opacity: 1;
+    }
+    .pc_pic {
+        display: block;
+        position: absolute;
+        top: -202px;
+        right: 65%;
+    }
+    .surporters .text {
+        width: 590px;
+    }
+}
+
 /* リンク集 */
 
 .link {
     background-color: #fdffb0;
-}
-
-.link .title {
-    width: 98px;
 }
 
 .btn_link {
@@ -172,14 +188,30 @@ h2 {
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
+.link_flex {
+    display: flex;
+    flex-direction: column;
+}
+
 .btn_link + .btn_link {
     margin-top: 20px;
 }
 
-/* お知らせ */
-.notice .title {
-    width: 104px;
+@media (min-width: 900px) {
+    .btn_link {
+        height: 50px;
+    }
+    .link_flex {
+        height: 50px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .btn_link + .btn_link {
+        margin-top: 0;
+    }
 }
+
+/* お知らせ */
 
 .notice .news {
     width: 242px;

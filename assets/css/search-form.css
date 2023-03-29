@@ -11,70 +11,11 @@
     max-width: 1024px;
 }
 
-.search_form_title {
-    width: 100px;
-    margin: 0 auto;
-}
-
-.form_area {
+.form {
     width: 80%;
-    padding: 10px;
-    border-radius: 10px;
     margin: 0 auto;
     background-color: #f7dd94;
-}
-
-.form_area_inner {
-    width: 75%;
     border-radius: 10px;
-    margin: 0 auto;
-    background-color: #fff8e6;
-}
-
-.form_subtitle {
-    text-align: center;
-}
-
-.area_wrap {
-    width: 100%;
-    flex-direction: column;
-    margin: 0 auto;
-}
-
-.area_title {
-    text-align: center;
-}
-
-.area_list {
-    margin: 0 30px;
-    flex-direction: column;
-}
-
-.checkbox_list {
-    width: 20px;
-    height: 20px;
-    border: 3px solid #f8b600;
-}
-
-.entrybtns {
-    width: 100%;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.entrybtns input {
-    width: 200px;
-    height: 45px;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #ffdf8c;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
-}
-
-.entrybtns input[type="reset"] {
-    background-color: #fdffb0;
 }
 
 /***********************
