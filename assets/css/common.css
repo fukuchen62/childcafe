@@ -94,7 +94,7 @@ body {
     margin-bottom: 25px;
 }
 
-@media (max-width: 770px) {
+@media (min-width: 770px) {
     h2 {
         font-size: 32px;
     }
