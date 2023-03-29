@@ -13,6 +13,7 @@
 
 .form {
     width: 80%;
+    height: 500px;
     padding-top: 10px;
     margin: 0 auto;
     background-color: #f7dd94;
@@ -25,17 +26,40 @@
 .form_wrap {
     width: 90%;
     margin: 0 auto;
-    padding: 10px;
+    /* padding: 10px; */
     background-color: #fff8e6;
     border-radius: 10px;
 }
 
-.form_item {
+.area {
     width: 100%;
     text-align: center;
 }
 
 .item_title {
+}
+
+.area_wrap {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checklist {
+}
+
+.select {
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    background-image: url(); /*--矢印の画像を指定--*/
+    background-repeat: no-repeat;
+    background-size: 18px 10px;
+    background-position: right 20px center;
+    background-color: ;
 }
 
 /***********************
