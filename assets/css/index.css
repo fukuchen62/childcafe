@@ -192,7 +192,7 @@ html {
     animation: korogari 6s linear infinite alternate;
 }
 
-.with_onigiri .btn {
+.with_onigiri .btn_item {
     position: relative;
     z-index: 2;
 }
