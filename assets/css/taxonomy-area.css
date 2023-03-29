@@ -23,6 +23,7 @@
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
+    font-weight: 500;
 }
 
 .tab_east,
@@ -56,14 +57,29 @@
     flex-direction: column;
 }
 
-.area_list {
+.area_list1,
+.area_list2,
+.area_list3 {
     /* max-width: 730px; */
     width: 90%;
     height: auto;
     border-radius: 10px;
     margin: 0 auto;
     padding: 25px 20px;
+}
+
+.area_list1 {
     background-color: #f7dd94;
+}
+
+.area_list2 {
+    background-color: #d7f794;
+    display: none;
+}
+
+.area_list3 {
+    background-color: #fdffb0;
+    display: none;
 }
 
 .title {
@@ -99,7 +115,9 @@
         justify-content: space-around;
     }
 
-    .area_list {
+    .area_list1,
+    .area_list2,
+    .area_list3 {
         width: 300px;
         margin: 50px 50px 0 50px;
     }
