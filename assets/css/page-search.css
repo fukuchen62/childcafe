@@ -13,9 +13,29 @@
 
 .form {
     width: 80%;
+    padding-top: 10px;
     margin: 0 auto;
     background-color: #f7dd94;
     border-radius: 10px;
+}
+
+.form_subtitle {
+}
+
+.form_wrap {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff8e6;
+    border-radius: 10px;
+}
+
+.form_item {
+    width: 100%;
+    text-align: center;
+}
+
+.item_title {
 }
 
 /***********************

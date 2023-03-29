@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+/* ........... 
+    フッター部分
+  ........... */
+
+.footer {
+    background-color: #f8b600;
+}
+
+.footer_inner {
+    width: 100%;
+    height: auto;
+}
+
+.footer_nav {
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.footer_nav_title_concept p {
+    font-weight: bold;
+    margin: 0 auto 12px;
+}
+
+.footer_nav_title_taxonomy_area p {
+    font-weight: bold;
+    margin: 20px auto 12px;
+}
+
+.footer_nav_title_other p {
+    font-weight: bold;
+    margin: 20px auto 12px;
+}
+
+.footer_copyright p {
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media (min-width: 770px) {
+    .footer_inner {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .footer_nav {
+        flex-direction: row;
+        margin-bottom: 110px;
+    }
+
+    .footer_nav_title_concept {
+        margin: 20px 42px;
+    }
+
+    .footer_nav_title_taxonomy_area {
+        margin: 0 auto;
+    }
+}
