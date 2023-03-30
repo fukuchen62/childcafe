@@ -30,7 +30,7 @@
         <main class="serch_form">
             <div class="search_form_inner">
                 <h2 class="title">詳細検索</h2>
-                <!-- 地域別タブ -->
+                <!-- 項目タブ -->
                 <ul class="tab flex">
                     <li class="tab_1">基本情報</li>
                     <li class="tab_2">日時</li>
@@ -43,7 +43,7 @@
                             子供食堂をしらべる
                         </h3>
                         <div class="form_wrap">
-                            <!-- 地域別チェック欄 -->
+                            <!-- エリア検索欄 -->
                             <div class="area flex">
                                 <h3 class="item_title">地域</h3>
                                 <!-- 東部 -->
@@ -109,11 +109,98 @@
                                     </select>
                                 </div>
                             </div>
+                            <!-- エリア検索欄終了 -->
+
+                            <!-- 料金検索欄 -->
+                            <div class="money flex">
+                                <h3 class="item_title">料金</h3>
+                                <!-- こども料金 -->
+                                <div class="money_wrap flex">
+                                    <label for="child" class="checklist"
+                                        >こども：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">料金を選択</option>
+                                        <option value="完全無料">
+                                            完全無料
+                                        </option>
+                                        <option value="募金制">募金制</option>
+                                        <option value="～３００円">
+                                            ～３００円
+                                        </option>
+                                        <option value="５００円">
+                                            ５００円
+                                        </option>
+                                        <option value="５００円以上">
+                                            ５００円以上
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- 大人料金 -->
+                                <div class="money_wrap flex">
+                                    <label for="adult" class="checklist"
+                                        >おとな：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">料金を選択</option>
+                                        <option value="完全無料">
+                                            完全無料
+                                        </option>
+                                        <option value="募金制">募金制</option>
+                                        <option value="～３００円">
+                                            ～３００円
+                                        </option>
+                                        <option value="５００円">
+                                            ５００円
+                                        </option>
+                                        <option value="５００円以上">
+                                            ５００円以上
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 料金検索欄 終了 -->
+
+                            <!-- 事前予約の有無 -->
+                            <div class="reserve_area flex">
+                                <h3 class="item_title">事前予約の有無</h3>
+                                <div class="reserve_radio">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="reserve"
+                                            checked
+                                        />
+                                        有
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="reserve" />
+                                        無
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 事前予約の有無 終了-->
                         </div>
                     </section>
                     <div class="form_btns flex">
-                        <input type="submit" value="しらべる" />
-                        <input type="reset" value="リセット" />
+                        <input
+                            class="btn submit_btn"
+                            type="submit"
+                            value="しらべる"
+                        />
+                        <input
+                            class="btn reset_btn"
+                            type="reset"
+                            value="リセット"
+                        />
                     </div>
                 </form>
             </div>
