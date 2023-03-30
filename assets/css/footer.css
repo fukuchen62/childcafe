@@ -49,10 +49,9 @@
     animation-name: anim_s;
     opacity: 0.9;
     animation: anim_s 10s infinite alternate;
-}
-
-html {
-    overflow: hidden;
+    width: 200px;
+    left: 50vw;
+    top: 75%;
 }
 
 @keyframes anim_s {
@@ -102,5 +101,34 @@ html {
 
     .footer_nav_title_other p {
         margin: 20px auto 40px;
+    }
+
+    /* 女の子のアニメーション */
+
+    .footer_girl {
+        position: absolute;
+        animation-name: anim_s;
+        opacity: 0.9;
+        animation: anim_s 10s infinite alternate;
+        width: 200px;
+        left: 20vw;
+        top: 75%;
+    }
+
+    @keyframes anim_s {
+        0% {
+            transform: rotate(15deg);
+        }
+        20% {
+            transform: rotate(-15deg);
+        }
+        50% {
+            transform: rotate(-30deg);
+        }
+        60% {
+        }
+        100% {
+            transform: rotate(30deg);
+        }
     }
 }
