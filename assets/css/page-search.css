@@ -190,10 +190,3 @@
 .reset_btn {
     background-color: #fdffb0;
 }
-
-/***********************
-    ユーティリティ
- **********************/
-.flex {
-    display: flex;
-}
