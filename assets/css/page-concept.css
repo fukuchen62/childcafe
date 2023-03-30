@@ -7,6 +7,10 @@ body {
     line-height: 1.8;
 }
 
+main {
+    margin-bottom: 150px;
+}
+
 .title {
     width: 180px;
     margin: 50px auto;
