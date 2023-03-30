@@ -1,6 +1,41 @@
 @charset "utf-8";
 
 /***********************
+        タブ 
+ **********************/
+
+.tab {
+    max-width: 980px;
+    height: 75px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.tab_1,
+.tab_2,
+.tab_3 {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    padding: 18px 0;
+    text-align: center;
+}
+
+.tab_1 {
+    background-color: #f7dd94;
+}
+
+.tab_2 {
+    background-color: #d7f794;
+}
+
+.tab_3 {
+    background-color: #fdffb0;
+}
+
+/***********************
     キーワード検索
  **********************/
 .search_form {
@@ -67,6 +102,13 @@
     background-size: 20px;
     background-position: right 5px center;
     background-color: white;
+}
+
+.form_btns {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 /***********************

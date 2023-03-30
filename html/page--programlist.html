@@ -7,8 +7,6 @@
         <title>参加子ども食堂一覧| 個別ページ</title>
         <!-- reset css -->
         <link rel="stylesheet" href="../assets/css/reset.css" />
-        <!-- common css -->
-        <link rel="stylesheet" href="../assets/css/common.css" />
         <!-- Googlefont -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,17 +14,115 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
+        <!-- common css -->
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <!-- header css -->
+        <link rel="stylesheet" href="../assets/css/header.css" />
         <!-- page--programlist css -->
         <link rel="stylesheet" href="../assets/css/page--programlist.css" />
         <!-- jquery -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-            integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
+
     <body>
+        <header class="header">
+            <div class="header_inner flex">
+                <div class="header_logo">
+                    <a href="#"
+                        ><img
+                            src="../assets/images/ロゴ（仮）.png"
+                            alt="ホームボタン"
+                    /></a>
+                </div>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- hamburger箱end -->
+                <nav class="menu_pc">
+                    <ul class="menu_pc_ul flex">
+                        <li class="btn_header_pc_1 flex">
+                            <a href="#"> こども食堂とは</a>
+                        </li>
+                        <li class="btn_header_pc_2 flex">
+                            <a href="#"> 支援者の方へ</a>
+                        </li>
+                        <li class="btn_header_pc_3 flex">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header_pc_4 flex">
+                            <a href="#"> エリアから<br />さがす</a>
+                        </li>
+                        <li class="btn_header_pc_5 flex">
+                            <a href="#"> 条件から<br />さがす</a>
+                        </li>
+                        <li class="btn_header_pc_6 flex">
+                            <a href="#">開催情報</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a class="a_menu" href="#"
+                            ><img
+                                src="../assets/images/ロゴ（仮）.png"
+                                alt="ホームボタン"
+                        /></a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> こども食堂とは</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 支援者の方へ</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 特集記事</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> エリアからさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 条件からさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 今月の開催情報</a>
+                    </li>
+                    <!-- 検索機能 -->
+                    <li class="btn_header menu_search">
+                        <form class="hbg_search" action="" method="">
+                            <input
+                                type="hidden"
+                                name="search_type"
+                                value="keywords"
+                            />
+                            <input
+                                class="hbg_form"
+                                size="25"
+                                type="search"
+                                name="s"
+                                value=""
+                                name="search"
+                                placeholder="キーワードを入力"
+                                id="clearbutton7"
+                            />
+                            <input
+                                class="hbg_submit fas"
+                                type="submit"
+                                value="   "
+                            />
+                        </form>
+                    </li>
+                    <!-- 検索機能end -->
+                </ul>
+            </nav>
+            <!-- hamburger中身end -->
+        </header>
+
+        <!-- 参加食堂一覧 -->
         <main class="programlist">
             <div class="programlist_inner">
                 <div class="result_img">
@@ -72,5 +168,6 @@
             </div>
         </main>
         <script src=""></script>
+        <script src="../assets/js/header.js"></script>
     </body>
 </html>
