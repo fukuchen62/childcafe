@@ -149,6 +149,19 @@ html {
     margin: 0 auto;
 }
 
+@media (min-width: 770px) {
+    .pickup_slider {
+        max-width: 1020px;
+        width: 100%;
+        height: 380px;
+        margin: 0 auto;
+    }
+
+    .pickup_slide li {
+        margin: 0 10px;
+    }
+}
+
 /* MAP */
 .map .pic {
     width: 306px;
