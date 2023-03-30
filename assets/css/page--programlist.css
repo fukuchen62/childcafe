@@ -4,3 +4,8 @@
     width: 220px;
     margin: 50px auto;
 }
+
+@media screen and (min-width: 770px) {
+    .programlist {
+    }
+}
