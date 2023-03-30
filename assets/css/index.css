@@ -104,11 +104,14 @@ html {
 .map .pic {
     width: 306px;
     height: 230px;
+    position: relative;
+    z-index: 1;
 }
 
 .map_pic {
     position: relative;
     text-align: center;
+    z-index: 1;
 }
 
 .serch_btn {
@@ -201,7 +204,6 @@ html {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         left: 100vw;
         transform: rotate(1120deg);
