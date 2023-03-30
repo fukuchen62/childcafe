@@ -58,6 +58,11 @@ html {
     position: relative;
 }
 
+.niji .btn_item {
+    position: relative;
+    z-index: 99999999;
+}
+
 .rainbow {
     width: 320px;
     height: 300px;
