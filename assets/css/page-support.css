@@ -41,10 +41,12 @@
 
 .support {
     width: 100%;
+    margin-bottom: 200px;
 }
 
 .support_inner {
     max-width: 1024px;
+    /* width: 100%; */
     margin: 0 auto;
 }
 

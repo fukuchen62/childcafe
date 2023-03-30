@@ -10,6 +10,7 @@
     z-index: 999;
     font-family: "Zen Maru Gothic", sans-serif;
     position: fixed;
+    top: 0;
 }
 
 .header_inner {
