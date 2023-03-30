@@ -8,9 +8,14 @@
     background-color: #f8b600;
 }
 
+.footer_wave {
+    background-color: #fff8e6;
+}
+
 .footer_inner {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 .footer_nav {
@@ -39,6 +44,34 @@
     text-align: center;
 }
 
+.footer_girl {
+    position: absolute;
+    animation-name: anim_s;
+    opacity: 0.9;
+    animation: anim_s 10s infinite alternate;
+}
+
+html {
+    overflow: hidden;
+}
+
+@keyframes anim_s {
+    0% {
+        transform: rotate(15deg);
+    }
+    20% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    60% {
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
 @media (min-width: 770px) {
     .footer_inner {
         max-width: 1024px;
@@ -54,7 +87,20 @@
         margin: 20px 42px;
     }
 
+    /* 項目とリンクのボトム感覚 */
     .footer_nav_title_taxonomy_area {
         margin: 0 auto;
+    }
+
+    .footer_nav_title_concept p {
+        margin: 0 auto 40px;
+    }
+
+    .footer_nav_title_taxonomy_area p {
+        margin: 20px auto 40px;
+    }
+
+    .footer_nav_title_other p {
+        margin: 20px auto 40px;
     }
 }
