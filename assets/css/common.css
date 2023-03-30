@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 body {
-    line-height: 1.7;
+    line-height: 1.8;
     font-family: "Zen Maru Gothic", sans-serif;
     background-color: #fff8e6;
 }
@@ -13,6 +13,8 @@ body {
 main {
     position: relative;
     top: 100px;
+    /* 追加 */
+    margin-bottom: 150px;
 }
 
 .main_inner {
@@ -22,8 +24,13 @@ main {
 
 /* h2 */
 .title {
+    /* 追加-このサイトについて,こども食堂とは */
+    width: 220px;
+
     font-size: 24px;
     font-weight: 500;
+    /* 追加margin auto  */
+    margin: 0 auto;
     margin-bottom: 50px;
     text-align: center;
     text-decoration: underline dotted 5px #008000;
@@ -42,6 +49,8 @@ main {
     font-size: 16px;
     margin: 0 auto;
     width: 280px;
+    /* 追加 */
+    margin-bottom: 20px;
 }
 
 /* ボタン */
@@ -85,6 +94,10 @@ main {
 
     .detail_img {
         margin: 25px;
+    }
+
+    .text {
+        width: 70%;
     }
 }
 
