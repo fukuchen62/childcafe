@@ -25,13 +25,12 @@
     background-color: #fdffb0;
 }
 
-.page_link_title1,
-.page_link_title2 {
+.title {
     width: 170px;
     margin: 0 auto;
 }
 
-.page_link_title3 {
+.page_link_title {
     width: 200px;
     margin: 0 auto;
 }
