@@ -41,10 +41,6 @@ function add_my_files() {
 	wp_enqueue_style('reset-css', get_template_directory_uri() .'/assets/css/reset.css');
     //common.cssの読み込み
     wp_enqueue_style('common-css', get_template_directory_uri() . '/assets/css/common.css',array('reset-css'));
-    //header.cssの読み込み
-	wp_enqueue_style('header-css', get_template_directory_uri() .'/assets/css/header.css',array('common-css'));
-    //footer.cssの読み込み
-	wp_enqueue_style('footer-css', get_template_directory_uri() .'/assets/css/footer.css',array('header-css'));
     //slickのCSSの読み込み
     wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick.css',array('common-css'));
     wp_enqueue_style('slickーtheme-css', get_template_directory_uri() . '/assets/css/slick-theme.css',array('slick-css'));
