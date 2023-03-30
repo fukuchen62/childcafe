@@ -14,8 +14,6 @@
 
 .footer_inner {
     width: 100%;
-    height: auto;
-    position: relative;
 }
 
 .footer_nav {
@@ -44,14 +42,19 @@
     text-align: center;
 }
 
+.with_girl {
+    position: relative;
+}
+
 .footer_girl {
     position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 50%;
+    bottom: 10%;
+    z-index: 1;
     animation-name: anim_s;
-    opacity: 0.9;
     animation: anim_s 10s infinite alternate;
-    width: 200px;
-    left: 50vw;
-    top: 75%;
 }
 
 @keyframes anim_s {
@@ -106,29 +109,8 @@
     /* 女の子のアニメーション */
 
     .footer_girl {
-        position: absolute;
-        animation-name: anim_s;
-        opacity: 0.9;
-        animation: anim_s 10s infinite alternate;
-        width: 200px;
-        left: 20vw;
-        top: 75%;
-    }
-
-    @keyframes anim_s {
-        0% {
-            transform: rotate(15deg);
-        }
-        20% {
-            transform: rotate(-15deg);
-        }
-        50% {
-            transform: rotate(-30deg);
-        }
-        60% {
-        }
-        100% {
-            transform: rotate(30deg);
-        }
+        width: 250px;
+        height: 250px;
+        left: 10%;
     }
 }

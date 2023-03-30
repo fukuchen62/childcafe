@@ -14,7 +14,7 @@
 }
 
 /***********************
-        地域別タブ 
+        地域別タブ
  **********************/
 
 .tab {
@@ -74,12 +74,22 @@
 
 .area_list2 {
     background-color: #d7f794;
-    display: none;
 }
 
 .area_list3 {
     background-color: #fdffb0;
+}
+
+.panel {
     display: none;
+}
+
+.is-show {
+    display: block;
+}
+
+.tab_js {
+    cursor: pointer;
 }
 
 .title {

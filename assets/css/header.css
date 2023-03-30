@@ -9,6 +9,7 @@
     line-height: 1.7;
     z-index: 999;
     font-family: "Zen Maru Gothic", sans-serif;
+    position: fixed;
 }
 
 .header_inner {
@@ -20,7 +21,7 @@
 }
 
 .header_logo {
-    width: 90px;
+    width: 79px;
     height: 80px;
 }
 
