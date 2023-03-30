@@ -38,19 +38,11 @@
 /**************************
     人的・物的・金銭的詳細
  **************************/
-
-.support {
-    width: 100%;
-    margin-bottom: 200px;
+main {
+    margin-bottom: 150px;
 }
 
-.support_inner {
-    max-width: 1024px;
-    /* width: 100%; */
-    margin: 0 auto;
-}
-
-.support_title {
+.title {
     width: 170px;
     margin: 50px auto;
 }

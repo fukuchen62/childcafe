@@ -38,14 +38,6 @@
 /***********************
     キーワード検索
  **********************/
-.search_form {
-    width: 100%;
-}
-
-.search_form_inner {
-    max-width: 1024px;
-}
-
 .form {
     width: 80%;
     height: 500px;
@@ -53,9 +45,6 @@
     margin: 0 auto;
     background-color: #f7dd94;
     border-radius: 10px;
-}
-
-.form_subtitle {
 }
 
 .form_wrap {

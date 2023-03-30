@@ -3,23 +3,12 @@
 /**************************
     Amazonプログラムとは
  **************************/
-
-.program {
-    width: 100%;
-}
-
-.program_inner {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.program_title1,
-.program_title2 {
+.title {
     width: 250px;
     margin: 0 auto;
 }
 
-.program_title2 {
+.program_title {
     margin-bottom: 50px;
 }
 
