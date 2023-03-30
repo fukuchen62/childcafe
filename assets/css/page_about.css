@@ -7,14 +7,8 @@ body {
     line-height: 1.8;
 }
 
-.page_about {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.page_about_inner {
-    width: 100%;
-    /* padding: 0 45px; */
+main {
+    margin-bottom: 150px;
 }
 
 .about_title {

@@ -8,15 +8,6 @@ body {
     line-height: 1.8;
 }
 
-.praivacy_policy {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.praivacy_policy_inner {
-    width: 100%;
-}
-
 .praivacy_title {
     width: fit-content;
     font-size: 20px;
