@@ -3,14 +3,8 @@
 /***********************
     市町村別検索結果一覧
  **********************/
-
-.taxonomy_area {
-    width: 100%;
-}
-
-.taxonomy_area_inner {
-    max-width: 1024px;
-    margin: 0 auto;
+main {
+    margin-bottom: 150px;
 }
 
 /***********************
@@ -94,9 +88,6 @@
 
 .title {
     text-align: center;
-}
-
-.area_list_title {
     width: 210px;
     height: 50px;
     padding-top: 5px;
@@ -119,6 +110,10 @@
     margin: 5px 0;
 }
 
+.result_title {
+    width: 250px;
+}
+
 @media screen and (min-width: 770px) {
     .list_area {
         flex-direction: row-reverse;
@@ -132,7 +127,7 @@
         margin: 50px 50px 0 50px;
     }
 
-    .area_list_title {
+    .title {
         margin-bottom: 30px;
     }
 
