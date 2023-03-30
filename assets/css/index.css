@@ -4,6 +4,10 @@ body {
     overflow: hidden;
 }
 
+.main_index {
+    top: 0;
+}
+
 .main_inner {
     width: 100%;
 }
@@ -37,16 +41,21 @@ html {
 }
 
 /* キービジュアル */
-.main_visual {
+.kv_slider {
+    width: 100vw;
+    height: 100%;
+}
+
+.kv_slide img {
     width: 100%;
     height: 100vh;
-    margin: 0 auto;
-    background-color: gray;
+    object-fit: cover;
 }
 
 /* このサイトについて */
 .about {
     background-color: #d7f794;
+    padding-top: 70px;
 }
 
 .niji {
@@ -100,9 +109,22 @@ html {
         height: 162px;
     }
 }
-/* インタビュー */
+
+/* pickupインタビュー */
 .interviews {
     background-color: #fdffb0;
+}
+
+/* pickupスライドショー */
+.pickup_slider {
+    width: 255px;
+    height: 380px;
+    margin: 0 auto;
+}
+
+.pickup_slider img {
+    width: 100%;
+    object-fit: cover;
 }
 
 /* MAP */

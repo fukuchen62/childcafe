@@ -12,7 +12,11 @@ body {
 
 main {
     position: relative;
-    top: 150px;
+    top: 100px;
+}
+
+.main_inner {
+    width: 100%;
 }
 
 /* h2 */
@@ -101,6 +105,9 @@ main {
 }
 
 @media (min-width: 770px) {
+    .main_inner {
+        max-width: 1024px;
+    }
     h2 {
         font-size: 32px;
     }

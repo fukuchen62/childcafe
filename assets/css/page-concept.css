@@ -7,15 +7,6 @@ body {
     line-height: 1.8;
 }
 
-.concept {
-    width: 100%;
-}
-
-.concept_inner {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
 .concept_title {
     width: 180px;
     margin: 50px auto;
