@@ -38,6 +38,11 @@
 /*****************
     リンク集
  *****************/
+main {
+    /* margin-top: 130px; */
+    margin-bottom: 150px;
+}
+
 .link_content1,
 .link_content2,
 .link_content3 {
