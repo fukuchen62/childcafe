@@ -26,9 +26,7 @@ function add_my_files() {
     //jquery読み込み
     wp_enqueue_script('jquery',get_template_directory_uri().'/assets/js/jquery-3.6.3.min.js',array(),'3.6.3',true);
     //slick本体読み込み
-    wp_enqueue_script('slick-min',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),true);
-    //slickの読み込み
-
+    wp_enqueue_script('slick-min-js',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),true);
     //header.jsの読み込み
     wp_enqueue_script('header-js',get_template_directory_uri().'/assets/js/header.js',array('jquery'),'1.0',true);
 
@@ -40,14 +38,14 @@ function add_my_files() {
     //リセットCSSの読み込み
 	wp_enqueue_style('reset-css', get_template_directory_uri() .'/assets/css/reset.css');
     //common.cssの読み込み
-    wp_enqueue_style('common-css', get_template_directory_uri() . '/assets/css/common.css',array('reset-css'));
+    wp_enqueue_style('common-css', get_template_directory_uri() . '/assets/css/common.css',array('slickーtheme-css'));
     //slickのCSSの読み込み
-    wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick.css',array('common-css'));
-    wp_enqueue_style('slickーtheme-css', get_template_directory_uri() . '/assets/css/slick-theme.css',array('slick-css'));
+    wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/slick/css/slick.css',array('reset-css'));
+    wp_enqueue_style('slickーtheme-css', get_template_directory_uri() . '/assets/slick/css/slick-theme.css',array('slick-css'));
 
     //TOPページのみ出力
     if (is_front_page()) {
-        wp_enqueue_style('index',get_template_directory_uri() . '/assets/css/slick.css',array('footer')
+        wp_enqueue_style('index-css',get_template_directory_uri() . '/assets/css/index.css',array('common-css')
         );
     }
 }
