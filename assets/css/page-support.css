@@ -1,5 +1,40 @@
 @charset "utf-8";
 
+/***********************
+        タブ 
+ **********************/
+
+.tab {
+    max-width: 980px;
+    height: 75px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.tab_1,
+.tab_2,
+.tab_3 {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    padding: 18px 0;
+    text-align: center;
+}
+
+.tab_1 {
+    background-color: #f7dd94;
+}
+
+.tab_2 {
+    background-color: #d7f794;
+}
+
+.tab_3 {
+    background-color: #fdffb0;
+}
+
 /**************************
     人的・物的・金銭的詳細
  **************************/
@@ -17,9 +52,9 @@
     width: 170px;
     margin: 50px auto;
 }
-
 .support_content {
     max-width: 100%;
+    margin-top: 50px;
 }
 
 .support_content1,
@@ -47,9 +82,9 @@
 }
 
 .support_subtitle {
-    /* margin-top: 35px; */
     width: 215px;
     height: 50px;
+    font-weight: 500;
     padding-top: 8px;
     background-color: #fff8e6;
     border-radius: 10px;
@@ -64,10 +99,7 @@
 }
 
 @media screen and (min-width: 770px) {
-    .support_content1 {
-        width: 680px;
-    }
-
+    .support_content1,
     .support_content2,
     .support_content3 {
         width: 680px;
