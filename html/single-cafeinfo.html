@@ -5,8 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/slick/css/slick.css" />
+        <link rel="stylesheet" href="../assets/slick/css/slick-theme.css" />
         <link rel="stylesheet" href="../assets/css/common.css" />
         <link rel="stylesheet" href="../assets/css/single-cafeinfo.css" />
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
+        <!-- slick js -->
+        <script src="../assets/slick/js/slick.min.js"></script>
         <title>子ども食堂詳細</title>
     </head>
     <body>
@@ -18,13 +23,20 @@
                         <div class="title">
                             <h1>サンプル食堂</h1>
                         </div>
-                        <img src="#" alt="" />
+                        <img
+                            src="../assets/images/text_kakko_kari.png"
+                            alt=""
+                            class="main_visual"
+                        />
                         <div class="underimg text flex">
                             <p class="address">徳島市</p>
                             <div class="good flex">
                                 <p class="iine">いいね</p>
                                 <p>(00)</p>
                             </div>
+                        </div>
+                        <div class="title">
+                            <h2>子ども食堂の特色</h2>
                         </div>
                         <div class="text">
                             <p>
@@ -37,11 +49,11 @@
                 <div class="beige">
                     <div class="beige_inner m1024">
                         <div class="detail_item">
-                            <h2>住所</h2>
+                            <div class="subtitle"><h3>住所</h3></div>
                             <p>徳島県○○市○○町</p>
                         </div>
                         <div class="detail_item">
-                            <h2>担当者</h2>
+                            <div class="title"><h2>担当者</h2></div>
                             <p>山田　花子</p>
                         </div>
                         <div class="detail_item">
@@ -49,7 +61,6 @@
                             <p>第第2、第3月曜日　午後5時30分~</p>
                             <p></p>
                         </div>
-
                         <div class="detail_item">
                             <h2>参加料金</h2>
                             <p>子ども:○○円</p>
@@ -59,7 +70,7 @@
                             <h2>駐車場</h2>
                             <p>敷地内5台あり</p>
                         </div>
-                        <div class="detail_title">
+                        <div class="detail_item">
                             <h2>参加条件</h2>
                             <p>
                                 子どもだけでもOK<br />
@@ -82,34 +93,34 @@
                             <h2>参加者の主な年代</h2>
                         </div>
                     </div>
-                    <div class="green">
-                        <div class="green_inner m1024">
-                            <div class="detail_item">
-                                <h2>連絡先</h2>
-                                <p>電話番号</p>
-                                <p>メールアドレス:sample@sample.com</p>
-                                <p>LINE:shokudou@LINE</p>
-                            </div>
-                            <div class="detail_item">
-                                <h2>LINE QRコード</h2>
-                                <img src="" alt="LINEQRコード" />
-                            </div>
-                            <div class="detail_item">
-                                <h2>SNS</h2>
-                                <p>instagram:インスタアカウント</p>
-                                <p>twitter:ツイッターアカウント</p>
-                                <p>facebook:フェイスブックアカウント</p>
-                            </div>
-                            <div class="detail_item">
-                                <h2>公式WEBサイト</h2>
-                                <p>http/example</p>
-                            </div>
-                            <div class="detail_item">
-                                <h2>Amazonみんなで応援プログラム</h2>
-                                <p>Amazon/url/urlurl</p>
-                            </div>
-                            <p class="volunteer">ボランティア募集中</p>
+                </div>
+                <div class="green">
+                    <div class="green_inner m1024">
+                        <div class="detail_item">
+                            <h2>連絡先</h2>
+                            <p>電話番号</p>
+                            <p>メールアドレス:sample@sample.com</p>
+                            <p>LINE:shokudou@LINE</p>
                         </div>
+                        <div class="detail_item">
+                            <h2>LINE QRコード</h2>
+                            <img src="" alt="LINEQRコード" />
+                        </div>
+                        <div class="detail_item">
+                            <h2>SNS</h2>
+                            <p>instagram:インスタアカウント</p>
+                            <p>twitter:ツイッターアカウント</p>
+                            <p>facebook:フェイスブックアカウント</p>
+                        </div>
+                        <div class="detail_item">
+                            <h2>公式WEBサイト</h2>
+                            <p>http/example</p>
+                        </div>
+                        <div class="detail_item">
+                            <h2>Amazonみんなで応援プログラム</h2>
+                            <p>Amazon/url/urlurl</p>
+                        </div>
+                        <p class="volunteer">ボランティア募集中</p>
                     </div>
                 </div>
                 <div class="bgcolor">
@@ -121,13 +132,65 @@
                                 <p>おむつ交換スペース</p>
                             </div>
                         </div>
-                        <div>MAPが入る</div>
+                        <div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1671457.3013939436!2d134.69202636250003!3d35.0925991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bf455fa707d%3A0xfaaea9929402ee59!2z5bmz5bCG6ZaA6aaW5aGa!5e0!3m2!1sja!2sjp!4v1680162253664!5m2!1sja!2sjp"
+                                width="400"
+                                height="300"
+                                style="border: 0"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="masakado"
+                            ></iframe>
+                        </div>
                         <h2>活動の様子</h2>
+                        <ul class="ac_slide">
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                        </ul>
                         <h2>過去のメニュー</h2>
+                        <ul class="past_slide">
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="../assets/images/text_kakko_kari.png"
+                                    alt="#"
+                                />
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- メインインナー終わり -->
             </div>
         </main>
+        <script src="../assets/js/single-cafeinfo.js"></script>
     </body>
 </html>
