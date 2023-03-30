@@ -8,7 +8,9 @@ body {
     top: 0;
 }
 
-.main_inner {
+/* headerのためのbloc */
+.block {
+    height: 80px;
     width: 100%;
 }
 
@@ -46,8 +48,8 @@ html {
     height: 100%;
 }
 
-.kv_slide img {
-    width: 100%;
+.kv_slider img {
+    width: 100vw;
     height: 100vh;
     object-fit: cover;
 }
