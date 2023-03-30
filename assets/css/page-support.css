@@ -35,6 +35,18 @@
     background-color: #fdffb0;
 }
 
+.panel {
+    display: none;
+}
+
+.is-show {
+    display: block;
+}
+
+.tab_js {
+    cursor: pointer;
+}
+
 /**************************
     人的・物的・金銭的詳細
  **************************/
@@ -96,7 +108,7 @@ main {
     .support_content1,
     .support_content2,
     .support_content3 {
-        width: 680px;
+        width: 100%;
         margin-top: 85px;
     }
 
