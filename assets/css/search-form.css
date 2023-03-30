@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/***********************
+    キーワード検索
+ **********************/
+.search_form {
+    width: 100%;
+}
+
+.search_form_inner {
+    max-width: 1024px;
+}
+
+.form_area {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f7dd94;
+    border-radius: 10px;
+}
+
+.form_subtitle {
+}
+
+.form_wrap {
+    width: 90%;
+    background-color: #fff8e6;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/***********************
+    ユーティリティ
+ **********************/
+.flex {
+    display: flex;
+}
