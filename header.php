@@ -9,21 +9,22 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <header class="header">
-        <div class="header_inner flex">
-            <div class="header_logo">
-                <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン"></a>
-            </div>
+    <div class="body_inner">
+        <?php wp_body_open(); ?>
+        <header class="header">
+            <div class="header_inner flex">
+                <div class="header_logo">
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン"></a>
+                </div>
 
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <!-- hamburger箱end -->
-            <nav class="menu_pc">
-                <?php
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- hamburger箱end -->
+                <nav class="menu_pc">
+                    <?php
                         $args = array(
                         'menu' => 'global-navigation',  //管理画面で作成したメニューの名前
                         'menu_class' => 'menu_pc_ul flex', //メニューを構成するulタグのクラス名
@@ -31,13 +32,41 @@
                         );
                         wp_nav_menu($args);
                         ?>
+                </nav>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a class="a_menu" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン" /></a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('concept'); ?>"> こども食堂とは</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('support'); ?>"> 支援者の方へ</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('interview'); ?>"> 特集記事</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('area/east'); ?>"> エリアからさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('search'); ?>"> 条件からさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="<?php echo home_url('event'); ?>"> 今月の開催情報</a>
+                    </li>
+                    <!-- 検索機能 -->
+                    <li class="btn_header menu_search">
+                        <form class="hbg_search" action="<?php echo home_url('/'); ?>" method="get">
+                            <input type="hidden" name="search_type" value="keywords" />
+                            <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" id="clearbutton7" />
+                            <input class="hbg_submit fas" type="submit" value="   " />
+                        </form>
+                    </li>
+                    <!-- 検索機能end -->
+                </ul>
             </nav>
-            <form action="<?php echo home_url('/'); ?>" method="get" class="header_search">
-                <input type="text" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力">
-                <i class="fas fa-search"></i>
-            </form>
-
-        </div>
-
-
-    </header>
+            <!-- hamburger中身end -->
+        </header>

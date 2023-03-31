@@ -15,7 +15,7 @@
             </div>
             <h3>全体へのお問い合わせはこちら</h3>
             <p>
-                MW WP formのショートコードを差し込む予定……
+                <?php echo do_shortcode('[contact-form-7 id="102" title="お問い合わせ"]'); ?>
             </p>
         </div>
 
