@@ -10,7 +10,7 @@
         <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
         <!-- multi-select.css -->
-        <link rel="stylesheet" href="../assets/css/multiple-select.min.css" />
+        <!-- <link rel="stylesheet" href="../assets/css/multiple-select.min.css" /> -->
         <!-- page search css -->
         <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- Googlefont -->
@@ -165,9 +165,9 @@
                             <!-- 料金検索欄 終了 -->
 
                             <!-- 事前予約の有無 -->
-                            <div class="reserve_area flex">
+                            <div class="reserve flex">
                                 <h3 class="item_title">事前予約の有無</h3>
-                                <div class="reserve_radio">
+                                <div class="reserve_radio flex">
                                     <label>
                                         <input
                                             type="radio"
@@ -183,17 +183,52 @@
                                 </div>
                             </div>
                             <!-- 事前予約の有無 終了-->
+
+                            <!-- 開催日時検索 -->
+                            <div class="day_time flex">
+                                <h3 class="item_title">開催日時</h3>
+                                <div class="day_wrap flex">
+                                    <label for="day" class="checklist"
+                                        >曜日：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">曜日を選択</option>
+                                        <option value="月曜日">月曜日</option>
+                                        <option value="火曜日">火曜日</option>
+                                        <option value="水曜日">水曜日</option>
+                                        <option value="木曜日">木曜日</option>
+                                        <option value="金曜日">金曜日</option>
+                                        <option value="土曜日">土曜日</option>
+                                        <option value="日曜日">日曜日</option>
+                                    </select>
+                                </div>
+                                <div class="time_wrap flex">
+                                    <label for="time_choice" class="checklist"
+                                        >時間：</label
+                                    >
+                                    <div class="time_choice_wrap flex">
+                                        <input
+                                            id="time_choice"
+                                            type="time"
+                                            name="time"
+                                        />
+                                        <p>～</p>
+                                        <input
+                                            id="time_choice"
+                                            type="time"
+                                            name="time"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 開催日時検索 終了-->
                         </div>
                     </section>
-                    <select multiple="multiple">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                    </select>
+
                     <div class="form_btns flex">
                         <input
                             class="btn submit_btn"
@@ -210,7 +245,7 @@
             </div>
         </main>
         <!-- multi-select.js -->
-        <script src="../assets/js/multiple-select.min.js"></script>
+        <!-- <script src="../assets/js/multiple-select.min.js"></script> -->
 
         <script src="../assets/js/page-search.js"></script>
     </body>

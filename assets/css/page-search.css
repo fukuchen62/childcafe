@@ -36,11 +36,11 @@
 }
 
 /***********************
-    キーワード検索
+    キーワード検索共通
  **********************/
 .form {
-    width: 80%;
-    height: 500px;
+    width: 90%;
+    height: 1000px;
     padding-top: 10px;
     margin: 0 auto;
     background-color: #f7dd94;
@@ -55,10 +55,6 @@
     border-radius: 10px;
 }
 
-/***********************
-    エリア検索
- **********************/
-
 .area {
     width: 100%;
     height: 220px;
@@ -72,6 +68,9 @@
     font-weight: 500;
     font-size: 20px;
 }
+/********************************
+    エリア検索
+ ********************************/
 
 .area_wrap {
     max-width: fit-content;
@@ -97,9 +96,9 @@
     background-color: white;
 }
 
-/***********************
+/******************************
     料金検索
- **********************/
+ ******************************/
 .money {
     width: 100%;
     height: 160px;
@@ -115,32 +114,35 @@
     align-items: center;
 }
 
-/***********************
+/*******************************
     事前予約の有無
- **********************/
-.reserve_area {
+ *******************************/
+.reserve {
     width: 100%;
     height: 160px;
     text-align: center;
     flex-direction: column;
 }
 
-.reserve_wrap {
-    max-width: fit-content;
-    margin: 0 auto;
-}
-
 .reserve_radio {
-    display: flex;
+    font-size: 18px;
+    max-width: fit-content;
+    margin: 10px auto;
     flex-wrap: wrap;
-    gap: 0.3em 2em;
+    /* gap: 0.3em 2em; */
+    gap: 0.3em 3em;
     border: none;
 }
+
+/*******************************
+    事前予約ラジオボタン
+ *******************************/
 
 .reserve_radio label {
     display: flex;
     align-items: center;
-    gap: 0 0.5em;
+    /* gap: 0 0.5em; */
+    gap: 0 1em;
     position: relative;
     cursor: pointer;
 }
@@ -151,20 +153,25 @@
     content: "";
 }
 
+/* ラジオボタン外枠 */
 .reserve_radio label::before {
-    width: 18px;
-    height: 18px;
+    /* width: 18px;
+    height: 18px; */
+    width: 25px;
+    height: 25px;
     border: 2px solid #dee5eb;
     box-sizing: border-box;
 }
 
+/* ラジオボタンの中の丸 */
 .reserve_radio label::after {
     position: absolute;
     top: 50%;
-    left: 9px;
+    /* left: 9px; */
+    left: 12px;
     transform: translate(-50%, -50%);
-    width: 9px;
-    height: 9px;
+    width: 15px;
+    height: 15px;
     background-color: #dee5eb;
 }
 
@@ -174,6 +181,44 @@
 
 .reserve_radio input {
     display: none;
+}
+
+/*******************************
+    開催日時検索
+ *******************************/
+
+.day_time {
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day_wrap,
+.time_wrap {
+    max-width: fit-content;
+    margin: 0 auto;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.time_choice_wrap {
+    background-color: #fff;
+    border: 2px solid #eca351;
+    border-radius: 10px;
+    padding: 3px;
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+.time_choice_wrap p {
+    margin: 0 8px;
+}
+
+.input[type="time"] {
+    /* border: 1px solid #eca351;
+    background-color: white; */
 }
 
 /***********************
@@ -189,4 +234,11 @@
 
 .reset_btn {
     background-color: #fdffb0;
+}
+
+/***********************
+    ユーティリティ
+ **********************/
+.flex {
+    display: flex;
 }
