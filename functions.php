@@ -61,10 +61,10 @@ function my_pre_get_posts($query) {
     }
 
     //トップページの場合
-    if ($query->is_front_page()) {
-        $query->set('posts_per_page', 3);
-        return;
-    }
+    // if ($query->is_front_page()) {
+    //     $query->set('posts_per_page', 3);
+    //     return;
+    // }
 
     //インタビュー一覧ページの場合
     // if ($query->is_archive('interview')) {

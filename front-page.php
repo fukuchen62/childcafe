@@ -45,9 +45,7 @@
                 <?php if ($custom_query->have_posts()) : ?>
                 <?php while($custom_query->have_posts()) : ?>
                 <?php $custom_query->the_post(); ?>
-                <li>
-                    <?php get_template_part('template-parts/loop', 'interview'); ?>
-                </li>
+                <?php get_template_part('template-parts/loop', 'interview'); ?>
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
