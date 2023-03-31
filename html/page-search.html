@@ -34,282 +34,239 @@
                         <li class="tab_2">日時</li>
                         <li class="tab_3">こだわり</li>
                     </ul>
-                    <!-- フォーム -->
-                    <form action="#" method="post">
-                        <section class="form">
-                            <h3 class="subtitle">子供食堂をしらべる</h3>
-                            <div class="form_wrap">
-                                <!-- エリア検索欄 -->
-                                <div class="area flex">
-                                    <h3 class="item_title">地域</h3>
-                                    <!-- 東部 -->
-                                    <div class="area_wrap flex">
-                                        <label for="east" class="checklist"
-                                            >県東部：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">
-                                                市町村を選択
-                                            </option>
-                                            <option value="徳島市">
-                                                徳島市
-                                            </option>
-                                            <option value="鳴門市">
-                                                鳴門市
-                                            </option>
-                                            <option value="松茂町">
-                                                松茂町
-                                            </option>
-                                            <option value="北島町">
-                                                北島町
-                                            </option>
-                                            <option value="藍住町">
-                                                藍住町
-                                            </option>
-                                            <option value="板野町">
-                                                板野町
-                                            </option>
-                                            <option value="石井町">
-                                                石井町
-                                            </option>
-                                            <option value="神山町">
-                                                神山町
-                                            </option>
-                                            <option value="阿波市">
-                                                阿波市
-                                            </option>
-                                            <option value="上板町">
-                                                上板町
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <!-- 西部 -->
-                                    <div class="area_wrap flex">
-                                        <label for="west" class="checklist"
-                                            >県西部：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">
-                                                市町村を選択
-                                            </option>
-                                            <option value="三好市">
-                                                三好市
-                                            </option>
-                                            <option value="東みよし町">
-                                                東みよし町
-                                            </option>
-                                            <option value="美馬市">
-                                                美馬市
-                                            </option>
-                                            <option value="吉野川市">
-                                                吉野川市
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <!-- 南部 -->
-                                    <div class="area_wrap flex">
-                                        <label for="south" class="checklist"
-                                            >県南部：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">
-                                                市町村を選択
-                                            </option>
-                                            <option value="小松島市">
-                                                小松島市
-                                            </option>
-                                            <option value="阿南市">
-                                                阿南市
-                                            </option>
-                                            <option value="海陽町">
-                                                海陽町
-                                            </option>
-                                        </select>
-                                    </div>
+                    <!-- タブ１項目 -->
+                    <form class="form1" action="#" method="get">
+                        <!-- <section class="form1"> -->
+                        <h3 class="subtitle">子供食堂をしらべる</h3>
+                        <div class="form_wrap flex">
+                            <!-- エリア検索欄 -->
+                            <h3 class="item_title">地域</h3>
+                            <div class="area flex">
+                                <!-- 東部 -->
+                                <div class="area_wrap flex">
+                                    <label for="east" class="checklist"
+                                        >県東部：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">市町村を選択</option>
+                                        <option value="徳島市">徳島市</option>
+                                        <option value="鳴門市">鳴門市</option>
+                                        <option value="松茂町">松茂町</option>
+                                        <option value="北島町">北島町</option>
+                                        <option value="藍住町">藍住町</option>
+                                        <option value="板野町">板野町</option>
+                                        <option value="石井町">石井町</option>
+                                        <option value="神山町">神山町</option>
+                                        <option value="阿波市">阿波市</option>
+                                        <option value="上板町">上板町</option>
+                                    </select>
                                 </div>
-                                <!-- エリア検索欄終了 -->
-
-                                <!-- 料金検索欄 -->
-                                <div class="money flex">
-                                    <h3 class="item_title">料金</h3>
-                                    <!-- こども料金 -->
-                                    <div class="money_wrap flex">
-                                        <label for="child" class="checklist"
-                                            >こども：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">料金を選択</option>
-                                            <option value="完全無料">
-                                                完全無料
-                                            </option>
-                                            <option value="募金制">
-                                                募金制
-                                            </option>
-                                            <option value="～３００円">
-                                                ～３００円
-                                            </option>
-                                            <option value="５００円">
-                                                ５００円
-                                            </option>
-                                            <option value="５００円以上">
-                                                ５００円以上
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <!-- 大人料金 -->
-                                    <div class="money_wrap flex">
-                                        <label for="adult" class="checklist"
-                                            >おとな：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">料金を選択</option>
-                                            <option value="完全無料">
-                                                完全無料
-                                            </option>
-                                            <option value="募金制">
-                                                募金制
-                                            </option>
-                                            <option value="～３００円">
-                                                ～３００円
-                                            </option>
-                                            <option value="５００円">
-                                                ５００円
-                                            </option>
-                                            <option value="５００円以上">
-                                                ５００円以上
-                                            </option>
-                                        </select>
-                                    </div>
+                                <!-- 西部 -->
+                                <div class="area_wrap flex">
+                                    <label for="west" class="checklist"
+                                        >県西部：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">市町村を選択</option>
+                                        <option value="三好市">三好市</option>
+                                        <option value="東みよし町">
+                                            東みよし町
+                                        </option>
+                                        <option value="美馬市">美馬市</option>
+                                        <option value="吉野川市">
+                                            吉野川市
+                                        </option>
+                                    </select>
                                 </div>
-                                <!-- 料金検索欄 終了 -->
-
-                                <!-- 開催日時検索 -->
-                                <div class="day_time flex">
-                                    <h3 class="item_title">開催日時</h3>
-                                    <div class="day_wrap flex">
-                                        <label for="day" class="checklist"
-                                            >曜日：</label
-                                        >
-                                        <select
-                                            class="select"
-                                            name="select"
-                                            size="1"
-                                        >
-                                            <option value="">曜日を選択</option>
-                                            <option value="月曜日">
-                                                月曜日
-                                            </option>
-                                            <option value="火曜日">
-                                                火曜日
-                                            </option>
-                                            <option value="水曜日">
-                                                水曜日
-                                            </option>
-                                            <option value="木曜日">
-                                                木曜日
-                                            </option>
-                                            <option value="金曜日">
-                                                金曜日
-                                            </option>
-                                            <option value="土曜日">
-                                                土曜日
-                                            </option>
-                                            <option value="日曜日">
-                                                日曜日
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="time_wrap flex">
-                                        <label
-                                            for="time_choice"
-                                            class="checklist"
-                                            >時間：</label
-                                        >
-                                        <div class="time_choice_wrap flex">
-                                            <input
-                                                id="time_choice"
-                                                type="time"
-                                                name="time"
-                                            />
-                                            <p>～</p>
-                                            <input
-                                                id="time_choice"
-                                                type="time"
-                                                name="time"
-                                            />
-                                        </div>
-                                    </div>
+                                <!-- 南部 -->
+                                <div class="area_wrap flex">
+                                    <label for="south" class="checklist"
+                                        >県南部：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">市町村を選択</option>
+                                        <option value="小松島市">
+                                            小松島市
+                                        </option>
+                                        <option value="阿南市">阿南市</option>
+                                        <option value="海陽町">海陽町</option>
+                                    </select>
                                 </div>
-                                <!-- 開催日時検索 終了-->
-
-                                <!-- 事前予約の有無 -->
-                                <div class="reserve flex">
-                                    <h3 class="item_title">事前予約の有無</h3>
-                                    <div class="reserve_radio flex">
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                                checked
-                                            />
-                                            有
-                                        </label>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                            />
-                                            無
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- 事前予約の有無 終了-->
-
-                                <!-- 駐車場の有無 -->
-                                <div class="reserve flex">
-                                    <h3 class="item_title">駐車場の有無</h3>
-                                    <div class="reserve_radio flex">
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                                checked
-                                            />
-                                            有
-                                        </label>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                            />
-                                            無
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- 駐車場の有無 終了-->
                             </div>
-                        </section>
+                            <!-- エリア検索欄終了 -->
 
+                            <!-- 料金検索欄 -->
+                            <h3 class="item_title">料金</h3>
+                            <div class="money flex">
+                                <!-- こども料金 -->
+                                <div class="money_wrap flex">
+                                    <label for="child" class="checklist"
+                                        >こども：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">料金を選択</option>
+                                        <option value="完全無料">
+                                            完全無料
+                                        </option>
+                                        <option value="募金制">募金制</option>
+                                        <option value="～３００円">
+                                            ～３００円
+                                        </option>
+                                        <option value="５００円">
+                                            ５００円
+                                        </option>
+                                        <option value="５００円以上">
+                                            ５００円以上
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- 大人料金 -->
+                                <div class="money_wrap flex">
+                                    <label for="adult" class="checklist"
+                                        >おとな：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">料金を選択</option>
+                                        <option value="完全無料">
+                                            完全無料
+                                        </option>
+                                        <option value="募金制">募金制</option>
+                                        <option value="～３００円">
+                                            ～３００円
+                                        </option>
+                                        <option value="５００円">
+                                            ５００円
+                                        </option>
+                                        <option value="５００円以上">
+                                            ５００円以上
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 料金検索欄 終了 -->
+
+                            <!-- 開催日時検索 -->
+                            <h3 class="item_title">開催日時</h3>
+                            <div class="day_time flex">
+                                <div class="day_wrap flex">
+                                    <label for="day" class="checklist"
+                                        >曜日：</label
+                                    >
+                                    <select
+                                        class="select"
+                                        name="select"
+                                        size="1"
+                                    >
+                                        <option value="">曜日を選択</option>
+                                        <option value="月曜日">月曜日</option>
+                                        <option value="火曜日">火曜日</option>
+                                        <option value="水曜日">水曜日</option>
+                                        <option value="木曜日">木曜日</option>
+                                        <option value="金曜日">金曜日</option>
+                                        <option value="土曜日">土曜日</option>
+                                        <option value="日曜日">日曜日</option>
+                                    </select>
+                                </div>
+                                <div class="time_wrap flex">
+                                    <label for="time_choice" class="checklist"
+                                        >時間：</label
+                                    >
+                                    <div class="time_choice_wrap flex">
+                                        <input
+                                            id="time_choice"
+                                            type="time"
+                                            name="time"
+                                        />
+                                        <p>～</p>
+                                        <input
+                                            id="time_choice"
+                                            type="time"
+                                            name="time"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 開催日時検索 終了-->
+
+                            <!-- 事前予約の有無 -->
+                            <div class="reserve flex">
+                                <h3 class="item_title">事前予約の有無</h3>
+                                <div class="reserve_radio flex">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="reserve"
+                                            checked
+                                        />
+                                        有
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="reserve" />
+                                        無
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 事前予約の有無 終了-->
+
+                            <!-- 駐車場の有無 -->
+                            <div class="reserve flex">
+                                <h3 class="item_title">駐車場の有無</h3>
+                                <div class="reserve_radio flex">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="reserve"
+                                            checked
+                                        />
+                                        有
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="reserve" />
+                                        無
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 駐車場の有無 終了-->
+                        </div>
+                        <div class="form_btns flex">
+                            <input
+                                class="btn submit_btn"
+                                type="submit"
+                                value="しらべる"
+                            />
+                            <input
+                                class="btn reset_btn"
+                                type="reset"
+                                value="リセット"
+                            />
+                        </div>
+                        <!-- </section> -->
+                    </form>
+                    <!-- タブ１項目 終了-->
+                    <!-- タブ２項目 -->
+                    <form class="form2" action="" method="get">
+                        <h3 class="subtitle">子供食堂をしらべる</h3>
+                        <div class="form_wrap"></div>
                         <div class="form_btns flex">
                             <input
                                 class="btn submit_btn"
@@ -323,6 +280,7 @@
                             />
                         </div>
                     </form>
+                    <!-- タブ２項目 終了-->
                 </div>
             </main>
             <!-- multi-select.js -->

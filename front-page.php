@@ -1,26 +1,42 @@
 <?php get_header(); ?>
 <?php
-$custom_query = new WP_Query(
-    array(
-        $post__in = wp_ulike_get_popular_items_ids(array(
-            'type'       => 'post',
-            'rel_type'   => 'interview',
-            'status'     => 'like',
-            'period'     => 'all',
-        )),
-        'posts_per_page' => -1, // 全件表示
-        'post__in' => $post__in,
-        'post_type' => 'interview', // カスタム投稿名
-        'orderby' => 'post__in',
-        'order' => 'DESC' // いいねの降順
-    )
-);
-	// $hoge = array(
-	// 	'post_type' => 'interview',
-	// 	'posts_per_page' => -1, //全件表示
-    //     'orderby' => 'rand',
-	// );
-	// $custom_query = new WP_Query($hoge);
+// $custom_query = new WP_Query(
+//     array(
+//         $post__in = wp_ulike_get_popular_items_ids(array(
+//             'type'       => 'post',
+//             'rel_type'   => 'interview',
+//             'status'     => 'like',
+//             'period'     => 'all',
+//         )),
+//         'posts_per_page' => -1, // 全件表示
+//         'post__in' => $post__in,
+//         'post_type' => 'interview', // カスタム投稿名
+//         'orderby' => 'post__in',
+//         'order' => 'DESC' // いいねの降順
+//     )
+// );
+
+    // $hoge = array(
+        // $post__in = wp_ulike_get_popular_items_ids(array(
+        //     'type'       => 'post',
+        //     'rel_type'   => 'interview',
+        //     'status'     => 'like',
+        //     'period'     => 'all',
+        // )),
+    //     'posts_per_page' => -1, // 全件表示
+    //     'post__in' => $post__in,
+    //     'post_type' => 'interview', // カスタム投稿名
+    //     'orderby' => 'post__in',
+    //     'order' => 'DESC' // いいねの降順
+    // );
+    // $custom_query = new WP_Query($hoge);
+
+	$hoge = array(
+		'post_type' => 'interview',
+		'posts_per_page' => -1, //全件表示
+        'orderby' => 'rand',
+	);
+	$custom_query = new WP_Query($hoge);
 ?>
 
 <main class="main_index">
