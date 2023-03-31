@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<h2 class="pageTitle">最新情報<span>NEWS</span></h2>
 
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
@@ -19,7 +18,7 @@
                     <?php if (have_posts()) : ?>
                     <?php while(have_posts()) : the_post(); ?>
                     <div class="col-md-4">
-                        <?php get_template_part('template-parts/loop', 'news'); ?>
+                        <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
@@ -32,10 +31,6 @@
 
             </div>
 
-            <div class="col-12 col-md-3">
-                <?php get_sidebar('categories'); ?>
-                <?php get_sidebar('archives'); ?>
-            </div>
         </div>
     </div>
 </main>

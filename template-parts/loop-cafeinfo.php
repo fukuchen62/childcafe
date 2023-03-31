@@ -10,7 +10,9 @@
                 <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
             </div>
             <div class="news_meta">
-                <h2 class="news_title"><?php the_title(); ?></h2>
+                <h2 class="news_title">
+                    <?php the_field('name'); ?>
+                </h2>
             </div>
         </div>
     </article>
