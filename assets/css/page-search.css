@@ -38,21 +38,38 @@
 /***********************
     キーワード検索共通
  **********************/
-.form {
+.form1,
+.form2,
+.form3 {
     width: 90%;
-    height: 1000px;
+    height: auto;
     padding-top: 10px;
     margin: 0 auto;
-    background-color: #f7dd94;
     border-radius: 10px;
+}
+
+.form1 {
+    background-color: #f7dd94;
+}
+
+.form2 {
+    background-color: #d7f794;
+}
+
+.form2 {
+    background-color: #fdffb0;
 }
 
 .form_wrap {
     width: 90%;
+    height: 90%;
     margin: 0 auto;
     padding: 10px;
     background-color: #fff8e6;
     border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .area {
@@ -221,6 +238,20 @@
     display: none;
 }
 
+/*******************************
+    参加対象検索欄
+ *******************************/
+
+.join {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.join_wrap {
+    margin: 0 auto;
+}
+
 /***********************
         ボタン
  **********************/
@@ -234,6 +265,11 @@
 
 .reset_btn {
     background-color: #fdffb0;
+    margin-bottom: 30px;
+}
+
+.btn {
+    margin-top: 30px;
 }
 
 /***********************
