@@ -35,18 +35,6 @@
     background-color: #fdffb0;
 }
 
-.panel {
-    display: none;
-}
-
-.is-show {
-    display: block;
-}
-
-.tab_js {
-    cursor: pointer;
-}
-
 /*****************
     リンク集
  *****************/
