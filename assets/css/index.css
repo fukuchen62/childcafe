@@ -49,12 +49,12 @@ html {
 /* キービジュアル */
 .kv_slider {
     width: 100vw;
-    height: 100%;
+    height: 92vh;
 }
 
 .kv_slider img {
     width: 100vw;
-    height: 100vh;
+    height: 92vh;
     object-fit: cover;
 }
 
@@ -122,6 +122,18 @@ html {
 }
 
 /* pickupスライドショー */
+.pickup_slide li {
+    background-color: white;
+    width: 255px;
+    height: 380px;
+    border-radius: 5px;
+    border: solid 1px #665a3d;
+    box-shadow: 3px 3px 3px #999;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
 .pickup_slider {
     width: 255px;
     height: 380px;
@@ -129,8 +141,25 @@ html {
 }
 
 .pickup_slider img {
-    width: 100%;
+    width: 214px;
+    height: 221px;
+    border-radius: 5px;
+    border: solid 1px #665a3d;
     object-fit: cover;
+    margin: 0 auto;
+}
+
+@media (min-width: 770px) {
+    .pickup_slider {
+        max-width: 1020px;
+        width: 100%;
+        height: 380px;
+        margin: 0 auto;
+    }
+
+    .pickup_slide li {
+        margin: 0 10px;
+    }
 }
 
 /* MAP */
@@ -339,3 +368,29 @@ html {
 }
 
 /* 活動の様子 */
+
+.activity_slide {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 80%;
+    height: 90px;
+}
+.activity_slider {
+    margin: 0 5px;
+}
+.activity_slider img {
+    height: 90px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 770px) {
+    .activity_slide {
+        max-width: 1024px;
+        width: 80%;
+        height: 170px;
+    }
+    .activity_slider img {
+        height: 150px;
+    }
+}

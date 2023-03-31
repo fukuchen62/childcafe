@@ -20,30 +20,32 @@ function my_theme_setup() {
 add_action('after_setup_theme', 'my_theme_setup');
 
 
-//練習問題2
 function add_my_files() {
+    //WordPress本体のJQueryを登録解除
+    wp_deregister_script('jquery');
     //jquery読み込み
-    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery',get_template_directory_uri().'/assets/js/jquery-3.6.3.min.js',array(),'3.6.3',true);
+    //slick本体読み込み
+    wp_enqueue_script('slick-min-js',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),true);
+    //header.jsの読み込み
+    wp_enqueue_script('header-js',get_template_directory_uri().'/assets/js/header.js',array('jquery'),'1.0',true);
+
     //以下はheaderに出力
-	wp_enqueue_style('font-awsome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css');
-    wp_enqueue_style('bistro-calme-styles', get_template_directory_uri() . '/assets/css/styles.min.css');
-	wp_enqueue_script('bistro-calme-main', get_template_directory_uri() .'/assets/js/main.js',  array('jquery'));
+    //Google fonts
+    wp_enqueue_style('Google-fonts-Kosugi+Maru', 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+    wp_enqueue_style('Google-fonts-Zen+Maru+Gothic', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+    wp_enqueue_style('Google-fonts-Noto+Sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&display=swap');
+    //リセットCSSの読み込み
+	wp_enqueue_style('reset-css', get_template_directory_uri() .'/assets/css/reset.css');
+    //common.cssの読み込み
+    wp_enqueue_style('common-css', get_template_directory_uri() . '/assets/css/common.css',array('slickーtheme-css'));
+    //slickのCSSの読み込み
+    wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/slick/css/slick.css',array('reset-css'));
+    wp_enqueue_style('slickーtheme-css', get_template_directory_uri() . '/assets/slick/css/slick-theme.css',array('slick-css'));
 
     //TOPページのみ出力
-    if (is_home()) {
-        wp_enqueue_style('slick-carousel',
-        'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'
-        );
-        wp_enqueue_script('slick-carousel',
-        'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-        array('jquery'),
-        '1.8.1',
-        true//footerに出力
-        );
-        wp_enqueue_script('bistro-calme-home', get_template_directory_uri() . '/assets/js/home.js',
-        array('jquery'),
-        '1.0',
-        true//footerに出力
+    if (is_front_page()) {
+        wp_enqueue_style('index-css',get_template_directory_uri() . '/assets/css/index.css',array('common-css')
         );
     }
 }
@@ -59,10 +61,10 @@ function my_pre_get_posts($query) {
     }
 
     //トップページの場合
-    if ($query->is_front_page()) {
-        $query->set('posts_per_page', 3);
-        return;
-    }
+    // if ($query->is_front_page()) {
+    //     $query->set('posts_per_page', 3);
+    //     return;
+    // }
 
     //インタビュー一覧ページの場合
     // if ($query->is_archive('interview')) {

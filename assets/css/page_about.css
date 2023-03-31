@@ -3,16 +3,8 @@
 /***********************
     このサイトについて
  **********************/
-body {
-    line-height: 1.8;
-}
-
-main {
-    margin-bottom: 150px;
-}
 
 .title {
-    width: 220px;
     margin: 50px auto;
 }
 

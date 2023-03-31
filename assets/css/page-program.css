@@ -3,10 +3,8 @@
 /**************************
     Amazonプログラムとは
  **************************/
-main {
-    margin-bottom: 150px;
-}
 
+/* comoncssの追加 */
 .title {
     width: 250px;
     margin: 0 auto;
@@ -25,10 +23,6 @@ main {
 }
 
 @media screen and (min-width: 770px) {
-    .text {
-        width: 70%;
-    }
-
     .program_btn {
         margin-top: 50px;
     }
