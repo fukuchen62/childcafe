@@ -22,6 +22,7 @@
                 <div class="article_body">
                     <div class="content">
                         <?php the_post_thumbnail('medium'); ?>
+                        <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
                         <?php
                         //カスタムフィールドから主催者名を取得
                         echo get_post_meta( get_the_ID(), 'organizer', true ). 'さん';
