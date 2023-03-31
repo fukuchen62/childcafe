@@ -27,6 +27,10 @@
     background-color: #fdffb0;
 }
 
+.underimg {
+    margin-bottom: 23px;
+}
+
 .flex {
     justify-content: space-between;
 }

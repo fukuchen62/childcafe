@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
+        <!-- multi-select.css -->
+        <link rel="stylesheet" href="../assets/css/multiple-select.min.css" />
+        <!-- page search css -->
+        <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- Googlefont -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +20,6 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
-        <!-- page search css -->
-        <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- jquery -->
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
@@ -183,6 +185,15 @@
                             <!-- 事前予約の有無 終了-->
                         </div>
                     </section>
+                    <select multiple="multiple">
+                        <option value="1">1月</option>
+                        <option value="2">2月</option>
+                        <option value="3">3月</option>
+                        <option value="4">4月</option>
+                        <option value="5">5月</option>
+                        <option value="6">6月</option>
+                        <option value="7">7月</option>
+                    </select>
                     <div class="form_btns flex">
                         <input
                             class="btn submit_btn"
@@ -198,6 +209,9 @@
                 </form>
             </div>
         </main>
-        <script src="../assets/js/search-form.js"></script>
+        <!-- multi-select.js -->
+        <script src="../assets/js/multiple-select.min.js"></script>
+
+        <script src="../assets/js/page-search.js"></script>
     </body>
 </html>
