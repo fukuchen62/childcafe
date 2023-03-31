@@ -6,6 +6,10 @@ body {
     background-color: #fff8e6;
 }
 
+.body_inner {
+    width: 100%;
+}
+
 .flex {
     display: flex;
 }
