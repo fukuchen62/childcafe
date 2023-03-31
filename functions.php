@@ -26,7 +26,7 @@ function add_my_files() {
     //jquery読み込み
     wp_enqueue_script('jquery',get_template_directory_uri().'/assets/js/jquery-3.6.3.min.js',array(),'3.6.3',true);
     //slick本体読み込み
-    wp_enqueue_script('slick-min-js',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),true);
+    wp_enqueue_script('slick-min-js',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),'1.0',true);
     //header.jsの読み込み
     wp_enqueue_script('header-js',get_template_directory_uri().'/assets/js/header.js',array('jquery'),'1.0',true);
 
@@ -48,6 +48,8 @@ function add_my_files() {
         wp_enqueue_style('index-css',get_template_directory_uri() . '/assets/css/index.css',array('common-css')
         );
     }
+    //index.jsの読み込み
+    wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/header.js',array('header-js'),'1.0',true);
 }
 add_action('wp_enqueue_scripts' ,'add_my_files');
 
@@ -61,10 +63,10 @@ function my_pre_get_posts($query) {
     }
 
     //トップページの場合
-    // if ($query->is_front_page()) {
-    //     $query->set('posts_per_page', 3);
-    //     return;
-    // }
+    if ($query->is_front_page()) {
+        $query->set('posts_per_page', 3);
+        return;
+    }
 
     //インタビュー一覧ページの場合
     // if ($query->is_archive('interview')) {
