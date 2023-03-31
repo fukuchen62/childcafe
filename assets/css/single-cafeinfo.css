@@ -154,11 +154,15 @@
 }
 
 /* map */
-.masakado {
+.addressmap {
     width: 100%;
 }
 
-.masakado iframe {
+.addressmap .subtitle {
+    display: none;
+}
+
+.addressmap iframe {
     width: 100%;
     height: 416px;
     margin-top: 20px;
@@ -176,16 +180,17 @@
     .bgcolor_flex {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
-    .masakado {
+    .addressmap {
         width: 594px;
-        height: 380px;
-        position: absolute;
+        height: 436px;
     }
-    .masakado iframe {
-        height: 380px;
-        top: -30px;
-        position: relative;
+    .addressmap iframe {
+        margin-top: 0;
+    }
+    .addressmap .subtitle {
+        display: block;
     }
 }
 /* スライド */

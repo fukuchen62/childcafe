@@ -1,5 +1,14 @@
 @charset "utf-8";
 
-.body_inner {
-    margin: 10px auto;
+.pickup_single_title {
+    width: 308px;
+    height: 162px;
+    background-color: #fffdf9;
+    border: 2px solid #ffb700;
+    border-radius: 5px;
+    margin: 60px auto 0;
+}
+
+.title {
+    margin-top: 25px;
 }
