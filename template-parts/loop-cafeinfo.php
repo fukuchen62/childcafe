@@ -16,9 +16,7 @@
                         ?>
                     </p>
                     <div class="good flex">
-
                         <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
-
                     </div>
                 </div>
             </div>
