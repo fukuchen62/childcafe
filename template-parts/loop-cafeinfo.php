@@ -7,7 +7,6 @@
                 <?php else: ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                 <?php endif; ?>
-                <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
             </div>
             <div class="news_meta">
                 <h2 class="news_title">
