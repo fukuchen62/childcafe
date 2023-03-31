@@ -19,6 +19,7 @@
                     <?php while(have_posts()) : the_post(); ?>
                     <div class="col-md-4">
                         <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
+                        <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
