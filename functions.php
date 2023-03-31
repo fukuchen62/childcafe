@@ -58,7 +58,16 @@ function add_my_files() {
         //tag.jsの読み込み
         wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
     }
+
+    //single-cafeinfoページのみ出力
+    if (is_single('cafeinfo')) {
+        wp_enqueue_style('single-cafeinfo-css',get_template_directory_uri() . '/assets/css/single-cafeinfo.css',array('common-css')
+        );
+        //single-cafeinfo.jsの読み込み
+        wp_enqueue_script('single-cafeinfo-js',get_template_directory_uri().'/assets/js/single-cafeinfo.js',array('header-js'),'1.0',true);
+    }
 }
+
 add_action('wp_enqueue_scripts' ,'add_my_files');
 
 
