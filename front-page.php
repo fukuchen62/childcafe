@@ -14,6 +14,11 @@
         <div class="block"></div>
         <!-- キービジュアル -->
         <section>
+            <form class="hbg_search_pc" action="<?php echo home_url('/'); ?>" method="get">
+                <input type="hidden" name="search_type" value="keywords" />
+                <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" name="search" placeholder="キーワードを入力" id="clearbutton7" />
+                <input class="hbg_submit fas" type="submit" value="   " />
+            </form>
             <ul class="kv_slider">
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="KV画像"></li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="KV画像"></li>

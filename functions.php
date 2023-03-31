@@ -47,9 +47,17 @@ function add_my_files() {
     if (is_front_page()) {
         wp_enqueue_style('index-css',get_template_directory_uri() . '/assets/css/index.css',array('common-css')
         );
+        //index.jsの読み込み
+        wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/index.js',array('header-js'),'1.0',true);
     }
-    //index.jsの読み込み
-    wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/index.js',array('header-js'),'1.0',true);
+
+    //taxsonomy-areaページのみ出力
+    if (is_tax('area')) {
+        wp_enqueue_style('taxsonomy-area-css',get_template_directory_uri() . '/assets/css/taxsonomy-area.css',array('common-css')
+        );
+        //tag.jsの読み込み
+        wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
+    }
 }
 add_action('wp_enqueue_scripts' ,'add_my_files');
 
