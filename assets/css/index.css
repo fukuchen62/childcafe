@@ -58,6 +58,30 @@ html {
     object-fit: cover;
 }
 
+.hbg_search_pc {
+    display: none;
+}
+
+@media (min-width: 770px) {
+    .kv {
+        position: relative;
+    }
+    .hbg_search_pc {
+        display: block;
+        z-index: 9;
+        top: 100px;
+        left: 1000px;
+        background-color: #d7f794;
+        padding: 10px;
+        border-radius: 5px;
+        position: absolute;
+    }
+
+    .hbg_submit {
+        width: 28.5px;
+    }
+}
+
 /* このサイトについて */
 .about {
     background-color: #d7f794;
