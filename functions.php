@@ -49,7 +49,7 @@ function add_my_files() {
         );
     }
     //index.jsの読み込み
-    wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/header.js',array('header-js'),'1.0',true);
+    wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/index.js',array('header-js'),'1.0',true);
 }
 add_action('wp_enqueue_scripts' ,'add_my_files');
 

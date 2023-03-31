@@ -2,7 +2,7 @@
 <?php
 	$hoge = array(
 		'post_type' => 'interview',
-		'posts_per_page' => 3, //3件のみ表示
+		'posts_per_page' => -1, //全件表示
         'orderby' => 'rand',
 	);
 	$custom_query = new WP_Query($hoge);
