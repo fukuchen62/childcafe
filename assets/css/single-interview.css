@@ -12,3 +12,55 @@
 .title {
     margin-top: 25px;
 }
+
+.pickup_single {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.pickup_single_img {
+    width: 305px;
+    height: 220px;
+    margin: 50px auto;
+}
+
+.pickup_single_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+.subtitle {
+    text-align: left;
+    text-decoration: underline 5px #d7f794;
+    text-underline-offset: 10px;
+}
+
+.pickup_single_text {
+    margin: 25px auto;
+}
+
+.btn_pickup_single {
+    background-color: #e9fcc1;
+}
+
+@media (min-width: 770px) {
+    .pickup_single_title {
+        width: 436px;
+        height: 115px;
+    }
+
+    .title {
+        margin: 10px auto;
+    }
+
+    .pickup_single {
+        width: 665px;
+    }
+
+    .pickup_single_img {
+        width: 481px;
+        height: 367px;
+    }
+}
