@@ -10,7 +10,7 @@
         <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
         <!-- multi-select.css -->
-        <!-- <link rel="stylesheet" href="../assets/css/multiple-select.min.css" /> -->
+        <link rel="stylesheet" href="../assets/css/multiple-select.min.css" />
         <!-- page search css -->
         <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- Googlefont -->
@@ -25,228 +25,656 @@
     </head>
     <body>
         <div class="body_inner">
+            <header class="header">
+                <div class="header_inner flex">
+                    <div class="header_logo">
+                        <a href="#"
+                            ><img
+                                src="../assets/images/ロゴ（仮）.png"
+                                alt="ホームボタン"
+                        /></a>
+                    </div>
+
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- hamburger箱end -->
+                    <nav class="menu_pc">
+                        <ul class="menu_pc_ul flex">
+                            <li class="btn_header_pc_1 flex">
+                                <a href="#"> こども食堂とは</a>
+                            </li>
+                            <li class="btn_header_pc_2 flex">
+                                <a href="#"> 支援したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_3 flex">
+                                <a href="#"> 特集記事</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> エリアから<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_6 flex">
+                                <a href="#">開催情報</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a class="a_menu" href="#"
+                                ><img
+                                    src="../assets/images/ロゴ（仮）.png"
+                                    alt="ホームボタン"
+                            /></a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> こども食堂とは</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> エリアからさがす</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 条件からさがす</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 開催情報</a>
+                        </li>
+                        <!-- 検索機能 -->
+                        <li class="btn_header menu_search">
+                            <form class="hbg_search" action="#" method="#">
+                                <input
+                                    type="hidden"
+                                    name="search_type"
+                                    value=""
+                                />
+                                <input
+                                    class="hbg_form"
+                                    size="25"
+                                    type="search"
+                                    value=""
+                                    name="search"
+                                    placeholder="キーワードを入力"
+                                    id=""
+                                />
+                                <input
+                                    class="hbg_submit fas"
+                                    type="submit"
+                                    value="   "
+                                    name=" "
+                                />
+                            </form>
+                        </li>
+                        <!-- 検索機能end -->
+                    </ul>
+                </nav>
+                <!-- hamburger中身end -->
+            </header>
             <main>
                 <div class="main_inner">
                     <h2 class="title">詳細検索</h2>
-                    <!-- 項目タブ -->
+                    <!-- タブ -->
                     <ul class="tab flex">
-                        <li class="tab_1">基本情報</li>
-                        <li class="tab_2">日時</li>
-                        <li class="tab_3">こだわり</li>
+                        <li class="tab_1 tab_js tab-A">基本情報</li>
+                        <li class="tab_2 tab_js tab-B">日時</li>
+                        <li class="tab_3 tab_js tab-C">こだわり</li>
                     </ul>
-                    <!-- タブ１項目 -->
-                    <form class="form1" action="#" method="get">
-                        <h3 class="subtitle">子供食堂をしらべる</h3>
-                        <div class="form_wrap flex">
-                            <!-- エリア検索欄 -->
-                            <h3 class="item_title">地域</h3>
-                            <div class="area flex">
-                                <!-- 東部 -->
-                                <div class="area_wrap flex">
-                                    <label for="east" class="checklist"
-                                        >県東部：</label
-                                    >
-                                    <select
-                                        class="select"
-                                        name="east_select"
-                                        size="1"
-                                    >
-                                        <option value="">市町村を選択</option>
-                                        <option value="徳島市">徳島市</option>
-                                        <option value="鳴門市">鳴門市</option>
-                                        <option value="松茂町">松茂町</option>
-                                        <option value="北島町">北島町</option>
-                                        <option value="藍住町">藍住町</option>
-                                        <option value="板野町">板野町</option>
-                                        <option value="石井町">石井町</option>
-                                        <option value="神山町">神山町</option>
-                                        <option value="阿波市">阿波市</option>
-                                        <option value="上板町">上板町</option>
-                                    </select>
+                    <form action="#" method="get">
+                        <!-- タブ１項目 -->
+                        <section
+                            class="form1 panel tab-A is-show"
+                            action="#"
+                            method="get"
+                        >
+                            <h3 class="subtitle">子供食堂をしらべる</h3>
+                            <div class="form_wrap">
+                                <!-- エリア検索欄 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">地域</h3>
+                                    <!-- 東部 -->
+                                    <div class="item_wrap">
+                                        <label for="east" class="checklist"
+                                            >県東部：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="east_select"
+                                            size="1"
+                                        >
+                                            <option value="">
+                                                市町村を選択
+                                            </option>
+                                            <option value="徳島市">
+                                                徳島市
+                                            </option>
+                                            <option value="鳴門市">
+                                                鳴門市
+                                            </option>
+                                            <option value="松茂町">
+                                                松茂町
+                                            </option>
+                                            <option value="北島町">
+                                                北島町
+                                            </option>
+                                            <option value="藍住町">
+                                                藍住町
+                                            </option>
+                                            <option value="板野町">
+                                                板野町
+                                            </option>
+                                            <option value="石井町">
+                                                石井町
+                                            </option>
+                                            <option value="神山町">
+                                                神山町
+                                            </option>
+                                            <option value="阿波市">
+                                                阿波市
+                                            </option>
+                                            <option value="上板町">
+                                                上板町
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <!-- 西部 -->
+                                    <div class="item_wrap">
+                                        <label for="west" class="checklist"
+                                            >県西部：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="west_select"
+                                            size="1"
+                                        >
+                                            <option value="">
+                                                市町村を選択
+                                            </option>
+                                            <option value="三好市">
+                                                三好市
+                                            </option>
+                                            <option value="東みよし町">
+                                                東みよし町
+                                            </option>
+                                            <option value="美馬市">
+                                                美馬市
+                                            </option>
+                                            <option value="吉野川市">
+                                                吉野川市
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <!-- 南部 -->
+                                    <div class="item_wrap">
+                                        <label for="south" class="checklist"
+                                            >県南部：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="south_select"
+                                            size="1"
+                                        >
+                                            <option value="">
+                                                市町村を選択
+                                            </option>
+                                            <option value="小松島市">
+                                                小松島市
+                                            </option>
+                                            <option value="阿南市">
+                                                阿南市
+                                            </option>
+                                            <option value="海陽町">
+                                                海陽町
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <!-- 西部 -->
-                                <div class="area_wrap flex">
-                                    <label for="west" class="checklist"
-                                        >県西部：</label
-                                    >
-                                    <select
-                                        class="select"
-                                        name="west_select"
-                                        size="1"
-                                    >
-                                        <option value="">市町村を選択</option>
-                                        <option value="三好市">三好市</option>
-                                        <option value="東みよし町">
-                                            東みよし町
-                                        </option>
-                                        <option value="美馬市">美馬市</option>
-                                        <option value="吉野川市">
-                                            吉野川市
-                                        </option>
-                                    </select>
-                                </div>
-                                <!-- 南部 -->
-                                <div class="area_wrap flex">
-                                    <label for="south" class="checklist"
-                                        >県南部：</label
-                                    >
-                                    <select
-                                        class="select"
-                                        name="south_select"
-                                        size="1"
-                                    >
-                                        <option value="">市町村を選択</option>
-                                        <option value="小松島市">
-                                            小松島市
-                                        </option>
-                                        <option value="阿南市">阿南市</option>
-                                        <option value="海陽町">海陽町</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- エリア検索欄終了 -->
+                                <!-- エリア検索欄終了 -->
 
-                            <!-- 料金検索欄 -->
-                            <h3 class="item_title">料金</h3>
-                            <div class="money flex">
-                                <!-- こども料金 -->
-                                <div class="money_wrap flex">
-                                    <label for="child" class="checklist"
-                                        >こども：</label
-                                    >
-                                    <select
-                                        class="select"
-                                        name="child_money"
-                                        size="1"
-                                    >
-                                        <option value="">料金を選択</option>
-                                        <option value="完全無料">
-                                            完全無料
-                                        </option>
-                                        <option value="募金制">募金制</option>
-                                        <option value="～３００円">
-                                            ～３００円
-                                        </option>
-                                        <option value="５００円">
-                                            ５００円
-                                        </option>
-                                        <option value="５００円以上">
-                                            ５００円以上
-                                        </option>
-                                    </select>
+                                <!-- 料金検索 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">料金</h3>
+                                    <!-- こども料金 -->
+                                    <div class="item_wrap">
+                                        <label for="child" class="checklist"
+                                            >こども：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="child_money"
+                                            size="1"
+                                        >
+                                            <option value="">料金を選択</option>
+                                            <option value="完全無料">
+                                                完全無料
+                                            </option>
+                                            <option value="募金制">
+                                                募金制
+                                            </option>
+                                            <option value="～３００円">
+                                                ～３００円
+                                            </option>
+                                            <option value="５００円">
+                                                ５００円
+                                            </option>
+                                            <option value="５００円以上">
+                                                ５００円以上
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <!-- 大人料金 -->
+                                    <div class="item_wrap">
+                                        <label for="adult" class="checklist"
+                                            >おとな：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="adult_money"
+                                            size="1"
+                                        >
+                                            <option value="">料金を選択</option>
+                                            <option value="完全無料">
+                                                完全無料
+                                            </option>
+                                            <option value="募金制">
+                                                募金制
+                                            </option>
+                                            <option value="～３００円">
+                                                ～３００円
+                                            </option>
+                                            <option value="５００円">
+                                                ５００円
+                                            </option>
+                                            <option value="５００円以上">
+                                                ５００円以上
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <!-- 大人料金 -->
-                                <div class="money_wrap flex">
-                                    <label for="adult" class="checklist"
-                                        >おとな：</label
-                                    >
-                                    <select
-                                        class="select"
-                                        name="adult_money"
-                                        size="1"
-                                    >
-                                        <option value="">料金を選択</option>
-                                        <option value="完全無料">
-                                            完全無料
-                                        </option>
-                                        <option value="募金制">募金制</option>
-                                        <option value="～３００円">
-                                            ～３００円
-                                        </option>
-                                        <option value="５００円">
-                                            ５００円
-                                        </option>
-                                        <option value="５００円以上">
-                                            ５００円以上
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- 料金検索欄 終了 -->
 
-                            <!-- 開催日時検索 -->
-                            <h3 class="item_title">開催日時</h3>
-                            <div class="day_time flex">
-                                <div class="day_wrap flex">
-                                    <label for="day" class="checklist"
-                                        >曜日：</label
-                                    >
+                                <!-- 開催日時検索 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">開催日時</h3>
+                                    <div class="item_wrap">
+                                        <label for="day" class="checklist"
+                                            >曜日：</label
+                                        >
+                                        <select
+                                            class="select"
+                                            name="weekday"
+                                            size="1"
+                                        >
+                                            <option value="">曜日を選択</option>
+                                            <option value="月曜日">
+                                                月曜日
+                                            </option>
+                                            <option value="火曜日">
+                                                火曜日
+                                            </option>
+                                            <option value="水曜日">
+                                                水曜日
+                                            </option>
+                                            <option value="木曜日">
+                                                木曜日
+                                            </option>
+                                            <option value="金曜日">
+                                                金曜日
+                                            </option>
+                                            <option value="土曜日">
+                                                土曜日
+                                            </option>
+                                            <option value="日曜日">
+                                                日曜日
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="item_wrap flex">
+                                        <label
+                                            for="time_choice"
+                                            class="checklist"
+                                            >時間：</label
+                                        >
+                                        <div class="time_wrap flex">
+                                            <input
+                                                id="time_choice"
+                                                type="time"
+                                                name="time"
+                                            />
+                                            <p>～</p>
+                                            <input
+                                                id="time_choice"
+                                                type="time"
+                                                name="time"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 開催日時検索 終了-->
+
+                                <!-- 事前予約の有無 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">事前予約</h3>
+                                    <div class="radiobtn flex">
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="reserve"
+                                                checked
+                                            />
+                                            有
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="reserve"
+                                            />
+                                            無
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 事前予約の有無 終了-->
+
+                                <!-- 駐車場の有無 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">駐車場</h3>
+                                    <div class="radiobtn flex">
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="parking"
+                                                checked
+                                            />
+                                            有
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="parking"
+                                            />
+                                            無
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 駐車場の有無 終了-->
+                            </div>
+                        </section>
+                        <!-- タブ１項目 終了-->
+
+                        <!-- タブ２項目 -->
+                        <section
+                            class="form2 tab-B panel"
+                            action=""
+                            method="get"
+                        >
+                            <h3 class="subtitle">子供食堂をしらべる</h3>
+                            <div class="form_wrap">
+                                <!-- 参加対象 -->
+                                <div class="form_item">
+                                    <label class="item_title">参加対象</label
+                                    ><br />
                                     <select
                                         class="select"
-                                        name="weekday"
+                                        name="subject"
                                         size="1"
                                     >
-                                        <option value="">曜日を選択</option>
-                                        <option value="月曜日">月曜日</option>
-                                        <option value="火曜日">火曜日</option>
-                                        <option value="水曜日">水曜日</option>
-                                        <option value="木曜日">木曜日</option>
-                                        <option value="金曜日">金曜日</option>
-                                        <option value="土曜日">土曜日</option>
-                                        <option value="日曜日">日曜日</option>
+                                        <option value="">対象を選択</option>
+                                        <option
+                                            value="誰でも（こどもは保護者同伴）
+"
+                                        >
+                                            誰でも（こどもは保護者同伴）
+                                        </option>
+                                        <option value="大人だけで行ける">
+                                            大人だけで行ける
+                                        </option>
+                                        <option value="大人は保護者だけ">
+                                            大人は保護者だけ
+                                        </option>
+                                        <option value="地域の方だけ">
+                                            地域の方だけ
+                                        </option>
+                                        <option value="会員登録制">
+                                            会員登録制
+                                        </option>
                                     </select>
                                 </div>
-                                <div class="time_wrap flex">
-                                    <label for="time_choice" class="checklist"
-                                        >時間：</label
-                                    >
-                                    <div class="time_choice_wrap flex">
+                                <!-- 参加対象 終了-->
+
+                                <!-- 対象年齢 -->
+                                <div class="form_item">
+                                    <label class="item_title">対象年齢</label>
+                                    <div class="age_select flex">
+                                        <select
+                                            class="select"
+                                            name="age"
+                                            size="1"
+                                        >
+                                            <option value="">選択</option>
+                                            <option value="制限なし">
+                                                制限なし
+                                            </option>
+                                            <option value="未就学児">
+                                                未就学児
+                                            </option>
+                                            <option value="小学生">
+                                                小学生
+                                            </option>
+                                            <option value="中学生">
+                                                中学生
+                                            </option>
+                                            <option value="高校生">
+                                                高校生
+                                            </option>
+                                            <option value="大学生">
+                                                大学生
+                                            </option>
+                                        </select>
+                                        <div class="select_p">～</div>
+                                        <select
+                                            class="select"
+                                            name="age"
+                                            size="1"
+                                        >
+                                            <option value="">選択</option>
+                                            <option value="制限なし">
+                                                制限なし
+                                            </option>
+                                            <option value="未就学児">
+                                                未就学児
+                                            </option>
+                                            <option value="小学生">
+                                                小学生
+                                            </option>
+                                            <option value="中学生">
+                                                中学生
+                                            </option>
+                                            <option value="高校生">
+                                                高校生
+                                            </option>
+                                            <option value="大学生">
+                                                大学生
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 対象年齢 終了-->
+
+                                <!-- 食事提供方式 -->
+                                <div class="form_item">
+                                    <label class="item_title"
+                                        >食事提供方式</label
+                                    ><br />
+                                    <select class="select" name="age" size="1">
+                                        <option value="">希望を選択</option>
+                                        <option value="いっしょに作って食べる">
+                                            いっしょに作って食べる
+                                        </option>
+                                        <option value="作ったものを提供">
+                                            作ったものを提供
+                                        </option>
+                                        <option
+                                            value="持ち帰り(弁当)
+"
+                                        >
+                                            持ち帰り(弁当)
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- 食事提供方式 終了-->
+
+                                <!-- ボランティア募集の有無 -->
+                                <div class="form_item">
+                                    <h3 class="item_title">ボランティア募集</h3>
+                                    <div class="radiobtn flex">
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="volunteer"
+                                                checked
+                                            />
+                                            有
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="volunteer"
+                                            />
+                                            無
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- ボランティア募集の有無 終了-->
+                            </div>
+                        </section>
+                        <!-- タブ２項目 終了-->
+
+                        <!-- タブ３項目 -->
+                        <section
+                            class="form3 tab-C panel"
+                            action=""
+                            method="get"
+                        >
+                            <h3 class="subtitle">子供食堂をしらべる</h3>
+                            <div class="form_wrap">
+                                <div class="checkbox-001">
+                                    <label>
                                         <input
-                                            id="time_choice"
-                                            type="time"
-                                            name="time"
-                                        />
-                                        <p>～</p>
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                            checked
+                                        />おもちゃ
+                                    </label>
+                                    <label>
                                         <input
-                                            id="time_choice"
-                                            type="time"
-                                            name="time"
-                                        />
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />絵本
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />外遊び
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />遊具
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />授乳スペース
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />オムツ交換スペース
+                                    </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />学習支援
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />アレルギー対応
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />フードパントリー<br />(食材の配布)あり
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />季節のイベント
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />調理師
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />栄養士
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />食品衛生責任者
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />教師
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />保育士
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />助産師
+                                        </label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="checkbox-001"
+                                            />看護師
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <!-- 開催日時検索 終了-->
-
-                            <!-- 事前予約の有無 -->
-                            <div class="reserve flex">
-                                <h3 class="item_title">事前予約</h3>
-                                <div class="reserve_radio flex">
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            name="reserve"
-                                            checked
-                                        />
-                                        有
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="no_reserve" />
-                                        無
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- 事前予約の有無 終了-->
-
-                            <!-- 駐車場の有無 -->
-                            <div class="reserve flex">
-                                <h3 class="item_title">駐車場</h3>
-                                <div class="reserve_radio flex">
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            name="reserve"
-                                            checked
-                                        />
-                                        有
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="no_reserve" />
-                                        無
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- 駐車場の有無 終了-->
-                        </div>
+                        </section>
+                        <!-- タブ３項目 終了-->
                         <!-- ボタン -->
                         <div class="form_btns flex">
                             <input
@@ -261,264 +689,37 @@
                             />
                         </div>
                     </form>
-                    <!-- タブ１項目 終了-->
 
-                    <!-- タブ２項目 -->
-                    <form class="form2" action="" method="get">
-                        <h3 class="subtitle">子供食堂をしらべる</h3>
-                        <div class="form_wrap">
-                            <!-- 参加対象 -->
-                            <div class="form2_item">
-                                <label class="item_title">参加対象</label><br />
-                                <select class="select" name="subject" size="1">
-                                    <option value="">対象を選択</option>
-                                    <option
-                                        value="誰でも（こどもは保護者同伴）
-"
-                                    >
-                                        誰でも（こどもは保護者同伴）
-                                    </option>
-                                    <option value="大人だけで行ける">
-                                        大人だけで行ける
-                                    </option>
-                                    <option value="大人は保護者だけ">
-                                        大人は保護者だけ
-                                    </option>
-                                    <option value="地域の方だけ">
-                                        地域の方だけ
-                                    </option>
-                                    <option value="会員登録制">
-                                        会員登録制
-                                    </option>
-                                </select>
-                            </div>
-                            <!-- 参加対象 終了-->
-
-                            <!-- 対象年齢 -->
-                            <div class="form2_item">
-                                <label class="item_title">対象年齢</label>
-                                <div class="age_select flex">
-                                    <select class="select" name="age" size="1">
-                                        <option value="">選択</option>
-                                        <option value="制限なし">
-                                            制限なし
-                                        </option>
-                                        <option value="未就学児">
-                                            未就学児
-                                        </option>
-                                        <option value="小学生">小学生</option>
-                                        <option value="中学生">中学生</option>
-                                        <option value="高校生">高校生</option>
-                                        <option value="大学生">大学生</option>
-                                    </select>
-                                    <div class="select_p">～</div>
-                                    <select class="select" name="age" size="1">
-                                        <option value="">選択</option>
-                                        <option value="制限なし">
-                                            制限なし
-                                        </option>
-                                        <option value="未就学児">
-                                            未就学児
-                                        </option>
-                                        <option value="小学生">小学生</option>
-                                        <option value="中学生">中学生</option>
-                                        <option value="高校生">高校生</option>
-                                        <option value="大学生">大学生</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- 対象年齢 終了-->
-
-                            <!-- 食事提供方式 -->
-                            <div class="form2_item">
-                                <label class="item_title">食事提供方式</label
-                                ><br />
-                                <select class="select" name="age" size="1">
-                                    <option value="">希望を選択</option>
-                                    <option value="いっしょに作って食べる">
-                                        いっしょに作って食べる
-                                    </option>
-                                    <option value="作ったものを提供">
-                                        作ったものを提供
-                                    </option>
-                                    <option
-                                        value="持ち帰り(弁当)
-"
-                                    >
-                                        持ち帰り(弁当)
-                                    </option>
-                                </select>
-                            </div>
-                            <!-- 食事提供方式 終了-->
-
-                            <!-- ボランティア募集の有無 -->
-                            <div class="form2_item">
-                                <h3 class="item_title">ボランティア募集</h3>
-                                <div class="reserve_radio flex">
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            name="reserve"
-                                            checked
-                                        />
-                                        有
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="no_reserve" />
-                                        無
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- ボランティア募集の有無 終了-->
+                    <!-- 検索結果表示 -->
+                    <div class="result_img">
+                        <h2 class="title">検索結果一覧</h2>
+                        <div class="result_img_wrap flex">
+                            <article class="result_img_card">
+                                <img src="../assets/images/img7.jpg" alt="" />
+                                <p>〇〇食堂</p>
+                                <p>（〇〇市●●町）</p>
+                            </article>
+                            <article class="result_img_card">
+                                <img src="../assets/images/img7.jpg" alt="" />
+                                <p>〇〇食堂</p>
+                                <p>（〇〇市●●町）</p>
+                            </article>
+                            <article class="result_img_card">
+                                <img src="../assets/images/img7.jpg" alt="" />
+                                <p>〇〇食堂</p>
+                                <p>（〇〇市●●町）</p>
+                            </article>
                         </div>
-                        <!-- ボタン -->
-                        <div class="form_btns flex">
-                            <input
-                                class="btn submit_btn"
-                                type="submit"
-                                value="しらべる"
-                            />
-                            <input
-                                class="btn reset_btn"
-                                type="reset"
-                                value="リセット"
-                            />
-                        </div>
-                    </form>
-                    <!-- タブ２項目 終了-->
-
-                    <!-- タブ３項目 -->
-                    <form class="form3" action="" method="get">
-                        <h3 class="subtitle">子供食堂をしらべる</h3>
-                        <div class="form_wrap">
-                            <div class="checkbox-001">
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                        checked
-                                    />おもちゃ
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />絵本
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />外遊び
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />遊具
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />授乳スペース
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />オムツ交換スペース
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />学習支援
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />アレルギー対応
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />フードパントリー<br />(食材の配布)あり
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />季節のイベント
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />調理師
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />栄養士
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />食品衛生責任者
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />教師
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />保育士
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />助産師
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="checkbox-001"
-                                    />看護師
-                                </label>
-                            </div>
-                        </div>
-                        <!-- ボタン -->
-                        <div class="form_btns flex">
-                            <input
-                                class="btn submit_btn"
-                                type="submit"
-                                value="しらべる"
-                            />
-                            <input
-                                class="btn reset_btn"
-                                type="reset"
-                                value="リセット"
-                            />
-                        </div>
-                    </form>
-                    <!-- タブ３項目 終了-->
+                    </div>
+                    <!-- 検索結果表示 終了-->
                 </div>
             </main>
 
             <!-- multi-select.js -->
             <!-- <script src="../assets/js/multiple-select.min.js"></script> -->
-
+            <script src="../assets/js/tab.js"></script>
             <script src="../assets/js/page-search.js"></script>
+            <script src="../assets/js/header.js"></script>
         </div>
     </body>
 </html>
