@@ -52,7 +52,7 @@
                             'parent' => $area->term_id,
                             //投稿がない場合でも表示させる
                             'hide_empty' => false,
-                            'orderby' => 'date',
+                            'orderby' => 'modified',
                             'order' => 'ASC',
                         ));
                         foreach ($towns as $town) {
@@ -63,112 +63,26 @@
             </div>
             <!-- 地域別食堂一覧 -->
             <div class="result_img">
-                <h2 class="title result_title">〇〇市こども食堂一覧</h2>
-                <div class="result_img_wrap flex">
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                    <article class="result_img_card">
-                        <img src="../assets/images/img7.jpg" alt="" />
-                        <p>〇〇食堂</p>
-                        <p>（〇〇市●●町）</p>
-                    </article>
-                </div>
+                <h2 class="title result_title">
+                    <!-- 市町村名が選択された時は市町村名にするようにする -->
+                    <?php echo $area->name; ?>こども食堂一覧
+                </h2>
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+                <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
+
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
-        <!-- ページナビ -->
-        <div class="page_nav flex">
-            <div class="page_triangle_left"></div>
-            <div class="page_number">1</div>
-            <div class="page_number">2</div>
-            <div class="page_number">3</div>
-            <div class="page_triangle_right"></div>
-        </div>
-    </div>
-</main>
-
-
-<!-- <main class="main">
-    <section class="sec">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"> -->
-<a href="<?php echo home_url('/area/east'); ?>" class="btn btn-default">東部<i class="fas fa-angle-right"></i></a>
-</div>
-<div class="col-md-4">
-    <a href="<?php echo home_url('/area/south'); ?>" class="btn btn-default">南部<i class="fas fa-angle-right"></i></a>
-</div>
-<div class="col-md-4">
-    <a href="<?php echo home_url('/area/west'); ?>" class="btn btn-default">西部<i class="fas fa-angle-right"></i></a>
-</div>
-</div>
-</div>
-</section>
-
-
-<h2 class="pageTitle"><?php echo $area->name; ?>市町村一覧</h2>
-<div class="faq_wrap">
-    <?php
-        $towns = get_terms(array(
-            'taxonomy' => 'area',
-            'parent' => $area->term_id,
-        ));
-            foreach ($towns as $town) {
-                echo '<a href="'.get_term_link($town).'"><h3 class="title">'.$town->name.'</h3></a>';
+        <?php
+            //自作検討する（仮で常時表示中）
+            if (function_exists('wp_pagenavi')) {
+                wp_pagenavi();
             }
         ?>
-</div>
-
-
-<section class="sec">
-    <div class="container">
-
-        <div class="row">
-
-            <?php if ($the_query->have_posts()) : ?>
-            <?php while($the_query->have_posts()) : ?>
-            <?php $the_query->the_post(); ?>
-            <div class="col-md-4">
-                <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
-            </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
-
-        </div>
-
-        <?php if (function_exists('wp_pagenavi')) {
-						wp_pagenavi();
-					} ?>
     </div>
-</section>
 </main>
-
 <?php get_footer(); ?>
