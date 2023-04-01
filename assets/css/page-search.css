@@ -56,7 +56,7 @@
     background-color: #d7f794;
 }
 
-.form2 {
+.form3 {
     background-color: #fdffb0;
 }
 
@@ -102,6 +102,7 @@
 .select {
     width: 160px;
     height: 45px;
+    margin: 20px 0;
     margin-left: 10px;
     padding-right: 15px;
     border: 2px solid orange;
@@ -239,17 +240,83 @@
 }
 
 /*******************************
-    参加対象検索欄
+    項目２
  *******************************/
-
-.join {
+.form2_item {
     width: 100%;
-    height: auto;
     text-align: center;
 }
 
-.join_wrap {
+.age_select {
+    width: 280px;
     margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.age_select select {
+    width: 100px;
+    font-size: 14px;
+    background-size: 15px;
+}
+
+.select_p {
+    width: 20px;
+    padding-top: 30px;
+}
+
+/*******************************
+    項目３
+ *******************************/
+/* チェックボックス */
+.checkbox-001 {
+    width: 100%;
+    /* gap: 0.5em 2em; */
+    border: none;
+}
+
+.checkbox-001 label {
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-001 label::before,
+.checkbox-001 label:has(:checked)::after {
+    content: "";
+}
+
+.checkbox-001 label::before {
+    /* 四角の大きさ */
+    width: 45px;
+    height: 45px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid rgb(146, 143, 143);
+}
+
+.checkbox-001 label:has(:checked)::before {
+    background-color: #eca351;
+}
+
+.checkbox-001 label:has(:checked)::after {
+    /* チェック */
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+}
+
+.checkbox-001 input {
+    display: none;
 }
 
 /***********************
@@ -288,6 +355,39 @@
 
     .day_time {
         height: 130px;
+    }
+
+    .age_select {
+        width: 400px;
+    }
+
+    .age_select select {
+        width: 150px;
+        font-size: 16px;
+        background-size: 20px;
+    }
+
+    .select_p {
+        width: 20px;
+        padding-top: 30px;
+    }
+
+    .checkbox-001 {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .checkbox-001 label {
+        width: 50%;
+    }
+
+    .checkbox-001:after {
+        content: "";
+        width: 50%;
+        margin: 10px 0;
+        color: aliceblue;
     }
 }
 
