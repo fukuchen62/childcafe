@@ -1,6 +1,6 @@
 "use strict";
 $(function () {
-    $(".multiple").multipleSelect({
+    $(".multiple-select").multipleSelect({
         width: 200,
         formatSelectAll: function () {
             return "すべて";

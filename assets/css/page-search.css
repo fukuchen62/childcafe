@@ -1,5 +1,42 @@
 @charset "utf-8";
+.multiple-select input {
+    appearance: auto;
+    -webkit-appearance: auto;
+}
 
+.ms-choice {
+    height: 45px;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+nav input {
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+nav {
+    display: none;
+}
+
+.nav-open {
+    height: 40px;
+    padding: 15px;
+    color: #fff;
+    font-size: 20px;
+    background: #2073c8;
+    position: relative;
+}
+.nav-open::before {
+    /* 閉じている時 */
+    content: "＋";
+    position: absolute;
+    right: 20px;
+}
+.nav-open.active::before {
+    /* 開いている時 */
+    content: "－";
+}
 /***********************
         タブ 
  **********************/
