@@ -59,9 +59,22 @@
         border: 3px solid #ffdf8c;
         width: 265px;
         border-radius: 37px;
+        padding-top: 80px;
+        padding-bottom: 10px;
     }
     .relative {
         position: initial;
+    }
+    .category_title {
+        font-size: 24px;
+        display: inline-block;
+        width: 304px;
+        margin-bottom: 47px;
+        margin-top: 130px;
+        background-color: #d9cdb0;
+        border-radius: 10px;
+        border-top: 5px dotted white;
+        border-bottom: 5px dotted white;
     }
     .page_nav {
         position: initial;
@@ -82,9 +95,5 @@
         left: -20px;
         right: 0;
         top: 15px;
-    }
-    .bgcnone {
-        padding-top: 80px;
-        padding-bottom: 10px;
     }
 }
