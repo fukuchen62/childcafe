@@ -60,7 +60,7 @@ function add_my_files() {
     }
 
     //single-cafeinfoページのみ出力
-    if (is_single('cafeinfo')) {
+    if (is_singular('cafeinfo')) {
         wp_enqueue_style('single-cafeinfo-css',get_template_directory_uri() . '/assets/css/single-cafeinfo.css',array('common-css')
         );
         //single-cafeinfo.jsの読み込み

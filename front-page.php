@@ -16,27 +16,142 @@
 //     )
 // );
 
-    // $hoge = array(
-        // $post__in = wp_ulike_get_popular_items_ids(array(
-        //     'type'       => 'post',
-        //     'rel_type'   => 'interview',
-        //     'status'     => 'like',
-        //     'period'     => 'all',
-        // )),
-    //     'posts_per_page' => -1, // 全件表示
-    //     'post__in' => $post__in,
-    //     'post_type' => 'interview', // カスタム投稿名
-    //     'orderby' => 'post__in',
-    //     'order' => 'DESC' // いいねの降順
-    // );
-    // $custom_query = new WP_Query($hoge);
+    // $post__in = array(
+    //                     'type'       => 'post',
+    //                     'rel_type'   => 'interview',
+    //                     'period'     => 'all',
+    //                     'meta_query' => array(
+    //                         'relation' => 'OR',
+    //                             array(
+    //                                 'key' => 'like_status',
+    //                                 'value' => 'like',
+    //                                 'compare' => '=',
+    //                             ),
+    //                             array(
+    //                                 'relation' => 'AND',
+    //                                 array(
+    //                                     'key' => 'like_status',
+    //                                     'value' => '',
+    //                                     'compare' => '=',
+    //                                 ),
+    //                                 array(
+    //                                     'key' => 'like_count',
+    //                                     'value' => '0',
+    //                                     'compare' => '=',
+    //                                 ),
+    //                                 'orderby' => 'rand'
+    //                             )
+    //                         ));
 
-	$hoge = array(
-		'post_type' => 'interview',
-		'posts_per_page' => -1, //全件表示
-        'orderby' => 'rand',
-	);
-	$custom_query = new WP_Query($hoge);
+//     //いいねされている記事を取得
+//     $like_posts = wp_ulike_get_popular_items_ids(
+//     array(
+//         'type'       => 'post',
+//         'rel_type'   => 'interview',
+//         'status'     => 'like',
+//         'period'     => 'all',
+//     )
+// );
+
+// // いいねが設定されていない記事を取得
+// $not_like_posts = array(
+//     'post_type'      => 'interview', // カスタム投稿名
+//     'meta_query'     => array(
+//         'relation' => 'OR',
+//         array(
+//             'key'     => 'like_status',
+//             'compare' => 'NOT EXISTS',
+//         ),
+//         array(
+//             'relation' => 'AND',
+//             array(
+//                 'key'     => 'like_status',
+//                 'value'   => '',
+//                 'compare' => '!=',
+//             ),
+//             array(
+//                 'key'     => 'like_count',
+//                 'value'   => '0',
+//                 'compare' => '>',
+//                 'type'    => 'NUMERIC',
+//             ),
+//         ),
+//     ),
+//     'post__not_in' => $like_posts,
+//     'orderby'      => 'rand'
+// );
+
+// // 2つの配列をマージ
+// $post__in = array_merge( $like_posts, $not_like_posts );
+
+//     $hoge = array(
+//         'posts_per_page' => -1, // 全件表示
+//         'post__in' => $post__in,
+//         'post_type' => 'interview', // カスタム投稿名
+//         'orderby' => 'post__in',
+//         'order' => 'DESC' // いいねの降順
+//     );
+//     $custom_query = new WP_Query($hoge);
+
+
+
+
+// いいねが押されている記事を取得し、いいね順にソート
+$like_posts = wp_ulike_get_popular_items_ids(
+    array(
+        'type'       => 'post',
+        'rel_type'   => 'interview',
+        'status'     => 'like',
+        'period'     => 'all',
+    )
+);
+// いいねが押されていない記事をランダムに取得
+$not_like_posts = get_posts(
+    array(
+        'post_type'      => 'interview', // カスタム投稿名
+        'posts_per_page' => -1,
+        'post__not_in'   => $like_posts, // いいねされている記事のIDを除外
+        'orderby'        => 'rand',
+    )
+);
+// いいねが押されている記事といいねが押されていない記事を順番を保ったままマージ
+$merged_posts = array_merge( $like_posts, wp_list_pluck( $not_like_posts, 'ID' ) );
+// クエリを作成し、記事を取得
+$custom_query = new WP_Query( array(
+    'post_type'      => 'interview',
+    'post__in'       => $merged_posts,
+    'orderby'        => 'post__in',
+    'posts_per_page' => -1,
+) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// $hoge = array(
+	// 	'post_type' => 'interview',
+	// 	'posts_per_page' => -1, //全件表示
+    //     'orderby' => 'rand',
+	// );
+	// $custom_query = new WP_Query($hoge);
 ?>
 
 <main class="main_index">
