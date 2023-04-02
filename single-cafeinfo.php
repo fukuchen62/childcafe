@@ -7,7 +7,8 @@
     <div class="main_inner">
         <!-- ページトップ -->
         <?php if (have_posts()) : ?>
-        <?php while(have_posts()) : the_post(); ?>
+        <?php while(have_posts()) : ?>
+        <?php the_post(); ?>
         <div class="yellow color">
             <div class="yellow_inner m1024">
                 <h2 class="title"><?php the_field('name'); ?></h2>
