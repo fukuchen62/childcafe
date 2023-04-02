@@ -26,33 +26,24 @@ $categories = get_categories();
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
-        </div>
-        <div class="category_list">
-            <h2 class="category_title">カテゴリー一覧</h2>
-            <div class="bgcnone column">
-                <?php
-                foreach ($categories as $category) {
-                echo '<a href="'.get_category_link($category->term_id).'" class="category_item">'.$category->name
-                .'</a>';
-                }
-                ?>
-                <a href="<?php echo home_url('/event'); ?>" class="category_item">次回開催</a>
+            <div class="category_list">
+                <h2 class="category_title">カテゴリー一覧</h2>
+                <div class="bgcnone column">
+                    <?php
+                    foreach ($categories as $category) {
+                    echo '<a href="'.get_category_link($category->term_id).'" class="category_item">'.$category->name
+                    .'</a>';
+                    }
+                    ?>
+                    <a href="<?php echo home_url('/event'); ?>" class="category_item">次回開催</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="page_nav flex">
-        <div class="page_triangle_left"></div>
-        <div class="page_number">1</div>
-        <div class="page_number">2</div>
-        <div class="page_number">3</div>
-        <div class="page_triangle_right"></div>
-    </div>
-    </div>
-    <?php if (function_exists('wp_pagenavi')) {
+    <?php
+    if (function_exists('wp_pagenavi')) {
 						wp_pagenavi();
-					} ?>
-
+        }
+    ?>
 </main>
-
-
 <?php get_footer(); ?>

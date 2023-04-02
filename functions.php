@@ -67,8 +67,8 @@ function add_my_files() {
         wp_enqueue_script('single-cafeinfo-js',get_template_directory_uri().'/assets/js/single-cafeinfo.js',array('header-js'),'1.0',true);
     }
 
-    //最新記事一覧ページのみ出力
-    if (is_page('post')) {
+    //記事一覧ページのみ出力
+    if (is_page('post') || is_category()) {
         wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
         );
     }
