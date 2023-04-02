@@ -93,7 +93,7 @@
 //     );
 //     $custom_query = new WP_Query($hoge);
 
-
+//おしらせ一覧のサブクエリ
 $args = array(
 		'post_type' => 'post',
 		'posts_per_page' => 2,
@@ -197,7 +197,6 @@ $event_query = new WP_Query($fuga);
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_postdata(); ?>
-
                 </div>
                 <a href="<?php echo home_url('/event'); ?>" class="btn_item">もっと見る</a>
             </div>

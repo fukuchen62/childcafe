@@ -66,6 +66,12 @@ function add_my_files() {
         //single-cafeinfo.jsの読み込み
         wp_enqueue_script('single-cafeinfo-js',get_template_directory_uri().'/assets/js/single-cafeinfo.js',array('header-js'),'1.0',true);
     }
+
+    //最新記事一覧ページのみ出力
+    if (is_page('post')) {
+        wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
@@ -75,15 +81,24 @@ add_action('wp_enqueue_scripts' ,'add_my_files');
 //投稿表示件数を変更する
 function my_pre_get_posts($query) {
     //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || $query->is_main_query()) {
+    if (is_admin() || ! $query->is_main_query()) {
         return;
     }
 
-    //トップページの場合
-    if ($query->is_front_page()) {
-        $query->set('posts_per_page', 2);
+    // //トップページの場合
+    // if ($query->is_front_page()) {
+    //     $query->set('posts_per_page', 2);
+    //     return;
+    // }
+
+    // 固定ページの場合
+    if ($query->is_page('post')) {
+        $query->set('posts_per_page',5);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
         return;
     }
+
+
 
     //インタビュー一覧ページの場合
     // if ($query->is_archive('interview')) {
