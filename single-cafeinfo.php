@@ -7,11 +7,8 @@
     <div class="main_inner">
         <!-- ページトップ -->
         <?php if (have_posts()) : ?>
-        <?php while(have_posts()) : the_post(); ?>
-        <?php
-
-?>
-
+        <?php while(have_posts()) : ?>
+        <?php the_post(); ?>
         <div class="yellow color">
             <div class="yellow_inner m1024">
                 <h2 class="title"><?php the_field('name'); ?></h2>
@@ -20,22 +17,21 @@
                         <img src="<?php the_field('eye_catching'); ?>" alt="" class="main_visual" />
                         <div class="underimg text flex">
                             <p class="address">
-                        <?php
-                        $this_terms = get_the_terms($post->ID,'area');
-                        echo $this_terms[1]->name;
-                        ?>
-                    </p>
+                                <?php
+                                $this_terms = get_the_terms($post->ID,'area');
+                                echo $this_terms[1]->name;
+                                ?>
+                            </p>
                             <div class="good flex">
                                 <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
                             </div>
                         </div>
                     </div>
                     <div class="pc_w320">
-                        <h3 class="subtitle">子ども食堂の特色</h3>
+                        <h3 class="subtitle"><?php echo get_field_object('features')['label']; ?></h3>
                         <p class="text">
-                                        テキストテキストテキストテキストテキストテキスト
-                                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                                    </p>
+                            <?php the_field('features'); ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -46,8 +42,8 @@
         <div class="beige color">
             <div class="beige_inner m1024">
                 <div class="detail_item">
-                    <h3 class="subtitle">住所</h3>
-                    <p>徳島県○○市○○町</p>
+                    <h3 class="subtitle"><?php echo get_field_object('place')['label']; ?></h3>
+                    <p><?php the_field('place'); ?></p>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">担当者</h3>
@@ -146,7 +142,7 @@
                     </div>
                     <div class="addressmap">
                         <h3 class="subtitle">アクセス</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1671457.3013939436!2d134.69202636250003!3d35.0925991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bf455fa707d%3A0xfaaea9929402ee59!2z5bmz5bCG6ZaA6aaW5aGa!5e0!3m2!1sja!2sjp!4v1680162253664!5m2!1sja!2sjp" width="600" height="300" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?php the_field('place_map'); ?>
                     </div>
                 </div>
                 <h3 class="subtitle_ulineorange">活動の様子</h3>

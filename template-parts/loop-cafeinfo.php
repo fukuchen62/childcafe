@@ -1,11 +1,20 @@
-<a href="<?php the_permalink(); ?>">
-    <?php if(has_post_thumbnail()): ?>
-    <?php the_post_thumbnail('medium'); ?>
-    <?php else: ?>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-    <?php endif; ?>
-
-    <p>
-        <?php the_title(); ?>
-    </p>
-</a>
+<div class="result_img_wrap flex">
+    <a href="<?php the_permalink(); ?>">
+        <article class="result_img_card">
+            <?php $eye_catching = get_post_meta($post->ID, 'eye_catching', true);?>
+            <?php if(!empty($eye_catching)): ?>
+            <img src="<?php the_field('eye_catching'); ?>" alt="">
+            <?php else: ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+            <?php endif; ?>
+            <p>
+                <?php the_field('name'); ?></p>
+            <p>
+                <?php
+                    $this_terms = get_the_terms($post->ID,'area');
+                    echo $this_terms[1]->name;
+                ?>
+            </p>
+        </article>
+    </a>
+</div>
