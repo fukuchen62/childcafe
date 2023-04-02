@@ -94,6 +94,11 @@
 //     $custom_query = new WP_Query($hoge);
 
 
+$args = array(
+		'post_type' => 'post',
+		'posts_per_page' => 2,
+	);
+$the_query = new WP_Query($args);
 
 
 // いいねが押されている記事を取得し、いいね順にソート
@@ -130,6 +135,14 @@ $custom_query = new WP_Query( array(
     //     'orderby' => 'rand',
 	// );
 	// $custom_query = new WP_Query($hoge);
+
+
+$fuga = array(
+		'post_type' => 'event',
+		'posts_per_page' => 2,
+	);
+$event_query = new WP_Query($fuga);
+
 ?>
 
 <main class="main_index">
@@ -176,8 +189,15 @@ $custom_query = new WP_Query( array(
                     <h2>開催情報</h2>
                 </div>
                 <div class="text_box">
-                    <a href="#">3/1　テキストテキスト</a><br>
-                    <a href="#">3/2　テキストテキスト</a>
+                    <?php if ($event_query->have_posts()) : ?>
+                    <?php while($event_query->have_posts()) : ?>
+                    <?php $event_query->the_post(); ?>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <br>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
+
                 </div>
                 <a href="<?php echo home_url('/event'); ?>" class="btn_item">もっと見る</a>
             </div>
@@ -299,8 +319,15 @@ $custom_query = new WP_Query( array(
                     <h2>おしらせ</h2>
                 </div>
                 <div class="news">
-                    <a href="#">3/1 テキストテキストテキスト</a><br />
-                    <a href="#">3/2 テキストテキストテキスト</a>
+                    <?php if ($the_query->have_posts()) : ?>
+                    <?php while($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <!-- <br>タグは<p>タグでも構わない？ -->
+                    <br>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
                 </div>
                 <a href="<?php echo home_url('/post'); ?>" class="btn_item">もっとみる</a>
             </div>

@@ -81,7 +81,7 @@ function my_pre_get_posts($query) {
 
     //トップページの場合
     if ($query->is_front_page()) {
-        $query->set('posts_per_page', 3);
+        $query->set('posts_per_page', 2);
         return;
     }
 
