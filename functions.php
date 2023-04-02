@@ -72,6 +72,13 @@ function add_my_files() {
         wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
         );
     }
+
+    //記事詳細ページのみ出力
+    if (is_single()) {
+        wp_enqueue_style('single-post-css',get_template_directory_uri() . '/assets/css/single-post.css',array('common-css')
+        );
+    }
+
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');

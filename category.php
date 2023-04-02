@@ -1,12 +1,15 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
+$cat = get_the_category();
+$cat = $cat[0];
+
 $categories = get_categories();
 ?>
 
 <main>
     <div class="main_inner relative">
-        <h2 class="title"><?php the_category(); ?>記事一覧</h2>
+        <h2 class="title"><?php echo $cat->cat_name; ?>記事一覧</h2>
         <div class="news_flex">
             <div class="tcenter column">
                 <?php if (have_posts()) : ?>
