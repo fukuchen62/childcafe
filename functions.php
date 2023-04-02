@@ -76,6 +76,12 @@ function add_my_files() {
         wp_enqueue_script('single-cafeinfo-js',get_template_directory_uri().'/assets/js/single-cafeinfo.js',array('header-js'),'1.0',true);
     }
 
+    //single-interviewページのみ出力
+    if (is_singular('interview')) {
+        wp_enqueue_style('single-interview-css',get_template_directory_uri() . '/assets/css/single-interview.css',array('common-css')
+        );
+    }
+
     //記事一覧ページのみ出力
     if (is_page('post') || is_category()) {
         wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')

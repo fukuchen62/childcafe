@@ -1,6 +1,3 @@
-<div class="pickup_single_img">
-    <img src="<?php the_field('eye_catching'); ?>" alt="PickUp画像" />
-</div>
 <div class="pickup_single_text">
     <h3 class="subtitle">
         こども食堂をはじめたきっかけ
@@ -28,7 +25,7 @@
     </p>
 </div>
 <div class="pickup_single_img">
-    <img src="<?php the_field('photo1'); ?>" alt="PickUp画像" />
+    <img src="http://localhost:8888/childcafe/wp-content/uploads/2023/03/mananakanogakko_exterior_01.jpeg" alt="PickUp画像" />
 </div>
 <div class="pickup_single_text">
     <h3 class="subtitle">
@@ -60,7 +57,7 @@
     </p>
 </div>
 <div class="pickup_single_img">
-    <img src="<?php the_field('photo2'); ?>" alt="PickUp画像" />
+    <img src="http://localhost:8888/childcafe/wp-content/uploads/2023/03/mannakanogakko_food_01.jpeg" alt="PickUp画像" />
 </div>
 <div class="pickup_single_text">
     <h3 class="subtitle">将来への展望</h3>
