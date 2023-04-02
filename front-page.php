@@ -283,9 +283,9 @@ $custom_query = new WP_Query( array(
                     <h2>リンク集</h2>
                 </div>
                 <div class="link_flex">
-                    <a href="<?php echo home_url('/links/cafe'); ?>" class="btn_item">こども食堂関連</a>
-                    <a href="<?php echo home_url('/links/care'); ?>" class="btn_item">子育て支援関連</a>
-                    <a href="<?php echo home_url('/links/third'); ?>" class="btn_item">こどもの居場所関連</a>
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="btn_item">こども食堂関連</a>
+                    <a href="<?php echo home_url('/link/care'); ?>" class="btn_item">子育て支援関連</a>
+                    <a href="<?php echo home_url('/link/third'); ?>" class="btn_item">こどもの居場所関連</a>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
