@@ -21,9 +21,9 @@ $(function () {
 
 // アコーディオン
 
-// $(function () {
-//     $(".clickbtn").on("click", function () {
-//         $(this).next().slideToggle(200);
-//         $(this).toggleClass("open", 200);
-//     });
-// });
+$(function () {
+    $(".area_label").on("click", function () {
+        $(this).next().slideToggle(400);
+        $(this).toggleClass("open", 400);
+    });
+});

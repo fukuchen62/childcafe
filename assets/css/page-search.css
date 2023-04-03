@@ -1,13 +1,33 @@
 @charset "utf-8";
-.multiple-select input {
-    appearance: auto;
-    -webkit-appearance: auto;
+
+.area_label {
+    width: 200px;
+    height: 45px;
+    padding-top: 10px;
+    background-color: #f7dd94;
+    border-radius: 10px;
+    background-image: url(../images/pulldown.png); /*--矢印の画像を指定--*/
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 5px center;
+}
+.area_list {
+    display: none;
 }
 
-.ms-choice {
-    height: 45px;
-    border: 2px solid orange;
-    border-radius: 10px;
+.area_list ul {
+}
+
+.area_list ul > li {
+}
+
+.area_list input[type="checkbox"] {
+    -webkit-appearance: auto;
+    /* appearance: auto; */
+}
+
+.open {
+    background-image: url(../images/index/矢印ボタン\　上2.png); /*--矢印の画像を指定--*/
 }
 
 /***********************

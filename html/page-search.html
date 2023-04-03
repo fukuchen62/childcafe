@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
-        <!-- multi-select.css -->
-        <link rel="stylesheet" href="../assets/css/multiple-select.min.css" />
         <!-- page search css -->
         <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- Googlefont -->
@@ -141,7 +139,7 @@
                             <div class="form_wrap">
                                 <!-- エリア検索欄 -->
                                 <div class="form_item">
-                                    <h3 class="item_title">地域</h3>
+                                    <label for="area" class="item_title">地域</label>
                                     <!-- 東部 -->
                                     <div class="item_wrap">
                                         <label for="east" class="checklist"
@@ -189,50 +187,13 @@
                                     </div>
                                     <!-- 西部 -->
                                     <div class="item_wrap">
-                                        
-                                        <div class="form-group row">
-    <label class="col-sm-2">
-      県西部
-    </label>
-    <div class="col-sm-10">
-      <select multiple="multiple" class="multiple-select">
-        <option value="三好市">三好市</option>
-        <option value="東みよし市">東みよし市</option>
-        <option value="美馬市">美馬市</option>
-        <option value="吉野川市">吉野川市</option>
-      </select>
-    </div>
-    
-  </div>
-
-  
-
-  <!-- <label for="west" class="checklist"
-                                            >県西部：</label
-                                        > -->
-
-
-                                        <!-- <select
-                                            class="select"
-                                            name="west_select"
-                                            size="1"
-                                        >
-                                            <option value="">
-                                                市町村を選択
-                                            </option>
-                                            <option value="三好市">
-                                                三好市
-                                            </option>
-                                            <option value="東みよし町">
-                                                東みよし町
-                                            </option>
-                                            <option value="美馬市">
-                                                美馬市
-                                            </option>
-                                            <option value="吉野川市">
-                                                吉野川市
-                                            </option>
-                                        </select> -->
+                                        <div class="area_label">西部</div>
+<ul class="area_list">
+<li><input type="checkbox" id="area">三好市</li>
+<li><input type="checkbox" id="area">東みよし市</li>
+<li><input type="checkbox" id="area">美馬市</li>
+<li><input type="checkbox" id="area">吉野川市</li></ul>
+                                    </div>
                                     
                                     <!-- 南部 -->
                                     <div class="item_wrap">
@@ -758,9 +719,6 @@
                     <!-- 検索結果表示 終了-->
                 </div>
             </main>
-
-            <!-- multi-select.js -->
-            <script src="../assets/js/multiple-select.min.js"></script>
             <script src="../assets/js/tab.js"></script>
             <script src="../assets/js/page-search.js"></script>
             <script src="../assets/js/header.js"></script>
