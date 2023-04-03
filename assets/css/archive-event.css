@@ -85,3 +85,117 @@ td {
     width: 260px;
     margin: 0 auto;
 }
+
+/* category一覧 */
+
+.category_title {
+    font-size: 24px;
+    display: inline-block;
+    width: 304px;
+    margin-bottom: 47px;
+    margin-top: 130px;
+    background-color: #d9cdb0;
+    border-radius: 10px;
+    border-top: 5px dotted white;
+    border-bottom: 5px dotted white;
+}
+
+.category_list {
+    text-decoration: underline solid 1px black;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.category_item + .category_item {
+    margin-top: 20px;
+}
+
+.bgcnone {
+    margin: 0 auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 770px) {
+    .main_inner {
+        position: relative;
+    }
+
+    .ivent_title {
+        width: 470px;
+        margin: 0 15%;
+        margin-top: 150px;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .ivent_title img {
+        width: 100%;
+    }
+
+    .bgcnone {
+        background-color: white;
+        border: 3px solid #ffdf8c;
+        width: 265px;
+        border-radius: 37px;
+        padding-top: 80px;
+        padding-bottom: 10px;
+    }
+
+    .category_title {
+        font-size: 24px;
+        display: inline-block;
+        width: 304px;
+        margin-bottom: 47px;
+        margin-top: 130px;
+        background-color: #d9cdb0;
+        border-radius: 10px;
+        border-top: 5px dotted white;
+        border-bottom: 5px dotted white;
+    }
+
+    .category_title {
+        margin-bottom: 0;
+        margin-top: 0;
+        left: -20px;
+        right: 0;
+        top: 15px;
+        position: absolute;
+    }
+
+    .category_list {
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+
+    .ivent_appeal {
+        width: 70%;
+        margin: 80px auto;
+    }
+    .ivent_table {
+        width: 65%;
+    }
+    .ivent_table_tdtitle {
+        width: 280px;
+        padding: 5px 10px;
+    }
+
+    .ivent_table_tdtext {
+        padding: 0 10px;
+    }
+
+    .ivent_map iframe {
+        width: 700px;
+        height: 360px;
+    }
+
+    .ivent_map {
+        margin: 0 auto;
+    }
+}
