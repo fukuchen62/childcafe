@@ -4,25 +4,10 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>トップページ</title>
-        <!-- reset css -->
         <link rel="stylesheet" href="../assets/css/reset.css" />
-        <!-- slick css -->
-        <link rel="stylesheet" href="../assets/slick/css/slick.css" />
-        <link rel="stylesheet" href="../assets/slick/css/slick-theme.css" />
-        <!-- css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
-        <link rel="stylesheet" href="../assets/css/archive-interview.css" />
-
-        <!-- js -->
-        <script src="../assets/js/jquery-3.6.3.min.js"></script>
-        <!-- slick js -->
-        <script src="../assets/slick/js/slick.min.js"></script>
-        <!-- Googleフォント -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Maru+Gothic&display=swap"
-            rel="stylesheet"
-        />
+        <link rel="stylesheet" href="../assets/css/page-post.css" />
+        <title>news記事一覧</title>
     </head>
     <body>
         <div class="body_inner">
@@ -48,7 +33,7 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援者の方へ</a>
+                                <a href="#"> 支援したい方へ</a>
                             </li>
                             <li class="btn_header_pc_3 flex">
                                 <a href="#"> 特集記事</a>
@@ -78,7 +63,7 @@
                             <a href="#"> こども食堂とは</a>
                         </li>
                         <li class="btn_header">
-                            <a href="#"> 支援者の方へ</a>
+                            <a href="#"> 支援したい方へ</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> 特集記事</a>
@@ -90,30 +75,30 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
-                            <a href="#"> 今月の開催情報</a>
+                            <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="" method="">
+                            <form class="hbg_search" action="#" method="#">
                                 <input
                                     type="hidden"
                                     name="search_type"
-                                    value="keywords"
+                                    value=""
                                 />
                                 <input
                                     class="hbg_form"
                                     size="25"
                                     type="search"
-                                    name="s"
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id="clearbutton7"
+                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
                                     type="submit"
                                     value="   "
+                                    name=" "
                                 />
                             </form>
                         </li>
@@ -122,69 +107,35 @@
                 </nav>
                 <!-- hamburger中身end -->
             </header>
+            <script src="../assets/js/header.js"></script>
             <main>
-                <div class="main_inner">
-                    <div class="pickup_title">
-                        <h2 class="title">特集記事　一覧</h2>
-                        <div class="text">
-                            <div class="intro">
-                                <p class="subtitle left">特集記事とは</p>
-                                <p>
-                                    テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト
-                                </p>
+                <div class="main_inner relative">
+                    <h2 class="title">最新記事一覧</h2>
+                    <div class="news_flex">
+                        <div class="tcenter column">
+                            <a href="#" class="news_title"
+                                >3/1テキストテキストテキスト</a
+                            >
+                            <a href="#" class="news_title"
+                                >3/2テキストテキストテキスト</a
+                            >
+                            <a href="#" class="news_title"
+                                >3/3テキストテキストテキスト</a
+                            >
+                            <a href="#" class="news_title"
+                                >3/4テキストテキストテキスト</a
+                            >
+                            <a href="#" class="news_title"
+                                >3/5テキストテキストテキスト</a
+                            >
+                        </div>
+                        <div class="category_list">
+                            <h2 class="category_title">カテゴリー一覧</h2>
+                            <div class="bgcnone column">
+                                <a href="#" class="category_item">おしらせ</a>
+                                <a href="#" class="category_item">更新情報</a>
+                                <a href="#" class="category_item">次回開催</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="pickup_item pickup_flex">
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
                         </div>
                     </div>
                     <div class="page_nav flex">
@@ -222,7 +173,9 @@
                                         <a href="#">FAQ</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">特集記事</a>
+                                        <a href="#"
+                                            >特集記事Pick Upインタビュー一覧</a
+                                        >
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">ニュース一覧</a>
@@ -237,7 +190,7 @@
                                 <p>こども食堂をみつける</p>
                                 <ul class="footer_nav_menu">
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">こども食堂MAP</a>
+                                        <a href="#">エリアをしらべる</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">こども食堂一覧</a>
@@ -252,7 +205,7 @@
                                         <a href="#">こども食堂　南部</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">条件検索</a>
+                                        <a href="#">条件でさがす</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">支援したい方へ</a>
@@ -275,13 +228,15 @@
                                         <a href="#">こども食堂関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">第三の居場所関連</a>
+                                        <a href="#">こどもの居場所関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">このサイトについて</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">プライバシーポリシー</a>
+                                        <a href="#"
+                                            >プライバシーポリシー・免責事項</a
+                                        >
                                     </li>
                                 </ul>
                             </li>

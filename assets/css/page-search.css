@@ -1,5 +1,42 @@
 @charset "utf-8";
+.multiple-select input {
+    appearance: auto;
+    -webkit-appearance: auto;
+}
 
+.ms-choice {
+    height: 45px;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+nav input {
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+nav {
+    display: none;
+}
+
+.nav-open {
+    height: 40px;
+    padding: 15px;
+    color: #fff;
+    font-size: 20px;
+    background: #2073c8;
+    position: relative;
+}
+.nav-open::before {
+    /* 閉じている時 */
+    content: "＋";
+    position: absolute;
+    right: 20px;
+}
+.nav-open.active::before {
+    /* 開いている時 */
+    content: "－";
+}
 /***********************
         タブ 
  **********************/
@@ -35,49 +72,62 @@
     background-color: #fdffb0;
 }
 
+.panel {
+    display: none;
+}
+
+.is-show {
+    display: block;
+}
+
+.tab_js {
+    cursor: pointer;
+}
+
 /***********************
-    キーワード検索共通
+    共通
  **********************/
 .form1,
 .form2,
 .form3 {
     width: 90%;
-    height: auto;
     padding-top: 10px;
     margin: 0 auto;
     border-radius: 10px;
 }
 
 .form1 {
+    height: 950px;
     background-color: #f7dd94;
 }
 
 .form2 {
+    height: 600px;
     background-color: #d7f794;
 }
 
-.form2 {
+.form3 {
+    height: 1100px;
     background-color: #fdffb0;
 }
 
 .form_wrap {
     width: 90%;
-    height: 90%;
+    height: auto;
     margin: 0 auto;
     padding: 10px;
     background-color: #fff8e6;
     border-radius: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
 }
 
-.area {
+.form_item {
     width: 100%;
-    height: 160px;
     text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
+}
+
+.item_wrap {
+    margin: 20px auto;
+    max-width: fit-content;
 }
 
 .item_title {
@@ -85,23 +135,12 @@
     font-weight: 500;
     font-size: 20px;
 }
-/********************************
-    エリア検索
- ********************************/
 
-.area_wrap {
-    max-width: fit-content;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.checklist {
-}
-
+/* セレクトボックス */
 .select {
     width: 160px;
     height: 45px;
+    /* margin-top: 20px; */
     margin-left: 10px;
     padding-right: 15px;
     border: 2px solid orange;
@@ -113,73 +152,9 @@
     background-color: white;
 }
 
-/******************************
-    料金検索
- ******************************/
-.money {
-    width: 100%;
-    height: 110px;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-}
+/* ラジオボタン */
 
-.money_wrap {
-    max-width: fit-content;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*******************************
-    開催日時検索
- *******************************/
-
-.day_time {
-    width: 100%;
-    height: 160px;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.day_wrap,
-.time_wrap {
-    max-width: fit-content;
-    margin: 0 auto;
-    justify-content: space-between;
-    /* align-items: center; */
-}
-
-.time_choice_wrap {
-    background-color: #fff;
-    border: 2px solid #eca351;
-    border-radius: 10px;
-    padding: 3px;
-    justify-content: space-between;
-    margin-left: 5px;
-}
-
-.time_choice_wrap p {
-    margin: 0 8px;
-}
-
-.input[type="time"] {
-    /* border: 1px solid #eca351;
-    background-color: white; */
-}
-
-/*******************************
-    事前予約・駐車場の有無
- *******************************/
-.reserve {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    flex-direction: column;
-}
-
-.reserve_radio {
+.radiobtn {
     font-size: 18px;
     max-width: fit-content;
     margin: 10px auto;
@@ -189,11 +164,7 @@
     border: none;
 }
 
-/*******************************
-    事前予約ラジオボタン
- *******************************/
-
-.reserve_radio label {
+.radiobtn label {
     display: flex;
     align-items: center;
     /* gap: 0 0.5em; */
@@ -202,24 +173,24 @@
     cursor: pointer;
 }
 
-.reserve_radio label::before,
-.reserve_radio label::after {
+.radiobtn label::before,
+.radiobtn label::after {
     border-radius: 50%;
     content: "";
 }
 
 /* ラジオボタン外枠 */
-.reserve_radio label::before {
+.radiobtn label::before {
     /* width: 18px;
     height: 18px; */
     width: 25px;
     height: 25px;
-    border: 2px solid #dee5eb;
+    border: 2px solid rgb(182, 176, 176);
     box-sizing: border-box;
 }
 
 /* ラジオボタンの中の丸 */
-.reserve_radio label::after {
+.radiobtn label::after {
     position: absolute;
     top: 50%;
     /* left: 9px; */
@@ -227,34 +198,18 @@
     transform: translate(-50%, -50%);
     width: 15px;
     height: 15px;
-    background-color: #dee5eb;
+    background-color: rgb(206, 201, 201);
 }
 
-.reserve_radio label:has(:checked)::after {
+.radiobtn label:has(:checked)::after {
     background-color: #eca351;
 }
 
-.reserve_radio input {
+.radiobtn input {
     display: none;
 }
 
-/*******************************
-    参加対象検索欄
- *******************************/
-
-.join {
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-
-.join_wrap {
-    margin: 0 auto;
-}
-
-/***********************
-        ボタン
- **********************/
+/* ボタン */
 
 .form_btns {
     width: 100%;
@@ -272,22 +227,177 @@
     margin-top: 30px;
 }
 
+/********************************
+    タブ１項目
+ ********************************/
+
+/* 開催日時検索 */
+
+.time_wrap {
+    background-color: #fff;
+    border: 2px solid #eca351;
+    border-radius: 10px;
+    padding: 3px;
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+.time_wrap p {
+    margin: 0 8px;
+}
+
+/*******************************
+    項目２
+ *******************************/
+.form2 select {
+    margin: 20px 0;
+}
+
+.age_select {
+    width: 280px;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.age_select select {
+    width: 100px;
+    font-size: 14px;
+    background-size: 15px;
+}
+
+.select_p {
+    width: 20px;
+    padding-top: 30px;
+}
+
+/*******************************
+    項目３
+ *******************************/
+/* チェックボックス */
+.checkbox-001 {
+    width: 100%;
+    /* gap: 0.5em 2em; */
+    border: none;
+}
+
+.checkbox-001 label {
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-001 label::before,
+.checkbox-001 label:has(:checked)::after {
+    content: "";
+}
+
+.checkbox-001 label::before {
+    /* 四角の大きさ */
+    width: 45px;
+    height: 45px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid rgb(146, 143, 143);
+}
+
+.checkbox-001 label:has(:checked)::before {
+    background-color: #eca351;
+}
+
+.checkbox-001 label:has(:checked)::after {
+    /* チェック */
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+}
+
+.checkbox-001 input {
+    display: none;
+}
+
+/*******************************
+    結果一覧
+ *******************************/
+
+.result_img {
+    /* display: none; */
+}
+
 @media screen and (min-width: 770px) {
+    .form1 {
+        height: 1050px;
+    }
+
+    .form2 {
+        height: 650px;
+    }
+
+    .form3 {
+        height: 750px;
+    }
+    .item_title {
+        margin-bottom: 20px;
+    }
+
     .select {
         width: 250px;
         height: 55px;
     }
 
-    .area {
-        height: 200px;
+    .time_wrap {
+        width: 250px;
     }
 
-    .money {
-        height: 130px;
+    .age_select {
+        width: 350px;
     }
 
-    .day_time {
-        height: 130px;
+    .age_select select {
+        width: 150px;
+        font-size: 16px;
+        background-size: 20px;
+    }
+
+    .select_p {
+        width: 20px;
+        padding-top: 30px;
+    }
+
+    .checkbox-001 {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .checkbox-001 label {
+        width: 50%;
+    }
+
+    .checkbox-001:after {
+        content: "";
+        width: 50%;
+        margin: 10px 0;
+        color: aliceblue;
+    }
+
+    .form_btns {
+        flex-direction: row;
+        width: 500px;
+    }
+
+    .submit_btn {
+        margin-bottom: 30px;
     }
 }
 

@@ -51,21 +51,49 @@ function add_my_files() {
         wp_enqueue_script('index-js',get_template_directory_uri().'/assets/js/index.js',array('header-js'),'1.0',true);
     }
 
-    //taxsonomy-areaページのみ出力
+    //taxonomy-areaページのみ出力
     if (is_tax('area')) {
-        wp_enqueue_style('taxsonomy-area-css',get_template_directory_uri() . '/assets/css/taxsonomy-area.css',array('common-css')
+        wp_enqueue_style('taxonomy-area-css',get_template_directory_uri() . '/assets/css/taxonomy-area.css',array('common-css')
         );
         //tag.jsの読み込み
         wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
     }
 
+    //taxonomy-linkページのみ出力
+    if (is_tax('link')) {
+        wp_enqueue_style('taxonomy-link-css',get_template_directory_uri() . '/assets/css/page-links.css',array('common-css')
+        );
+    }
+
+
+
+
     //single-cafeinfoページのみ出力
-    if (is_single('cafeinfo')) {
+    if (is_singular('cafeinfo')) {
         wp_enqueue_style('single-cafeinfo-css',get_template_directory_uri() . '/assets/css/single-cafeinfo.css',array('common-css')
         );
         //single-cafeinfo.jsの読み込み
         wp_enqueue_script('single-cafeinfo-js',get_template_directory_uri().'/assets/js/single-cafeinfo.js',array('header-js'),'1.0',true);
     }
+
+    //single-interviewページのみ出力
+    if (is_singular('interview')) {
+        wp_enqueue_style('single-interview-css',get_template_directory_uri() . '/assets/css/single-interview.css',array('common-css')
+        );
+    }
+
+    //記事一覧ページのみ出力
+    if (is_page('post') || is_category()) {
+        wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
+        );
+    }
+
+    //記事詳細ページのみ出力
+    if (is_single()) {
+        wp_enqueue_style('single-post-css',get_template_directory_uri() . '/assets/css/single-post.css',array('common-css')
+        );
+    }
+
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
@@ -75,15 +103,24 @@ add_action('wp_enqueue_scripts' ,'add_my_files');
 //投稿表示件数を変更する
 function my_pre_get_posts($query) {
     //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || $query->is_main_query()) {
+    if (is_admin() || ! $query->is_main_query()) {
         return;
     }
 
-    //トップページの場合
-    if ($query->is_front_page()) {
-        $query->set('posts_per_page', 3);
+    // //トップページの場合
+    // if ($query->is_front_page()) {
+    //     $query->set('posts_per_page', 2);
+    //     return;
+    // }
+
+    // 固定ページの場合
+    if ($query->is_page('post')) {
+        $query->set('posts_per_page',5);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
         return;
     }
+
+
 
     //インタビュー一覧ページの場合
     // if ($query->is_archive('interview')) {

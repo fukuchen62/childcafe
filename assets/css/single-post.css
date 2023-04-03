@@ -1,0 +1,107 @@
+@charset "utf-8";
+.mb0 {
+    margin-bottom: 0;
+}
+
+.news_title {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.category_tag {
+    display: inline-block;
+    padding: 0 20px;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid #f8b600;
+}
+
+.tag_box {
+    position: relative;
+    left: 120px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.s-p_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.news_btn {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #e9fcc1;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+.category_list {
+    display: none;
+}
+
+@media (min-width: 770px) {
+    .btn {
+        display: none;
+    }
+    .category_tag {
+        display: none;
+    }
+    .title {
+        margin-bottom: 50px;
+    }
+    .text {
+        width: 400px;
+    }
+    /* カテゴリーリスト */
+    .category_list {
+        display: block;
+        position: relative;
+        text-decoration: underline solid 1px black;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .bgcnone {
+        background-color: white;
+        border: 3px solid #ffdf8c;
+        width: 265px;
+        border-radius: 37px;
+        padding-top: 80px;
+        padding-bottom: 10px;
+    }
+    .category_title {
+        position: absolute;
+        margin-bottom: 0;
+        margin-top: 0;
+        left: -20px;
+        right: 0;
+        top: 15px;
+        font-size: 24px;
+        display: inline-block;
+        width: 304px;
+        background-color: #d9cdb0;
+        border-radius: 10px;
+        border-top: 5px dotted white;
+        border-bottom: 5px dotted white;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+    .category_item + .category_item {
+        margin-top: 20px;
+    }
+    /* カテゴリーリストここまで */
+    .s-p_between {
+        display: flex;
+        justify-content: space-between;
+    }
+}

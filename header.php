@@ -40,22 +40,22 @@
                         <a class="a_menu" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン" /></a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('concept'); ?>"> こども食堂とは</a>
+                        <a href="<?php echo home_url('concept'); ?>">こども食堂とは</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('support'); ?>"> 支援者の方へ</a>
+                        <a href="<?php echo home_url('support'); ?>">支援したい方へ</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('interview'); ?>"> 特集記事</a>
+                        <a href="<?php echo home_url('interview'); ?>">特集記事</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('area/east'); ?>"> エリアからさがす</a>
+                        <a href="<?php echo home_url('area/east'); ?>">エリアからさがす</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('search'); ?>"> 条件からさがす</a>
+                        <a href="<?php echo home_url('search'); ?>">条件からさがす</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('event'); ?>"> 今月の開催情報</a>
+                        <a href="<?php echo home_url('event'); ?>">今月の開催情報</a>
                     </li>
                     <!-- 検索機能 -->
                     <li class="btn_header menu_search">
