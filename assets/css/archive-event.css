@@ -1,31 +1,87 @@
 @charset "utf-8";
-.title {
-    margin-top: 80px;
-}
 
 .ivent_title {
+    width: 275px;
     margin: 0 auto;
-    width: 320px;
 }
 
 .ivent_title img {
-    width: 305px;
     border-radius: 22px;
+    margin: 0 auto;
 }
 
 .ivent_appeal {
-    margin: 0 auto;
-    width: 305px;
-    height: 180px;
-    background-color: #f7dd94;
+    width: 283px;
+    height: 200px;
+    margin: 30px auto;
+    padding: 10px;
     border-radius: 10px;
-    margin-top: 60px;
+    background-color: #f7dd94;
 }
 
-.sacle p {
-    width: 80%;
-    height: auto;
+.ivent_appeal_text {
+    width: 60%;
+    height: 35px;
+    text-align: center;
+    padding: 2px;
     margin: 0 auto;
-    padding: 35px;
+    background-color: #fff8e6;
     border-radius: 10px;
+}
+
+.ivent_table {
+    border: 1px solid #ffb700;
+    background-color: #fffbf1;
+    margin: 0 auto 70px;
+    /* 角丸 */
+    border-collapse: separate;
+    overflow: hidden;
+    border-spacing: 0;
+    border-radius: 10px;
+    border: 1px solid #ffb700;
+
+    th,
+    td {
+        vertical-align: middle;
+        border-right: 1px solid #ffb700;
+        border-bottom: 1px solid #ffb700;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    thead {
+        th {
+        }
+    }
+
+    tbody {
+        tr {
+            &:last-child {
+                th,
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+tr,
+td {
+    font-size: 15px;
+    border: 1px solid #ffb700;
+}
+
+.ivent_table_tdtitle {
+    width: 120px;
+    text-align: justify;
+    background-color: #e9fcc1;
+    border: 1px solid #ffb700;
+}
+
+.ivent_map {
+    width: 260px;
+    margin: 0 auto;
 }
