@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-
-
 <?php get_template_part('template-parts/breadcrumb'); ?>
+<?php
+$service_array = get_field('service');
+$license = the_field('license');
+?>
 
 <main>
     <div class="main_inner">
@@ -46,8 +48,8 @@
                     <p><?php the_field('place'); ?></p>
                 </div>
                 <div class="detail_item">
-                    <h3 class="subtitle">担当者</h3>
-                    <p>山田　花子</p>
+                    <h3 class="subtitle"><?php echo get_field_object('name')['label']; ?></h3>
+                    <p><?php the_field('name'); ?></p>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">開催日時・頻度</h3>
@@ -136,8 +138,20 @@
                     <div class="others">
                         <h3 class="subtitle">取り扱いのあるもの</h3>
                         <div class="others_item">
-                            <p>おもちゃ</p>
-                            <p>おむつ交換スペース</p>
+                            <?php foreach($service_array as $service): ?>
+                            <?php if(is_array($service)): ?>
+                            <?php $service_value = $service['value']; ?>
+                            <p>
+                                <?php
+                                if ($service_value == 'その他資格者') {
+                                    the_field('license');
+                                } else {
+                                    echo $service_value;
+                                }
+                                ?>
+                            </p>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                     <div class="addressmap">
