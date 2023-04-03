@@ -1,29 +1,26 @@
 @charset "utf-8";
 
-.area_label {
+/***********************
+        アコーディオン
+ **********************/
+.ac_label {
     width: 200px;
     height: 45px;
     padding-top: 10px;
-    background-color: #f7dd94;
+    border: 2px solid orange;
+    background-color: white;
     border-radius: 10px;
     background-image: url(../images/pulldown.png); /*--矢印の画像を指定--*/
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: right 5px center;
 }
-.area_list {
+.ac_list {
     display: none;
 }
 
-.area_list ul {
-}
-
-.area_list ul > li {
-}
-
-.area_list input[type="checkbox"] {
-    -webkit-appearance: auto;
-    /* appearance: auto; */
+.ac_list input[type="checkbox"] {
+    appearance: auto;
 }
 
 .open {
@@ -84,23 +81,21 @@
 .form2,
 .form3 {
     width: 90%;
-    padding-top: 10px;
+    height: auto;
+    padding: 20px 0;
     margin: 0 auto;
     border-radius: 10px;
 }
 
 .form1 {
-    height: 950px;
     background-color: #f7dd94;
 }
 
 .form2 {
-    height: 600px;
     background-color: #d7f794;
 }
 
 .form3 {
-    height: 1100px;
     background-color: #fdffb0;
 }
 
@@ -327,17 +322,6 @@
 }
 
 @media screen and (min-width: 770px) {
-    .form1 {
-        height: 1050px;
-    }
-
-    .form2 {
-        height: 650px;
-    }
-
-    .form3 {
-        height: 750px;
-    }
     .item_title {
         margin-bottom: 20px;
     }
@@ -349,6 +333,11 @@
 
     .time_wrap {
         width: 250px;
+    }
+
+    .ac_label {
+        width: 350px;
+        height: 55px;
     }
 
     .age_select {
