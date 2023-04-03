@@ -1,42 +1,32 @@
 @charset "utf-8";
-.multiple-select input {
-    appearance: auto;
-    -webkit-appearance: auto;
-}
 
-.ms-choice {
+/***********************
+        アコーディオン
+ **********************/
+.ac_label {
+    width: 200px;
     height: 45px;
+    padding-top: 10px;
     border: 2px solid orange;
+    background-color: white;
     border-radius: 10px;
+    background-image: url(../images/pulldown.png); /*--矢印の画像を指定--*/
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 5px center;
 }
-
-nav input {
-    appearance: auto;
-    -webkit-appearance: auto;
-}
-
-nav {
+.ac_list {
     display: none;
 }
 
-.nav-open {
-    height: 40px;
-    padding: 15px;
-    color: #fff;
-    font-size: 20px;
-    background: #2073c8;
-    position: relative;
+.ac_list input[type="checkbox"] {
+    appearance: auto;
 }
-.nav-open::before {
-    /* 閉じている時 */
-    content: "＋";
-    position: absolute;
-    right: 20px;
+
+.open {
+    background-image: url(../images/index/矢印ボタン\　上2.png); /*--矢印の画像を指定--*/
 }
-.nav-open.active::before {
-    /* 開いている時 */
-    content: "－";
-}
+
 /***********************
         タブ 
  **********************/
@@ -91,23 +81,21 @@ nav {
 .form2,
 .form3 {
     width: 90%;
-    padding-top: 10px;
+    height: auto;
+    padding: 20px 0;
     margin: 0 auto;
     border-radius: 10px;
 }
 
 .form1 {
-    height: 950px;
     background-color: #f7dd94;
 }
 
 .form2 {
-    height: 600px;
     background-color: #d7f794;
 }
 
 .form3 {
-    height: 1100px;
     background-color: #fdffb0;
 }
 
@@ -334,17 +322,6 @@ nav {
 }
 
 @media screen and (min-width: 770px) {
-    .form1 {
-        height: 1050px;
-    }
-
-    .form2 {
-        height: 650px;
-    }
-
-    .form3 {
-        height: 750px;
-    }
     .item_title {
         margin-bottom: 20px;
     }
@@ -356,6 +333,11 @@ nav {
 
     .time_wrap {
         width: 250px;
+    }
+
+    .ac_label {
+        width: 350px;
+        height: 55px;
     }
 
     .age_select {
