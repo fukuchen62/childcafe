@@ -182,7 +182,12 @@ html {
     }
 
     .pickup_slide li {
-        margin: 0 10px;
+        margin: 0 15px;
+    }
+
+    .pickup_slider img {
+        width: 280px;
+        height: 200px;
     }
 }
 
