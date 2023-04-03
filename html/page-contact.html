@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>お問い合わせ</title>
+        <!-- reset css -->
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <!-- common css -->
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <!-- header footer css -->
+        <link rel="stylesheet" href="../assets/css/header.css" />
+        <link rel="stylesheet" href="../assets/css/footer.css" />
+        <!-- contact css -->
+        <link rel="stylesheet" href="../assets/css/page-contact.css" />
+        <!-- Googlefont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- jquery -->
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>
+        <div class="body_inner">
+            <header class="header">
+                <div class="header_inner flex">
+                    <div class="header_logo">
+                        <a href="#"
+                            ><img
+                                src="../assets/images/ロゴ（仮）.png"
+                                alt="ホームボタン"
+                        /></a>
+                    </div>
+
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- hamburger箱end -->
+                    <nav class="menu_pc">
+                        <ul class="menu_pc_ul flex">
+                            <li class="btn_header_pc_1 flex">
+                                <a href="#"> こども食堂とは</a>
+                            </li>
+                            <li class="btn_header_pc_2 flex">
+                                <a href="#"> 支援したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_3 flex">
+                                <a href="#"> 特集記事</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> エリアから<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_6 flex">
+                                <a href="#">開催情報</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a class="a_menu" href="#"
+                                ><img
+                                    src="../assets/images/ロゴ（仮）.png"
+                                    alt="ホームボタン"
+                            /></a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> こども食堂とは</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> エリアからさがす</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 条件からさがす</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 開催情報</a>
+                        </li>
+                        <!-- 検索機能 -->
+                        <li class="btn_header menu_search">
+                            <form class="hbg_search" action="#" method="#">
+                                <input
+                                    type="hidden"
+                                    name="search_type"
+                                    value=""
+                                />
+                                <input
+                                    class="hbg_form"
+                                    size="25"
+                                    type="search"
+                                    value=""
+                                    name="search"
+                                    placeholder="キーワードを入力"
+                                    id=""
+                                />
+                                <input
+                                    class="hbg_submit fas"
+                                    type="submit"
+                                    value="   "
+                                    name=" "
+                                />
+                            </form>
+                        </li>
+                        <!-- 検索機能end -->
+                    </ul>
+                </nav>
+                <!-- hamburger中身end -->
+            </header>
+            <main>
+                <div class="main_inner">
+                    <h2 class="title">お問い合わせ</h2>
+                    <!-- 各子供食堂 -->
+                    <section class="contact1">
+                        <h3 class="subtitle">
+                            各子供食堂へのお問い合わせについて
+                        </h3>
+                        <div class="text">
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </div>
+                        <div class="btn"><a href="#">各食堂一覧</a></div>
+                    </section>
+                    <!-- 各子供食堂 終了-->
+
+                    <!-- 全体への問い合わせ -->
+                    <section class="contact2">
+                        <h3 class="subtitle">全体への問い合わせはこちら</h3>
+                        <form class="form" action="#" method="post">
+                            <div class="contact2_inner">
+                                <!-- お問い合わせ項目 -->
+                                <div class="contact_item flex">
+                                    <label
+                                        for="contact_subjects"
+                                        class="contact_subjects"
+                                        >お問い合わせ項目</label
+                                    >
+                                    <select
+                                        name="contact_subjects"
+                                        id="contact_subjects"
+                                    >
+                                        <option value="">
+                                            選択してください
+                                        </option>
+                                        <option value="支援について">
+                                            支援について
+                                        </option>
+                                        <option value="利用について">
+                                            利用について
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- お問い合わせ項目 終了-->
+
+                                <!-- 名前 -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="name">名前</label>
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        required
+                                        placeholder="徳島　花子"
+                                    />
+                                </div>
+                                <!-- フリガナ -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="furigana">フリガナ</label>
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="furigana"
+                                        id="furigana"
+                                        required
+                                        placeholder="トクシマ　ハナコ"
+                                    />
+                                </div>
+                                <!-- メール -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="email"
+                                            >メールアドレス</label
+                                        >
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                        placeholder="sample@gmail.com"
+                                    />
+                                </div>
+                                <!-- メッセージ -->
+                                <div class="contact_message flex">
+                                    <label for="message">メッセージ</label>
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        cols="30"
+                                        rows="5"
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <p>個人情報の取り扱いについて</p>
+                                <div class="checkbox-001">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />同意する
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- ボタン -->
+                            <div class="form_btns flex">
+                                <input
+                                    class="btn submit_btn"
+                                    type="submit"
+                                    value="送信"
+                                />
+                                <input
+                                    class="btn reset_btn"
+                                    type="reset"
+                                    value="リセット"
+                                />
+                            </div>
+                        </form>
+                    </section>
+                    <!-- 全体への問い合わせ 終了-->
+                </div>
+            </main>
+            <script src="../assets/js/header.js"></script>
+        </div>
+    </body>
+</html>
