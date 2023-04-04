@@ -7,8 +7,7 @@
     $area = get_term_by('slug', $area_slug, 'area');
     //開いているページの子カテゴリの情報を取得
     // $town_slug = get_query_var('area_child');
-    // $town = get_term_by('slug', $town_slug, 'area');
-
+    // $town = get_term_by('slug', $town_slug, 'area')
 
     $args = array(
         'post_type' => 'cafeinfo',
@@ -41,9 +40,7 @@
         <!-- 市町村別一覧 -->
         <div class="list_area flex">
             <!-- 東部 -->
-            <div class="area_list1 panel tab-<?php echo $area->name; ?> is-show">
-                <!-- アルファベットではなく、tab_eastのようになると呼び出しがシンプル(echo $area->name;だけ)になるので,
-                できれば変更お願いしたい（依頼） -->
+            <div class="area_<?php echo $area->slug; ?> panel is-show">
                 <h2 class="title"><?php echo $area->name; ?>市町村一覧</h2>
                 <ul class="area_list_wrap flex">
                     <?php
@@ -56,7 +53,7 @@
                             'order' => 'ASC',
                         ));
                         foreach ($towns as $town) {
-                            echo '<li>'.$town->name.'（'.$town->count.'）'.'</li>';
+                            echo '<li><a href="'.get_term_link($town).'">'.$town->name.'（'.$town->count.'）'.'</a></li>';
                         }
                     ?>
                 </ul>
