@@ -6,6 +6,17 @@
 .text {
     padding: 20px;
     border-radius: 10px;
-    text-align: left;
     background-color: #e9fcc1;
+    text-align: center;
+}
+
+.text p:nth-child(1) {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 770px) {
+    .text {
+        width: 620px;
+    }
 }
