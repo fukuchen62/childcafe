@@ -120,6 +120,10 @@ td {
     flex-direction: column;
 }
 
+.sp {
+    display: inline-block;
+}
+
 @media (min-width: 770px) {
     .main_inner {
         position: relative;

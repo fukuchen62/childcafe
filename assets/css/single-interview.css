@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-.pickup_single_title {
-    width: 100%;
+.pickup_title {
     text-align: center;
+    line-height: 2.1;
     font-size: 20px;
     font-weight: 500;
     text-decoration: underline dotted 5px #ffb700;
@@ -67,6 +67,15 @@
 
 .btn_pickup_single {
     background-color: #e9fcc1;
+}
+
+.child_text,
+.adult_text {
+    font-size: 18px;
+    width: 80px;
+    text-decoration: underline 3px #ffe0ff;
+    text-underline-offset: 10px;
+    margin: 20px 0;
 }
 
 @media (min-width: 770px) {
