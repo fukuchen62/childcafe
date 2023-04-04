@@ -94,6 +94,11 @@ function add_my_files() {
         );
     }
 
+    // page-contactのみ出力
+    if (is_page('contact')) {
+        wp_enqueue_style('page-contact-css', get_template_directory_uri() . '/assets/css/page-contact.css', array('common-css')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
