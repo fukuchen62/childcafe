@@ -4,25 +4,25 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>特集記事一覧</title>
+        <title>お問い合わせ</title>
         <!-- reset css -->
         <link rel="stylesheet" href="../assets/css/reset.css" />
-        <!-- slick css -->
-        <link rel="stylesheet" href="../assets/slick/css/slick.css" />
-        <link rel="stylesheet" href="../assets/slick/css/slick-theme.css" />
-        <!-- css -->
+        <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
-        <link rel="stylesheet" href="../assets/css/archive-interview.css" />
-
-        <!-- js -->
-        <script src="../assets/js/jquery-3.6.3.min.js"></script>
-        <!-- slick js -->
-        <script src="../assets/slick/js/slick.min.js"></script>
-        <!-- Googleフォント -->
+        <!-- header footer css -->
+        <link rel="stylesheet" href="../assets/css/header.css" />
+        <link rel="stylesheet" href="../assets/css/footer.css" />
+        <!-- contact css -->
+        <link rel="stylesheet" href="../assets/css/page-contact.css" />
+        <!-- Googlefont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Maru+Gothic&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
+        <!-- jquery -->
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
         <div class="body_inner">
@@ -152,76 +152,130 @@
             </header>
             <main>
                 <div class="main_inner">
-                    <div class="pickup_title">
-                        <h2 class="title">特集記事　一覧</h2>
+                    <h2 class="title">お問い合わせ</h2>
+                    <!-- 各子供食堂 -->
+                    <section class="contact1">
+                        <h3 class="subtitle">
+                            各子供食堂へのお問い合わせについて
+                        </h3>
                         <div class="text">
-                            <div class="intro">
-                                <p class="subtitle left">特集記事とは</p>
-                                <p>
-                                    テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト
-                                </p>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </div>
+                        <div class="btn"><a href="#">各食堂一覧</a></div>
+                    </section>
+                    <!-- 各子供食堂 終了-->
+
+                    <!-- 全体への問い合わせ -->
+                    <section class="contact2">
+                        <h3 class="subtitle">全体への問い合わせはこちら</h3>
+                        <form class="form" action="#" method="post">
+                            <div class="contact2_inner">
+                                <!-- お問い合わせ項目 -->
+                                <div class="contact_item flex">
+                                    <label
+                                        for="contact_subjects"
+                                        class="contact_subjects"
+                                        >お問い合わせ項目</label
+                                    >
+                                    <select
+                                        name="contact_subjects"
+                                        id="contact_subjects"
+                                    >
+                                        <option value="">
+                                            選択してください
+                                        </option>
+                                        <option value="支援について">
+                                            支援について
+                                        </option>
+                                        <option value="利用について">
+                                            利用について
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- お問い合わせ項目 終了-->
+
+                                <!-- 名前 -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="name">名前</label>
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        required
+                                        placeholder="徳島　花子"
+                                    />
+                                </div>
+                                <!-- フリガナ -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="furigana">フリガナ</label>
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="furigana"
+                                        id="furigana"
+                                        required
+                                        placeholder="トクシマ　ハナコ"
+                                    />
+                                </div>
+                                <!-- メール -->
+                                <div class="contact_item flex">
+                                    <div class="required_item flex">
+                                        <label for="email"
+                                            >メールアドレス</label
+                                        >
+                                        <small>必須</small>
+                                    </div>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                        placeholder="sample@gmail.com"
+                                    />
+                                </div>
+                                <!-- メッセージ -->
+                                <div class="contact_message flex">
+                                    <label for="message">メッセージ</label>
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        cols="30"
+                                        rows="5"
+                                    ></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="pickup_item pickup_flex">
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
+                            <div class="contact_item">
+                                <p>個人情報の取り扱いについて</p>
+                                <div class="checkbox-001">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox-001"
+                                        />同意する
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- ボタン -->
+                            <div class="form_btns flex">
+                                <input
+                                    class="btn submit_btn"
+                                    type="submit"
+                                    value="送信"
                                 />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
+                                <input
+                                    class="btn reset_btn"
+                                    type="reset"
+                                    value="リセット"
                                 />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="pickup_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="page_nav flex">
-                        <div class="page_triangle_left"></div>
-                        <div class="page_number">1</div>
-                        <div class="page_number">2</div>
-                        <div class="page_number">3</div>
-                        <div class="page_triangle_right"></div>
-                    </div>
+                            </div>
+                        </form>
+                    </section>
+                    <!-- 全体への問い合わせ 終了-->
                 </div>
             </main>
             <footer class="footer">
@@ -250,7 +304,9 @@
                                         <a href="#">FAQ</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">特集記事</a>
+                                        <a href="#"
+                                            >特集記事Pick Upインタビュー一覧</a
+                                        >
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">ニュース一覧</a>
@@ -265,7 +321,7 @@
                                 <p>こども食堂をみつける</p>
                                 <ul class="footer_nav_menu">
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">こども食堂MAP</a>
+                                        <a href="#">エリアをしらべる</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">こども食堂一覧</a>
@@ -280,7 +336,7 @@
                                         <a href="#">こども食堂　南部</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">条件検索</a>
+                                        <a href="#">条件でさがす</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">支援したい方へ</a>
@@ -303,13 +359,15 @@
                                         <a href="#">こども食堂関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">第三の居場所関連</a>
+                                        <a href="#">こどもの居場所関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">このサイトについて</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">プライバシーポリシー</a>
+                                        <a href="#"
+                                            >プライバシーポリシー・免責事項</a
+                                        >
                                     </li>
                                 </ul>
                             </li>
@@ -324,5 +382,6 @@
                 <!-- footer_inner end -->
             </footer>
         </div>
+        <script src="../assets/js/header.js"></script>
     </body>
 </html>
