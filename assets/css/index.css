@@ -164,6 +164,40 @@ html {
     margin: 0 auto;
 }
 
+.slick-prev:before {
+    content: "<";
+    color: #fff;
+    opacity: 1;
+    font-size: 14px;
+}
+.slick-next:before {
+    content: ">";
+    color: #fff;
+    opacity: 1;
+    font-size: 14px;
+}
+
+.slick-prev {
+    z-index: 1;
+    width: auto;
+    height: auto;
+    left: -28px;
+    padding: 10px;
+    color: white;
+    background-color: #ffb700;
+    border-radius: 50%;
+}
+
+.slick-next {
+    width: auto;
+    height: auto;
+    right: -28px;
+    padding: 10px;
+    color: white;
+    background-color: #ffb700;
+    border-radius: 50%;
+}
+
 .pickup_slider img {
     width: 214px;
     height: 221px;
