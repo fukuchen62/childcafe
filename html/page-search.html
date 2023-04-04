@@ -152,13 +152,13 @@
                     <h2 class="title">詳細検索</h2>
                     <!-- タブ -->
                     <ul class="tab flex">
-                        <li class="tab_1 tab_js tab-A">基本情報</li>
-                        <li class="tab_2 tab_js tab-B">日時</li>
-                        <li class="tab_3 tab_js tab-C">こだわり</li>
+                        <li class="tab_1 tab_js info">基本情報</li>
+                        <li class="tab_2 tab_js daytime">日時</li>
+                        <li class="tab_3 tab_js favorite">こだわり</li>
                     </ul>
                     <form action="#" method="get">
                         <!-- タブ１項目 -->
-                        <section class="form1 panel tab-A is-show">
+                        <section class="form1 panel info is-show">
                             <h3 class="subtitle">子供食堂をしらべる</h3>
                             <div class="form_wrap">
                                 <!-- エリア検索欄 -->
@@ -544,7 +544,7 @@
                         <!-- タブ１項目 終了-->
 
                         <!-- タブ２項目 -->
-                        <section class="form2 tab-B panel">
+                        <section class="form2 daytime panel">
                             <h3 class="subtitle">子供食堂をしらべる</h3>
                             <div class="form_wrap">
                                 <!-- 参加対象 -->
@@ -688,7 +688,7 @@
                         <!-- タブ２項目 終了-->
 
                         <!-- タブ３項目 -->
-                        <section class="form3 tab-C panel">
+                        <section class="form3 favorite panel">
                             <h3 class="subtitle">子供食堂をしらべる</h3>
                             <div class="form_wrap">
                                 <div class="checkbox-001">
@@ -696,7 +696,6 @@
                                         <input
                                             type="checkbox"
                                             name="checkbox-001"
-                                            checked
                                         />おもちゃ
                                     </label>
                                     <label>
@@ -838,9 +837,112 @@
                     <!-- 検索結果表示 終了-->
                 </div>
             </main>
-            <script src="../assets/js/tab.js"></script>
-            <script src="../assets/js/page-search.js"></script>
-            <script src="../assets/js/header.js"></script>
+            <footer class="footer">
+                <!-- 波型の画像 -->
+                <img
+                    class="footer_wave"
+                    src="../assets/images/footer_wave.svg"
+                    alt=""
+                />
+                <div class="footer_inner">
+                    <nav class="footer_container with_girl">
+                        <!-- 女の子の画像 -->
+                        <img
+                            src="../assets/images/girl.png"
+                            alt=""
+                            class="footer_girl"
+                        />
+                        <ul class="footer_nav flex">
+                            <li class="footer_nav_title_concept">
+                                <p>こども食堂とは</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">ことも食堂とは</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#"
+                                            >特集記事Pick Upインタビュー一覧</a
+                                        >
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">ニュース一覧</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">お問い合わせ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- こども食堂とはend -->
+                            <li class="footer_nav_title_taxonomy_area">
+                                <p>こども食堂をみつける</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">エリアをしらべる</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂一覧</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　東部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　西部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　南部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">条件でさがす</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">支援したい方へ</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#"
+                                            >Amazonみんなで応援プログラム</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- こども食堂をみつけるend -->
+                            <li class="footer_nav_title_other">
+                                <p>その他</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">子育て支援関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こどもの居場所関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">このサイトについて</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#"
+                                            >プライバシーポリシー・免責事項</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- その他end -->
+                        </ul>
+                        <!-- footer_nav end -->
+                        <div class="footer_copyright">
+                            <p>copyright©</p>
+                        </div>
+                    </nav>
+                </div>
+                <!-- footer_inner end -->
+            </footer>
         </div>
+        <script src="../assets/js/tab.js"></script>
+        <script src="../assets/js/page-search.js"></script>
+        <script src="../assets/js/header.js"></script>
     </body>
 </html>

@@ -151,12 +151,18 @@
             <div class="main_inner">
                 <!-- 項目タブ -->
                 <ul class="tab flex">
-                    <li class="tab_1"><a href="#">子供食堂関連</a></li>
-                    <li class="tab_2"><a href="#">子育て支援関連</a></li>
-                    <li class="tab_3"><a href="#">第三支援関連</a></li>
+                    <li class="tab_1 tab_js childcafe">
+                        <a href="#">子供食堂関連</a>
+                    </li>
+                    <li class="tab_2 tab_js childsupport">
+                        <a href="#">子育て支援関連</a>
+                    </li>
+                    <li class="tab_3 tab_js childplace">
+                        <a href="#">第三支援関連</a>
+                    </li>
                 </ul>
                 <!-- 子供食堂関連リンク -->
-                <section class="link_content1">
+                <section class="link_content1 childcafe panel is-show">
                     <h2 class="title">子供食堂関連</h2>
                     <div class="link_wrap">
                         <div class="link">
@@ -189,7 +195,7 @@
                     </div>
                 </section>
                 <!-- 子育て支援関連リンク -->
-                <section class="link_content2">
+                <section class="link_content2 childsupport panel is-show">
                     <h2 class="title">子育て支援関連</h2>
                     <div class="link_wrap">
                         <div class="link">
@@ -222,7 +228,7 @@
                     </div>
                 </section>
                 <!-- 第三の居場所関連リンク -->
-                <section class="link_content3">
+                <section class="link_content3 childplace panel is-show">
                     <h2 class="title page_link_title">第三の居場所関連</h2>
                     <div class="link_wrap">
                         <div class="link">
@@ -352,6 +358,7 @@
             </div>
             <!-- footer_inner end -->
         </footer>
+        <script src="../assets/js/tab.js"></script>
         <script src="../assets/js/header.js"></script>
     </body>
 </html>

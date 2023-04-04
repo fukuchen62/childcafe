@@ -192,9 +192,7 @@
         width: 600px;
         margin: 0 auto;
     }
-    .others {
-        height: 300px;
-    }
+
     .bgcolor_flex {
         display: flex;
         justify-content: space-between;
