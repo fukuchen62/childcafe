@@ -51,9 +51,9 @@ main {
     flex-direction: column;
 }
 
-.area_list1,
-.area_list2,
-.area_list3 {
+.area_east,
+.area_south,
+.area_west {
     /* max-width: 730px; */
     width: 90%;
     height: auto;
@@ -62,15 +62,15 @@ main {
     padding: 25px 20px;
 }
 
-.area_list1 {
+.area_east {
     background-color: #f7dd94;
 }
 
-.area_list2 {
+.area_south {
     background-color: #d7f794;
 }
 
-.area_list3 {
+.area_west {
     background-color: #fdffb0;
 }
 
@@ -129,9 +129,9 @@ main {
         justify-content: space-around;
     }
 
-    .area_list1,
-    .area_list2,
-    .area_list3 {
+    .area_east,
+    .area_south,
+    .area_west {
         width: 300px;
         margin: 50px 50px 0 50px;
     }
