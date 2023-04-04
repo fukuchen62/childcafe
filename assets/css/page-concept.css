@@ -7,10 +7,63 @@
 .title {
     width: 180px;
     margin: 50px auto;
+    z-index: 10;
+    position: relative;
 }
 
+.text {
+    z-index: 10;
+    position: relative;
+}
 @media screen and (min-width: 770px) {
     .qbtn {
         margin-top: 50px;
+    }
+}
+.concept {
+    position: relative;
+    padding-bottom: 200px;
+    overflow: hidden;
+}
+
+.concept_img {
+    position: absolute;
+}
+
+.rice {
+    width: 379px;
+    height: 379px;
+    top: -40px;
+    left: -30%;
+    opacity: 40%;
+    z-index: 1;
+}
+
+.curry {
+    width: 316px;
+    height: 316px;
+    right: -90px;
+    top: 720px;
+    z-index: 1;
+    opacity: 30%;
+}
+
+@media (min-width: 770px) {
+    .concept {
+        overflow: visible;
+        padding-bottom: 320px;
+        padding-top: 150px;
+    }
+    .rice {
+        width: 875px;
+        height: 900px;
+        top: -50px;
+        left: -52%;
+    }
+    .curry {
+        width: 826px;
+        height: 826px;
+        top: 400px;
+        right: -40%;
     }
 }
