@@ -1,5 +1,21 @@
 @charset "utf-8";
 
+/* トップページへ戻るボタン */
+.toppage_btn {
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 1;
+}
+
+.toppage_btn img {
+    width: 100%;
+    height: 100%;
+}
+/*****************************/
+
 body {
     line-height: 1.8;
     font-family: "Zen Maru Gothic", sans-serif;
