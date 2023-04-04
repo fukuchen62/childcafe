@@ -104,6 +104,15 @@ main {
     flex-wrap: wrap;
 }
 
+/* flex-wrap最後の配置を整える */
+.area_list_wrap:after {
+    content: "";
+    width: 50%;
+    margin-top: 5px 0;
+    color: aliceblue;
+    /* background-color: #f44336; */
+}
+
 .area_list_wrap li {
     text-align: center;
     width: 50%;
