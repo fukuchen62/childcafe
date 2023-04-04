@@ -1,0 +1,11 @@
+@charset "utf-8";
+.faq {
+    width: 100%;
+}
+
+.text {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #e9fcc1;
+}
