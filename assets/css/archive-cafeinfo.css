@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+.cafeinfo_tab {
+    width: 166px;
+    height: 55px;
+    padding: 13px 0;
+    text-align: center;
+    background-color: #f7dd94;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.orange {
+    background-color: #f7dd94;
+}
+
+.green {
+    background-color: #d7f794;
+}
+
+.yellow {
+    background-color: #fdffb0;
+}
+
+.cafeinfo_section {
+    margin: 50px 20%;
+}
+
+.cafeinfo_subtitle {
+    font-size: 20px;
+}
+
+.cafeinfo p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cafeinfo a {
+    padding: 10px 0;
+}
+
+@media screen and (min-width: 770px) {
+    .cafeinfo_tab {
+        width: 70%;
+    }
+
+    .cafeinfo_subtitle {
+        margin: 10px 0;
+    }
+
+    .cafeinfo p {
+        display: inline-block;
+        margin: 20px 40px;
+    }
+}
