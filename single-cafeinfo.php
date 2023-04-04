@@ -2,7 +2,6 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 $service_array = get_field('service');
-$license = the_field('license');
 ?>
 
 <main>
@@ -44,8 +43,8 @@ $license = the_field('license');
         <div class="beige color">
             <div class="beige_inner m1024">
                 <div class="detail_item">
-                    <h3 class="subtitle"><?php echo get_field_object('place')['label']; ?></h3>
-                    <p><?php the_field('place'); ?></p>
+                    <h3 class="subtitle"><?php echo get_field_object('address')['label']; ?></h3>
+                    <p><?php the_field('address'); ?></p>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle"><?php echo get_field_object('name')['label']; ?></h3>
