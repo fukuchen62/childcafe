@@ -1,8 +1,13 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
-$service_array = get_field('service');
-$event = get_field('event_id');
+$event_id = get_field('event_id');
+$service_array = get_field('service', $event_id);
+$event_fields = get_field_objects($event_id);
+$events = $event_fields;
+unset($events['class'],$events['place_map'],$events['service'],$events['service'],$events['pic1'],$events['pic2'],$events['pic3'],$events['pic4'],$events['pic5'],$events['pic6'],$events['pic7'],$events['pic8'],$events['pic9'],$events['pic10'],$events['eye_catching'],$events['id'],$events['appeal'],$events['license']);
+
+
 ?>
 
 <main>
@@ -47,11 +52,29 @@ $event = get_field('event_id');
         </div>
         <div class="beige color">
             <div class="beige_inner m1024">
+                <?php
+                foreach( $events as $event): ?>
                 <div class="detail_item">
-                    <h3 class="subtitle"><?php echo get_field_object('address', $event)['label']; ?></h3>
-                    <p><?php the_field('address', $event); ?></p>
+                    <?php if (! empty($event['value'])) : ?>
+                    <h3 class="subtitle">
+                        <?php echo $event['label']; ?>
+                    </h3>
+                    <?php if (! is_array($event['value'])) : ?>
+                    <p>
+                        <?php echo $event['value']; ?>
+                    </p>
+                    <?php else: ?>
+                    <?php foreach( $event['value'] as $value ): ?>
+                    <p>
+                        <?php echo $value; ?>
+                    </p>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php endif; ?>
                 </div>
-                <div class="detail_item">
+                <?php endforeach; ?>
+
+                <!-- <div class="detail_item">
                     <h3 class="subtitle">開催日時・頻度</h3>
                     <p>第第2、第3月曜日　午後5時30分~</p>
                     <p></p>
@@ -88,7 +111,7 @@ $event = get_field('event_id');
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">参加者の主な年代</h3>
-                </div>
+                </div> -->
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#d7f794" fill-opacity="1" d="M0,256L60,224C120,192,240,128,360,96C480,64,600,64,720,96C840,128,960,192,1080,208C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
@@ -139,24 +162,21 @@ $event = get_field('event_id');
                         <h3 class="subtitle">取り扱いのあるもの</h3>
                         <div class="others_item">
                             <?php foreach($service_array as $service): ?>
-                            <?php if(is_array($service)): ?>
-                            <?php $service_value = $service['value']; ?>
                             <p>
                                 <?php
-                                if ($service_value == 'その他資格者') {
-                                    the_field('license');
+                                if ($service == 'その他資格者') {
+                                    the_field('license',$event_id);
                                 } else {
-                                    echo $service_value;
+                                    echo $service;
                                 }
                                 ?>
                             </p>
-                            <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
                     <div class="addressmap">
                         <h3 class="subtitle">アクセス</h3>
-                        <?php the_field('place_map'); ?>
+                        <?php the_field('place_map',$event_id); ?>
                     </div>
                 </div>
                 <h3 class="subtitle_ulineorange">活動の様子</h3>
