@@ -51,9 +51,9 @@
     リンク集
  *****************/
 
-.link_content1,
-.link_content2,
-.link_content3 {
+.link_childcafe,
+.link_childsupport,
+.link_childplace {
     width: 300px;
     width: 80%;
     border-radius: 10px;
@@ -61,15 +61,15 @@
     padding: 20px;
 }
 
-.link_content1 {
+.link_childcafe {
     background-color: #f7dd94;
 }
 
-.link_content2 {
+.link_childsupport {
     background-color: #d7f794;
 }
 
-.link_content3 {
+.link_childplace {
     background-color: #fdffb0;
 }
 
@@ -104,9 +104,9 @@
 }
 
 @media screen and (min-width: 770px) {
-    .link_content1,
-    .link_content2,
-    .link_content3 {
+    .link_childcafe,
+    .link_childsupport,
+    .link_childplace {
         width: 700px;
     }
 
