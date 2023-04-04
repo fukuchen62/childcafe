@@ -25,48 +25,104 @@
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <header class="header">
-            <div class="header_inner flex">
-                <div class="header_logo">
-                    <a href="#"
-                        ><img
-                            src="../assets/images/ロゴ（仮）.png"
-                            alt="ホームボタン"
-                    /></a>
-                </div>
+        <div class="body_inner">
+            <header class="header">
+                <div class="header_inner flex">
+                    <div class="header_logo">
+                        <a href="#"
+                            ><img
+                                src="../assets/images/ロゴ（仮）.png"
+                                alt="ホームボタン"
+                        /></a>
+                    </div>
 
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- hamburger箱end -->
+                    <nav class="menu_pc">
+                        <ul class="menu_pc_ul flex">
+                            <li class="btn_header_pc_1 flex">
+                                <a href="#"> こども食堂とは</a>
+                            </li>
+                            <li class="btn_header_pc_2 flex">
+                                <a href="#"> 支援したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_3 flex">
+                                <a href="#"> 特集記事</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> エリアから<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_6 flex">
+                                <a href="#">開催情報</a>
+                            </li>
+                            <li>
+                                <form
+                                    class="btn_header_search_pc"
+                                    action="#"
+                                    method="#"
+                                >
+                                    <input
+                                        type="hidden"
+                                        name="search_type"
+                                        value=""
+                                    />
+                                    <input
+                                        class="hbg_form"
+                                        size="20"
+                                        type="search"
+                                        value=""
+                                        name="search"
+                                        placeholder="キーワードを入力"
+                                        id=""
+                                    />
+                                    <input
+                                        class="hbg_submit_pc"
+                                        type="submit"
+                                        value="   "
+                                        name=" "
+                                    />
+                                </form>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <!-- hamburger箱end -->
-                <nav class="menu_pc">
-                    <ul class="menu_pc_ul flex">
-                        <li class="btn_header_pc_1 flex">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a class="a_menu" href="#"
+                                ><img
+                                    src="../assets/images/ロゴ（仮）.png"
+                                    alt="ホームボタン"
+                            /></a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
                         </li>
-                        <li class="btn_header_pc_2 flex">
+                        <li class="btn_header">
                             <a href="#"> 支援したい方へ</a>
                         </li>
-                        <li class="btn_header_pc_3 flex">
+                        <li class="btn_header">
                             <a href="#"> 特集記事</a>
                         </li>
-                        <li class="btn_header_pc_4 flex">
-                            <a href="#"> エリアから<br />さがす</a>
+                        <li class="btn_header">
+                            <a href="#"> エリアからさがす</a>
                         </li>
-                        <li class="btn_header_pc_5 flex">
-                            <a href="#"> 条件から<br />さがす</a>
+                        <li class="btn_header">
+                            <a href="#"> 条件からさがす</a>
                         </li>
-                        <li class="btn_header_pc_6 flex">
-                            <a href="#">開催情報</a>
+                        <li class="btn_header">
+                            <a href="#"> 開催情報</a>
                         </li>
-                        <li>
-                            <form
-                                class="btn_header_search_pc"
-                                action="#"
-                                method="#"
-                            >
+                        <!-- 検索機能 -->
+                        <li class="btn_header menu_search">
+                            <form class="hbg_search" action="#" method="#">
                                 <input
                                     type="hidden"
                                     name="search_type"
@@ -74,7 +130,7 @@
                                 />
                                 <input
                                     class="hbg_form"
-                                    size="20"
+                                    size="25"
                                     type="search"
                                     value=""
                                     name="search"
@@ -82,184 +138,136 @@
                                     id=""
                                 />
                                 <input
-                                    class="hbg_submit_pc"
+                                    class="hbg_submit fas"
                                     type="submit"
                                     value="   "
                                     name=" "
                                 />
                             </form>
                         </li>
+                        <!-- 検索機能end -->
                     </ul>
                 </nav>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li>
-                        <a class="a_menu" href="#"
-                            ><img
-                                src="../assets/images/ロゴ（仮）.png"
-                                alt="ホームボタン"
-                        /></a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> こども食堂とは</a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> 支援したい方へ</a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> 特集記事</a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> エリアからさがす</a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> 条件からさがす</a>
-                    </li>
-                    <li class="btn_header">
-                        <a href="#"> 開催情報</a>
-                    </li>
-                    <!-- 検索機能 -->
-                    <li class="btn_header menu_search">
-                        <form class="hbg_search" action="#" method="#">
-                            <input type="hidden" name="search_type" value="" />
-                            <input
-                                class="hbg_form"
-                                size="25"
-                                type="search"
-                                value=""
-                                name="search"
-                                placeholder="キーワードを入力"
-                                id=""
-                            />
-                            <input
-                                class="hbg_submit fas"
-                                type="submit"
-                                value="   "
-                                name=" "
-                            />
-                        </form>
-                    </li>
-                    <!-- 検索機能end -->
-                </ul>
-            </nav>
-            <!-- hamburger中身end -->
-        </header>
-        <main>
-            <div class="main_inner">
-                <h2 class="title">子供食堂とは</h2>
-                <div class="text">
-                    <p>
-                        こども食堂は、子どもたちが安心して食事ができる場所で、食材を提供し、食事を作る場所です。多くは、地域のボランティアや市民団体などが運営しており、家庭の事情によって十分な食事を摂れない子どもたちに、無料または低額で食事を提供しています。
-                    </p>
-                </div>
-                <div class="text">
-                    <p>
-                        こども食堂は、子どもたちの食生活や栄養バランスの改善、社会的孤立の解消、地域の交流促進など、様々な社会問題に取り組む場でもあります。また、地域の食材や調理方法など、地域特有の食文化を守り、伝える役割も担っています。
-                    </p>
-                </div>
-                <div class="text">
-                    <p>
-                        こども食堂は、子どもたちの健やかな成長を支援するために、全国各地で展開されています。
-                    </p>
-                </div>
-                <a href="#"><div class="btn qbtn">Ｑ＆Ａ</div></a>
-            </div>
-        </main>
-        <footer class="footer">
-            <!-- 波型の画像 -->
-            <img
-                class="footer_wave"
-                src="../assets/images/footer_wave.svg"
-                alt=""
-            />
-            <div class="footer_inner">
-                <nav class="footer_container with_girl">
-                    <!-- 女の子の画像 -->
-                    <img
-                        src="../assets/images/girl.png"
-                        alt=""
-                        class="footer_girl"
-                    />
-                    <ul class="footer_nav flex">
-                        <li class="footer_nav_title_concept">
-                            <p>こども食堂とは</p>
-                            <ul class="footer_nav_menu">
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">ことも食堂とは</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">FAQ</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">特集記事</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">ニュース一覧</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- こども食堂とはend -->
-                        <li class="footer_nav_title_taxonomy_area">
-                            <p>こども食堂をみつける</p>
-                            <ul class="footer_nav_menu">
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂MAP</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂一覧</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂　東部</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂　西部</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂　南部</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">条件検索</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">支援したい方へ</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">Amazonみんなで応援プログラム</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- こども食堂をみつけるend -->
-                        <li class="footer_nav_title_other">
-                            <p>その他</p>
-                            <ul class="footer_nav_menu">
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">子育て支援関連</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">こども食堂関連</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">第三の居場所関連</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">このサイトについて</a>
-                                </li>
-                                <li class="footer_nav_menu_item">
-                                    <a href="#">プライバシーポリシー</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- その他end -->
-                    </ul>
-                    <!-- footer_nav end -->
-                    <div class="footer_copyright">
-                        <p>copyright©</p>
+                <!-- hamburger中身end -->
+            </header>
+            <main>
+                <div class="main_inner">
+                    <h2 class="title">子供食堂とは</h2>
+                    <div class="text">
+                        <p>
+                            こども食堂は、子どもたちが安心して食事ができる場所で、食材を提供し、食事を作る場所です。多くは、地域のボランティアや市民団体などが運営しており、家庭の事情によって十分な食事を摂れない子どもたちに、無料または低額で食事を提供しています。
+                        </p>
                     </div>
-                </nav>
-            </div>
-            <!-- footer_inner end -->
-        </footer>
+                    <div class="text">
+                        <p>
+                            こども食堂は、子どもたちの食生活や栄養バランスの改善、社会的孤立の解消、地域の交流促進など、様々な社会問題に取り組む場でもあります。また、地域の食材や調理方法など、地域特有の食文化を守り、伝える役割も担っています。
+                        </p>
+                    </div>
+                    <div class="text">
+                        <p>
+                            こども食堂は、子どもたちの健やかな成長を支援するために、全国各地で展開されています。
+                        </p>
+                    </div>
+                    <a href="#"><div class="btn qbtn">Ｑ＆Ａ</div></a>
+                </div>
+            </main>
+            <footer class="footer">
+                <!-- 波型の画像 -->
+                <img
+                    class="footer_wave"
+                    src="../assets/images/footer_wave.svg"
+                    alt=""
+                />
+                <div class="footer_inner">
+                    <nav class="footer_container with_girl">
+                        <!-- 女の子の画像 -->
+                        <img
+                            src="../assets/images/girl.png"
+                            alt=""
+                            class="footer_girl"
+                        />
+                        <ul class="footer_nav flex">
+                            <li class="footer_nav_title_concept">
+                                <p>こども食堂とは</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">ことも食堂とは</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">特集記事</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">ニュース一覧</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- こども食堂とはend -->
+                            <li class="footer_nav_title_taxonomy_area">
+                                <p>こども食堂をみつける</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂MAP</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂一覧</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　東部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　西部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂　南部</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">条件検索</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">支援したい方へ</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#"
+                                            >Amazonみんなで応援プログラム</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- こども食堂をみつけるend -->
+                            <li class="footer_nav_title_other">
+                                <p>その他</p>
+                                <ul class="footer_nav_menu">
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">子育て支援関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">こども食堂関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">第三の居場所関連</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">このサイトについて</a>
+                                    </li>
+                                    <li class="footer_nav_menu_item">
+                                        <a href="#">プライバシーポリシー</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- その他end -->
+                        </ul>
+                        <!-- footer_nav end -->
+                        <div class="footer_copyright">
+                            <p>copyright©</p>
+                        </div>
+                    </nav>
+                </div>
+                <!-- footer_inner end -->
+            </footer>
+        </div>
         <script src="../assets/js/header.js"></script>
     </body>
 </html>
