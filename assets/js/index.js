@@ -9,26 +9,47 @@ $(".kv_slider").slick({
 
 // slick（pickupインタビュー）
 // 幅が768px以上のビューポートをターゲットとするメディアクエリを作成
-const mediaQuery = window.matchMedia("(min-width: 760px)");
+// const mediaQuery = window.matchMedia("(min-width: 760px)");
 
-// メディアクエリがtrueかどうかをチェック
-if (mediaQuery.matches) {
-    // その後、alertを実行
-    $(".pickup_slider").slick({
-        autoplay: true, // 自動再生
-        autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
-        infinite: true, // 無限スライド
-        slidesToShow: 3,
-    });
-} else {
-    // slick(pickupスライド)
-    $(".pickup_slider").slick({
-        autoplay: true, // 自動再生
-        autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
-        infinite: true, // 無限スライド
-        slidesToShow: 1,
-    });
-}
+// // メディアクエリがtrueかどうかをチェック
+// if (mediaQuery.matches) {
+//     // その後、alertを実行
+//     $(".pickup_slider").slick({
+//         autoplay: true, // 自動再生
+//         autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
+//         infinite: true, // 無限スライド
+//         slidesToShow: 3,
+//     });
+// } else {
+//     // slick(pickupスライド)
+//     $(".pickup_slider").slick({
+//         autoplay: true, // 自動再生
+//         autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
+//         infinite: true, // 無限スライド
+//         slidesToShow: 1,
+//     });
+// }
+
+$(".pickup_slider").slick({
+    autoplay: true, // 自動再生
+    autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
+    infinite: true, // 無限スライド
+
+    slidesToShow: 3,
+    responsive: [
+        {
+            breakpoint: 770,
+            settings: {
+                arrows: true,
+                autoplaySpeed: 4000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+            },
+        },
+    ],
+});
 
 // slick(活動の様子スライド)
 $(function () {

@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>開催情報一覧</title>
+        <title>開催詳細</title>
         <!-- reset css -->
         <link rel="stylesheet" href="../assets/css/reset.css" />
-        <!-- slick css -->
-        <link rel="stylesheet" href="../assets/slick/css/slick.css" />
-        <link rel="stylesheet" href="../assets/slick/css/slick-theme.css" />
-        <!-- css -->
+        <!-- common css -->
         <link rel="stylesheet" href="../assets/css/common.css" />
-        <link rel="stylesheet" href="../assets/css/archive-event-post.css" />
-
-        <!-- js -->
-        <script src="../assets/js/jquery-3.6.3.min.js"></script>
-        <!-- slick js -->
-        <script src="../assets/slick/js/slick.min.js"></script>
-        <!-- Googleフォント -->
+        <!-- single-event css -->
+        <link rel="stylesheet" href="../assets/css/single-event.css" />
+        <!-- Googlefont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Maru+Gothic&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
+        <!-- jquery -->
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
         <div class="body_inner">
@@ -152,65 +149,91 @@
             </header>
             <main>
                 <div class="main_inner">
-                    <h2 class="title">開催情報一覧</h2>
-                    <div class="ivent_item ivent_flex">
-                        <div class="ivent_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="ivent_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="ivent_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="ivent_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
-                        <div class="ivent_item_card">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/text_kakko_kari.png"
-                                    alt="pickup画像"
-                                />
-                                <p>〇〇食堂　山田花子さん</p>
-                                <p>概要、概要、概要、概要、概要、、</p>
-                            </a>
-                        </div>
+                    <div class="ivent_title">
+                        <h2 class="title">1月1日 〇〇食堂開催のお知らせ</h2>
+                        <img
+                            src="..//assets/images/delete/kv1_kari.jpg"
+                            alt=""
+                        />
                     </div>
-                    <div class="page_nav flex">
-                        <div class="page_triangle_left"></div>
-                        <div class="page_number">1</div>
-                        <div class="page_number">2</div>
-                        <div class="page_number">3</div>
-                        <div class="page_triangle_right"></div>
+                    <div class="ivent_appeal">
+                        <p class="ivent_appeal_text">食堂から一言</p>
+                        <p>テキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                    <table class="ivent_table">
+                        <tr>
+                            <td class="ivent_table_tdtitle">開催日時</td>
+                            <td class="ivent_table_tdtext">
+                                5/1 13:00~14:00まで
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">開催住所</td>
+                            <td class="ivent_table_tdtext">
+                                徳島市●●町●●1-1-1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">会場</td>
+                            <td class="ivent_table_tdtext">●●公民館</td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">参加条件</td>
+                            <td class="ivent_table_tdtext">
+                                テキストテキストテキストテキストテキストテキスト
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">参加料金</td>
+                            <td class="ivent_table_tdtext">
+                                こども 300円 大人 400円
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">参加年齢</td>
+                            <td class="ivent_table_tdtext">
+                                未就学児～高校生まで
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">食事提供方法</td>
+                            <td class="ivent_table_tdtext">
+                                参加者と一緒に料理を作る
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">
+                                取り扱いがあるもの
+                            </td>
+                            <td class="ivent_table_tdtext">おもちゃ</td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">事前の予約</td>
+                            <td class="ivent_table_tdtext">電話にて必要</td>
+                        </tr>
+                        <tr>
+                            <td class="ivent_table_tdtitle">連絡先</td>
+                            <td class="ivent_table_tdtext">088-000-000</td>
+                        </tr>
+                    </table>
+                    <div class="ivent_map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1671457.3013939436!2d134.69202636250003!3d35.0925991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bf455fa707d%3A0xfaaea9929402ee59!2z5bmz5bCG6ZaA6aaW5aGa!5e0!3m2!1sja!2sjp!4v1680162253664!5m2!1sja!2sjp"
+                            width="250"
+                            height="200"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                    <div class="category_list">
+                        <h2 class="category_title">カテゴリー一覧</h2>
+                        <div class="bgcnone column">
+                            <a href="#" class="category_item">おしらせ</a>
+                            <a href="#" class="category_item">更新情報</a>
+                            <a href="#" class="category_item">次回開催</a>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -317,6 +340,7 @@
                 </div>
                 <!-- footer_inner end -->
             </footer>
+            <script src="../assets/js/header.js"></script>
         </div>
     </body>
 </html>
