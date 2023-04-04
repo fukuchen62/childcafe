@@ -60,9 +60,9 @@
     margin-top: 50px;
 }
 
-.support_content1,
-.support_content2,
-.support_content3 {
+.support_supplies,
+.support_money,
+.support_help {
     /* max-width: 650px; */
     /* width: 280px; */
     width: 80%;
@@ -72,15 +72,15 @@
     border-radius: 10px;
 }
 
-.support_content1 {
+.support_supplies {
     background-color: #f7dd94;
 }
 
-.support_content2 {
+.support_money {
     background-color: #d7f794;
 }
 
-.support_content3 {
+.support_help {
     background-color: #fdffb0;
 }
 
@@ -94,17 +94,17 @@
     margin: 0 auto;
 }
 
-.support_content1 p,
-.support_content2 p,
-.support_content3 p {
+.support_supplies p,
+.support_money p,
+.support_help p {
     width: 195px;
     margin: 20px auto;
 }
 
 @media screen and (min-width: 770px) {
-    .support_content1,
-    .support_content2,
-    .support_content3 {
+    .support_supplies,
+    .support_money,
+    .support_help {
         width: 100%;
         margin-top: 85px;
     }
@@ -113,9 +113,9 @@
         margin-top: 150px;
     }
 
-    .support_content1 p,
-    .support_content2 p,
-    .support_content3 p {
+    .support_supplies p,
+    .support_money p,
+    .support_help p {
         width: 570px;
     }
 }
