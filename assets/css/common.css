@@ -26,6 +26,12 @@ main {
     margin: 0 auto;
 }
 
+/* spanで画面幅により改行 */
+
+.sp {
+    display: inline-block;
+}
+
 /* h2 */
 .title {
     /* 追加-このサイトについて,こども食堂とは */
