@@ -2,6 +2,7 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 $service_array = get_field('service');
+$event = get_field('event_id');
 ?>
 
 <main>
@@ -15,7 +16,11 @@ $service_array = get_field('service');
                 <h2 class="title"><?php the_field('name'); ?></h2>
                 <div class="pc_flex">
                     <div>
+                        <?php if(! empty(get_field('eye_catching'))): ?>
                         <img src="<?php the_field('eye_catching'); ?>" alt="" class="main_visual" />
+                        <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+                        <?php endif; ?>
                         <div class="underimg text flex">
                             <p class="address">
                                 <?php
@@ -43,12 +48,8 @@ $service_array = get_field('service');
         <div class="beige color">
             <div class="beige_inner m1024">
                 <div class="detail_item">
-                    <h3 class="subtitle"><?php echo get_field_object('address')['label']; ?></h3>
-                    <p><?php the_field('address'); ?></p>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle"><?php echo get_field_object('name')['label']; ?></h3>
-                    <p><?php the_field('name'); ?></p>
+                    <h3 class="subtitle"><?php echo get_field_object('address', $event)['label']; ?></h3>
+                    <p><?php the_field('address', $event); ?></p>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">開催日時・頻度</h3>
