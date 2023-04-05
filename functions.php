@@ -130,11 +130,18 @@ function add_my_files() {
         );
     }
 
-        // 404のみ出力
+    // 404のみ出力
     if (is_page('404')) {
         wp_enqueue_style('404-css', get_template_directory_uri() . '/assets/css/404.css', array('common-css')
         );
     }
+
+    // event一覧のみ出力
+    if (is_archive('event')) {
+        wp_enqueue_style('archive-event-css', get_template_directory_uri() . '/assets/css/archive-event.css', array('common-css')
+        );
+    }
+
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
