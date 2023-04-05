@@ -101,6 +101,12 @@
     margin: 20px auto;
 }
 
+.support_supplies a {
+    font-weight: 500;
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 10px;
+}
+
 @media screen and (min-width: 770px) {
     .support_supplies,
     .support_money,
