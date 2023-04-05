@@ -146,6 +146,12 @@ function add_my_files() {
         );
     }
 
+        // event一覧のみ出力
+    if (is_post_type_archive('interview')) {
+        wp_enqueue_style('archive-interview-css', get_template_directory_uri() . '/assets/css/archive-interview.css', array('common-css')
+        );
+    }
+
 
 
 }
@@ -179,12 +185,10 @@ function my_pre_get_posts($query) {
         return;
     }
 
-
-
-    //インタビュー一覧ページの場合
-    // if ($query->is_archive('interview')) {
-    //     $query->set('posts_per_page', 9);
-    //     return;
-    // }
+    // インタビュー一覧ページの場合
+    if ($query->is_post_type_archive('interview')) {
+        $query->set('posts_per_page', 6);
+        return;
+    }
 }
 add_action('pre_get_posts', 'my_pre_get_posts');

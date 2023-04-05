@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
-function my_archive_pre_get_posts($query) {
-    if ($query->is_archive('interview')) {
-        echo $query->get('posts_per_page');
-    }
-}
-add_action('pre_get_posts', 'my_archive_pre_get_posts');
+// function my_archive_pre_get_posts($query) {
+//     if ($query->is_archive('interview')) {
+//         echo $query->get('posts_per_page');
+//     }
+// }
+// add_action('pre_get_posts', 'my_archive_pre_get_posts');
 ?>
 
 <?php
 	$args = array(
 		'post_type' => 'interview',
-		'post_per_page' => -1, //全件表示
+		'posts_per_page' => -1, //全件表示
         'orderby' => 'date',
         'order' => 'ASC',
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
@@ -51,48 +51,24 @@ add_action('pre_get_posts', 'my_archive_pre_get_posts');
                     <?php else: ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
                     <?php endif; ?>
-                    <p><?php the_field('title'); ?>　<?php the_field('name'); ?>さん</p>
+                    <p><?php the_field('title'); ?>　<?php echo get_field('name') . 'さん'; ?></p>
                     <p>
-                        <?php the_field('excerpt'); ?>S
+                        <?php
+                        if (!empty(get_field('excerpt'))) {
+                            echo get_field('excerpt') . '・・・';
+                        }else{
+                            echo '';
+                        }
+                        ?>
                     </p>
                 </a>
             </div>
-            <div class="pickup_item_card">
-                <a href="#">
-                    <img src="../assets/images/text_kakko_kari.png" alt="pickup画像" />
-                    <p>〇〇食堂　山田花子さん</p>
-                    <p>
-                                    すべての子どもたちが未来への希望を持ち、生き抜く力を育む居場所をつくる活動の一つ・・
-                                </p>
-                </a>
-            </div>
-            <div class="pickup_item_card">
-                <a href="#">
-                    <img src="../assets/images/text_kakko_kari.png" alt="pickup画像" />
-                    <p>〇〇食堂　山田花子さん</p>
-                    <p>
-                                    すべての子どもたちが未来への希望を持ち、生き抜く力を育む居場所をつくる活動の一つ・・
-                                </p>
-                </a>
-            </div>
-            <div class="pickup_item_card">
-                <a href="#">
-                    <img src="../assets/images/text_kakko_kari.png" alt="pickup画像" />
-                    <p>〇〇食堂　山田花子さん</p>
-                    <p>
-                                    すべての子どもたちが未来への希望を持ち、生き抜く力を育む居場所をつくる活動の一つ・・
-                                </p>
-                </a>
-            </div>
-            <div class="pickup_item_card">
-                <a href="#">
-                    <img src="../assets/images/text_kakko_kari.png" alt="pickup画像" />
-                    <p>〇〇食堂　山田花子さん</p>
-                    <p>
-                                    すべての子どもたちが未来への希望を持ち、生き抜く力を育む居場所をつくる活動の一つ・・
-                                </p>
-                </a>
-            </div>
+
+            <?php endwhile; ?>
+            <?php endif ?>
+            <?php wp_reset_postdata(); ?>
+
+
         </div>
         <div class="page_nav flex">
             <div class="page_triangle_left"></div>
