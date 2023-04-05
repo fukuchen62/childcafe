@@ -59,14 +59,14 @@ function add_my_files() {
     if (is_tax('area')) {
         wp_enqueue_style('taxonomy-area-css',get_template_directory_uri() . '/assets/css/taxonomy-area.css',array('common-css')
         );
-        //tag.jsの読み込み
-        wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
     }
 
     //taxonomy-linkページのみ出力
     if (is_tax('link')) {
         wp_enqueue_style('taxonomy-link-css',get_template_directory_uri() . '/assets/css/page-links.css',array('common-css')
         );
+        //tab.jsの読み込み
+        wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
     }
 
 
@@ -140,6 +140,16 @@ function add_my_files() {
         );
     }
 
+    // 詳細検索ページのみ出力
+    if (is_page('search')) {
+        wp_enqueue_style('page-search-css', get_template_directory_uri() . '/assets/css/page-search.css', array('common-css')
+        );
+        //tab.jsの読み込み
+        wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
+        //age-search.jsの読み込み
+        wp_enqueue_script('page-search-js',get_template_directory_uri().'/assets/js/page-search.js',array('tab-js'),'1.0',true);
+    }
+
     // event一覧のみ出力
     if (is_post_type_archive('event')) {
         wp_enqueue_style('archive-event-css', get_template_directory_uri() . '/assets/css/archive-event.css', array('common-css')
@@ -168,7 +178,7 @@ function wpcf7_autop_return_false() {
 //投稿表示件数を変更する
 function my_pre_get_posts($query) {
     //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || ! $query->is_main_query()) {
+    if (is_admin() || !$query->is_main_query()) {
         return;
     }
 
@@ -188,6 +198,7 @@ function my_pre_get_posts($query) {
     // インタビュー一覧ページの場合
     if ($query->is_post_type_archive('interview')) {
         $query->set('posts_per_page', 6);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
         return;
     }
 }

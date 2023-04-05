@@ -26,14 +26,14 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
                         <?php else: ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
                         <?php endif; ?>
-                        <div class="underimg text flex">
+                        <div class="underimg text cafeinfo_flex flex">
                             <p class="address">
                                 <?php
                                 $this_terms = get_the_terms($post->ID,'area');
                                 echo $this_terms[1]->name;
                                 ?>
                             </p>
-                            <div class="good flex">
+                            <div class="good cafeinfo_flex flex">
                                 <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
                             </div>
                         </div>
@@ -73,45 +73,6 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
                     <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
-
-                <!-- <div class="detail_item">
-                    <h3 class="subtitle">開催日時・頻度</h3>
-                    <p>第第2、第3月曜日　午後5時30分~</p>
-                    <p></p>
-                </div>
-                <div class="detail_item">
-                    <div>
-                        <h3 class="subtitle">参加料金</h3>
-                        <p>子ども:○○円</p>
-                        <p>大人:○○円</p>
-                    </div>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">駐車場</h3>
-                    <p>敷地内5台あり</p>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">参加条件</h3>
-                    <p>
-                                    子どもだけでもOK<br />
-                                    対象年齢 5歳<br />
-                                    その他
-                                </p>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">事前予約</h3>
-                    <p>
-                                    必要あり<br />
-                                    ※電話にて事前に連絡お願いします
-                                </p>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">食事スタイル</h3>
-                    <p>参加者と料理を作ってその場で食べる</p>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">参加者の主な年代</h3>
-                </div> -->
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#d7f794" fill-opacity="1" d="M0,256L60,224C120,192,240,128,360,96C480,64,600,64,720,96C840,128,960,192,1080,208C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
@@ -145,11 +106,13 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">
-                                    Amazonみんなで応援プログラム
-                                </h3>
+                        Amazonみんなで応援プログラム
+                    </h3>
                     <p>Amazon/url/urlurl</p>
                 </div>
+                <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>
+                <?php endif;?>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#fff8e6" fill-opacity="1" d="M0,128L60,149.3C120,171,240,213,360,208C480,203,600,149,720,144C840,139,960,181,1080,186.7C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>

@@ -1,15 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
-// function my_archive_pre_get_posts($query) {
-//     if ($query->is_archive('interview')) {
-//         echo $query->get('posts_per_page');
-//     }
-// }
-// add_action('pre_get_posts', 'my_archive_pre_get_posts');
-?>
-
-<?php
 	$args = array(
 		'post_type' => 'interview',
 		'posts_per_page' => -1, //全件表示
@@ -67,16 +58,12 @@
             <?php endwhile; ?>
             <?php endif ?>
             <?php wp_reset_postdata(); ?>
-
-
         </div>
-        <div class="page_nav flex">
-            <div class="page_triangle_left"></div>
-            <div class="page_number">1</div>
-            <div class="page_number">2</div>
-            <div class="page_number">3</div>
-            <div class="page_triangle_right"></div>
-        </div>
+        <?php
+            if (function_exists('wp_pagenavi')) {
+                wp_pagenavi();
+            }
+        ?>
     </div>
 </main>
 
