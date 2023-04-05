@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>子ども食堂詳細</title>
+        <title>こども食堂詳細</title>
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <link rel="stylesheet" href="../assets/slick/css/slick.css" />
         <link rel="stylesheet" href="../assets/slick/css/slick-theme.css" />
@@ -13,6 +13,13 @@
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
         <!-- slick js -->
         <script src="../assets/slick/js/slick.min.js"></script>
+        <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="body_inner">
@@ -31,11 +38,11 @@
                     <div class="header_logo">
                         <a href="#"
                             ><img
-                                src="../assets/images/ロゴ（仮）.png"
+                                src="../assets/images/logo.png"
                                 alt="ホームボタン"
                         /></a>
                     </div>
-
+    
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -48,16 +55,16 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援したい方へ</a>
-                            </li>
-                            <li class="btn_header_pc_3 flex">
-                                <a href="#"> 特集記事</a>
-                            </li>
-                            <li class="btn_header_pc_4 flex">
                                 <a href="#"> エリアから<br />さがす</a>
                             </li>
-                            <li class="btn_header_pc_5 flex">
+                            <li class="btn_header_pc_3 flex">
                                 <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> 支援 <br />したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 特集記事</a>
                             </li>
                             <li class="btn_header_pc_6 flex">
                                 <a href="#">開催情報</a>
@@ -66,7 +73,7 @@
                                 <form
                                     class="btn_header_search_pc"
                                     action="#"
-                                    method="#"
+                                    method="get"
                                 >
                                     <input
                                         type="hidden"
@@ -80,7 +87,6 @@
                                         value=""
                                         name="search"
                                         placeholder="キーワードを入力"
-                                        id=""
                                     />
                                     <input
                                         class="hbg_submit_pc"
@@ -98,18 +104,12 @@
                         <li>
                             <a class="a_menu" href="#"
                                 ><img
-                                    src="../assets/images/ロゴ（仮）.png"
+                                    src="../assets/images/logo.png"
                                     alt="ホームボタン"
                             /></a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 支援したい方へ</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 特集記事</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> エリアからさがす</a>
@@ -118,16 +118,18 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="#" method="#">
-                                <input
-                                    type="hidden"
-                                    name="search_type"
-                                    value=""
-                                />
+                            <form class="hbg_search" action="#" method="get">
+                                <input type="hidden" name="search_type" value="" />
                                 <input
                                     class="hbg_form"
                                     size="25"
@@ -135,7 +137,6 @@
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
@@ -163,16 +164,16 @@
                                         alt=""
                                         class="main_visual"
                                     />
-                                    <div class="underimg text flex">
+                                    <div class="underimg text cafeinfo_flex flex">
                                         <p class="address">徳島市</p>
-                                        <div class="good flex">
+                                        <div class="good cafeinfo_flex flex">
                                             <p class="iine">いいね</p>
                                             <p>(00)</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pc_w320">
-                                    <h3 class="subtitle">子ども食堂の特色</h3>
+                                    <h3 class="subtitle">こども食堂の特色</h3>
                                     <p class="text">
                                         テキストテキストテキストテキストテキストテキスト
                                         テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
@@ -219,7 +220,7 @@
                             <div class="detail_item">
                                 <h3 class="subtitle">参加条件</h3>
                                 <p>
-                                    子どもだけでもOK<br />
+                                    こどもだけでもOK<br />
                                     対象年齢 5歳<br />
                                     その他
                                 </p>
