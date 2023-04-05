@@ -1,0 +1,28 @@
+.main_inner {
+    text-align: center;
+    padding: 20px;
+}
+
+.title404 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.text404 {
+    font-size: 24px;
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 10px;
+    margin-bottom: 30px;
+}
+
+.main_inner a {
+    color: red;
+    font-weight: 500;
+    text-decoration: underline dotted 1px red;
+    text-underline-offset: 10px;
+}
+
+.main_inner img {
+    width: 200px;
+}
