@@ -11,6 +11,10 @@ $args = array(
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
 	);
 $the_query = new WP_Query($args);
+
+$cafeinfo_id = get_field('id');
+$this_terms = get_the_terms($cafeinfo_id,'area');
+
 ?>
 
 <main>
@@ -23,8 +27,13 @@ $the_query = new WP_Query($args);
             <div class="ivent_item_card">
                 <a href="<?php the_permalink(); ?>">
                     <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
-                    <p>3月1日　徳島市（現在静的）</p>
-                    <p><?php the_field('name',324); ?>　開催のお知らせ</p>
+                    <p>
+                        <!-- 日付表示加工予定 ◯月◯日-->
+                        <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
+                    </p>
+                    <p>
+                        <?php echo get_field('name',$cafeinfo_id).'　開催のお知らせ'; ?>
+                    </p>
                 </a>
             </div>
             <?php endwhile; ?>

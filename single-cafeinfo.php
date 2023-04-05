@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
+$this_terms = get_the_terms($post->ID,'area');
+
 $event_id = get_field('event_id');
 $service_array = get_field('service', $event_id);
 $event_fields = get_field_objects($event_id);
@@ -29,7 +31,6 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
                         <div class="underimg text cafeinfo_flex flex">
                             <p class="address">
                                 <?php
-                                $this_terms = get_the_terms($post->ID,'area');
                                 echo $this_terms[1]->name;
                                 ?>
                             </p>
