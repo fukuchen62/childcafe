@@ -83,7 +83,7 @@ function add_my_files() {
     }
 
     //記事一覧ページのみ出力
-    if (is_page('post') || is_category()) {
+    isif (_page('post') || is_category()) {
         wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
         );
     }
@@ -97,6 +97,12 @@ function add_my_files() {
     // page-contactのみ出力
     if (is_page('contact')) {
         wp_enqueue_style('page-contact-css', get_template_directory_uri() . '/assets/css/page-contact.css', array('common-css')
+        );
+    }
+
+    // page-conceptのみ出力
+    if (is_page('concept')) {
+        wp_enqueue_style('page-concept-css', get_template_directory_uri() . '/assets/css/page-concept.css', array('common-css')
         );
     }
 }
