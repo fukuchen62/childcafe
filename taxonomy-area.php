@@ -23,25 +23,20 @@
     $the_query = new WP_Query($args);
 
 ?>
+
 <main>
     <div class="main_inner">
         <!-- 地域別タブ -->
         <ul class="tab flex">
-            <li class="tab_east tab_js tab-A">
-                <a href="<?php echo home_url('/area/east'); ?>">東部</a>
-            </li>
-            <li class="tab_south tab_js tab-B">
-                <a href="<?php echo home_url('/area/south'); ?>">南部</a>
-            </li>
-            <li class="tab_west tab_js tab-C">
-                <a href="<?php echo home_url('/area/west'); ?>">西部</a>
-            </li>
+            <li class="tab_east tab_js east"><a href="<?php echo home_url('/area/east'); ?>">東部</a></li>
+            <li class="tab_south tab_js south"><a href="<?php echo home_url('/area/south'); ?>">南部</a></li>
+            <li class="tab_west tab_js west"><a href="<?php echo home_url('/area/west'); ?>">西部</a></li>
         </ul>
         <!-- 市町村別一覧 -->
         <div class="list_area flex">
             <!-- 東部 -->
-            <div class="area_<?php echo $area->slug; ?> panel is-show">
-                <h2 class="title"><?php echo $area->name; ?>市町村一覧</h2>
+            <div class="area_<?php echo $area->slug; ?> panel east is-show">
+                <h2 class="title"><?php echo $area->name; ?>東部市町村一覧</h2>
                 <ul class="area_list_wrap flex">
                     <?php
                         $towns = get_terms(array(
@@ -59,7 +54,7 @@
                 </ul>
             </div>
             <!-- 地域別食堂一覧 -->
-            <div class="result_img">
+            <section class="result_img">
                 <h2 class="title result_title">
                     <!-- 市町村名が選択された時は市町村名にするようにする -->
                     <?php echo $area->name; ?>こども食堂一覧
@@ -72,8 +67,9 @@
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
-            </div>
+            </section>
         </div>
+        <!-- ページナビ -->
         <?php
             //自作検討する（仮で常時表示中）
             if (function_exists('wp_pagenavi')) {
@@ -82,4 +78,5 @@
         ?>
     </div>
 </main>
+
 <?php get_footer(); ?>
