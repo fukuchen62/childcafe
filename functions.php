@@ -83,7 +83,7 @@ function add_my_files() {
     }
 
     //記事一覧ページのみ出力
-    isif (_page('post') || is_category()) {
+    if (is_page('post') || is_category()) {
         wp_enqueue_style('page-post-css',get_template_directory_uri() . '/assets/css/page-post.css',array('common-css')
         );
     }
