@@ -21,8 +21,7 @@
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div class="body_inner">
-            <!-- トップページへ戻るボタン -->
+        <!-- トップページへ戻るボタン -->
         <div class="body_inner">
             <div class="toppage_btn">
                 <a href="#"
@@ -37,7 +36,7 @@
                     <div class="header_logo">
                         <a href="#"
                             ><img
-                                src="../assets/images/ロゴ（仮）.png"
+                                src="../assets/images/logo.png"
                                 alt="ホームボタン"
                         /></a>
                     </div>
@@ -54,16 +53,16 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援したい方へ</a>
-                            </li>
-                            <li class="btn_header_pc_3 flex">
-                                <a href="#"> 特集記事</a>
-                            </li>
-                            <li class="btn_header_pc_4 flex">
                                 <a href="#"> エリアから<br />さがす</a>
                             </li>
-                            <li class="btn_header_pc_5 flex">
+                            <li class="btn_header_pc_3 flex">
                                 <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> 支援 <br />したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 特集記事</a>
                             </li>
                             <li class="btn_header_pc_6 flex">
                                 <a href="#">開催情報</a>
@@ -72,7 +71,7 @@
                                 <form
                                     class="btn_header_search_pc"
                                     action="#"
-                                    method="#"
+                                    method="get"
                                 >
                                     <input
                                         type="hidden"
@@ -86,7 +85,6 @@
                                         value=""
                                         name="search"
                                         placeholder="キーワードを入力"
-                                        id=""
                                     />
                                     <input
                                         class="hbg_submit_pc"
@@ -104,18 +102,12 @@
                         <li>
                             <a class="a_menu" href="#"
                                 ><img
-                                    src="../assets/images/ロゴ（仮）.png"
+                                    src="../assets/images/logo.png"
                                     alt="ホームボタン"
                             /></a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 支援したい方へ</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 特集記事</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> エリアからさがす</a>
@@ -124,11 +116,17 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="#" method="#">
+                            <form class="hbg_search" action="#" method="get">
                                 <input
                                     type="hidden"
                                     name="search_type"
@@ -141,7 +139,6 @@
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
@@ -158,10 +155,14 @@
             </header>
             <main>
                 <div class="main_inner">
-                        <h2 class="pickup_title">
-                            <span class="pickup_title sp">ダミーダミーダミー食堂</span>
-                            <span class="pickup_title sp">一社）ダミーダミーダミーダミーさん</span>
-                        </h2>
+                    <h2 class="pickup_title">
+                        <span class="pickup_title sp"
+                            >ダミーダミーダミー食堂</span
+                        >
+                        <span class="pickup_title sp"
+                            >一社）ダミーダミーダミーダミーさん</span
+                        >
+                    </h2>
                     <div class="pickup_single">
                         <div class="pickup_top_img">
                             <div class="pickup_single_img">
@@ -203,8 +204,12 @@
                         </div>
                         <div class="pickup_single_text">
                             <h3 class="subtitle">
-                                <span class="sp subtitle">うちのこども食堂</span>
-                                <span class="sp subtitle">ここがおすすめ！！</span>
+                                <span class="sp subtitle"
+                                    >うちのこども食堂</span
+                                >
+                                <span class="sp subtitle"
+                                    >ここがおすすめ！！</span
+                                >
                             </h3>
                             <p>
                                 テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
@@ -225,8 +230,12 @@
                         </div>
                         <div class="pickup_single_text">
                             <h3 class="subtitle">
-                                <span class="sp subtitle">こども食堂に行きたいけど</span>
-                                <span class="sp subtitle">足を運んだ事がない方へ</span>
+                                <span class="sp subtitle"
+                                    >こども食堂に行きたいけど</span
+                                >
+                                <span class="sp subtitle"
+                                    >足を運んだ事がない方へ</span
+                                >
                             </h3>
                             <p>
                                 テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
@@ -270,11 +279,11 @@
             </main>
             <footer class="footer">
                 <!-- 波型の画像 -->
-                <img
+                <!-- <img
                     class="footer_wave"
                     src="../assets/images/footer_wave.svg"
                     alt=""
-                />
+                /> -->
                 <div class="footer_inner">
                     <nav class="footer_container with_girl">
                         <!-- 女の子の画像 -->
@@ -294,7 +303,9 @@
                                         <a href="#">FAQ</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">特集記事</a>
+                                        <a href="#"
+                                            >特集記事Pick Upインタビュー一覧</a
+                                        >
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">ニュース一覧</a>
@@ -309,7 +320,7 @@
                                 <p>こども食堂をみつける</p>
                                 <ul class="footer_nav_menu">
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">こども食堂MAP</a>
+                                        <a href="#">エリアをしらべる</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">こども食堂一覧</a>
@@ -324,7 +335,7 @@
                                         <a href="#">こども食堂　南部</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">条件検索</a>
+                                        <a href="#">条件でさがす</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">支援したい方へ</a>
@@ -347,13 +358,15 @@
                                         <a href="#">こども食堂関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">第三の居場所関連</a>
+                                        <a href="#">こどもの居場所関連</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
                                         <a href="#">このサイトについて</a>
                                     </li>
                                     <li class="footer_nav_menu_item">
-                                        <a href="#">プライバシーポリシー</a>
+                                        <a href="#"
+                                            >プライバシーポリシー・免責事項</a
+                                        >
                                     </li>
                                 </ul>
                             </li>
