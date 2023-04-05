@@ -123,6 +123,12 @@ function add_my_files() {
         wp_enqueue_style('page-faq-css', get_template_directory_uri() . '/assets/css/page-faq.css', array('common-css')
         );
     }
+
+    // page-praivacy_policyのみ出力
+    if (is_page('praivacy_policy')) {
+        wp_enqueue_style('page-praivacy_policy-css', get_template_directory_uri() . '/assets/css/page-praivacy_policy.css', array('common-css')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
