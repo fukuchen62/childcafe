@@ -23,13 +23,13 @@ $the_query = new WP_Query($args);
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
+            <?php
+            if (function_exists('wp_pagenavi')) {
+                wp_pagenavi();
+                }
+            ?>
             <?php get_sidebar('categories'); ?>
         </div>
     </div>
-    <?php
-    if (function_exists('wp_pagenavi')) {
-						wp_pagenavi();
-        }
-    ?>
 </main>
 <?php get_footer(); ?>
