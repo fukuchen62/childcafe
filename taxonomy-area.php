@@ -34,7 +34,6 @@
         </ul>
         <!-- 市町村別一覧 -->
         <div class="list_area flex">
-            <!-- 東部 -->
             <div class="area_<?php echo $area->slug; ?> panel east is-show">
                 <h2 class="title"><?php echo $area->name; ?>市町村一覧</h2>
                 <ul class="area_list_wrap flex">

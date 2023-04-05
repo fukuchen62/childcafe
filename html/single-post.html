@@ -7,11 +7,14 @@
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <link rel="stylesheet" href="../assets/css/common.css" />
         <link rel="stylesheet" href="../assets/css/single-post.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Maru+Gothic&display=swap"
+            rel="stylesheet"
+        />
         <title>News固定記事</title>
     </head>
     <body>
-        <div class="body_inner">
-            <!-- トップページへ戻るボタン -->
+        <!-- トップページへ戻るボタン -->
         <div class="body_inner">
             <div class="toppage_btn">
                 <a href="#"
@@ -26,7 +29,7 @@
                     <div class="header_logo">
                         <a href="#"
                             ><img
-                                src="../assets/images/ロゴ（仮）.png"
+                                src="../assets/images/logo.png"
                                 alt="ホームボタン"
                         /></a>
                     </div>
@@ -43,16 +46,16 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援したい方へ</a>
-                            </li>
-                            <li class="btn_header_pc_3 flex">
-                                <a href="#"> 特集記事</a>
-                            </li>
-                            <li class="btn_header_pc_4 flex">
                                 <a href="#"> エリアから<br />さがす</a>
                             </li>
-                            <li class="btn_header_pc_5 flex">
+                            <li class="btn_header_pc_3 flex">
                                 <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> 支援 <br />したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 特集記事</a>
                             </li>
                             <li class="btn_header_pc_6 flex">
                                 <a href="#">開催情報</a>
@@ -61,7 +64,7 @@
                                 <form
                                     class="btn_header_search_pc"
                                     action="#"
-                                    method="#"
+                                    method="get"
                                 >
                                     <input
                                         type="hidden"
@@ -75,7 +78,6 @@
                                         value=""
                                         name="search"
                                         placeholder="キーワードを入力"
-                                        id=""
                                     />
                                     <input
                                         class="hbg_submit_pc"
@@ -93,18 +95,12 @@
                         <li>
                             <a class="a_menu" href="#"
                                 ><img
-                                    src="../assets/images/ロゴ（仮）.png"
+                                    src="../assets/images/logo.png"
                                     alt="ホームボタン"
                             /></a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 支援したい方へ</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 特集記事</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> エリアからさがす</a>
@@ -113,11 +109,17 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="#" method="#">
+                            <form class="hbg_search" action="#" method="get">
                                 <input
                                     type="hidden"
                                     name="search_type"
@@ -130,7 +132,6 @@
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
@@ -145,7 +146,7 @@
                 </nav>
                 <!-- hamburger中身end -->
             </header>
-            <script src="../assets/js/header.js"></script>
+
             <main>
                 <div class="main_inner">
                     <div class="news_title">
@@ -175,11 +176,11 @@
             </main>
             <footer class="footer">
                 <!-- 波型の画像 -->
-                <img
+                <!-- <img
                     class="footer_wave"
                     src="../assets/images/footer_wave.svg"
                     alt=""
-                />
+                /> -->
                 <div class="footer_inner">
                     <nav class="footer_container with_girl">
                         <!-- 女の子の画像 -->
@@ -276,6 +277,7 @@
                 </div>
                 <!-- footer_inner end -->
             </footer>
+            <script src="../assets/js/header.js"></script>
         </div>
     </body>
 </html>
