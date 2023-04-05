@@ -1,6 +1,6 @@
 <li>
     <a href="<?php the_permalink(); ?>">
-        <?php $eye_catching = get_post_meta($post->ID, 'eye_catching', true);?>
+        <?php $eye_catching = get_field('eye_catching');?>
         <?php if(!empty($eye_catching)): ?>
         <img src="<?php the_field('eye_catching'); ?>" alt="">
         <?php else: ?>
@@ -10,10 +10,16 @@
             <?php the_field('title'); ?>
         </p>
         <p>
-            <?php the_field('name'); ?>さん
+            <?php echo get_field('name') . 'さん'; ?>
         </p>
         <p>
-            <?php the_field('excerpt'); ?>
+            <?php
+                if (!empty(get_field('excerpt'))) {
+                    echo get_field('excerpt') . '・・・';
+                }else{
+                    echo '';
+                }
+            ?>
         </p>
     </a>
 </li>
