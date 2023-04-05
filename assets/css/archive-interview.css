@@ -6,7 +6,7 @@
 }
 
 .pickup_item_card {
-    max-width: 267px;
+    max-width: 280px;
     width: 100%;
     height: 370px;
     background-color: white;
@@ -17,7 +17,7 @@
 }
 
 .pickup_item_card img {
-    width: 230px;
+    width: 250px;
     height: 200px;
     margin-top: 13px;
     border: 1px solid #665a3d;
@@ -42,6 +42,11 @@
     margin-bottom: 0;
 }
 
+.text {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .intro {
     border-radius: 15px;
     background-color: #fffbf1;
@@ -57,6 +62,11 @@
     .pickup_flex {
         display: flex;
     }
+
+    .pickup_title {
+        margin-top: 120px;
+    }
+
     .pickup_item {
         margin: 80px auto 80px;
         align-content: space-between;
@@ -70,6 +80,7 @@
         color: aliceblue;
         /* background-color: #f44336; */
     }
+
     /* .pickup_item_card::before {
         content: "";
         width: 287px;
@@ -79,12 +90,21 @@
         margin-top: 0;
     }
     .pickup_item_card {
-        width: 287px;
-        height: 440px;
+        height: 430px;
         /* margin-top: 50px; */
     }
     .pickup_item_card img {
         width: 246px;
         height: 252px;
+    }
+
+    .pickup_item_card a {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .pickup_item_card a:hover {
+        opacity: 0.6;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
     }
 }
