@@ -1,6 +1,6 @@
 <a href="<?php the_permalink(); ?>">
     <article class="result_img_card">
-        <?php $eye_catching = get_post_meta($post->ID, 'eye_catching', true);?>
+        <?php $eye_catching = get_field('eye_catching');?>
         <?php if(!empty($eye_catching)): ?>
         <img src="<?php the_field('eye_catching'); ?>" alt="">
         <?php else: ?>
