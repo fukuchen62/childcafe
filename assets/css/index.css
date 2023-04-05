@@ -114,9 +114,7 @@ html {
     .rainbow {
         width: 650px;
         height: 650px;
-        left: 10%;
-        top: -260px;
-        transform: rotate(10deg);
+        top: -370px;
     }
 }
 
