@@ -15,7 +15,7 @@
             </div>
             <h3>全体へのお問い合わせはこちら</h3>
             <p>
-                <?php echo do_shortcode('[contact-form-7 id="102" title="お問い合わせ"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="323" title="contact"]'); ?>
             </p>
         </div>
 
