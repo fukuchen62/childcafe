@@ -59,14 +59,15 @@
                     <!-- 市町村名が選択された時は市町村名にするようにする -->
                     <?php echo $area->name; ?>こども食堂一覧
                 </h2>
-                <?php if ($the_query->have_posts()) : ?>
-                <?php while($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-                <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
-
-                <?php endwhile; ?>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
+                <div class="result_img_wrap flex">
+                    <?php if ($the_query->have_posts()) : ?>
+                    <?php while($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+                    <?php get_template_part('template-parts/loop', 'cafeinfo'); ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
+                </div>
             </section>
         </div>
         <!-- ページナビ -->
