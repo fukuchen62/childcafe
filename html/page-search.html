@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../assets/css/page-search.css" />
         <!-- Googlefont -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
@@ -22,8 +22,7 @@
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div class="body_inner">
-            <!-- トップページへ戻るボタン -->
+        <!-- トップページへ戻るボタン -->
         <div class="body_inner">
             <div class="toppage_btn">
                 <a href="#"
@@ -38,7 +37,7 @@
                     <div class="header_logo">
                         <a href="#"
                             ><img
-                                src="../assets/images/ロゴ（仮）.png"
+                                src="../assets/images/logo.png"
                                 alt="ホームボタン"
                         /></a>
                     </div>
@@ -55,16 +54,16 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援したい方へ</a>
-                            </li>
-                            <li class="btn_header_pc_3 flex">
-                                <a href="#"> 特集記事</a>
-                            </li>
-                            <li class="btn_header_pc_4 flex">
                                 <a href="#"> エリアから<br />さがす</a>
                             </li>
-                            <li class="btn_header_pc_5 flex">
+                            <li class="btn_header_pc_3 flex">
                                 <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> 支援 <br />したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 特集記事</a>
                             </li>
                             <li class="btn_header_pc_6 flex">
                                 <a href="#">開催情報</a>
@@ -73,7 +72,7 @@
                                 <form
                                     class="btn_header_search_pc"
                                     action="#"
-                                    method="#"
+                                    method="get"
                                 >
                                     <input
                                         type="hidden"
@@ -87,7 +86,6 @@
                                         value=""
                                         name="search"
                                         placeholder="キーワードを入力"
-                                        id=""
                                     />
                                     <input
                                         class="hbg_submit_pc"
@@ -105,18 +103,12 @@
                         <li>
                             <a class="a_menu" href="#"
                                 ><img
-                                    src="../assets/images/ロゴ（仮）.png"
+                                    src="../assets/images/logo.png"
                                     alt="ホームボタン"
                             /></a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 支援したい方へ</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 特集記事</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> エリアからさがす</a>
@@ -125,11 +117,17 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="#" method="#">
+                            <form class="hbg_search" action="#" method="get">
                                 <input
                                     type="hidden"
                                     name="search_type"
@@ -142,7 +140,6 @@
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
@@ -469,8 +466,8 @@
                                                 type="time"
                                                 name="time"
                                                 step="3600"
-                                                min="07:00"
-                                                max="22:00"
+                                                min="07:00:00"
+                                                max="22:00:00"
                                                 list="data-list"
                                             />
                                             <p>～</p>
@@ -479,8 +476,8 @@
                                                 type="time"
                                                 name="time"
                                                 step="3600"
-                                                min="07:00"
-                                                max="22:00"
+                                                min="07:00:00"
+                                                max="22:00:00"
                                                 list="data-list"
                                             />
                                         </div>
@@ -501,54 +498,54 @@
                                             <option value="22:00"></option>
                                         </datalist>
                                     </div>
-                                </div>
-                                <!-- 開催日時検索 終了-->
+                                    <!-- 開催日時検索 終了-->
 
-                                <!-- 事前予約の有無 -->
-                                <div class="form_item">
-                                    <h3 class="item_title">事前予約</h3>
-                                    <div class="radiobtn flex">
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                                checked
-                                            />
-                                            有
-                                        </label>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="reserve"
-                                            />
-                                            無
-                                        </label>
+                                    <!-- 事前予約の有無 -->
+                                    <div class="form_item">
+                                        <h3 class="item_title">事前予約</h3>
+                                        <div class="radiobtn flex">
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="reserve"
+                                                    checked
+                                                />
+                                                有
+                                            </label>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="reserve"
+                                                />
+                                                無
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- 事前予約の有無 終了-->
+                                    <!-- 事前予約の有無 終了-->
 
-                                <!-- 駐車場の有無 -->
-                                <div class="form_item">
-                                    <h3 class="item_title">駐車場</h3>
-                                    <div class="radiobtn flex">
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="parking"
-                                                checked
-                                            />
-                                            有
-                                        </label>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name="parking"
-                                            />
-                                            無
-                                        </label>
+                                    <!-- 駐車場の有無 -->
+                                    <div class="form_item">
+                                        <h3 class="item_title">駐車場</h3>
+                                        <div class="radiobtn flex">
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="parking"
+                                                    checked
+                                                />
+                                                有
+                                            </label>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="parking"
+                                                />
+                                                無
+                                            </label>
+                                        </div>
                                     </div>
+                                    <!-- 駐車場の有無 終了-->
                                 </div>
-                                <!-- 駐車場の有無 終了-->
                             </div>
                         </section>
                         <!-- タブ１項目 終了-->
@@ -559,8 +556,8 @@
                             <div class="form_wrap">
                                 <!-- 参加対象 -->
                                 <div class="form_item">
-                                    <label class="item_title">参加対象</label
-                                    ><br />
+                                    <h3 class="item_title">参加対象</h3>
+                                    <br />
                                     <select
                                         class="select"
                                         name="subject"
@@ -591,7 +588,7 @@
 
                                 <!-- 対象年齢 -->
                                 <div class="form_item">
-                                    <label class="item_title">対象年齢</label>
+                                    <h3 class="item_title">対象年齢</h3>
                                     <div class="age_select flex">
                                         <select
                                             class="select"
@@ -650,9 +647,8 @@
 
                                 <!-- 食事提供方式 -->
                                 <div class="form_item">
-                                    <label class="item_title"
-                                        >食事提供方式</label
-                                    ><br />
+                                    <h3 class="item_title">食事提供方式</h3>
+                                    <br />
                                     <select class="select" name="age" size="1">
                                         <option value="">希望を選択</option>
                                         <option value="いっしょに作って食べる">
@@ -827,21 +823,21 @@
                     <div class="result_img">
                         <h2 class="title">検索結果一覧</h2>
                         <div class="result_img_wrap flex">
-                            <article class="result_img_card">
+                            <div class="result_img_card">
                                 <img src="../assets/images/img7.jpg" alt="" />
                                 <p>〇〇食堂</p>
                                 <p>（〇〇市●●町）</p>
-                            </article>
-                            <article class="result_img_card">
+                            </div>
+                            <div class="result_img_card">
                                 <img src="../assets/images/img7.jpg" alt="" />
                                 <p>〇〇食堂</p>
                                 <p>（〇〇市●●町）</p>
-                            </article>
-                            <article class="result_img_card">
+                            </div>
+                            <div class="result_img_card">
                                 <img src="../assets/images/img7.jpg" alt="" />
                                 <p>〇〇食堂</p>
                                 <p>（〇〇市●●町）</p>
-                            </article>
+                            </div>
                         </div>
                     </div>
                     <!-- 検索結果表示 終了-->
@@ -849,11 +845,11 @@
             </main>
             <footer class="footer">
                 <!-- 波型の画像 -->
-                <img
-                    class="footer_wave"
-                    src="../assets/images/footer_wave.svg"
-                    alt=""
-                />
+                <!-- <img
+                class="footer_wave"
+                src="../assets/images/footer_wave.svg"
+                alt=""
+            /> -->
                 <div class="footer_inner">
                     <nav class="footer_container with_girl">
                         <!-- 女の子の画像 -->
