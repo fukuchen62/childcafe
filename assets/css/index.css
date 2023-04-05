@@ -146,12 +146,8 @@ html {
 
 /* 開催情報 */
 
-.info {
-    margin: 0 15px;
-}
-
 .info .text_box {
-    width: 100%;
+    width: 80%;
     line-height: 60px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.6);
@@ -190,12 +186,13 @@ html {
 
 .taleft {
     text-align: left;
+    text-decoration: none;
+    width: 286px;
 }
 
 @media (min-width: 770px) {
     .taleft {
         width: 435px;
-        text-decoration: none;
     }
 }
 
@@ -311,8 +308,14 @@ html {
     right: 15%;
     top: 40px;
     z-index: 10;
+    transition: 1s;
     background-color: rgba(247, 221, 148, 0.66);
 }
+
+.north:hover {
+    background-color: rgba(247, 221, 148, 1);
+}
+
 .south {
     position: absolute;
     right: 20%;
@@ -496,7 +499,7 @@ html {
     margin: 0 5px;
 }
 .activity_slider img {
-    height: 90px;
+    height: 120px;
     width: 100%;
     object-fit: cover;
 }

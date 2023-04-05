@@ -26,7 +26,7 @@ $the_query = new WP_Query($args);
         </div>
         <div class="ivent_appeal">
             <p class="ivent_appeal_text">食堂から一言</p>
-            <p>テキストテキストテキストテキストテキストテキスト</p>
+            <p><?php the_field('appeal'); ?></p>
         </div>
         <table class="ivent_table">
             <tr>
@@ -88,14 +88,7 @@ $the_query = new WP_Query($args);
         <div class="ivent_map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1671457.3013939436!2d134.69202636250003!3d35.0925991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bf455fa707d%3A0xfaaea9929402ee59!2z5bmz5bCG6ZaA6aaW5aGa!5e0!3m2!1sja!2sjp!4v1680162253664!5m2!1sja!2sjp" width="250" height="200" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="category_list">
-            <h2 class="category_title">カテゴリー一覧</h2>
-            <div class="bgcnone column">
-                <a href="#" class="category_item">おしらせ</a>
-                <a href="#" class="category_item">更新情報</a>
-                <a href="#" class="category_item">次回開催</a>
-            </div>
-        </div>
+        <?php get_sidebar('categories'); ?>
         <?php endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>

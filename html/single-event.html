@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../assets/css/single-event.css" />
         <!-- Googlefont -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
             rel="stylesheet"
@@ -22,8 +22,7 @@
         <script src="../assets/js/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div class="body_inner">
-            <!-- トップページへ戻るボタン -->
+        <!-- トップページへ戻るボタン -->
         <div class="body_inner">
             <div class="toppage_btn">
                 <a href="#"
@@ -38,7 +37,7 @@
                     <div class="header_logo">
                         <a href="#"
                             ><img
-                                src="../assets/images/ロゴ（仮）.png"
+                                src="../assets/images/logo.png"
                                 alt="ホームボタン"
                         /></a>
                     </div>
@@ -55,16 +54,16 @@
                                 <a href="#"> こども食堂とは</a>
                             </li>
                             <li class="btn_header_pc_2 flex">
-                                <a href="#"> 支援したい方へ</a>
-                            </li>
-                            <li class="btn_header_pc_3 flex">
-                                <a href="#"> 特集記事</a>
-                            </li>
-                            <li class="btn_header_pc_4 flex">
                                 <a href="#"> エリアから<br />さがす</a>
                             </li>
-                            <li class="btn_header_pc_5 flex">
+                            <li class="btn_header_pc_3 flex">
                                 <a href="#"> 条件から<br />さがす</a>
+                            </li>
+                            <li class="btn_header_pc_4 flex">
+                                <a href="#"> 支援 <br />したい方へ</a>
+                            </li>
+                            <li class="btn_header_pc_5 flex">
+                                <a href="#"> 特集記事</a>
                             </li>
                             <li class="btn_header_pc_6 flex">
                                 <a href="#">開催情報</a>
@@ -73,7 +72,7 @@
                                 <form
                                     class="btn_header_search_pc"
                                     action="#"
-                                    method="#"
+                                    method="get"
                                 >
                                     <input
                                         type="hidden"
@@ -87,7 +86,6 @@
                                         value=""
                                         name="search"
                                         placeholder="キーワードを入力"
-                                        id=""
                                     />
                                     <input
                                         class="hbg_submit_pc"
@@ -105,18 +103,12 @@
                         <li>
                             <a class="a_menu" href="#"
                                 ><img
-                                    src="../assets/images/ロゴ（仮）.png"
+                                    src="../assets/images/logo.png"
                                     alt="ホームボタン"
                             /></a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> こども食堂とは</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 支援したい方へ</a>
-                        </li>
-                        <li class="btn_header">
-                            <a href="#"> 特集記事</a>
                         </li>
                         <li class="btn_header">
                             <a href="#"> エリアからさがす</a>
@@ -125,11 +117,17 @@
                             <a href="#"> 条件からさがす</a>
                         </li>
                         <li class="btn_header">
+                            <a href="#"> 支援したい方へ</a>
+                        </li>
+                        <li class="btn_header">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header">
                             <a href="#"> 開催情報</a>
                         </li>
                         <!-- 検索機能 -->
                         <li class="btn_header menu_search">
-                            <form class="hbg_search" action="#" method="#">
+                            <form class="hbg_search" action="#" method="get">
                                 <input
                                     type="hidden"
                                     name="search_type"
@@ -142,7 +140,6 @@
                                     value=""
                                     name="search"
                                     placeholder="キーワードを入力"
-                                    id=""
                                 />
                                 <input
                                     class="hbg_submit fas"
@@ -250,11 +247,11 @@
             </main>
             <footer class="footer">
                 <!-- 波型の画像 -->
-                <img
+                <!-- <img
                     class="footer_wave"
                     src="../assets/images/footer_wave.svg"
                     alt=""
-                />
+                /> -->
                 <div class="footer_inner">
                     <nav class="footer_container with_girl">
                         <!-- 女の子の画像 -->
