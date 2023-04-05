@@ -103,6 +103,11 @@ function add_my_files() {
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
 
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+    return false;
+}
 
 
 //投稿表示件数を変更する
