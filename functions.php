@@ -129,6 +129,12 @@ function add_my_files() {
         wp_enqueue_style('page-praivacy_policy-css', get_template_directory_uri() . '/assets/css/page-praivacy_policy.css', array('common-css')
         );
     }
+
+        // 404のみ出力
+    if (is_page('404')) {
+        wp_enqueue_style('404-css', get_template_directory_uri() . '/assets/css/404.css', array('common-css')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
