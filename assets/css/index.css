@@ -26,7 +26,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
-    margin: 50px;
+    margin: 50px 50px 0;
 }
 
 html {
@@ -48,6 +48,11 @@ html {
 }
 
 /* キービジュアル */
+
+.kv {
+    position: relative;
+}
+
 .kv_slider {
     width: 100vw;
     height: 92vh;
@@ -63,9 +68,26 @@ html {
     display: none;
 }
 
+.kvphrase {
+    position: absolute;
+    top: 217px;
+    left: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 0 #ffb700, -1px -1px 0 #ffb700, -1px 1px 0 #ffb700,
+        1px -1px 0 #ffb700, 0px 1px 0 #ffb700, 0-1px 0 #ffb700, -1px 0 0 #ffb700,
+        1px 0 0 #ffb700;
+}
+
 @media (min-width: 770px) {
     .kv {
         position: relative;
+    }
+    .kvphrase {
+        top: 135px;
+        left: 20%;
+        font-size: 36px;
     }
     .hbg_search_pc {
         display: block;
@@ -114,7 +136,7 @@ html {
     .rainbow {
         width: 650px;
         height: 650px;
-        top: -370px;
+        top: -340px;
     }
 }
 
@@ -160,6 +182,18 @@ html {
 /* pickupインタビュー */
 .interviews {
     background-color: #fdffb0;
+}
+
+.taleft {
+    text-align: left;
+    width: 287px;
+}
+
+@media (min-width: 770px) {
+    .taleft {
+        width: 435px;
+        text-decoration: none;
+    }
 }
 
 /* pickupスライドショー */
@@ -473,4 +507,23 @@ html {
     .activity_slider img {
         height: 150px;
     }
+}
+
+/* 波の設定 */
+.about_wave {
+    width: 100%;
+    height: 80px;
+    background-color: #fff8e6;
+}
+
+.onigiriup {
+    width: 100%;
+    height: 80px;
+    background-color: #fff8e6;
+}
+
+.onigiribottom {
+    width: 100%;
+    height: 80px;
+    background-color: #fff8e6;
 }
