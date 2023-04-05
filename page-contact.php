@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
-<h2 class="pageTitle">お問い合わせ</h2>
-
 <main>
                 <div class="main_inner">
                     <h2 class="title">お問い合わせ</h2>

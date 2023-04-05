@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<h2>Amazonみんなで応援プログラム</h2>
-
 <main>
                 <div class="main_inner">
                     <h2 class="title">
