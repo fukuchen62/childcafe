@@ -61,5 +61,13 @@ $(function () {
         centerPadding: "8%",
         dots: true,
         slidesToShow: 4,
+        responsive: [
+            {
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
     });
 });
