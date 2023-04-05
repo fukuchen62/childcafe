@@ -18,7 +18,7 @@
                 <p>
                     徳島県のこども食堂全体の活動を支援したい場合は、徳島こども食堂ネットワークへお問い合わせください。
                     支援したいと思うこども食堂が決まっている方は、各こども食堂へ直接お問い合わせください。
-                    Amazonみんなで応援プログラムに登録している食堂は<a href="<?php echo home_url(''); ?>">こちら!</a>
+                    Amazonみんなで応援プログラムに登録している食堂は<a href="<?php echo home_url('programlist'); ?>">こちら!</a>
                 </p>
             </div>
             <div class="support_money tab-b panel">
