@@ -29,7 +29,7 @@
             <li class="tab_3"><a href="<?php echo home_url('/link/third'); ?>">第三支援関連</a></li>
         </ul>
         <!-- 関連リンク -->
-        <section class="link_content1 <?php echo $link->name; ?>">
+        <section class="link_<?php echo $link->slug; ?>">
             <h2 class="title"><?php echo $link->name; ?>関連</h2>
             <div class="link_wrap">
                 <?php if (have_posts()) : ?>
