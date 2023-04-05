@@ -9,6 +9,17 @@ $event_fields = get_field_objects($event_id);
 $events = $event_fields;
 unset($events['class'],$events['place_map'],$events['service'],$events['service'],$events['pic1'],$events['pic2'],$events['pic3'],$events['pic4'],$events['pic5'],$events['pic6'],$events['pic7'],$events['pic8'],$events['pic9'],$events['pic10'],$events['eye_catching'],$events['id'],$events['appeal'],$events['license']);
 
+$infos = array();
+// $contact = array('電話番号:'. get_field('tel'),'メールアドレス:'.get_field('email'),'LINE:'.get_field('line_id'));
+
+
+$infos = array(
+    '連絡先'=> ['電話番号:'=> get_field('tel'),'メールアドレス:'=>get_field('email'),'LINE:'=>get_field('line_id')],
+    'LINE QRコード'=>[get_field('line_qr'), get_field('line_url')],
+    'SNS'=>['instagram:'=> get_field('instagram'),'twitter:'=> get_field('twitter'),'facebook:'=> get_field('twitter')],
+    '公式WEBサイト'=>[get_field('site_url')],
+    'Amazonみんなで応援プログラム'=>[get_field('amapro')]
+    );
 
 ?>
 
@@ -53,8 +64,7 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
         </div>
         <div class="beige color">
             <div class="beige_inner m1024">
-                <?php
-                foreach( $events as $event): ?>
+                <?php foreach( $events as $event): ?>
                 <div class="detail_item">
                     <?php if (! empty($event['value'])) : ?>
                     <h3 class="subtitle">
@@ -81,36 +91,31 @@ unset($events['class'],$events['place_map'],$events['service'],$events['service'
         </div>
         <div class="green color">
             <div class="green_inner m1024">
+                <?php foreach( $infos as $label => $info): ?>
                 <div class="detail_item">
-                    <h3 class="subtitle">連絡先</h3>
-                    <div>
-                        <p>電話番号:000-000-0000</p>
-                        <p>メールアドレス:sample@sample.com</p>
-                        <p>LINE:shokudou@LINE</p>
-                    </div>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">LINE QRコード</h3>
-                    <img src="#" alt="LINEQRコード" />
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">SNS</h3>
-                    <div>
-                        <p>instagram:インスタアカウント</p>
-                        <p>twitter:ツイッターアカウント</p>
-                        <p>facebook:フェイスブックアカウント</p>
-                    </div>
-                </div>
-                <div class="detail_item">
-                    <h3 class="subtitle">公式WEBサイト</h3>
-                    <p>http/example</p>
-                </div>
-                <div class="detail_item">
+                    <?php //$info = array_filter($info); // 空の要素を削除する ?>
+                    <?php if (!empty($info)) : ?>
                     <h3 class="subtitle">
-                        Amazonみんなで応援プログラム
+                        <?php echo $label; ?>
                     </h3>
-                    <p>Amazon/url/urlurl</p>
+                    <div>
+                        <?php foreach($info as $key => $value): ?>
+                        <?php if (!empty($value)) : ?>
+                        <?php if (@exif_imagetype($value) == true) : ?>
+                        <img src="<?php echo $value ?>" alt="LINEQRコード">
+                        <?php elseif(filter_var($value, FILTER_VALIDATE_URL )): ?>
+                        <a href="<?php echo $value ?>"><?php echo $value ?></a>
+                        <?php else: ?>
+                        <p>
+                        <?php echo $key . $value; ?>
+                        </p>
+                        <?php endif; ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
                 <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>
                 <?php endif;?>
