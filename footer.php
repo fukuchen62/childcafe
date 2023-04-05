@@ -1,19 +1,15 @@
 <footer class="footer">
-            <!-- 波型の画像 -->
-            <!-- <img
+    <!-- 波型の画像 -->
+    <!-- <img
                 class="footer_wave"
                 src="../assets/images/footer_wave.svg"
                 alt=""
             /> -->
-            <div class="footer_inner">
-                <nav class="footer_container with_girl">
-                    <!-- 女の子の画像 -->
-                    <img
-                        src="../assets/images/girl.png"
-                        alt=""
-                        class="footer_girl"
-                    />
-                    <?php
+    <div class="footer_inner">
+        <nav class="footer_container with_girl">
+            <!-- 女の子の画像 -->
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/girl.png" alt="" class="footer_girl" />
+            <?php
             $hoge = array(
             'menu' => 'footer-navigation',  //管理画面で作成したメニューの名前
             'menu_class' => 'footer_nav flex', //メニューを構成するulタグのクラス名
@@ -21,14 +17,15 @@
             );
             wp_nav_menu($hoge);
             ?>
-                    <!-- footer_nav end -->
-                    <div class="footer_copyright">
-                        <p>copyright©</p>
-                    </div>
-                </nav>
+            <!-- footer_nav end -->
+            <div class="footer_copyright">
+                <p>copyright©<?php echo bloginfo('name'); ?></p>
             </div>
-            <!-- footer_inner end -->
-        </footer>
-        <?php wp_footer(); ?>
-    </body>
+        </nav>
+    </div>
+    <!-- footer_inner end -->
+</footer>
+<?php wp_footer(); ?>
+</body>
+
 </html>
