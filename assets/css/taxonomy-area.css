@@ -14,7 +14,7 @@ main {
 .tab {
     max-width: 980px;
     height: 75px;
-    margin: 0 auto;
+    margin: 15px auto;
     justify-content: space-between;
     align-items: center;
     font-weight: 500;
@@ -124,6 +124,9 @@ main {
 }
 
 @media screen and (min-width: 770px) {
+    .tab {
+        margin-top: 160px;
+    }
     .list_area {
         flex-direction: row-reverse;
         justify-content: space-around;
