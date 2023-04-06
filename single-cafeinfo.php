@@ -44,6 +44,7 @@ $infos = array(
                             <p class="address">
                                 <?php
                                 echo $this_terms[1]->name;
+                                echo $cafeinfo_id;
                                 ?>
                             </p>
                             <div class="good cafeinfo_flex flex">
