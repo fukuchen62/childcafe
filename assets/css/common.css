@@ -92,54 +92,6 @@ main {
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
-/* 新しいボタン */
-.btn_new {
-    margin-top: 100px;
-}
-
-.btn_new a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 auto;
-    padding: 1em 2em;
-    width: 250px;
-    color: #333;
-    font-size: 16px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.btn_new a::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    border-radius: 10px;
-    transition: 0.2s;
-}
-
-.btn_new a::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-top: 3px solid #333333;
-    border-right: 3px solid #333333;
-    transform: rotate(45deg);
-}
-
-.btn_new a:hover::before {
-    top: 0;
-    left: 0;
-}
-
-.btn_new a:hover {
-    text-decoration: none;
-}
-
 /* 詳細一覧のimgの大きさ */
 .detail_img {
     width: 120px;
