@@ -136,7 +136,7 @@ html {
     position: relative;
 }
 
-.niji .btn_item {
+.about .btn_item {
     position: relative;
     z-index: 10;
 }
@@ -153,6 +153,7 @@ html {
 @media (min-width: 770px) {
     .about .text {
         width: 590px;
+        text-align: left;
     }
     .rainbow {
         width: 650px;
@@ -193,6 +194,9 @@ html {
     .text_box img {
         width: 80%;
         opacity: 0.5;
+    }
+    .info .btn_item {
+        margin-bottom: 30px;
     }
 }
 
@@ -489,6 +493,12 @@ html {
     z-index: 2;
 }
 
+@media (min-width: 770px) {
+    .with_onigiri .text {
+        width: 590px;
+        text-align: left;
+    }
+}
 @keyframes korogari {
     0% {
         transform: rotate(0deg);
@@ -536,6 +546,7 @@ html {
     }
     .surporters .text {
         width: 590px;
+        text-align: left;
     }
     .surporters .btn_item {
         margin-bottom: 30px;
@@ -573,6 +584,7 @@ html {
     .link_flex {
         flex-direction: row;
         justify-content: center;
+        margin-bottom: 30px;
     }
 }
 
