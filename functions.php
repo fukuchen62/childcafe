@@ -114,6 +114,8 @@ function add_my_files() {
     if (is_page('support')) {
         wp_enqueue_style('page-support-css', get_template_directory_uri() . '/assets/css/page-support.css', array('common-css')
         );
+        //tab.jsの読み込み
+        wp_enqueue_script('tab-js',get_template_directory_uri().'/assets/js/tab.js',array('header-js'),'1.0',true);
     }
 
     // page-supportのみ出力
