@@ -185,14 +185,29 @@ html {
 }
 
 .taleft {
+    position: relative;
     text-align: left;
     text-decoration: none;
     width: 286px;
+    z-index: 10;
+}
+
+.crayon {
+    position: absolute;
+    width: 330px;
+    height: 50px;
+    left: -18px;
+    top: 55px;
+    z-index: -1;
 }
 
 @media (min-width: 770px) {
     .taleft {
         width: 435px;
+    }
+    .crayon {
+        top: 80px;
+        width: 400px;
     }
 }
 
@@ -207,6 +222,29 @@ html {
     position: relative;
     padding: 10px;
     padding-bottom: 30px;
+}
+
+.pickup_slide {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.orangetabs {
+    position: absolute;
+    left: 85px;
+    top: -35px;
+    z-index: 10;
+}
+
+.orangetab {
+    width: 150px;
+    height: 80px;
+}
+
+.orange1,
+.orange2 {
+    display: none;
 }
 
 .pickup_slider {
@@ -268,6 +306,26 @@ html {
         margin: 0 auto;
     }
 
+    .pickup_slide {
+        width: 100%;
+    }
+
+    .orangetabs {
+        width: 90%;
+        left: 5%;
+        top: -50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .orange1,
+    .orange2 {
+        display: block;
+    }
+
+    .orangetab {
+        width: 200px;
+        height: 80px;
+    }
     .pickup_slide li {
         margin: 0 15px;
     }
@@ -278,6 +336,12 @@ html {
     }
 }
 
+@media (min-width: 1100px) {
+    .orangetabs {
+        width: 60%;
+        left: 20%;
+    }
+}
 /* MAP */
 .map .pic {
     width: 306px;
@@ -308,12 +372,9 @@ html {
     right: 15%;
     top: 40px;
     z-index: 10;
-    transition: 1s;
+    transition: 0.5s;
+    border-radius: 20% 40% / 30% 70%;
     background-color: rgba(247, 221, 148, 0.66);
-}
-
-.north:hover {
-    background-color: rgba(247, 221, 148, 1);
 }
 
 .south {
@@ -348,6 +409,11 @@ html {
     .north {
         right: 20%;
         top: 90px;
+    }
+    .north:hover {
+        box-shadow: 0px 10px 19px 2px #000;
+        border-radius: 50% 20% / 80% 30%;
+        background-color: rgba(247, 221, 148, 1);
     }
     .south {
         right: 20%;
@@ -439,6 +505,10 @@ html {
     background-color: #fdffb0;
 }
 
+.link_title {
+    margin-bottom: 0;
+}
+
 .btn_link {
     margin: 0 auto;
     width: 200px;
@@ -485,6 +555,10 @@ html {
 /* お問い合わせ */
 .contact {
     background-color: #d7f794;
+}
+
+.contact .btn_item {
+    margin: 10px auto 30px;
 }
 
 /* 活動の様子 */
