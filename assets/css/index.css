@@ -184,6 +184,16 @@ html {
     background-color: #fdffb0;
 }
 
+.crayon {
+    position: relative;
+}
+
+.crayon::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/index/);
+}
+
 .taleft {
     text-align: left;
     text-decoration: none;
@@ -308,12 +318,9 @@ html {
     right: 15%;
     top: 40px;
     z-index: 10;
-    transition: 1s;
+    transition: 0.5s;
+    border-radius: 20% 40% / 30% 70%;
     background-color: rgba(247, 221, 148, 0.66);
-}
-
-.north:hover {
-    background-color: rgba(247, 221, 148, 1);
 }
 
 .south {
@@ -348,6 +355,11 @@ html {
     .north {
         right: 20%;
         top: 90px;
+    }
+    .north:hover {
+        box-shadow: 0px 10px 19px 2px #000;
+        border-radius: 50% 20% / 80% 30%;
+        background-color: rgba(247, 221, 148, 1);
     }
     .south {
         right: 20%;
@@ -439,6 +451,10 @@ html {
     background-color: #fdffb0;
 }
 
+.link_title {
+    margin-bottom: 0;
+}
+
 .btn_link {
     margin: 0 auto;
     width: 200px;
@@ -485,6 +501,10 @@ html {
 /* お問い合わせ */
 .contact {
     background-color: #d7f794;
+}
+
+.contact .btn_item {
+    margin: 10px auto 30px;
 }
 
 /* 活動の様子 */
