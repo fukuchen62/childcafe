@@ -176,7 +176,7 @@ $event_query = new WP_Query($fuga);
                     <h2>このサイトについて</h2>
                 </div>
                 <div class="text niji">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/20220819_2_虹_01_1.png" alt="虹" class="rainbow">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/rainbow.png" alt="虹" class="rainbow">
                     <p>
                         徳島県には、こども食堂がたくさんあります。
                         ”こども食堂って何なの？という人”や、”こども食堂へ行ってみたい人・手伝いたい人・支援したい人”へ分かりやすく情報をお届けする！をスローガンにこのサイトを作りました。ぜひ、自分の家の近くのこども食堂を探して行ってみてください！
@@ -253,7 +253,7 @@ $event_query = new WP_Query($fuga);
                     <!-- クラス名をeastに変更依頼 -->
                     <a href="<?php echo home_url('/area/south'); ?>" class="serch_btn south">南部</a>
                     <a href="<?php echo home_url('/area/west'); ?>" class="serch_btn west">西部</a>
-                    <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/徳島県の３区分　明るめ.png" alt="地図" />
+                    <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/tokushima_map.png" alt="地図" />
                 </div>
 
                 <a href="<?php echo home_url('/search'); ?>" class="btn_item">条件からさがす</a>
@@ -277,7 +277,7 @@ $event_query = new WP_Query($fuga);
                             こども食堂は、子どもたちが安心して食事ができる場所で、食材を提供し、食事を作る場所です。多くは、地域のボランティアや市民団体などが運営しており、家庭の事情によって十分な食事を摂れない子どもたちに、無料または低額で食事を提供しています。
                         </p>
                     </div>
-                    <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/おにぎり.png" alt="おにぎり">
+                    <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiri.png" alt="おにぎり">
                     <a href="<?php echo home_url('/concept'); ?>" class="btn_item">もっと見る</a>
                 </div>
             </div>
@@ -303,8 +303,8 @@ $event_query = new WP_Query($fuga);
                             一言に”支援”と言っても、いくつかの方法があります。
                         </p>
                     </div>
-                    <img class="mobile_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_01.png" alt="野菜を収穫した人" />
-                    <img class="pc_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_02.png" alt="野菜を収穫した人">
+                    <img class="mobile_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_mobile.png" alt="野菜を収穫した人" />
+                    <img class="pc_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_pc.png" alt="野菜を収穫した人">
                 </div>
                 <a href="<?php echo home_url('/support'); ?>" class="btn_item">もっと見る</a>
             </div>

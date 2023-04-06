@@ -14,7 +14,7 @@
         <header class="header">
             <div class="header_inner flex">
                 <div class="header_logo">
-                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン"></a>
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="ホームボタン"></a>
                 </div>
 
                 <div class="hamburger">
@@ -37,7 +37,7 @@
             <nav class="menu">
                 <ul>
                     <li>
-                        <a class="a_menu" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ロゴ（仮）.png" alt="ホームボタン" /></a>
+                        <a class="a_menu" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="ホームボタン" /></a>
                     </li>
                     <li class="btn_header">
                         <a href="<?php echo home_url('concept'); ?>">こども食堂とは</a>
