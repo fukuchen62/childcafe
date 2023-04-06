@@ -367,6 +367,30 @@ html {
     }
 }
 /* MAP */
+.map .section_inner {
+    position: relative;
+}
+
+.serch_map_img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 60px;
+    left: -20vw;
+    opacity: 40%;
+    transform: rotate(0deg);
+    animation: mushimegane 3s linear infinite alternate;
+}
+@keyframes mushimegane {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(15deg);
+        left: -10vw;
+    }
+}
+
 .map .pic {
     width: 306px;
     height: 230px;
@@ -466,6 +490,20 @@ html {
     }
     .map .btn_item {
         margin-bottom: 30px;
+    }
+    .serch_map_img {
+        width: 500px;
+        height: 500px;
+        top: 30px;
+        left: 150px;
+    }
+    @keyframes mushimegane {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(15deg);
+        }
     }
 }
 
