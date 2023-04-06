@@ -10,6 +10,11 @@ $args = array(
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
 	);
 $the_query = new WP_Query($args);
+
+$event_fields = get_field_objects();
+$events = $event_fields;
+unset($events['class'],$events['title'],$events['place_map'],$events['service'],$events['pic1'],$events['pic2'],$events['pic3'],$events['pic4'],$events['pic5'],$events['pic6'],$events['pic7'],$events['pic8'],$events['pic9'],$events['pic10'],$events['eye_catching'],$events['id'],$events['appeal'],$events['license']);
+
 ?>
 <main>
     <div class="main_inner">
@@ -17,7 +22,7 @@ $the_query = new WP_Query($args);
         <?php while($the_query->have_posts()) : ?>
         <?php $the_query->the_post(); ?>
         <div class="ivent_title">
-            <h2 class="title">1月1日 〇〇食堂開催のお知らせ</h2>
+            <h2 class="title"><?php the_field('title'); ?></h2>
             <?php if(! empty(get_field('eye_catching'))): ?>
             <img src="<?php the_field('eye_catching'); ?>" alt="" class="main_visual" />
             <?php else: ?>
@@ -29,64 +34,29 @@ $the_query = new WP_Query($args);
             <p><?php the_field('appeal'); ?></p>
         </div>
         <table class="ivent_table">
+            <?php foreach( $events as $event): ?>
             <tr>
-                <td class="ivent_table_tdtitle">開催日時</td>
-                <td class="ivent_table_tdtext">
-                    5/1 13:00~14:00まで
-                </td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">開催住所</td>
-                <td class="ivent_table_tdtext">
-                    徳島市●●町●●1-1-1
-                </td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">会場</td>
-                <td class="ivent_table_tdtext">●●公民館</td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">参加条件</td>
-                <td class="ivent_table_tdtext">
-                    テキストテキストテキストテキストテキストテキスト
-                </td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">参加料金</td>
-                <td class="ivent_table_tdtext">
-                    こども 300円 大人 400円
-                </td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">参加年齢</td>
-                <td class="ivent_table_tdtext">
-                    未就学児～高校生まで
-                </td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">食事提供方法</td>
-                <td class="ivent_table_tdtext">
-                    参加者と一緒に料理を作る
-                </td>
-            </tr>
-            <tr>
+                <?php if (! empty($event['value'])) : ?>
                 <td class="ivent_table_tdtitle">
-                    <span class="sp"> 取り扱いが</span>
-                    <span class="sp">あるもの</span>
+                    <?php echo $event['label']; ?>
                 </td>
-                <td class="ivent_table_tdtext">おもちゃ</td>
+                <?php if (! is_array($event['value'])) : ?>
+                <td class="ivent_table_tdtext">
+                    <?php echo $event['value']; ?>
+                </td>
+                <?php else: ?>
+                <?php foreach( $event['value'] as $value ): ?>
+                <td class="ivent_table_tdtext">
+                    <?php echo $value; ?>
+                </td>
+                <?php endforeach; ?>
+                <?php endif; ?>
+                <?php endif; ?>
             </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">事前の予約</td>
-                <td class="ivent_table_tdtext">電話にて必要</td>
-            </tr>
-            <tr>
-                <td class="ivent_table_tdtitle">連絡先</td>
-                <td class="ivent_table_tdtext">088-000-000</td>
-            </tr>
+            <?php endforeach; ?>
         </table>
         <div class="ivent_map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1671457.3013939436!2d134.69202636250003!3d35.0925991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bf455fa707d%3A0xfaaea9929402ee59!2z5bmz5bCG6ZaA6aaW5aGa!5e0!3m2!1sja!2sjp!4v1680162253664!5m2!1sja!2sjp" width="250" height="200" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <?php the_field('place_map'); ?>
         </div>
         <?php get_sidebar('categories'); ?>
         <?php endwhile; ?>
