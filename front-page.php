@@ -153,13 +153,17 @@ $event_query = new WP_Query($fuga);
         <section>
             <form class="hbg_search_pc" action="<?php echo home_url('/'); ?>" method="get">
                 <input type="hidden" name="search_type" value="keywords">
-                <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" name="search" placeholder="キーワードを入力" id="" />
+                <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>"
+                    name="search" placeholder="キーワードを入力" id="" />
                 <input class="hbg_submit fas" type="submit" value="">
             </form>
             <ul class="kv_slider">
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="KV画像"></li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="KV画像"></li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="KV画像"></li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="KV画像">
+                </li>
             </ul>
         </section>
         <!-- このサイトについて -->
@@ -169,16 +173,21 @@ $event_query = new WP_Query($fuga);
                     <h2>このサイトについて</h2>
                 </div>
                 <div class="text niji">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/20220819_2_虹_01_1.png" alt="虹" class="rainbow">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/20220819_2_虹_01_1.png"
+                        alt="虹" class="rainbow">
                     <p>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        徳島県には、こども食堂がたくさんあります。
+                        ”こども食堂って何なの？という人”や、”こども食堂へ行ってみたい人・手伝いたい人・支援したい人”へ分かりやすく情報をお届けする！をスローガンにこのサイトを作りました。ぜひ、自分の家の近くのこども食堂を探して行ってみてください！
+
                     </p>
                     <a href="<?php echo home_url('/about'); ?>" class="btn_item">もっと見る</a>
                 </div>
             </div>
             <div class="wave_mobile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff8e6" fill-opacity="1" d="M0,192L48,170.7C96,149,192,107,288,106.7C384,107,480,149,576,181.3C672,213,768,235,864,218.7C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    <path fill="#fff8e6" fill-opacity="1"
+                        d="M0,192L48,170.7C96,149,192,107,288,106.7C384,107,480,149,576,181.3C672,213,768,235,864,218.7C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
                 </svg>
             </div>
         </section>
@@ -204,7 +213,9 @@ $event_query = new WP_Query($fuga);
         <!-- Pick Upインタビュー一覧 -->
         <section class="interviews">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,138.7C840,117,960,107,1080,112C1200,117,1320,139,1380,149.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,138.7C840,117,960,107,1080,112C1200,117,1320,139,1380,149.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+                </path>
             </svg>
             <div class="section_inner">
                 <div class="title">
@@ -227,7 +238,9 @@ $event_query = new WP_Query($fuga);
                 <a href="<?php echo home_url('/interview'); ?>" class="btn_item">もっと見る</a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,138.7C840,117,960,107,1080,112C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,138.7C840,117,960,107,1080,112C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
             </svg>
         </section>
         <!-- MAP -->
@@ -241,7 +254,9 @@ $event_query = new WP_Query($fuga);
                     <!-- クラス名をeastに変更依頼 -->
                     <a href="<?php echo home_url('/area/south'); ?>" class="serch_btn south">南部</a>
                     <a href="<?php echo home_url('/area/west'); ?>" class="serch_btn west">西部</a>
-                    <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/徳島県の３区分　明るめ.png" alt="地図" />
+                    <img class="pic"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/index/徳島県の３区分　明るめ.png"
+                        alt="地図" />
                 </div>
 
                 <a href="<?php echo home_url('/search'); ?>" class="btn_item">条件からさがす</a>
@@ -251,7 +266,9 @@ $event_query = new WP_Query($fuga);
         <section class="childcafe">
             <div class="wave_mobile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff8e6" fill-opacity="1" d="M0,128L60,106.7C120,85,240,43,360,64C480,85,600,171,720,181.3C840,192,960,128,1080,106.7C1200,85,1320,107,1380,117.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                    <path fill="#fff8e6" fill-opacity="1"
+                        d="M0,128L60,106.7C120,85,240,43,360,64C480,85,600,171,720,181.3C840,192,960,128,1080,106.7C1200,85,1320,107,1380,117.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+                    </path>
                 </svg>
             </div>
             <div class="section_inner">
@@ -261,16 +278,19 @@ $event_query = new WP_Query($fuga);
                 <div class="with_onigiri">
                     <div class="text">
                         <p>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                            こども食堂は、子どもたちが安心して食事ができる場所で、食材を提供し、食事を作る場所です。多くは、地域のボランティアや市民団体などが運営しており、家庭の事情によって十分な食事を摂れない子どもたちに、無料または低額で食事を提供しています。
                         </p>
                     </div>
-                    <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/おにぎり.png" alt="おにぎり">
+                    <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/おにぎり.png"
+                        alt="おにぎり">
                     <a href="<?php echo home_url('/concept'); ?>" class="btn_item">もっと見る</a>
                 </div>
             </div>
             <div class="wave_mobile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff8e6" fill-opacity="1" d="M0,128L60,106.7C120,85,240,43,360,64C480,85,600,171,720,181.3C840,192,960,128,1080,106.7C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                    <path fill="#fff8e6" fill-opacity="1"
+                        d="M0,128L60,106.7C120,85,240,43,360,64C480,85,600,171,720,181.3C840,192,960,128,1080,106.7C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
                 </svg>
             </div>
         </section>
@@ -283,11 +303,18 @@ $event_query = new WP_Query($fuga);
                 <div class="shien_box">
                     <div class="text">
                         <p>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                            こども食堂は、ほとんどがボランティアスタッフで運営されています。
+                            行政等からの助成金等がもらえる場合もありますが、それでは間に合わない事も多いです。
+                            自分にできることから、支援してみませんか？
+                            一言に”支援”と言っても、いくつかの方法があります。
                         </p>
                     </div>
-                    <img class="mobile_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_01.png" alt="野菜を収穫した人" />
-                    <img class="pc_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_02.png" alt="野菜を収穫した人">
+                    <img class="mobile_pic"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_01.png"
+                        alt="野菜を収穫した人" />
+                    <img class="pc_pic"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/index/野菜を収穫した人_02.png"
+                        alt="野菜を収穫した人">
                 </div>
                 <a href="<?php echo home_url('/support'); ?>" class="btn_item">もっと見る</a>
             </div>
@@ -295,7 +322,9 @@ $event_query = new WP_Query($fuga);
         <!-- リンク集 -->
         <section class="link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,128L60,144C120,160,240,192,360,213.3C480,235,600,245,720,234.7C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,128L60,144C120,160,240,192,360,213.3C480,235,600,245,720,234.7C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+                </path>
             </svg>
             <div class="section_inner">
                 <div class="title">
@@ -308,7 +337,9 @@ $event_query = new WP_Query($fuga);
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,128L60,144C120,160,240,192,360,213.3C480,235,600,245,720,234.7C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,128L60,144C120,160,240,192,360,213.3C480,235,600,245,720,234.7C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
             </svg>
         </section>
         <!-- おしらせ -->
@@ -334,7 +365,9 @@ $event_query = new WP_Query($fuga);
         <!-- お問い合わせ -->
         <section class="contact">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,80C840,64,960,96,1080,122.7C1200,149,1320,171,1380,181.3L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,80C840,64,960,96,1080,122.7C1200,149,1320,171,1380,181.3L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+                </path>
             </svg>
             <div class="section_inner">
                 <div class="title">
@@ -343,7 +376,9 @@ $event_query = new WP_Query($fuga);
                 <a href="<?php echo home_url('/contact'); ?>" class="btn_item">お問い合わせはこちら</a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#fff8e6" fill-opacity="1" d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,80C840,64,960,96,1080,122.7C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                <path fill="#fff8e6" fill-opacity="1"
+                    d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,80C840,64,960,96,1080,122.7C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
             </svg>
         </section>
         <!-- 活動風景 -->
