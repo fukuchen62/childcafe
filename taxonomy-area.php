@@ -9,6 +9,10 @@
     // $town_slug = get_query_var('area_child');
     // $town = get_term_by('slug', $town_slug, 'area')
 
+    //市町村名が選択された場合は、親カテゴリーのエリアのIDを取得
+    $parent_id = $area->parent != 0 ? $area->parent : $area->term_id;
+    $parent_term = get_term($parent_id, 'area');
+
     $args = array(
         'post_type' => 'cafeinfo',
         'tax_query' => array(
@@ -19,8 +23,20 @@
                 'include_children' => true,
             ),
         ),
+        // orderby => ,
     );
     $the_query = new WP_Query($args);
+
+    //市町村一覧
+    $towns = get_terms(array(
+    'taxonomy' => 'area',
+    'parent' => $parent_term->term_id,
+    //投稿がない場合でも表示させる
+    'hide_empty' => false,
+    // 'orderby' => 'modified',
+    // 'order' => 'ASC',
+));
+
 
 ?>
 
@@ -34,22 +50,20 @@
         </ul>
         <!-- 市町村別一覧 -->
         <div class="list_area flex">
-            <div class="area_<?php echo $area->slug; ?> panel east is-show">
-                <h2 class="title"><?php echo $area->name; ?>市町村一覧</h2>
+            <div class="area_<?php echo $parent_term->slug; ?> panel east is-show">
+                <h2 class="title"><?php echo $parent_term->name.'市町村一覧'; ?></h2>
                 <ul class="area_list_wrap flex">
-                    <?php
-                        $towns = get_terms(array(
-                            'taxonomy' => 'area',
-                            'parent' => $area->term_id,
-                            //投稿がない場合でも表示させる
-                            'hide_empty' => false,
-                            'orderby' => 'modified',
-                            'order' => 'ASC',
-                        ));
-                        foreach ($towns as $town) {
-                            echo '<li><a href="'.get_term_link($town).'">'.$town->name.'（'.$town->count.'）'.'</a></li>';
-                        }
-                    ?>
+                    <?php foreach ($towns as $town) :  ?>
+                    <li>
+                        <?php if(! $town->count == 0) :?>
+                        <a href="<?php echo get_term_link($town); ?>">
+                            <?php echo $town->name.'（'.$town->count.'）'; ?>
+                        </a>
+                        <?php else: ?>
+                        <?php echo $town->name.'（'.$town->count.'）'?>
+                        <?php endif; ?>
+                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- 地域別食堂一覧 -->
