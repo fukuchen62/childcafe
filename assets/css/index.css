@@ -26,10 +26,13 @@ body {
 .btn_item {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #ffdf8c;
-    border: 1px solid black;
+    background-color: #ffd466;
     border-radius: 10px;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
     text-align: center;
+    transition: 0.3s;
     margin: 50px 50px 0;
 }
 
@@ -47,8 +50,22 @@ html {
     width: 100%;
 }
 
-.btn a {
-    display: inline-block;
+.btn_item:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: shad26 1.5s infinite;
+}
+@keyframes shad26 {
+    0% {
+        box-shadow: 0 0 0 0 #ffb700;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
+    }
 }
 
 /* キービジュアル */
@@ -334,6 +351,9 @@ html {
         width: 280px;
         height: 200px;
     }
+    .interviews .btn_item {
+        margin-bottom: 30px;
+    }
 }
 
 @media (min-width: 1100px) {
@@ -382,13 +402,18 @@ html {
     right: 20%;
     top: 135px;
     z-index: 10;
+    transition: 0.5s;
+    border-radius: 20% 40% / 30% 70%;
     background-color: rgba(215, 247, 148, 0.66);
 }
+
 .west {
     position: absolute;
     left: 10%;
     top: 70px;
     z-index: 10;
+    transition: 0.5s;
+    border-radius: 20% 40% / 30% 70%;
     background-color: rgba(253, 255, 176, 0.66);
 }
 
@@ -413,15 +438,30 @@ html {
     .north:hover {
         box-shadow: 0px 10px 19px 2px #000;
         border-radius: 50% 20% / 80% 30%;
-        background-color: rgba(247, 221, 148, 1);
+        box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
     }
     .south {
         right: 20%;
         top: 280px;
     }
+    .south:hover {
+        box-shadow: 0px 10px 19px 2px #000;
+        border-radius: 50% 20% / 80% 30%;
+        box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+    }
     .west {
         left: 25%;
         top: 150px;
+    }
+    .west:hover {
+        left: 25%;
+        top: 150px;
+        box-shadow: 0px 10px 19px 2px #000;
+        border-radius: 50% 20% / 80% 30%;
+        box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+    }
+    .map .btn_item {
+        margin-bottom: 30px;
     }
 }
 
@@ -497,6 +537,9 @@ html {
     .surporters .text {
         width: 590px;
     }
+    .surporters .btn_item {
+        margin-bottom: 30px;
+    }
 }
 
 /* リンク集 */
@@ -550,6 +593,9 @@ html {
     .notice .news {
         width: 633px;
         height: 162px;
+    }
+    .notice .btn_item {
+        margin-bottom: 30px;
     }
 }
 /* お問い合わせ */
