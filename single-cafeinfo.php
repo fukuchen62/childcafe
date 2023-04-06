@@ -14,12 +14,15 @@ $infos = array();
 
 
 $infos = array(
+    '担当者名'=>
     '連絡先'=> ['電話番号:'=> get_field('tel'),'メールアドレス:'=>get_field('email'),'LINE:'=>get_field('line_id')],
     'LINE QRコード'=>[get_field('line_qr'), get_field('line_url')],
     'SNS'=>['instagram:'=> get_field('instagram'),'twitter:'=> get_field('twitter'),'facebook:'=> get_field('twitter')],
     '公式WEBサイト'=>[get_field('site_url')],
     'Amazonみんなで応援プログラム'=>[get_field('amapro')]
     );
+
+$pics = array(get_field(''));
 
 ?>
 
@@ -150,26 +153,9 @@ $infos = array(
                 </div>
                 <h3 class="subtitle_ulineorange">活動の様子</h3>
                 <ul class="ac_slide">
+
                     <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
-                    </li>
-                </ul>
-                <h3 class="subtitle_ulineorange">過去のメニュー</h3>
-                <ul class="past_slide">
-                    <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/text_kakko_kari.png" alt="#" />
+                        <img src="../assets/images/delete/kv1_kari.jpg" alt="#" />
                     </li>
                 </ul>
             </div>
