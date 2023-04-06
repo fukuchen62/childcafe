@@ -1,16 +1,16 @@
 @charset "utf-8";
 
-.pickup_title {
+.pickup_title_1 {
     text-align: center;
+    font-size: 24px;
+}
+
+.pickup_title {
     line-height: 2.1;
     font-size: 20px;
     font-weight: 500;
     text-decoration: underline dotted 5px #ffb700;
     text-underline-offset: 10px;
-}
-
-.title {
-    margin-top: 25px;
 }
 
 .pickup_single {
@@ -65,8 +65,70 @@
     margin: 50px auto;
 }
 
-.btn_pickup_single {
+/* .btn_pickup_single {
     background-color: #e9fcc1;
+} */
+
+/* ボタン */
+
+/* ボタン */
+.btn_new {
+    margin-top: 100px;
+}
+
+.btn_new a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 250px;
+    color: #333;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn_new a::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.btn_new a::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg);
+}
+
+.btn_new a:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.btn_new a:hover {
+    text-decoration: none;
+}
+
+.pickup_btn a {
+    background-color: #e9fcc1;
+}
+
+.pickup_btn a::before {
+    border: 2px solid #008000;
+}
+
+.pickup_btn a:hover {
+    background-color: #ccfc65;
 }
 
 .child_text,
@@ -79,9 +141,20 @@
 }
 
 @media (min-width: 770px) {
-    .title {
-        margin: 10px auto;
+    .pickup_title_1 {
+        margin-top: 120px;
     }
+
+    .pickup_title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+    /* .title {
+        margin: 10px auto;
+    } */
 
     .pickup_single {
         width: 665px;
@@ -94,9 +167,70 @@
 
     .good {
         margin-top: 10px;
+        padding-left: 70%;
     }
 
     .pickup_single_text {
         margin: 80px auto;
+    }
+
+    /* ボタン */
+    .btn_new {
+        margin-top: 150px;
+    }
+
+    .btn_new a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+        padding: 1em 2em;
+        width: 250px;
+        color: #333;
+        font-size: 16px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .btn_new a::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    .btn_new a::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid #333333;
+        border-right: 3px solid #333333;
+        transform: rotate(45deg);
+    }
+
+    .btn_new a:hover::before {
+        top: 0;
+        left: 0;
+    }
+
+    .btn_new a:hover {
+        text-decoration: none;
+    }
+
+    .pickup_btn a {
+        background-color: #e9fcc1;
+    }
+
+    .pickup_btn a::before {
+        border: 2px solid #008000;
+    }
+
+    .pickup_btn a:hover {
+        background-color: #ccfc65;
     }
 }
