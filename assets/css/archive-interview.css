@@ -6,10 +6,10 @@
 }
 
 .pickup_item_card {
-    max-width: 267px;
+    max-width: 320px;
     width: 100%;
-    height: 370px;
     background-color: white;
+    padding: 10px;
     margin: 0 auto;
     text-align: center;
     border-radius: 5px;
@@ -17,7 +17,6 @@
 }
 
 .pickup_item_card img {
-    width: 230px;
     height: 200px;
     margin-top: 13px;
     border: 1px solid #665a3d;
@@ -25,12 +24,22 @@
     object-fit: cover;
 }
 
+.pickup_item_card_title {
+    font-weight: bolder;
+}
+
+.border {
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #665a3d;
+}
+
 .pickup_item_card + .pickup_item_card {
     margin-top: 54px;
 }
 
 .pickup_item_card p + p {
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .intro p + p {
@@ -42,16 +51,31 @@
     margin-bottom: 0;
 }
 
+.text {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .intro {
     border-radius: 15px;
-    background-color: white;
-    padding: 12px 15px 20px;
+    background-color: #fffbf1;
+    border: 2px solid #ffdf8c;
+    padding: 12px 15px 15px;
+}
+
+.pickup_text {
+    padding: 0 10px;
 }
 
 @media (min-width: 770px) {
     .pickup_flex {
         display: flex;
     }
+
+    .pickup_title {
+        margin-top: 120px;
+    }
+
     .pickup_item {
         margin: 80px auto 80px;
         align-content: space-between;
@@ -65,6 +89,7 @@
         color: aliceblue;
         /* background-color: #f44336; */
     }
+
     /* .pickup_item_card::before {
         content: "";
         width: 287px;
@@ -73,13 +98,19 @@
     .pickup_item_card + .pickup_item_card {
         margin-top: 0;
     }
-    .pickup_item_card {
-        width: 287px;
-        height: 440px;
-        /* margin-top: 50px; */
-    }
+
     .pickup_item_card img {
-        width: 246px;
-        height: 252px;
+        width: 100%;
+        height: 240px;
+    }
+
+    .pickup_item_card a {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .pickup_item_card a:hover {
+        opacity: 0.6;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
     }
 }
