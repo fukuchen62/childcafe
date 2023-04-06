@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
+<?php
+$cafeinfo_id = get_field('id');
+$this_terms = get_the_terms($cafeinfo_id,'area');
+?>
 
 <main>
     <div class="main_inner">
@@ -14,6 +18,11 @@
             <img src="<?php the_field('eye_catching'); ?>" alt="PickUp画像" />
         </div>
         <div class="good flex">
+            <p class="address">
+            <?php
+            echo $this_terms[1]->name;
+            ?>
+            </p>
             <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
         </div>
         <div class="pickup_single">

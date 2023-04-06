@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
-$cafeinfo_id = get_field('id');
-$this_terms = get_the_terms($cafeinfo_id,'area');
+$this_terms = get_the_terms($post->ID,'area');
 
 $event_id = get_field('event_id');
 $service_array = get_field('service', $event_id);
@@ -44,7 +43,6 @@ $infos = array(
                             <p class="address">
                                 <?php
                                 echo $this_terms[1]->name;
-                                echo $cafeinfo_id;
                                 ?>
                             </p>
                             <div class="good cafeinfo_flex flex">
