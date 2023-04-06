@@ -136,7 +136,7 @@ html {
     position: relative;
 }
 
-.niji .btn_item {
+.about .btn_item {
     position: relative;
     z-index: 10;
 }
@@ -194,6 +194,9 @@ html {
     .text_box img {
         width: 80%;
         opacity: 0.5;
+    }
+    .info .btn_item {
+        margin-bottom: 30px;
     }
 }
 
@@ -581,6 +584,7 @@ html {
     .link_flex {
         flex-direction: row;
         justify-content: center;
+        margin-bottom: 30px;
     }
 }
 
