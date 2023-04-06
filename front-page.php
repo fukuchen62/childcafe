@@ -140,6 +140,10 @@ $custom_query = new WP_Query( array(
 $fuga = array(
 		'post_type' => 'event',
 		'posts_per_page' => 2,
+        //非公開のは出さないようにする！！
+        'meta_key' => 'class',
+        //不定期のもの
+        'meta_value' => 2,
 	);
 $event_query = new WP_Query($fuga);
 
