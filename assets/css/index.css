@@ -627,6 +627,26 @@ html {
 
 /* お知らせ */
 
+.notice .section_inner {
+    position: relative;
+}
+
+.noticeimg {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 150px;
+    left: -30px;
+}
+
+.notice_suzume {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    top: 50px;
+    left: 20%;
+}
+
 .notice .news {
     line-height: 60px;
     width: 242px;
@@ -645,6 +665,18 @@ html {
     }
     .notice .btn_item {
         margin-bottom: 30px;
+    }
+    .noticeimg {
+        width: 400px;
+        height: 400px;
+        top: 40px;
+        left: 5%;
+    }
+    .notice_suzume {
+        width: 80px;
+        height: 90px;
+        top: 35px;
+        left: 30%;
     }
 }
 /* お問い合わせ */
