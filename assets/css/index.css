@@ -184,25 +184,30 @@ html {
     background-color: #fdffb0;
 }
 
-.crayon {
-    position: relative;
-}
-
-.crayon::before {
-    position: absolute;
-    content: "";
-    background-image: url(../images/index/);
-}
-
 .taleft {
+    position: relative;
     text-align: left;
     text-decoration: none;
     width: 286px;
+    z-index: 10;
+}
+
+.crayon {
+    position: absolute;
+    width: 330px;
+    height: 50px;
+    left: -18px;
+    top: 55px;
+    z-index: -1;
 }
 
 @media (min-width: 770px) {
     .taleft {
         width: 435px;
+    }
+    .crayon {
+        top: 80px;
+        width: 400px;
     }
 }
 
@@ -217,6 +222,29 @@ html {
     position: relative;
     padding: 10px;
     padding-bottom: 30px;
+}
+
+.pickup_slide {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.orangetabs {
+    position: absolute;
+    left: 85px;
+    top: -35px;
+    z-index: 10;
+}
+
+.orangetab {
+    width: 150px;
+    height: 80px;
+}
+
+.orange1,
+.orange2 {
+    display: none;
 }
 
 .pickup_slider {
@@ -278,6 +306,26 @@ html {
         margin: 0 auto;
     }
 
+    .pickup_slide {
+        width: 100%;
+    }
+
+    .orangetabs {
+        width: 90%;
+        left: 5%;
+        top: -50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .orange1,
+    .orange2 {
+        display: block;
+    }
+
+    .orangetab {
+        width: 200px;
+        height: 80px;
+    }
     .pickup_slide li {
         margin: 0 15px;
     }
@@ -288,6 +336,12 @@ html {
     }
 }
 
+@media (min-width: 1100px) {
+    .orangetabs {
+        width: 73%;
+        left: 13%;
+    }
+}
 /* MAP */
 .map .pic {
     width: 306px;
