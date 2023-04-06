@@ -5,15 +5,58 @@
  **********************/
 
 .title {
-    margin: 50px auto;
+    margin: 50px auto 90px auto;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
 .text {
     margin-bottom: 20px;
+    width: 70%;
+}
+
+.text_title {
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-decoration: underline solid 5px #d7f794;
+    text-underline-offset: 5px;
+}
+
+.text a {
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 5px;
+}
+
+.text a:hover {
+    color: red;
+    text-decoration: underline dotted 1px red;
+    text-underline-offset: 5px;
+}
+
+.main_inner {
+    position: relative;
+}
+
+.about_img {
+    position: absolute;
+}
+
+.onigiri {
+    width: 200px;
+    height: 200px;
+    top: 0;
+    opacity: 25%;
 }
 
 @media screen and (min-width: 770px) {
-    .text {
-        width: 70%;
+    .onigiri {
+        width: 455px;
+        height: 455px;
+        top: -150px;
+        left: -70px;
     }
 }

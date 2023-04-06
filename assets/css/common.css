@@ -42,6 +42,29 @@ main {
     margin: 0 auto;
 }
 
+/* ボタンのエフェクト */
+.btn_item {
+    display: inline-block;
+    padding: 10px 15px;
+    /* ボタン本体の色 */
+    background-color: #ffd466;
+    border-radius: 10px;
+    font-weight: bolder;
+    /*文字色*/
+    color: whitesmoke;
+    /*文字の影*/
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
+    text-align: center;
+    margin: 50px 50px 0;
+}
+
+.btn_item:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: shad26 1.5s infinite;
+}
+/* ボタンのエフェクトここまで */
 /* spanで画面幅により改行 */
 
 .sp {
@@ -110,6 +133,11 @@ main {
         width: 200px;
         height: 50px;
     }
+
+    .btn_new {
+        margin-top: 150px;
+    }
+
     .title {
         margin-bottom: 75px;
     }

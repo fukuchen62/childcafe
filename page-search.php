@@ -1,6 +1,44 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
+<?php
 
+// $tokushima = $_GET['tokushima'];
+$volunteer = $_GET['volunteer'];
+// $volunteer = filter_var($volunteer, FILTER_VALIDATE_BOOLEAN);
+
+// $area_slug = get_query_var('area');                // エリアを取得
+
+$args = array(
+    'post_type' => 'cafeinfo',
+    'posts_per_page' => -1,
+    'meta_key' => 'recruitment',
+    'meta_value' => 1,
+    );
+// $taxquerysp = ['relation' => 'AND'];
+
+//選択していない場合も考慮して条件で絞り込む。
+// if (!empty($volunteer)) {
+    $taxquerysp = [
+        'meta_key' => 'recruitment',
+        'meta_value' =>1,
+        'compare' => '='
+    ];
+// }
+
+
+// 選択していない場合も考慮して条件で絞り込む。
+// if (!empty($tokushima)) {
+//     $taxquerysp[] = [
+//         'taxonomy' => 'area',           //タクソノミー：『エリア』
+//         'terms' => $area_slug,          //スラッグ名
+//         'field' => 'slug',              //スラッグ指定
+//     ];
+// }
+$args[] = $taxquerysp;       // 絞り込んだ情報を $args に代入する。
+$the_query = new WP_Query($args);
+
+
+?>
 <main>
     <div class="main_inner">
         <h2 class="title">詳細検索</h2>
@@ -10,10 +48,12 @@
             <li class="tab_2 tab_js daytime">日時</li>
             <li class="tab_3 tab_js favorite">こだわり</li>
         </ul>
-        <form action="#" method="get">
+        <form action="<?php echo home_url('/search')?>" method="get">
             <!-- タブ１項目 -->
             <section class="form1 panel info is-show">
                 <h3 class="subtitle">子供食堂をしらべる</h3>
+                <?php echo $volunteer; ?>
+                <?php print_r($args); ?>
                 <div class="form_wrap">
                     <!-- エリア検索欄 -->
                     <div class="form_item">
@@ -23,7 +63,7 @@
                             <div class="ac_label">東部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="tokushima" /><label for="tokushima">徳島市</label>
+                                    <input type="checkbox" id="tokushima" name="tokushima" /><label for="tokushima">徳島市</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="naruto" /><label for="naruto">鳴門市</label>
@@ -337,11 +377,11 @@
                         <h3 class="item_title">ボランティア募集</h3>
                         <div class="radiobtn flex">
                             <label>
-                                <input type="radio" name="volunteer" checked />
+                                <input type="radio" name="volunteer" checked value="1">
                                 有
                             </label>
                             <label>
-                                <input type="radio" name="volunteer" />
+                                <input type="radio" name="volunteer" value="">
                                 無
                             </label>
                         </div>
@@ -422,21 +462,20 @@
         <div class="result_img">
             <h2 class="title">検索結果一覧</h2>
             <div class="result_img_wrap flex">
-                <div class="result_img_card">
-                    <img src="../assets/images/img7.jpg" alt="" />
-                    <p>〇〇食堂</p>
-                    <p>（〇〇市●●町）</p>
-                </div>
-                <div class="result_img_card">
-                    <img src="../assets/images/img7.jpg" alt="" />
-                    <p>〇〇食堂</p>
-                    <p>（〇〇市●●町）</p>
-                </div>
-                <div class="result_img_card">
-                    <img src="../assets/images/img7.jpg" alt="" />
-                    <p>〇〇食堂</p>
-                    <p>（〇〇市●●町）</p>
-                </div>
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+                <a href="<?php the_permalink() ?>">
+                    <div class="result_img_card">
+                        <img src="<?php the_field('eye_catching'); ?>" alt="" />
+                        <p><?php the_field('name') ?></p>
+                        <?php the_field('recruitment'); ?>
+                        <p>（〇〇市●●町）</p>
+                    </div>
+                </a>
+                <?php endwhile; ?>
+                <?php endif;?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
         <!-- 検索結果表示 終了-->

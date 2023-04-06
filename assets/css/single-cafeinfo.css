@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .title {
+    margin-top: 40px;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -39,8 +40,14 @@
 }
 
 @media (min-width: 770px) {
+    .title {
+        margin-top: 150px;
+    }
     .subtitle {
-        font-size: 24px;
+        font-size: 20px;
+    }
+    .text {
+        font-size: 20px;
     }
     .subtitle_ulineorange {
         font-size: 24px;
@@ -52,6 +59,13 @@
     }
 }
 
+.pc_flex img {
+    margin-top: 20px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
 /* 黄色の背景 */
 .yellow {
     background-color: #fdffb0;
@@ -60,6 +74,7 @@
 }
 
 .underimg {
+    width: 100%;
     margin-bottom: 23px;
 }
 
@@ -108,9 +123,10 @@
     }
     .pc_w320 .subtitle {
         text-align: left;
-        font-size: 24px;
+        font-size: 20px;
     }
     .pc_w320 .text {
+        font-size: 16px;
         text-align: left;
         width: 320px;
     }
@@ -134,7 +150,9 @@
     display: inline-block;
     width: 230px;
     padding: 10px;
-    margin-top: 35px;
+    margin-top: 55px;
+    margin-bottom: 30px;
+    border-radius: 10px;
     background-color: #f8b600;
 }
 
@@ -148,7 +166,7 @@
     width: 308px;
     padding-bottom: 20px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .others_item {
@@ -172,6 +190,7 @@
 /* map */
 .addressmap {
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .addressmap .subtitle {
@@ -194,13 +213,13 @@
     }
 
     .bgcolor_flex {
+        margin-top: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     .addressmap {
         width: 594px;
-        height: 436px;
     }
     .addressmap iframe {
         margin-top: 0;
@@ -208,12 +227,36 @@
     .addressmap .subtitle {
         display: block;
     }
+
+    .subtitle_ulineorange {
+        margin-top: 50px;
+    }
+
+    .volunteer {
+        width: 500px;
+        margin-top: 90px;
+        margin-bottom: 60px;
+    }
+    .others {
+        margin: 0px auto;
+        margin-top: 10px;
+    }
+
+    .subtitle_ulineorange {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+
+    .past_slide {
+        margin-bottom: 70px;
+    }
 }
 /* スライド */
 ul img {
-    width: 250px;
+    width: 400px;
     height: 300px;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 .wave_img {
@@ -231,4 +274,77 @@ ul img {
 
 .gbottom {
     background-color: #fff8e6;
+}
+
+/* スリック矢印 */
+.slick-prev:before {
+    content: "<";
+    color: #fff;
+    opacity: 1;
+    font-size: 14px;
+}
+.slick-next:before {
+    content: ">";
+    color: #fff;
+    opacity: 1;
+    font-size: 14px;
+}
+
+.slick-prev {
+    z-index: 1;
+    width: auto;
+    height: auto;
+    left: -35px;
+    padding: 10px;
+    color: white;
+    background-color: #ffb700;
+    border-radius: 50%;
+}
+
+.slick-next {
+    width: auto;
+    height: auto;
+    right: -35px;
+    padding: 10px;
+    color: white;
+    background-color: #ffb700;
+    border-radius: 50%;
+}
+/* スリック矢印ここまで */
+
+@media (min-width: 770px) {
+    /* スリック矢印 */
+    .slick-prev:before {
+        content: "<";
+        color: #fff;
+        opacity: 1;
+        font-size: 14px;
+    }
+    .slick-next:before {
+        content: ">";
+        color: #fff;
+        opacity: 1;
+        font-size: 14px;
+    }
+
+    .slick-prev {
+        z-index: 1;
+        width: auto;
+        height: auto;
+        left: -40px;
+        padding: 10px;
+        color: white;
+        background-color: #ffb700;
+        border-radius: 50%;
+    }
+
+    .slick-next {
+        width: auto;
+        height: auto;
+        right: -35x;
+        padding: 10px;
+        color: white;
+        background-color: #ffb700;
+        border-radius: 50%;
+    }
 }
