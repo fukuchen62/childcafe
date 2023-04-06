@@ -153,6 +153,7 @@ html {
 @media (min-width: 770px) {
     .about .text {
         width: 590px;
+        text-align: left;
     }
     .rainbow {
         width: 650px;
@@ -489,6 +490,12 @@ html {
     z-index: 2;
 }
 
+@media (min-width: 770px) {
+    .with_onigiri .text {
+        width: 590px;
+        text-align: left;
+    }
+}
 @keyframes korogari {
     0% {
         transform: rotate(0deg);
@@ -536,6 +543,7 @@ html {
     }
     .surporters .text {
         width: 590px;
+        text-align: left;
     }
     .surporters .btn_item {
         margin-bottom: 30px;
