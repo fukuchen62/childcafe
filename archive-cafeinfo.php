@@ -23,10 +23,11 @@ $terms = get_terms(array('taxonomy' => 'area', 'hide_empty' => false));
     <div class="main_inner">
         <h2 class="title">こども食堂一覧</h2>
 
-        <?php foreach ($terms as $term); ?>
+        <?php foreach ($terms as $term): ?>
         <div class="cafeinfo_tab orange">
             <?php echo $term -> name; ?>
         </div>
+        <?php endforeach; ?>
         <?php if ($the_query->have_posts()) : ?>
         <?php while($the_query->have_posts()) : ?>
         <?php $the_query->the_post(); ?>
