@@ -41,7 +41,13 @@ main {
     width: 100%;
     margin: 0 auto;
 }
-
+/* ボタンのエフェクト */
+.btn_item:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: shad26 1.5s infinite;
+}
 /* spanで画面幅により改行 */
 
 .sp {
