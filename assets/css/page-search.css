@@ -77,6 +77,20 @@
 /***********************
     共通
  **********************/
+form {
+    margin-top: 25px;
+}
+
+@media screen and (min-width: 770px) {
+    form {
+        margin-top: 50px;
+    }
+
+    .title {
+        margin-top: 120px;
+    }
+}
+
 .form1,
 .form2,
 .form3 {
