@@ -2,7 +2,7 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
 
-<!-- url先まだ入れてないです -->
+<!-- url先入力途中 -->
 <main>
     <div class="main_inner">
         <h2 class="title">このサイトについて</h2>
@@ -11,10 +11,11 @@
             <p class="text_title">開催情報について</p>
             <p>
                 今後の開催日が決まっている食堂の情報は、<a href="<?php echo home_url(''); ?>">【開催情報】</a>からご覧いただけます。 不定期開催の食堂も多いので、
-                <a href="<?php echo home_url(''); ?>">【MAPからさがす】</a>
+                <a href="<?php echo home_url(''); ?>">【MAPからさがす】</a><a
+                    href="<?php echo home_url('search'); ?>">【条件からさがす】</a>
                 でお近くの食堂を探してみてください。
             </p>
-            <a href="<?php echo home_url(''); ?>">【条件からさがす】</a>
+
         </div>
         <div class="text">
             <p class="text_title">特集記事について</p>
