@@ -1,22 +1,51 @@
 @charset "utf-8";
+.title {
+    margin-top: 75px;
+}
+
 .faq {
     width: 100%;
 }
 
 .text {
+    width: 80%;
     padding: 20px;
     border-radius: 10px;
     background-color: #e9fcc1;
-    text-align: center;
+    text-align: left;
+}
+
+.text p img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
 }
 
 .text p:nth-child(1) {
     font-weight: 500;
     margin-bottom: 20px;
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 5px;
+}
+
+.text p:nth-child(2) {
+    text-align: left;
+}
+
+.text a {
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 5px;
+}
+
+.text a:hover {
+    color: red;
+    text-decoration: underline dotted 1px red;
+    text-underline-offset: 5px;
 }
 
 @media screen and (min-width: 770px) {
     .text {
-        width: 620px;
+        width: 70%;
+        padding: 30px;
     }
 }
