@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
-$this_terms = get_the_terms($post->ID,'area');
+$cafeinfo_id = get_field('id');
+$this_terms = get_the_terms($cafeinfo_id,'area');
 
 $event_id = get_field('event_id');
 $service_array = get_field('service', $event_id);
