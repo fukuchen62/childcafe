@@ -317,38 +317,18 @@ html {
 
 /* スリック矢印 */
 .slick-prev:before {
-    content: "<";
-    color: #fff;
-    opacity: 1;
-    font-size: 14px;
+    content: "\f0a8";
+    color: navy;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 .slick-next:before {
-    content: ">";
-    color: #fff;
-    opacity: 1;
-    font-size: 14px;
+    content: "\f0a9";
+    color: navy;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
-.slick-prev {
-    z-index: 1;
-    width: auto;
-    height: auto;
-    left: -28px;
-    padding: 10px;
-    color: white;
-    background-color: #ffb700;
-    border-radius: 50%;
-}
-
-.slick-next {
-    width: auto;
-    height: auto;
-    right: -28px;
-    padding: 10px;
-    color: white;
-    background-color: #ffb700;
-    border-radius: 50%;
-}
 /* スリック矢印ここまで */
 
 .pickup_slider img {
