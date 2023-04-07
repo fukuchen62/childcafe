@@ -318,13 +318,13 @@ html {
 /* スリック矢印 */
 .slick-prev:before {
     content: "\f0a8";
-    color: navy;
+    color: orange;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 .slick-next:before {
     content: "\f0a9";
-    color: navy;
+    color: orange;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
