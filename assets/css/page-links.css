@@ -63,10 +63,12 @@
 
 .link_cafe {
     background-color: #f7dd94;
+    position: relative;
 }
 
 .link_care {
     background-color: #d7f794;
+    position: relative;
 }
 
 .link_third {
@@ -74,12 +76,7 @@
 }
 
 .title {
-    width: 170px;
-}
-
-.page_link_title {
-    width: 200px;
-    margin: 0 auto;
+    /* width: 170px; */
 }
 
 .link_wrap {
@@ -103,11 +100,55 @@
     margin: 0 auto;
 }
 
+.link a {
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 10px;
+}
+
+.link span {
+    text-decoration: underline dotted 1px gray;
+    text-underline-offset: 10px;
+}
+
+.apple {
+    width: 150px;
+    height: 150px;
+    opacity: 0.2;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+
+.girl {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 20px;
+}
+
+.veg {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 20px;
+}
+
+.linkicon {
+    width: 20px;
+    height: 20px;
+}
+
 @media screen and (min-width: 770px) {
     .link_cafe,
     .link_care,
     .link_third {
         width: 700px;
+    }
+
+    .title {
+        margin: 0 auto 50px auto;
     }
 
     .link img {
@@ -117,5 +158,11 @@
     .page_link img:hover {
         transform: scale(1.1);
         opacity: 0.8;
+    }
+
+    .link a:hover {
+        color: red;
+        text-decoration: underline dotted 1px red;
+        text-underline-offset: 10px;
     }
 }
