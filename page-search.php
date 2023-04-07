@@ -3,39 +3,95 @@
 <?php
 
 // $tokushima = $_GET['tokushima'];
-$volunteer = $_GET['volunteer'];
+// $volunteer = $_GET['volunteer'];
 // $volunteer = filter_var($volunteer, FILTER_VALIDATE_BOOLEAN);
 
-// $area_slug = get_query_var('area');                // エリアを取得
+// エリア（タクソノミーに存在）を取得
+$area_slug = get_query_var('area');
 
-$args = array(
+
+$volunteer ='';
+if (isset($_GET['volunteer'])) {
+$volunteer = $_GET['volunteer']; //searchform.phpの<input>のname属性の値と合わせる
+}
+
+// $starttime ='';
+// if (isset($_GET['starttime'])) {
+// $starttime = $_GET['starttime']; //searchform.phpの<input>のname属性の値と合わせる
+// }
+
+// $subject ='';
+// if (isset($_GET['subject'])) {
+// $subject = $_GET['subject']; //searchform.phpの<input>のname属性の値と合わせる
+// }
+
+$reserve ='';
+if (isset($_GET['reserve'])) {
+$reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合わせる
+}
+
+// クエリ作成
+$args = [
     'post_type' => 'cafeinfo',
     'posts_per_page' => -1,
-    'meta_key' => 'recruitment',
-    'meta_value' => 1,
-    );
-// $taxquerysp = ['relation' => 'AND'];
-
-//選択していない場合も考慮して条件で絞り込む。
-// if (!empty($volunteer)) {
-    $taxquerysp = [
-        'meta_key' => 'recruitment',
-        'meta_value' =>1,
-        'compare' => '='
-    ];
-// }
-
+];
+$querysp = ['relation' => 'AND'];
 
 // 選択していない場合も考慮して条件で絞り込む。
-// if (!empty($tokushima)) {
-//     $taxquerysp[] = [
-//         'taxonomy' => 'area',           //タクソノミー：『エリア』
-//         'terms' => $area_slug,          //スラッグ名
-//         'field' => 'slug',              //スラッグ指定
-//     ];
-// }
-$args[] = $taxquerysp;       // 絞り込んだ情報を $args に代入する。
+if (!empty($area_slug)) {
+    $querysp[] = [
+        'taxonomy' => 'area',           //タクソノミー：『エリア』
+        'terms' => $area_slug,          //スラッグ名
+        'field' => 'slug',              //スラッグ指定
+    ];
+    $args['tax_query'] = $querysp;       // 絞り込んだ情報を $args に代入する。
+}
+
+// 選択していない場合も考慮して条件で絞り込む。
+if (!empty($volunteer)) {
+    $querysp[] = [
+        'key' => 'recruitment',
+        'value' => $volunteer,
+        'compare' => '='
+    ];
+    $args['meta_query'] = $querysp;       // 絞り込んだ情報を $args に代入する。
+}
+
+
+$hoge = [
+    'post_type' => 'event',
+    'posts_per_page' => -1,
+    'meta_query' => [
+        [
+        'key' => 'reserve',
+        'value' => $reserve,
+        'compare' => '='
+        ]
+    ]
+];
+
+$event_query = new WP_Query($hoge);
+
+if ($event_query->have_posts()) {
+while ($event_query->have_posts()) {
+$event_query->the_post(); {
+    $cafeinfo_ids[] = get_field('id');
+}
+}
+wp_reset_postdata(); }
+
+if (!empty($reserve)) {
+$querysp = [
+    'post__in' => $cafeinfo_ids,
+];
+$args[] = $querysp;
+}
+
 $the_query = new WP_Query($args);
+
+
+
+
 
 
 ?>
@@ -49,11 +105,18 @@ $the_query = new WP_Query($args);
             <li class="tab_3 tab_js favorite">こだわり</li>
         </ul>
         <form action="<?php echo home_url('/search')?>" method="get">
+
+            <!--隠しフィールドとして記述する（これがないとフォームがうまく動作しません）-->
+            <input type="hidden" name="s" value="">
+
             <!-- タブ１項目 -->
             <section class="form1 panel info is-show">
                 <h3 class="subtitle">子供食堂をしらべる</h3>
-                <?php echo $volunteer; ?>
+                <?php echo $volunteer.'は'; ?>
                 <?php print_r($args); ?>
+                <?php echo $area_slug; ?>
+                <?php echo $starttime .'は';?>
+                <?php print_r($cafeinfo_ids); ?>
                 <div class="form_wrap">
                     <!-- エリア検索欄 -->
                     <div class="form_item">
@@ -63,10 +126,10 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">東部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="tokushima" name="tokushima" /><label for="tokushima">徳島市</label>
+                                    <input type="checkbox" id="tokushima" name="area" value="tokushima"><label for="tokushima">徳島市</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="naruto" /><label for="naruto">鳴門市</label>
+                                    <input type="checkbox" id="naruto" name="area" value="naruto" /><label for="naruto">鳴門市</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="matushige" /><label for="matushige">松茂町</label>
@@ -138,7 +201,7 @@ $the_query = new WP_Query($args);
                         <div class="item_wrap">
                             <label for="child" class="checklist">こども：</label>
                             <select class="select" name="child_money" size="1" id="child">
-                                <option value="">料金を選択</option>
+                                <option value="" selected hidden disabled>料金を選択</option>
                                 <option value="完全無料">
                                     完全無料
                                 </option>
@@ -160,7 +223,7 @@ $the_query = new WP_Query($args);
                         <div class="item_wrap">
                             <label for="adult" class="checklist">おとな：</label>
                             <select class="select" name="adult_money" size="1" id="adult">
-                                <option value="">料金を選択</option>
+                                <option value="" selected hidden disabled>料金を選択</option>
                                 <option value="完全無料">
                                     完全無料
                                 </option>
@@ -212,9 +275,9 @@ $the_query = new WP_Query($args);
                         <div class="item_wrap flex">
                             <label for="min_time" class="checklist">時間：</label>
                             <div class="time_wrap flex">
-                                <input id="min_time" type="time" name="time" step="3600" min="07:00:00" max="22:00:00" list="data-list" />
+                                <input id="min_time" type="time" name="starttime" step="3600" min="07:00:00" max="22:00:00" list="data-list" selected />
                                 <p>～</p>
-                                <input id="max_time" type="time" name="time" step="3600" min="07:00:00" max="22:00:00" list="data-list" />
+                                <input id="max_time" type="time" name="time" step="3600" min="07:00:00" max="22:00:00" list="data-list" selected disabled />
                             </div>
                             <!-- 時間間隔設定 -->
                             <datalist id="data-list">
@@ -240,7 +303,7 @@ $the_query = new WP_Query($args);
                             <h3 class="item_title">事前予約</h3>
                             <div class="radiobtn flex">
                                 <label>
-                                    <input type="radio" name="reserve" checked />
+                                    <input type="radio" name="reserve" value="1" />
                                     有
                                 </label>
                                 <label>
@@ -256,7 +319,7 @@ $the_query = new WP_Query($args);
                             <h3 class="item_title">駐車場</h3>
                             <div class="radiobtn flex">
                                 <label>
-                                    <input type="radio" name="parking" checked />
+                                    <input type="radio" name="parking" />
                                     有
                                 </label>
                                 <label>
@@ -280,7 +343,7 @@ $the_query = new WP_Query($args);
                         <h3 class="item_title">参加対象</h3>
                         <br />
                         <select class="select" name="subject" size="1">
-                            <option value="">対象を選択</option>
+                            <option value="" selected hidden disabled>対象を選択</option>
                             <option value="誰でも（こどもは保護者同伴）
 ">
                                 誰でも（こどもは保護者同伴）
@@ -306,7 +369,7 @@ $the_query = new WP_Query($args);
                         <h3 class="item_title">対象年齢</h3>
                         <div class="age_select flex">
                             <select class="select" name="age" size="1">
-                                <option value="">選択</option>
+                                <option value="" selected hidden disabled>選択</option>
                                 <option value="制限なし">
                                     制限なし
                                 </option>
@@ -328,7 +391,7 @@ $the_query = new WP_Query($args);
                             </select>
                             <div class="select_p">～</div>
                             <select class="select" name="age" size="1">
-                                <option value="">選択</option>
+                                <option value="" selected hidden disabled>選択</option>
                                 <option value="制限なし">
                                     制限なし
                                 </option>
@@ -357,7 +420,7 @@ $the_query = new WP_Query($args);
                         <h3 class="item_title">食事提供方式</h3>
                         <br />
                         <select class="select" name="age" size="1">
-                            <option value="">希望を選択</option>
+                            <option value="" selected hidden disabled>希望を選択</option>
                             <option value="いっしょに作って食べる">
                                 いっしょに作って食べる
                             </option>
@@ -377,7 +440,7 @@ $the_query = new WP_Query($args);
                         <h3 class="item_title">ボランティア募集</h3>
                         <div class="radiobtn flex">
                             <label>
-                                <input type="radio" name="volunteer" checked value="1">
+                                <input type="radio" name="volunteer" value="1">
                                 有
                             </label>
                             <label>
@@ -470,7 +533,8 @@ $the_query = new WP_Query($args);
                         <img src="<?php the_field('eye_catching'); ?>" alt="" />
                         <p><?php the_field('name') ?></p>
                         <?php the_field('recruitment'); ?>
-                        <p>（〇〇市●●町）</p>
+                        <?php echo get_the_terms($post->ID, 'area')[0]->name; ?>
+                        <?php echo get_the_terms($post->ID, 'area')[1]->name; ?>
                     </div>
                 </a>
                 <?php endwhile; ?>
@@ -479,6 +543,28 @@ $the_query = new WP_Query($args);
             </div>
         </div>
         <!-- 検索結果表示 終了-->
+        <!-- 検索結果表示 -->
+        <div class="result_img">
+            <h2 class="title">検証用イベント一覧</h2>
+            <div class="result_img_wrap flex">
+                <?php if ($event_query->have_posts()) : ?>
+                <?php while ($event_query->have_posts()) : ?>
+                <?php $event_query->the_post(); ?>
+                <a href="<?php the_permalink() ?>">
+                    <div class="result_img_card">
+                        <img src="<?php the_field('eye_catching'); ?>" alt="" />
+                        <p><?php the_field('starttime') ?></p>
+                        <p><?php the_field('reserve') ?></p>
+                        <?php //print_r(get_field_object('starttime')); ?>
+                    </div>
+                </a>
+                <?php endwhile; ?>
+                <?php endif;?>
+                <?php wp_reset_postdata(); ?>
+            </div>
+        </div>
+        <!-- 検索結果表示 終了-->
+
     </div>
 </main>
 
