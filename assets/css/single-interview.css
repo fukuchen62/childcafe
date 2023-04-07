@@ -74,6 +74,29 @@
     margin: 20px 0;
 }
 
+.underimg {
+    width: 80%;
+    margin-bottom: 23px;
+}
+
+.cafeinfo_flex {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address {
+    display: inline-block;
+    padding: 5px;
+    background-color: #8cc98c;
+    border-radius: 70%;
+}
+
+/* ボタン */
+
+.btn_item {
+    margin: 0 auto;
+}
+
 @media (min-width: 770px) {
     .pickup_title_1 {
         margin-top: 120px;

@@ -41,21 +41,20 @@
 
 @media (min-width: 770px) {
     .title {
-        margin-top: 150px;
+        margin-top: 130px;
     }
     .subtitle {
         font-size: 20px;
     }
     .text {
-        font-size: 20px;
+        font-size: 16px;
     }
     .subtitle_ulineorange {
         font-size: 24px;
         margin-top: 60px;
     }
     .main_visual {
-        width: 417px;
-        height: 319px;
+        width: 380px;
     }
 }
 
@@ -95,7 +94,7 @@
 
 .address {
     display: inline-block;
-    padding: 5px 15px;
+    padding: 5px 10px;
     background-color: #8cc98c;
     border-radius: 70%;
 }
@@ -111,7 +110,7 @@
         max-width: 1024px;
     }
     .pc_flex {
-        margin-top: 44px;
+        margin-top: 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -124,13 +123,63 @@
     .pc_w320 .subtitle {
         text-align: left;
         font-size: 20px;
+        margin-bottom: 50px;
     }
     .pc_w320 .text {
         font-size: 16px;
         text-align: left;
         width: 320px;
     }
+
+    /* スクロール */
+
+    .scroll {
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        /* border: 2px solid #f8b600; */
+        border-radius: 50%;
+        position: relative;
+        animation: down 1.5s infinite;
+        -webkit-animation: down 1.5s infinite;
+    }
+    .scroll::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        border-left: 5px solid #f8b600;
+        border-bottom: 5px solid #f8b600;
+        transform: rotate(-45deg);
+    }
 }
+
+@keyframes down {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translateY(15px);
+    }
+    40% {
+        transform: translate(0);
+    }
+}
+
+@-webkit-keyframes down {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translateY(15px);
+    }
+    40% {
+        transform: translate(0);
+    }
+}
+
 /* ベージュの背景 */
 .beige {
     background-color: #f7dd94;
@@ -245,10 +294,6 @@
     .subtitle_ulineorange {
         margin-top: 100px;
         margin-bottom: 40px;
-    }
-
-    .past_slide {
-        margin-bottom: 70px;
     }
 }
 /* スライド */
