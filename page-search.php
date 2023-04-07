@@ -30,34 +30,6 @@ if (isset($_GET['reserve'])) {
 $reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合わせる
 }
 
-// クエリ作成
-$args = [
-    'post_type' => 'cafeinfo',
-    'posts_per_page' => -1,
-];
-$querysp = ['relation' => 'AND'];
-
-// 選択していない場合も考慮して条件で絞り込む。
-if (!empty($area_slug)) {
-    $querysp[] = [
-        'taxonomy' => 'area',           //タクソノミー：『エリア』
-        'terms' => $area_slug,          //スラッグ名
-        'field' => 'slug',              //スラッグ指定
-    ];
-    $args['tax_query'] = $querysp;       // 絞り込んだ情報を $args に代入する。
-}
-
-// 選択していない場合も考慮して条件で絞り込む。
-if (!empty($volunteer)) {
-    $querysp[] = [
-        'key' => 'recruitment',
-        'value' => $volunteer,
-        'compare' => '='
-    ];
-    $args['meta_query'] = $querysp;       // 絞り込んだ情報を $args に代入する。
-}
-
-
 $hoge = [
     'post_type' => 'event',
     'posts_per_page' => -1,
@@ -80,12 +52,48 @@ $event_query->the_post(); {
 }
 wp_reset_postdata(); }
 
-if (!empty($reserve)) {
-$querysp = [
+
+// クエリ作成
+$args = [
+    'post_type' => 'cafeinfo',
+    'posts_per_page' => -1,
+    //eventの記事ID
     'post__in' => $cafeinfo_ids,
 ];
-$args[] = $querysp;
+
+// if (!empty($reserve)) {
+// $querysp[] = [
+//     'post__in' => $cafeinfo_ids,
+// ];
+// $args[] = $querysp;
+// // }
+
+
+$args[] = ['relation' => 'AND'];
+
+
+// 選択していない場合も考慮して条件で絞り込む。
+if (!empty($area_slug)) {
+    $taxquerysp[] = [
+        'taxonomy' => 'area',           //タクソノミー：『エリア』
+        'terms' => $area_slug,          //スラッグ名
+        'field' => 'slug',              //スラッグ指定
+    ];
+    $args['tax_query'] = $taxquerysp;       // 絞り込んだ情報を $args に代入する。
 }
+
+// 選択していない場合も考慮して条件で絞り込む。
+if (!empty($volunteer)) {
+    $metaquerysp[] = [
+        'key' => 'recruitment',
+        'value' => $volunteer,
+        'compare' => '='
+    ];
+    $args['meta_query'] = $metaquerysp;       // 絞り込んだ情報を $args に代入する。
+}
+
+
+
 
 $the_query = new WP_Query($args);
 
@@ -112,11 +120,8 @@ $the_query = new WP_Query($args);
             <!-- タブ１項目 -->
             <section class="form1 panel info is-show">
                 <h3 class="subtitle">子供食堂をしらべる</h3>
-                <?php echo $volunteer.'は'; ?>
-                <?php print_r($args); ?>
-                <?php echo $area_slug; ?>
-                <?php echo $starttime .'は';?>
-                <?php print_r($cafeinfo_ids); ?>
+                <?php //print_r($args); ?>
+                <?php //print_r($cafeinfo_ids); ?>
                 <div class="form_wrap">
                     <!-- エリア検索欄 -->
                     <div class="form_item">
@@ -126,13 +131,13 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">東部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="tokushima" name="area" value="tokushima"><label for="tokushima">徳島市</label>
+                                    <input type="checkbox" id="tokushima" name="area[]" value="tokushima"><label for="tokushima">徳島市</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="naruto" name="area" value="naruto" /><label for="naruto">鳴門市</label>
+                                    <input type="checkbox" id="naruto" name="area[]" value="naruto" /><label for="naruto">鳴門市</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="matushige" /><label for="matushige">松茂町</label>
+                                    <input type="checkbox" id="matushige" name="area[]" value="matushige" /><label for="matushige">松茂町</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="kitajima" /><label for="kitajima">北島町</label>
@@ -532,8 +537,7 @@ $the_query = new WP_Query($args);
                     <div class="result_img_card">
                         <img src="<?php the_field('eye_catching'); ?>" alt="" />
                         <p><?php the_field('name') ?></p>
-                        <?php the_field('recruitment'); ?>
-                        <?php echo get_the_terms($post->ID, 'area')[0]->name; ?>
+                        <?php 'ボランティアは'.the_field('recruitment'); ?>
                         <?php echo get_the_terms($post->ID, 'area')[1]->name; ?>
                     </div>
                 </a>
@@ -553,8 +557,8 @@ $the_query = new WP_Query($args);
                 <a href="<?php the_permalink() ?>">
                     <div class="result_img_card">
                         <img src="<?php the_field('eye_catching'); ?>" alt="" />
-                        <p><?php the_field('starttime') ?></p>
-                        <p><?php the_field('reserve') ?></p>
+                        <p><?php the_field('title') ?></p>
+                        <p><?php '予約必要性は'.the_field('reserve') ?></p>
                         <?php //print_r(get_field_object('starttime')); ?>
                     </div>
                 </a>
