@@ -69,6 +69,7 @@
 .yellow {
     background-color: #fdffb0;
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 
@@ -100,7 +101,7 @@
 }
 
 .m1024 {
-    max-width: 291px;
+    max-width: 300px;
     margin: 0 auto;
     text-align: center;
 }
@@ -136,7 +137,7 @@
     .scroll {
         width: 60px;
         height: 60px;
-        left: 50%;
+        left: 48%;
         /* border: 2px solid #f8b600; */
         border-radius: 50%;
         position: relative;
@@ -153,6 +154,27 @@
         border-left: 5px solid #f8b600;
         border-bottom: 5px solid #f8b600;
         transform: rotate(-45deg);
+    }
+
+    /* シャボン玉 */
+    .shingle-cafeinfo_img {
+        position: absolute;
+    }
+
+    .shabondama01 {
+        width: 250px;
+        height: 250px;
+        right: 15%;
+        top: 0px;
+        opacity: 45%;
+    }
+
+    .shabondama02 {
+        width: 100px;
+        height: 100px;
+        right: 25%;
+        top: 27%;
+        opacity: 45%;
     }
 }
 
@@ -195,15 +217,36 @@
     background-color: #d7f794;
 }
 
+/* ボランティアリボン*/
 .volunteer {
-    letter-spacing: 0.12em;
     display: inline-block;
-    width: 230px;
-    padding: 10px;
-    margin-top: 55px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    background-color: #f8b600;
+    margin-top: 40px;
+    width: 250px;
+    position: relative;
+    padding: 15px 20px;
+    font-size: 18px; /*フォントサイズ*/
+    color: #fff; /*フォントカラー*/
+    background: #a6d3c8; /*背景色*/
+}
+
+.volunteer:before {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155); /*折り返し部分*/
+}
+
+.volunteer:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    right: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-left: solid 20px rgb(149, 158, 155); /*折り返し部分*/
 }
 
 /* 標準の背景 */
@@ -219,15 +262,21 @@
     margin: 30px auto;
 }
 
+.others_subtitle {
+    padding: 10px 0;
+}
+
 .others_item {
     width: 278px;
-    background-color: #fdffb0;
+    border-radius: 20px;
+    background-color: #f0ffcc;
+    /* background-color: #fdffb0; */
     padding-top: 20px;
     padding-bottom: 39px;
     margin: 0 auto;
 }
 
-.others_item p {
+/* .others_item p {
     display: inline-block;
     margin-top: 10px;
     padding: 5px 5px;
@@ -235,6 +284,21 @@
     background-color: #f7dd94;
     border: 1px solid black;
     border-radius: 70%;
+} */
+
+.others_item p {
+    display: inline-block;
+    margin: 0 0.1em 0.6em 0;
+    padding: 7px;
+    line-height: 1;
+    text-decoration: none;
+    background-color: #ccf0ff;
+    border-radius: 2em 0 0 2em;
+}
+.others_item p:before {
+    content: "●";
+    margin-right: 0.5em;
+    color: white;
 }
 
 /* map */
