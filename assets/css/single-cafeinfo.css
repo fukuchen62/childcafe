@@ -348,9 +348,8 @@
     margin: 0 auto;
 }
 
-.text_box p a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+.bgcolor_news p {
+    text-decoration: underline 1px orange;
 }
 
 @media (min-width: 770px) {
@@ -399,6 +398,11 @@
 
     .bgcolor_news {
         width: 70%;
+        font-size: 16px;
+    }
+
+    .bgcolor_news p {
+        text-decoration: none;
     }
 
     .text_box p a {
@@ -419,6 +423,11 @@
         transform-origin: right;
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
+    }
+
+    .text_box p a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
     }
 }
 /* スライド */

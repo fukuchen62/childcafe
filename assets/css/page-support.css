@@ -92,7 +92,7 @@
 }
 
 .support_subtitle {
-    width: 100%;
+    width: 90%;
     height: auto;
     font-weight: 500;
     padding-top: 8px;
@@ -135,7 +135,14 @@
     }
 
     .support_btn {
+        width: 30%;
+        height: 100px;
+        padding: 35px;
         margin-top: 50px;
+    }
+
+    .support_btn:hover {
+        background: #f7c331;
     }
 
     .support_supplies p,
