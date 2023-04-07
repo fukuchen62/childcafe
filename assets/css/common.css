@@ -44,7 +44,7 @@ main {
 
 /* ボタンのエフェクト */
 .btn_item {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 10px 15px;
     /* ボタン本体の色 */
     background-color: #ffd466;
@@ -55,7 +55,6 @@ main {
     /*文字の影*/
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
     text-align: center;
-    margin: 50px 50px 0;
 }
 
 .btn_item:hover {
@@ -64,6 +63,19 @@ main {
     -webkit-animation: pulse 2s infinite;
     animation: shad26 1.5s infinite;
 }
+
+@keyframes shad26 {
+    0% {
+        box-shadow: 0 0 0 0 #ffb700;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
+    }
+}
+
 /* ボタンのエフェクトここまで */
 /* spanで画面幅により改行 */
 
@@ -103,16 +115,16 @@ main {
 
 /* ボタン */
 .btn {
-    margin: 0 auto;
-    margin-top: 50px;
     width: 200px;
     height: 45px;
     text-align: center;
     padding: 10px 0;
     background-color: #ffdf8c;
-    border: 1px solid black;
+    border: none;
     border-radius: 10px;
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+    margin: auto;
+    margin-top: 50px;
 }
 
 /* 詳細一覧のimgの大きさ */
