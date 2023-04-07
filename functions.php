@@ -164,7 +164,11 @@ function add_my_files() {
         );
     }
 
-
+        // cafeinfo一覧のみ出力
+    if (is_post_type_archive('cafeinfo')) {
+        wp_enqueue_style('archive-cafeinfo-css', get_template_directory_uri() . '/assets/css/archive-cafeinfo.css', array('common-css')
+        );
+    }
 
 }
 

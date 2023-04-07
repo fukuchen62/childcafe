@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/***********************
+        アコーディオン
+ **********************/
+.ac_label {
+    width: 200px;
+    height: 45px;
+    padding-top: 10px;
+    border: 2px solid orange;
+    background-color: white;
+    border-radius: 10px;
+    background-image: url(../images/pulldown.png); /*--矢印の画像を指定--*/
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 5px center;
+}
+.ac_list {
+    display: none;
+}
+
+.ac_list input[type="checkbox"] {
+    appearance: auto;
+}
+
+.open {
+    background-image: url(../images/index/pullup.png); /*--矢印の画像を指定--*/
+}
+
+/***********************
+    共通
+ **********************/
+form {
+    margin-top: 25px;
+}
+
+@media screen and (min-width: 770px) {
+    form {
+        margin-top: 50px;
+    }
+
+    .title {
+        margin-top: 120px;
+    }
+}
+
+.form {
+    width: 80%;
+    height: auto;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f7dd94;
+}
+
+.form_wrap {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff8e6;
+    border-radius: 10px;
+}
+
+.form_item {
+    width: 100%;
+    text-align: center;
+}
+
+.item_wrap {
+    margin: 20px auto;
+    max-width: fit-content;
+}
+
+.item_title {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* ボタン */
+
+.form_btns {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reset_btn {
+    background-color: #fdffb0;
+    margin-bottom: 30px;
+}
+
+.submit_btn {
+    /* padding: 25px 80px; */
+}
+
+.btn {
+    width: 180px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* チェックボックス */
+.checkbox-001 {
+    width: 100%;
+    /* gap: 0.5em 2em; */
+    border: none;
+}
+
+.checkbox-001 label {
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-001 label::before,
+.checkbox-001 label:has(:checked)::after {
+    content: "";
+}
+
+.checkbox-001 label::before {
+    /* 四角の大きさ */
+    width: 45px;
+    height: 45px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid rgb(146, 143, 143);
+}
+
+.checkbox-001 label:has(:checked)::before {
+    background-color: #eca351;
+}
+
+.checkbox-001 label:has(:checked)::after {
+    /* チェック */
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+}
+
+.checkbox-001 input {
+    display: none;
+}
+
+@media screen and (min-width: 770px) {
+    .item_title {
+        margin-bottom: 20px;
+    }
+
+    .ac_label {
+        width: 350px;
+        height: 55px;
+    }
+
+    .checkbox-001 {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .checkbox-001 label {
+        width: 50%;
+    }
+
+    .checkbox-001:after {
+        content: "";
+        width: 50%;
+        margin: 10px 0;
+        color: aliceblue;
+    }
+
+    .form_btns {
+        flex-direction: row;
+        width: 500px;
+    }
+
+    .submit_btn {
+        margin-bottom: 30px;
+    }
+}
+
+/***********************
+    ユーティリティ
+ **********************/
+.flex {
+    display: flex;
+}

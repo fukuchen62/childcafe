@@ -9,6 +9,14 @@
     margin-top: 50px;
 }
 
+.text {
+    width: 80%;
+}
+
+.contact1_text_p1 {
+    text-decoration: underline solid black;
+}
+
 .form {
     width: 90%;
     /* height: 1000px; */

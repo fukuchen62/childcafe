@@ -44,7 +44,7 @@ main {
 
 /* ボタンのエフェクト */
 .btn_item {
-    /* display: inline-block; */
+    /* display: inline-block;*/
     padding: 10px 15px;
     /* ボタン本体の色 */
     background-color: #ffd466;
@@ -55,6 +55,7 @@ main {
     /*文字の影*/
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
     text-align: center;
+    margin: 0 auto;
 }
 
 .btn_item:hover {
@@ -115,7 +116,6 @@ main {
 
 /* ボタン */
 .btn {
-    width: 200px;
     height: 45px;
     text-align: center;
     padding: 10px 0;
@@ -151,6 +151,7 @@ main {
     }
 
     .title {
+        margin-top: 120px;
         margin-bottom: 75px;
     }
 

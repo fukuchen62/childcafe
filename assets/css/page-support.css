@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /***********************
-        タブ 
+        タブ
  **********************/
 
 .tab {
@@ -70,10 +70,17 @@
     margin: 0 auto;
     padding: 35px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .support_supplies {
     background-color: #f7dd94;
+}
+
+.support_text {
+    padding: 10px;
+    text-align: left;
+    margin: 0 auto;
 }
 
 .support_money {
@@ -101,16 +108,22 @@
     margin: 20px auto;
 }
 
-.support_supplies a {
+/* .support_supplies a {
     font-weight: 500;
     text-decoration: underline dotted 1px gray;
     text-underline-offset: 10px;
-}
+} */
 
-.support_supplies a:hover {
+/* .support_supplies a:hover {
     text-decoration: underline dotted 1px red;
     text-underline-offset: 10px;
     color: red;
+} */
+
+.font_awsome {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 @media screen and (min-width: 770px) {
@@ -122,7 +135,7 @@
     }
 
     .support_btn {
-        margin-top: 150px;
+        margin-top: 50px;
     }
 
     .support_supplies p,
@@ -130,4 +143,12 @@
     .support_help p {
         width: 570px;
     }
+
+    .btn_center {
+        width: 350px;
+    }
+}
+
+.block {
+    display: inline-block;
 }
