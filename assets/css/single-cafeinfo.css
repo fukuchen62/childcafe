@@ -196,6 +196,7 @@
 }
 
 .volunteer {
+    letter-spacing: 0.12em;
     display: inline-block;
     width: 230px;
     padding: 10px;
