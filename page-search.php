@@ -20,7 +20,7 @@ $west = get_terms(array(
 
 
 //エリアとボランティア募集だけ検索の場合
-// eventの時点で該当するものがない場合
+// eventの時点で該当するものがない場合 cafeinfo_idsが空になってしまい、エリアとボランティアだけになってしまう
 
 // エリア（タクソノミーに存在）を取得
 $area_slug = get_query_var('area');
@@ -30,16 +30,6 @@ $volunteer ='';
 if (isset($_GET['volunteer'])) {
 $volunteer = $_GET['volunteer']; //searchform.phpの<input>のname属性の値と合わせる
 }
-
-// $starttime ='';
-// if (isset($_GET['starttime'])) {
-// $starttime = $_GET['starttime']; //searchform.phpの<input>のname属性の値と合わせる
-// }
-
-// $subject ='';
-// if (isset($_GET['subject'])) {
-// $subject = $_GET['subject']; //searchform.phpの<input>のname属性の値と合わせる
-// }
 
 $event_metaquerysp = ['relation' => 'AND'];
 
@@ -131,23 +121,57 @@ $event_query->the_post(); {
     $cafeinfo_ids[] = get_field('id');
 }
 }
-wp_reset_postdata(); }
+wp_reset_postdata();
+
+        $post__in = $cafeinfo_ids;
+    // クエリ作成
+    $args = [
+        'post_type' => 'cafeinfo',
+        'posts_per_page' => -1,
+        //該当イベント記事の親食堂ID
+        'post__in' => $post__in,
+    ];
+
+
+
+} else {
+    $args = [
+    ];
+
+}
+
+// $post__in = '';
+// if (empty($cafeinfo_ids)
+// // && ($free || $reserve || $parking || $person || $food_pantry || $learning_support)
+// ) {
+
+//         $args = [
+//         'post_type' => 'cafeinfo',
+//         'posts_per_page' => 1,
+//     ];
+
+// }else {
+
+
+//         $post__in = $cafeinfo_ids;
+//     // クエリ作成
+//     $args = [
+//         'post_type' => 'cafeinfo',
+//         'posts_per_page' => -1,
+//         //該当イベント記事の親食堂ID
+//         'post__in' => $post__in,
+//     ];
+
+// }
 
 
 // クエリ作成
-$args = [
-    'post_type' => 'cafeinfo',
-    'posts_per_page' => -1,
-    //該当イベント記事の親食堂ID
-    'post__in' => $cafeinfo_ids,
-];
-
-// if (!empty($reserve)) {
-// $querysp[] = [
-//     'post__in' => $cafeinfo_ids,
+// $args = [
+//     'post_type' => 'cafeinfo',
+//     'posts_per_page' => -1,
+//     //該当イベント記事の親食堂ID
+//     'post__in' => $post__in,
 // ];
-// $args[] = $querysp;
-// // }
 
 
 $args[] = ['relation' => 'AND'];
@@ -190,8 +214,9 @@ $the_query = new WP_Query($args);
         <?php print_r($learning_support); ?>
         <?php echo $volunteer; ?>
         <?php echo $free; ?>
-        <?php print_r($hoge); ?>
-        <?php print_r($args); ?>
+        <?php //print_r($hoge); ?>
+        <?php //print_r($args); ?>
+        <?php print_r($cafeinfo_ids); ?>
 
         <form action="#" method="get">
             <section class="form">
@@ -295,6 +320,8 @@ $the_query = new WP_Query($args);
                     </div>
                 </a>
                 <?php endwhile; ?>
+                <?php else:?>
+                <h3>当てはまるこども食堂はありません</h3>
                 <?php endif;?>
                 <?php wp_reset_postdata(); ?>
             </div>
