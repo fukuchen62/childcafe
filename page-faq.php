@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
-
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">FAQ</h2>
         <div class="faq">
             <div class="text">
@@ -78,5 +77,6 @@
         </div>
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>
