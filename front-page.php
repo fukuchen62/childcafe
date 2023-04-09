@@ -377,7 +377,6 @@ $event_query = new WP_Query($fuga);
         </div>
     </div>
     <!-- メインインナー終わり -->
-    </div>
 </main>
 </div>
 <?php get_footer(); ?>

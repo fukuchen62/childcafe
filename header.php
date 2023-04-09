@@ -11,6 +11,11 @@
 <body <?php //body_class(); ?>>
     <div class="body_inner">
         <?php wp_body_open(); ?>
+        <!-- トップページへ戻るボタン -->
+        <div class="toppage_btn">
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
+        </div>
+        <!-- トップページへ戻るボタン 終了-->
         <header class="header">
             <div class="header_inner flex">
                 <div class="header_logo">
@@ -76,7 +81,7 @@
                             <input type="hidden" name="search_type" value="keywords" />
                             <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" />
                             <input class="hbg_submit fas" type="submit" value="" />
-                            <!-- </form> -->
+                        </form>
                     </li>
                     <!-- 検索機能end -->
                 </ul>

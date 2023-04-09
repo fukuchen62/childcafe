@@ -29,6 +29,8 @@ function add_my_files() {
     wp_enqueue_script('slick-min',get_template_directory_uri().'/assets/slick/js/slick.min.js',array('jquery'),'1.0',true);
     //header.jsの読み込み
     wp_enqueue_script('header',get_template_directory_uri().'/assets/js/header.js',array('jquery'),'1.0',true);
+    //WP Paginateの既存CSSを読み込まないようにする
+    wp_deregister_style('wp-paginate');
 
     //以下はheaderに出力
     //Google fonts
@@ -186,7 +188,7 @@ function wpcf7_autop_return_false() {
 //投稿表示件数を変更する
 function my_pre_get_posts($query) {
     //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || !$query->is_main_query()) {
+    if (is_admin() || $query->is_main_query()) {
         return;
     }
 
@@ -211,3 +213,29 @@ function my_pre_get_posts($query) {
     }
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
+
+
+//自作ページネーションを読み込ませる
+function original_pagenation(){
+
+    the_posts_pagination(
+        array(
+            'mid_size' => 1,
+            'prev_next' => true,
+            'prev_text' => '<div class="page_triangle_left"></div>',
+            'next_text' => '<div class="page_triangle_right"></div>',
+            'type' => 'plain',
+            'screen_reader_text' => 'ページネーション',
+        )
+    );
+}
+
+function custom_the_posts_pagination( $template ) {
+	$template = '
+	<div class="p-posts-pagination %1$s" role="navigation">
+		<h2 class="screen-reader-text">%2$s</h2>
+		<div class="page_nav flex">%3$s</div>
+	</div>';
+	return $template;
+}
+add_filter( 'navigation_markup_template', 'custom_the_posts_pagination' );
