@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 
 $args = array(
@@ -19,11 +18,16 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
 
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">開催情報一覧</h2>
         <div class="ivent_item ivent_flex">
             <?php if ($the_query->have_posts()) : ?>
             <?php while($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
+            <?php
+            $cafeinfo_id = get_field('id');
+            $this_terms = get_the_terms($cafeinfo_id,'area');
+            ?>
             <div class="ivent_item_card">
                 <a href="<?php the_permalink(); ?>">
                     <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
@@ -40,13 +44,23 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
         </div>
-        <?php
-            if (function_exists('wp_pagenavi')) {
-                wp_pagenavi();
-                }
-            ?>
+        <!-- ページナビ -->
+        <div class="page_nav flex">
+            <?php original_pagenation(); ?>
+        </div>
+        <style>
+        .page-numbers {
+            width: 37px;
+            height: 37px;
+            padding-top: 3px;
+            background-color: #f7dd94;
+            border-radius: 50px;
+            text-align: center;
+        }
+        </style>
         <?php get_sidebar('categories'); ?>
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>

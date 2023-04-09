@@ -213,6 +213,14 @@ function my_pre_get_posts($query) {
         return;
     }
 
+        // 開催情報一覧ページの場合
+    if ($query->is_post_type_archive('event')) {
+        $query->set('posts_per_page', 6);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+        return;
+    }
+
+
     // エリア検索ページの場合
     if ($query->is_tax('area')) {
         $query->set('posts_per_page', 9);
