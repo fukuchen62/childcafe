@@ -2,9 +2,25 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 
-// $tokushima = $_GET['tokushima'];
-// $volunteer = $_GET['volunteer'];
-// $volunteer = filter_var($volunteer, FILTER_VALIDATE_BOOLEAN);
+//市町村一覧
+$east = get_terms(array(
+    'taxonomy' => 'area',
+    'parent' => get_term_by('slug', 'east', 'area')->term_id
+));
+
+$south = get_terms(array(
+    'taxonomy' => 'area',
+    'parent' => get_term_by('slug', 'south', 'area')->term_id
+));
+
+$west = get_terms(array(
+    'taxonomy' => 'area',
+    'parent' => get_term_by('slug', 'west', 'area')->term_id
+));
+
+
+//エリアとボランティア募集だけ検索の場合
+// eventの時点で該当するものがない場合 cafeinfo_idsが空になってしまい、エリアとボランティアだけになってしまう
 
 // エリア（タクソノミーに存在）を取得
 $area_slug = get_query_var('area');
@@ -15,32 +31,87 @@ if (isset($_GET['volunteer'])) {
 $volunteer = $_GET['volunteer']; //searchform.phpの<input>のname属性の値と合わせる
 }
 
-// $starttime ='';
-// if (isset($_GET['starttime'])) {
-// $starttime = $_GET['starttime']; //searchform.phpの<input>のname属性の値と合わせる
-// }
-
-// $subject ='';
-// if (isset($_GET['subject'])) {
-// $subject = $_GET['subject']; //searchform.phpの<input>のname属性の値と合わせる
-// }
+$event_metaquerysp = ['relation' => 'AND'];
 
 $reserve ='';
 if (isset($_GET['reserve'])) {
 $reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'reserve',
+        'value' => $reserve,
+        'compare' => '='
+    ];
 }
+
+$free ='';
+if (isset($_GET['child_price'])) {
+$free = $_GET['child_price']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'child_price',
+        'value' => $free,
+        'compare' => '='
+    ];
+}
+
+$parking ='';
+if (isset($_GET['parking'])) {
+$parking = $_GET['parking']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'parking',
+        'value' => $parking,
+        'compare' => 'LIKE'
+    ];
+}
+
+$person ='';
+if (isset($_GET['person'])) {
+$person = $_GET['person']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'person',
+        'value' => $person,
+        'compare' => 'LIKE'
+    ];
+}
+
+$learning_support ='';
+if (isset($_GET['learning_support'])) {
+$learning_support = $_GET['learning_support']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'service',
+        'value' => $learning_support,
+        'compare' => 'LIKE'
+    ];
+}
+
+
+
+$food_pantry ='';
+if (isset($_GET['food_pantry'])) {
+$food_pantry = $_GET['food_pantry']; //searchform.phpの<input>のname属性の値と合わせる
+    $event_metaquerysp[] = [
+        'key' => 'service',
+        'value' => $food_pantry,
+        'compare' => 'LIKE'
+    ];
+}
+
 
 $hoge = [
     'post_type' => 'event',
     'posts_per_page' => -1,
-    'meta_query' => [
-        [
-        'key' => 'reserve',
-        'value' => $reserve,
-        'compare' => '='
-        ]
-    ]
+    // 'meta_query' => [
+    //     [
+    //     'key' => 'reserve',
+    //     'value' => $reserve,
+    //     'compare' => '='
+    //     ]
+    // ],
 ];
+
+$hoge['meta_query'] = $event_metaquerysp;
+
+
+
 
 $event_query = new WP_Query($hoge);
 
@@ -50,23 +121,57 @@ $event_query->the_post(); {
     $cafeinfo_ids[] = get_field('id');
 }
 }
-wp_reset_postdata(); }
+wp_reset_postdata();
+
+        $post__in = $cafeinfo_ids;
+    // クエリ作成
+    $args = [
+        'post_type' => 'cafeinfo',
+        'posts_per_page' => -1,
+        //該当イベント記事の親食堂ID
+        'post__in' => $post__in,
+    ];
+
+
+
+} else {
+    $args = [
+    ];
+
+}
+
+// $post__in = '';
+// if (empty($cafeinfo_ids)
+// // && ($free || $reserve || $parking || $person || $food_pantry || $learning_support)
+// ) {
+
+//         $args = [
+//         'post_type' => 'cafeinfo',
+//         'posts_per_page' => 1,
+//     ];
+
+// }else {
+
+
+//         $post__in = $cafeinfo_ids;
+//     // クエリ作成
+//     $args = [
+//         'post_type' => 'cafeinfo',
+//         'posts_per_page' => -1,
+//         //該当イベント記事の親食堂ID
+//         'post__in' => $post__in,
+//     ];
+
+// }
 
 
 // クエリ作成
-$args = [
-    'post_type' => 'cafeinfo',
-    'posts_per_page' => -1,
-    //eventの記事ID
-    'post__in' => $cafeinfo_ids,
-];
-
-// if (!empty($reserve)) {
-// $querysp[] = [
-//     'post__in' => $cafeinfo_ids,
+// $args = [
+//     'post_type' => 'cafeinfo',
+//     'posts_per_page' => -1,
+//     //該当イベント記事の親食堂ID
+//     'post__in' => $post__in,
 // ];
-// $args[] = $querysp;
-// // }
 
 
 $args[] = ['relation' => 'AND'];
@@ -106,22 +211,16 @@ $the_query = new WP_Query($args);
 <main>
     <div class="main_inner">
         <h2 class="title">詳細検索</h2>
-        <!-- タブ -->
-        <ul class="tab flex">
-            <li class="tab_1 tab_js info">基本情報</li>
-            <li class="tab_2 tab_js daytime">日時</li>
-            <li class="tab_3 tab_js favorite">こだわり</li>
-        </ul>
-        <form action="<?php echo home_url('/search')?>" method="get">
+        <?php print_r($learning_support); ?>
+        <?php echo $volunteer; ?>
+        <?php echo $free; ?>
+        <?php //print_r($hoge); ?>
+        <?php //print_r($args); ?>
+        <?php print_r($cafeinfo_ids); ?>
 
-            <!--隠しフィールドとして記述する（これがないとフォームがうまく動作しません）-->
-            <input type="hidden" name="s" value="">
-
-            <!-- タブ１項目 -->
-            <section class="form1 panel info is-show">
-                <h3 class="subtitle">子供食堂をしらべる</h3>
-                <?php //print_r($args); ?>
-                <?php //print_r($cafeinfo_ids); ?>
+        <form action="#" method="get">
+            <section class="form">
+                <h3 class="subtitle">子供食堂をさがす</h3>
                 <div class="form_wrap">
                     <!-- エリア検索欄 -->
                     <div class="form_item">
@@ -131,35 +230,13 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">東部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="tokushima" name="area[]" value="tokushima"><label for="tokushima">徳島市</label>
+                                    <input type="checkbox" id="east_all" name="area[]" value="tokushima" /><label for="east_all">東部</label>
                                 </li>
+                                <?php foreach ($east as $town) :  ?>
                                 <li>
-                                    <input type="checkbox" id="naruto" name="area[]" value="naruto" /><label for="naruto">鳴門市</label>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
                                 </li>
-                                <li>
-                                    <input type="checkbox" id="matushige" name="area[]" value="matushige" /><label for="matushige">松茂町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="kitajima" /><label for="kitajima">北島町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="aizumi" /><label for="aizumi">藍住町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="itano" /><label for="itano">板野町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="ishii" /><label for="ishii">石井町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="kamiyama" /><label for="kamiyama">神山町</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="awa" /><label for="awa">阿波市</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="kamiita" /><label for="kamiita">上板町</label>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                         <!-- 西部 -->
@@ -167,364 +244,65 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">西部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="miyoshi" /><label for="miyoshi">三好市</label>
+                                    <input type="checkbox" id="west_all" name="area[]" value="tokushima" /><label for="west_all">西部</label>
                                 </li>
+                                <?php foreach ($west as $town) :  ?>
                                 <li>
-                                    <input type="checkbox" id="higashimiyoshi" /><label for="higashimiyoshi">東みよし市</label>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
                                 </li>
-                                <li>
-                                    <input type="checkbox" id="mima" /><label for="mima">美馬市</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="yoshinogawa" /><label for="yoshinogawa">吉野川市</label>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
-
                         <!-- 南部 -->
                         <div class="item_wrap">
                             <div class="ac_label">南部</div>
                             <ul class="ac_list">
+                                <input type="checkbox" id="south_all" /><label for="south_all">南部</label>
+                                <?php foreach ($south as $town) :  ?>
                                 <li>
-                                    <input type="checkbox" id="komatushima" /><label for="komatushima">小松島市</label>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
                                 </li>
-                                <li>
-                                    <input type="checkbox" id="anann" /><label for="anann">阿南市</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="kaiyou" /><label for="kaiyou">海陽町</label>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <!-- エリア検索欄終了 -->
-
-                    <!-- 料金検索 -->
-                    <div class="form_item">
-                        <h3 class="item_title">料金</h3>
-                        <!-- こども料金 -->
-                        <div class="item_wrap">
-                            <label for="child" class="checklist">こども：</label>
-                            <select class="select" name="child_money" size="1" id="child">
-                                <option value="" selected hidden disabled>料金を選択</option>
-                                <option value="完全無料">
-                                    完全無料
-                                </option>
-                                <option value="募金制">
-                                    募金制
-                                </option>
-                                <option value="～３００円">
-                                    ～３００円
-                                </option>
-                                <option value="５００円">
-                                    ５００円
-                                </option>
-                                <option value="５００円以上">
-                                    ５００円以上
-                                </option>
-                            </select>
-                        </div>
-                        <!-- 大人料金 -->
-                        <div class="item_wrap">
-                            <label for="adult" class="checklist">おとな：</label>
-                            <select class="select" name="adult_money" size="1" id="adult">
-                                <option value="" selected hidden disabled>料金を選択</option>
-                                <option value="完全無料">
-                                    完全無料
-                                </option>
-                                <option value="募金制">
-                                    募金制
-                                </option>
-                                <option value="～３００円">
-                                    ～３００円
-                                </option>
-                                <option value="５００円">
-                                    ５００円
-                                </option>
-                                <option value="５００円以上">
-                                    ５００円以上
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- 開催日時検索 -->
-                    <div class="form_item">
-                        <h3 class="item_title">開催日時</h3>
-                        <div class="item_wrap">
-                            <div class="ac_label">曜日</div>
-                            <ul class="ac_list">
-                                <li>
-                                    <input type="checkbox" id="monday" /><label for="monday">月曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="tuesday" /><label for="tuesday">火曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="wednesday" /><label for="wednesday">水曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="thursday" /><label for="thursday">木曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="friday" /><label for="friday">金曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="saturday" /><label for="saturday">土曜日</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="sunday" /><label for="sunday">日曜日</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="item_wrap flex">
-                            <label for="min_time" class="checklist">時間：</label>
-                            <div class="time_wrap flex">
-                                <input id="min_time" type="time" name="starttime" step="3600" min="07:00:00" max="22:00:00" list="data-list" selected />
-                                <p>～</p>
-                                <input id="max_time" type="time" name="time" step="3600" min="07:00:00" max="22:00:00" list="data-list" selected disabled />
-                            </div>
-                            <!-- 時間間隔設定 -->
-                            <datalist id="data-list">
-                                <option value="07:00"></option>
-                                <option value="08:00"></option>
-                                <option value="09:00"></option>
-                                <option value="10:00"></option>
-                                <option value="11:00"></option>
-                                <option value="12:00"></option>
-                                <option value="13:00"></option>
-                                <option value="14:00"></option>
-                                <option value="18:00"></option>
-                                <option value="19:00"></option>
-                                <option value="20:00"></option>
-                                <option value="21:00"></option>
-                                <option value="22:00"></option>
-                            </datalist>
-                        </div>
-                        <!-- 開催日時検索 終了-->
-
-                        <!-- 事前予約の有無 -->
-                        <div class="form_item">
-                            <h3 class="item_title">事前予約</h3>
-                            <div class="radiobtn flex">
-                                <label>
-                                    <input type="radio" name="reserve" value="1" />
-                                    有
-                                </label>
-                                <label>
-                                    <input type="radio" name="reserve" />
-                                    無
-                                </label>
-                            </div>
-                        </div>
-                        <!-- 事前予約の有無 終了-->
-
-                        <!-- 駐車場の有無 -->
-                        <div class="form_item">
-                            <h3 class="item_title">駐車場</h3>
-                            <div class="radiobtn flex">
-                                <label>
-                                    <input type="radio" name="parking" />
-                                    有
-                                </label>
-                                <label>
-                                    <input type="radio" name="parking" />
-                                    無
-                                </label>
-                            </div>
-                        </div>
-                        <!-- 駐車場の有無 終了-->
-                    </div>
-                </div>
-            </section>
-            <!-- タブ１項目 終了-->
-
-            <!-- タブ２項目 -->
-            <section class="form2 daytime panel">
-                <h3 class="subtitle">子供食堂をしらべる</h3>
-                <div class="form_wrap">
-                    <!-- 参加対象 -->
-                    <div class="form_item">
-                        <h3 class="item_title">参加対象</h3>
-                        <br />
-                        <select class="select" name="subject" size="1">
-                            <option value="" selected hidden disabled>対象を選択</option>
-                            <option value="誰でも（こどもは保護者同伴）
-">
-                                誰でも（こどもは保護者同伴）
-                            </option>
-                            <option value="大人だけで行ける">
-                                大人だけで行ける
-                            </option>
-                            <option value="大人は保護者だけ">
-                                大人は保護者だけ
-                            </option>
-                            <option value="地域の方だけ">
-                                地域の方だけ
-                            </option>
-                            <option value="会員登録制">
-                                会員登録制
-                            </option>
-                        </select>
-                    </div>
-                    <!-- 参加対象 終了-->
-
-                    <!-- 対象年齢 -->
-                    <div class="form_item">
-                        <h3 class="item_title">対象年齢</h3>
-                        <div class="age_select flex">
-                            <select class="select" name="age" size="1">
-                                <option value="" selected hidden disabled>選択</option>
-                                <option value="制限なし">
-                                    制限なし
-                                </option>
-                                <option value="未就学児">
-                                    未就学児
-                                </option>
-                                <option value="小学生">
-                                    小学生
-                                </option>
-                                <option value="中学生">
-                                    中学生
-                                </option>
-                                <option value="高校生">
-                                    高校生
-                                </option>
-                                <option value="大学生">
-                                    大学生
-                                </option>
-                            </select>
-                            <div class="select_p">～</div>
-                            <select class="select" name="age" size="1">
-                                <option value="" selected hidden disabled>選択</option>
-                                <option value="制限なし">
-                                    制限なし
-                                </option>
-                                <option value="未就学児">
-                                    未就学児
-                                </option>
-                                <option value="小学生">
-                                    小学生
-                                </option>
-                                <option value="中学生">
-                                    中学生
-                                </option>
-                                <option value="高校生">
-                                    高校生
-                                </option>
-                                <option value="大学生">
-                                    大学生
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- 対象年齢 終了-->
-
-                    <!-- 食事提供方式 -->
-                    <div class="form_item">
-                        <h3 class="item_title">食事提供方式</h3>
-                        <br />
-                        <select class="select" name="age" size="1">
-                            <option value="" selected hidden disabled>希望を選択</option>
-                            <option value="いっしょに作って食べる">
-                                いっしょに作って食べる
-                            </option>
-                            <option value="作ったものを提供">
-                                作ったものを提供
-                            </option>
-                            <option value="持ち帰り(弁当)
-">
-                                持ち帰り(弁当)
-                            </option>
-                        </select>
-                    </div>
-                    <!-- 食事提供方式 終了-->
-
-                    <!-- ボランティア募集の有無 -->
-                    <div class="form_item">
-                        <h3 class="item_title">ボランティア募集</h3>
-                        <div class="radiobtn flex">
+                    <!-- チェックボックス欄 -->
+                    <div class="form_wrap">
+                        <div class="checkbox-001">
                             <label>
-                                <input type="radio" name="volunteer" value="1">
-                                有
+                                <input type="checkbox" name="child_price" value="0" />完全無料
                             </label>
                             <label>
-                                <input type="radio" name="volunteer" value="">
-                                無
+                                <input type="checkbox" name="reserve" value="1" />事前予約
+                            </label>
+                            <label>
+                                <input type="checkbox" name="parking" value="有り" />駐車場
+                            </label>
+                            <label>
+                                <input type="checkbox" name="person" value="こどもだけで行ける" />子供だけでいける
+                            </label>
+                            <label>
+                                <input type="checkbox" name="volunteer" value="1" />ボランティア募集中
+                            </label>
+                            <label>
+                                <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリー
+                            </label>
+                            <label>
+                                <input type="checkbox" name="learning_support" value="学習支援" />学習支援
                             </label>
                         </div>
                     </div>
-                    <!-- ボランティア募集の有無 終了-->
+                    <!--チェックボックス欄  終了-->
                 </div>
             </section>
-            <!-- タブ２項目 終了-->
-
-            <!-- タブ３項目 -->
-            <section class="form3 favorite panel">
-                <h3 class="subtitle">子供食堂をしらべる</h3>
-                <div class="form_wrap">
-                    <div class="checkbox-001">
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />おもちゃ
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />絵本
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />外遊び
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />遊具
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />授乳スペース
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />オムツ交換スペース
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />学習支援
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />アレルギー対応
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />フードパントリー<br />(食材の配布)あり
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />季節のイベント
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />調理師
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />栄養士
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />食品衛生責任者
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />教師
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />保育士
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />助産師
-                        </label>
-                        <label>
-                            <input type="checkbox" name="checkbox-001" />看護師
-                        </label>
-                    </div>
-                </div>
-            </section>
-            <!-- タブ３項目 終了-->
             <!-- ボタン -->
             <div class="form_btns flex">
-                <input class="btn submit_btn" type="submit" value="しらべる" />
+                <input class="btn submit_btn" type="submit" value="さがす" />
                 <input class="btn reset_btn" type="reset" value="リセット" />
             </div>
         </form>
+
 
         <!-- 検索結果表示 -->
         <div class="result_img">
@@ -542,6 +320,8 @@ $the_query = new WP_Query($args);
                     </div>
                 </a>
                 <?php endwhile; ?>
+                <?php else:?>
+                <h3>当てはまるこども食堂はありません</h3>
                 <?php endif;?>
                 <?php wp_reset_postdata(); ?>
             </div>
@@ -558,7 +338,12 @@ $the_query = new WP_Query($args);
                     <div class="result_img_card">
                         <img src="<?php the_field('eye_catching'); ?>" alt="" />
                         <p><?php the_field('title') ?></p>
-                        <p><?php '予約必要性は'.the_field('reserve') ?></p>
+                        <p><?php //print_r(get_field('service')) ?></p>
+                        <p><?php //print_r(get_field('person')) ?></p>
+                        <p><?php echo '予約必要性は'.get_field('reserve') ?></p>
+                        <p><?php echo '子ども料金は'.get_field('child_price') ?></p>
+                        <p><?php //print_r(get_field('parking')) ?></p>
+                        <?php //print_r(get_field_object('parking')); ?>
                         <?php //print_r(get_field_object('starttime')); ?>
                     </div>
                 </a>
