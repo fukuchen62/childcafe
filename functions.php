@@ -211,6 +211,13 @@ function my_pre_get_posts($query) {
         $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
         return;
     }
+
+    // インタビュー一覧ページの場合
+    if ($query->is_post_type_archive('cafeinfo')) {
+        $query->set('posts_per_page', 9);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+        return;
+    }
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 

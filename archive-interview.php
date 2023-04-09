@@ -5,7 +5,7 @@
 		'posts_per_page' => -1, //全件表示
         'orderby' => 'date',
         'order' => 'ASC',
-        'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
 	);
 	$the_query = new WP_Query($args);
 

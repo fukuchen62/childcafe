@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <?php
     //開いているページの情報を取得
@@ -15,6 +14,8 @@
 
     $args = array(
         'post_type' => 'cafeinfo',
+        'posts_per_page' => -1, //全件表示
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'tax_query' => array(
             array(
                 'taxonomy' => 'area',
@@ -32,7 +33,7 @@
     'taxonomy' => 'area',
     'parent' => $parent_term->term_id,
     //投稿がない場合でも表示させる
-    'hide_empty' => false,
+    // 'hide_empty' => false,
     // 'orderby' => 'modified',
     // 'order' => 'ASC',
 ));
@@ -42,6 +43,8 @@
 
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
+
         <!-- 地域別タブ -->
         <ul class="tab flex">
             <li class="tab_east tab_js east"><a href="<?php echo home_url('/area/east'); ?>">東部</a></li>
@@ -84,13 +87,21 @@
             </section>
         </div>
         <!-- ページナビ -->
-        <?php
-            //自作検討する（仮で常時表示中）
-            if (function_exists('wp_pagenavi')) {
-                wp_pagenavi();
-            }
-        ?>
+        <div class="page_nav flex">
+            <?php original_pagenation(); ?>
+        </div>
+        <style>
+        .page-numbers {
+            width: 37px;
+            height: 37px;
+            padding-top: 3px;
+            background-color: #f7dd94;
+            border-radius: 50px;
+            text-align: center;
+        }
+        </style>
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>
