@@ -108,6 +108,12 @@
     margin: 20px auto;
 }
 
+.support_btn {
+    width: 50%;
+    height: 60px;
+    padding: 13px;
+}
+
 /* .support_supplies a {
     font-weight: 500;
     text-decoration: underline dotted 1px gray;
@@ -153,6 +159,10 @@
 
     .btn_center {
         width: 350px;
+    }
+
+    .title {
+        margin-top: 120px;
     }
 }
 
