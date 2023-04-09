@@ -122,7 +122,7 @@ function add_my_files() {
         wp_enqueue_script('tab',get_template_directory_uri().'/assets/js/tab.js',array('header'),'1.0',true);
     }
 
-    // page-supportのみ出力
+    // page-aboutのみ出力
     if (is_page('about')) {
         wp_enqueue_style('page-about', get_template_directory_uri() . '/assets/css/page-about.css', array('my-common')
         );
@@ -200,11 +200,11 @@ function my_pre_get_posts($query) {
     // }
 
     // 固定ページの場合
-    if ($query->is_page('post')) {
-        $query->set('posts_per_page',5);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_page('post')) {
+    //     $query->set('posts_per_page',5);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
     // インタビュー一覧ページの場合
     if ($query->is_post_type_archive('interview')) {
@@ -214,11 +214,11 @@ function my_pre_get_posts($query) {
     }
 
         // 開催情報一覧ページの場合
-    if ($query->is_post_type_archive('event')) {
-        $query->set('posts_per_page', 6);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_post_type_archive('event')) {
+    //     $query->set('posts_per_page', 6);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
 
     // エリア検索ページの場合
