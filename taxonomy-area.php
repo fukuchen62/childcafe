@@ -26,6 +26,10 @@
         ),
         // orderby => ,
     );
+
+    // カスタムクエリを追加する前に、元のクエリを保存しておく
+    $original_query = $wp_query;
+
     $the_query = new WP_Query($args);
 
     //市町村一覧
@@ -83,6 +87,10 @@
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_postdata(); ?>
+                    <?php
+                        // 元のクエリを復元する
+                        $wp_query = $original_query;
+                    ?>
                 </div>
             </section>
         </div>

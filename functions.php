@@ -96,8 +96,8 @@ function add_my_files() {
         );
     }
 
-    //記事詳細ページのみ出力
-    if (is_single()) {
+    //最新記事詳細ページのみ出力
+    if (is_singular('post')) {
         wp_enqueue_style('single-post',get_template_directory_uri() . '/assets/css/single-post.css',array('my-common')
         );
     }
@@ -148,11 +148,12 @@ function add_my_files() {
 
     // 詳細検索ページのみ出力
     if (is_page('search')) {
-        wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search.css', array('my-common')
+        //(再)の字を取り忘れないように！！とりあえず繋いでいる
+        wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search(再).css', array('my-common')
         );
         //tab.jsの読み込み
         wp_enqueue_script('tab',get_template_directory_uri().'/assets/js/tab.js',array('header'),'1.0',true);
-        //age-search.jsの読み込み
+        //page-search.jsの読み込み
         wp_enqueue_script('page-search',get_template_directory_uri().'/assets/js/page-search.js',array('tab'),'1.0',true);
     }
 
@@ -212,12 +213,20 @@ function my_pre_get_posts($query) {
         return;
     }
 
-    // インタビュー一覧ページの場合
-    if ($query->is_post_type_archive('cafeinfo')) {
+    // エリア検索ページの場合
+    if ($query->is_tax('area')) {
         $query->set('posts_per_page', 9);
         $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
         return;
     }
+
+    // 条件検索ページの場合
+    if ($query->is_page('search')) {
+        $query->set('posts_per_page', 9);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+        return;
+    }
+
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 

@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 
 //市町村一覧
@@ -128,6 +127,7 @@ wp_reset_postdata();
     $args = [
         'post_type' => 'cafeinfo',
         'posts_per_page' => -1,
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         //該当イベント記事の親食堂ID
         'post__in' => $post__in,
     ];
@@ -198,6 +198,8 @@ if (!empty($volunteer)) {
 }
 
 
+// カスタムクエリを追加する前に、元のクエリを保存しておく
+// $original_query = $wp_query;
 
 
 $the_query = new WP_Query($args);
@@ -210,13 +212,14 @@ $the_query = new WP_Query($args);
 ?>
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">詳細検索</h2>
-        <?php print_r($learning_support); ?>
-        <?php echo $volunteer; ?>
-        <?php echo $free; ?>
+        <?php //print_r($learning_support); ?>
+        <?php //echo $volunteer; ?>
+        <?php //echo $free; ?>
         <?php //print_r($hoge); ?>
         <?php //print_r($args); ?>
-        <?php print_r($cafeinfo_ids); ?>
+        <?php //print_r($cafeinfo_ids); ?>
 
         <form action="#" method="get">
             <section class="form">
@@ -325,6 +328,25 @@ $the_query = new WP_Query($args);
                 <?php endif;?>
                 <?php wp_reset_postdata(); ?>
             </div>
+            <?php
+                    // 元のクエリを復元する
+                    // $wp_query = $original_query;
+                ?>
+            <!-- ページナビ -->
+            <div class="page_nav flex">
+                <?php original_pagenation(); ?>
+            </div>
+            <style>
+            .page-numbers {
+                width: 37px;
+                height: 37px;
+                padding-top: 3px;
+                background-color: #f7dd94;
+                border-radius: 50px;
+                text-align: center;
+            }
+            </style>
+
         </div>
         <!-- 検索結果表示 終了-->
         <!-- 検索結果表示 -->
@@ -356,6 +378,7 @@ $the_query = new WP_Query($args);
 
     </div>
 </main>
+</div>
 
 
 <?php get_footer(); ?>
