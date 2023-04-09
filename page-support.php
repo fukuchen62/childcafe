@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">支援したい方へ</h2>
         <!-- 項目タブ -->
         <ul class="tab flex">
@@ -46,5 +46,6 @@
         </a>
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>
