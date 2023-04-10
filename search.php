@@ -2,13 +2,48 @@
 <?php
 // $eye_catching = get_post_meta($post->ID, 'eye_catching', true);
 // $eye_catching = get_field('eye_catching');
+
+$args = [
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+    'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+    'post_status' => 'publish', // 公開された投稿を指定
+    // 'post__in' => $post__in,
+];
+
+// $the_query = new WP_Query($args);
+
+// $query = $wp_query;
+
+// $args = $wp_query->query_vars;
+// $wp_query->query_vars['posts_per_page'] = -1;
+// $wp_query->tax_query->queries[] = array(
+//     'taxonomy' => 'area',
+//     'field'    => 'slug',
+//     'terms'    => get_search_query(),
+//     'compare' => 'LIKE',
+// );
+
+// $wp_query-> WP_Tax_Query Object['tax_query'] = [['taxonomy' => 'area']];
+// 'taxonomy' => 'area'
+// $wp_query['tax_query'] = [['taxonomy' => 'area']];
+
+$the_query = new WP_Query($args);
+
 ?>
 
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="result_img">
-            <h2 class="title">「<?php the_search_query(); ?>」検索結果一覧</h2>
+            <h2 class="title">
+                <?php echo '「'. get_search_query() . '」の検索結果一覧'; ?>
+            </h2>
+            <?php
+            // echo '<pre>';
+            // print_r($query);
+            // echo '</pre>';
+            ?>
             <div class="result_img_wrap flex">
                 <?php if (have_posts()) : ?>
                 <?php while(have_posts()) : ?>

@@ -238,8 +238,8 @@ $the_query = new WP_Query($args);
                 <div class="detail_item">
                     <h3 class="subtitle">SNS</h3>
                     <div>
-                        <p><a href="<?php echo 'instagram：'.get_field('instagram'); ?>"><?php echo 'instagram：'.get_field('instagram'); ?></a></p>
-                        <p><a href="<?php echo 'facebook：'.get_field('facebook'); ?>"><?php echo 'facebook：'.get_field('facebook'); ?></a></p>
+                        <p><a href="<?php the_field('instagram'); ?>"><?php echo 'instagram：'.get_field('instagram'); ?></a></p>
+                        <p><a href="<?php the_field('facebook'); ?>"><?php echo 'facebook：'.get_field('facebook'); ?></a></p>
                     </div>
                 </div>
                 <div class="detail_item">
@@ -366,11 +366,15 @@ $the_query = new WP_Query($args);
                         <?php while($the_query->have_posts()) : ?>
                         <?php $the_query->the_post(); ?>
                         <p>
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                    </p>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </p>
                         <?php endwhile; ?>
+                        <?php else: ?>
+                        <p>
+                            （仮表示中）直近の開催情報は、各食堂のSNS等をご覧ください。
+                        </p>
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
