@@ -57,7 +57,10 @@ $events = $event_fields;
 //     'Amazonみんなで応援プログラム'=>[get_field('amapro')]
 //     );
 
-$pics = array(get_field(''));
+$pics = array(get_field('pic1'),get_field('pic2'),get_field('pic3'),get_field('pic4'),get_field('pic5'),get_field('pic6'),get_field('pic7'),get_field('pic8'),get_field('pic9'),get_field('pic10'));
+
+$license = get_field('license',$event_id);
+$license = explode(",", $license);
 
 $args = array(
 		'post_type' => 'event',
@@ -279,8 +282,8 @@ $the_query = new WP_Query($args);
                     <?php //endforeach; ?>
                 </div>
                 <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/beigebottom.png" alt="波" class="wave_img bbottom" /> -->
-        </div>
-        <!-- <div class="green color">
+            <!-- </div> -->
+            <!-- <div class="green color">
                 <div class="green_inner m1024">
                     <?php //foreach( $infos as $label => $info): ?>
                     <?php //$show_label = true; ?>
@@ -322,68 +325,68 @@ $the_query = new WP_Query($args);
                     <?php //endif;?>
                 </div> -->
 
-        <!-- スクロール -->
-        <div class="scroll"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波" class="wave_img gbottom" />
-    </div>
-    <div class="bgcolor color">
-        <div class="bgcolor_inner m1024">
-            <div class="bgcolor_flex">
-                <div class="others">
-                    <h3 class="subtitle others_subtitle">
+            <!-- スクロール -->
+            <div class="scroll"></div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波" class="wave_img gbottom" />
+        </div>
+        <div class="bgcolor color">
+            <div class="bgcolor_inner m1024">
+                <div class="bgcolor_flex">
+                    <div class="others">
+                        <h3 class="subtitle others_subtitle">
                         取り扱いのあるもの
                     </h3>
-                    <div class="others_item">
-                        <?php foreach($service_array as $service): ?>
-                        <p>
-                            <?php
-                            if ($service == 'その他資格者') {
-                                the_field('license',$event_id);
-                            } else {
-                                echo $service;
-                            }
-                            ?>
-                        </p>
-                        <?php endforeach; ?>
+                        <div class="others_item">
+                            <?php foreach($service_array as $service): ?>
+                            <?php if ($service == 'その他資格者' && $license) : ?>
+                            <?php foreach( $license as $value): ?>
+                            <p>
+                                <?php echo $value; ?>
+                            </p>
+                            <?php endforeach; ?>
+                            <?php else: ?>
+                            <p>
+                                <?php echo $service; ?>
+                            </p>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div class="addressmap">
+                        <h3 class="subtitle">アクセス</h3>
+                        <?php the_field('place_map',$event_id); ?>
                     </div>
                 </div>
-                <div class="addressmap">
-                    <h3 class="subtitle">アクセス</h3>
-                    <?php the_field('place_map',$event_id); ?>
-                </div>
-            </div>
-            <h3 class="subtitle_ulineorange">開催情報</h3>
-            <div class="bgcolor_news">
-                <div class="text_box">
-                    <?php if ($the_query->have_posts()) : ?>
-                    <?php while($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>
-                    <p>
+                <h3 class="subtitle_ulineorange">開催情報</h3>
+                <div class="bgcolor_news">
+                    <div class="text_box">
+                        <?php if ($the_query->have_posts()) : ?>
+                        <?php while($the_query->have_posts()) : ?>
+                        <?php $the_query->the_post(); ?>
+                        <p>
                         <a href="<?php the_permalink(); ?>">
                             <?php the_title(); ?>
                         </a>
                     </p>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
-            </div>
 
-            <h3 class="subtitle_ulineorange">活動の様子</h3>
-            <ul class="ac_slide">
-                <li>
-                    <img src="../assets/images/delete/kv1_kari.jpg" alt="#" />
-                </li>
-                <li>
-                    <img src="../assets/images/delete/kv2_kari.jpg" alt="#" />
-                </li>
-                <li>
-                    <img src="../assets/images/delete/kv3_kari.jpg" alt="#" />
-                </li>
-            </ul>
+                <h3 class="subtitle_ulineorange">活動の様子</h3>
+                <ul class="ac_slide">
+                    <?php foreach( $pics as $pic): ?>
+                    <?php if (!empty($pic)) :?>
+                    <li>
+                        <img src="<?php echo  $pic; ?>" alt="#" />
+                    </li>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
-    </div>
-    <!-- メインインナー終わり -->
+        <!-- メインインナー終わり -->
     </div>
     <?php endwhile; ?>
     <?php endif; ?>
