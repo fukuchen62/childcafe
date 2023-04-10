@@ -122,9 +122,9 @@ $the_query = new WP_Query($args);
                                     <?php the_field('features'); ?>
                                 </p>
                             </div>
-                            <div class="pc_pickup">
-                                <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
-                            </div>
+                        </div>
+                        <div class="pc_pickup">
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
                         </div>
                     </div>
                 </div>
@@ -338,12 +338,14 @@ $the_query = new WP_Query($args);
                     </h3>
                         <div class="others_item">
                             <?php foreach($service_array as $service): ?>
-                            <?php if ($service == 'その他資格者' && $license) : ?>
+                            <?php if ($service == 'その他資格者') : ?>
+                            <?php if (!empty($license[0])) : ?>
                             <?php foreach( $license as $value): ?>
                             <p>
                                 <?php echo $value; ?>
                             </p>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                             <?php else: ?>
                             <p>
                                 <?php echo $service; ?>

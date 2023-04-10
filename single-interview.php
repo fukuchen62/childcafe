@@ -12,7 +12,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 <?php the_field('title'); ?>
             </span>
             <span class="pickup_title sp">
-                <?php echo the_field('organizer').'　様'; ?>
+                <?php echo the_field('organizer'); ?>
             </span>
         </h2>
         <div class="pickup_single">
