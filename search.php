@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 // $eye_catching = get_post_meta($post->ID, 'eye_catching', true);
 // $eye_catching = get_field('eye_catching');
@@ -7,6 +6,7 @@
 
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="result_img">
             <h2 class="title">「<?php the_search_query(); ?>」検索結果一覧</h2>
             <div class="result_img_wrap flex">
@@ -29,6 +29,20 @@
 
             </div>
         </div>
+        <div class="page_nav flex">
+            <?php original_pagenation(); ?>
+        </div>
+        <style>
+        .page-numbers {
+            width: 37px;
+            height: 37px;
+            padding-top: 3px;
+            background-color: #f7dd94;
+            border-radius: 50px;
+            text-align: center;
+        }
+        </style>
+
     </div>
 </main>
 

@@ -98,6 +98,7 @@ $food_pantry = $_GET['food_pantry']; //searchform.phpの<input>のname属性の�
 $hoge = [
     'post_type' => 'event',
     'posts_per_page' => -1,
+    'post_status' => 'publish', // 公開された投稿を指定
     // 'meta_query' => [
     //     [
     //     'key' => 'reserve',
@@ -128,6 +129,7 @@ wp_reset_postdata();
         'post_type' => 'cafeinfo',
         'posts_per_page' => -1,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+        'post_status' => 'publish', // 公開された投稿を指定
         //該当イベント記事の親食堂ID
         'post__in' => $post__in,
     ];

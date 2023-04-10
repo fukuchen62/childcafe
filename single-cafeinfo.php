@@ -94,14 +94,26 @@ $pics = array(get_field(''));
         </div>
         <div class="green color">
             <div class="green_inner m1024">
+
                 <?php foreach( $infos as $label => $info): ?>
+                <?php $show_label = true; ?>
+                <?php foreach($info as $key => $value): ?>
+                <?php if (!empty($value)) : ?>
+
+                <?php //$info = array_filter($info); // 空の要素を削除する ?>
+                <?php //foreach($info as $key => $value): ?>
+                <?php if ($show_label): ?>
+                <?php //if (!empty($value)) : ?>
                 <div class="detail_item">
-                    <?php //$info = array_filter($info); // 空の要素を削除する ?>
-                    <?php if (!empty($info)) : ?>
                     <h3 class="subtitle">
                         <?php echo $label; ?>
                     </h3>
                     <div>
+                        <?php $show_label = false; ?>
+                        <?php endif; ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+
                         <?php foreach($info as $key => $value): ?>
                         <?php if (!empty($value)) : ?>
                         <?php if (@exif_imagetype($value) == true) : ?>
@@ -117,7 +129,6 @@ $pics = array(get_field(''));
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <?php endif; ?>
                 <?php endforeach; ?>
                 <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>

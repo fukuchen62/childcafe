@@ -148,8 +148,7 @@ function add_my_files() {
 
     // 詳細検索ページのみ出力
     if (is_page('search')) {
-        //(再)の字を取り忘れないように！！とりあえず繋いでいる
-        wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search(再).css', array('my-common')
+        wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search.css', array('my-common')
         );
         //tab.jsの読み込み
         wp_enqueue_script('tab',get_template_directory_uri().'/assets/js/tab.js',array('header'),'1.0',true);
