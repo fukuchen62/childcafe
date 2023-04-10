@@ -57,6 +57,17 @@ $events = $event_fields;
 
 $pics = array(get_field(''));
 
+$args = array(
+		'post_type' => 'event',
+        'meta_key' => 'class',
+        //不定期のもの
+        'meta_value' => 2,
+		'posts_per_page' => 3,
+	);
+$the_query = new WP_Query($args);
+
+
+
 ?>
 
 <main>
@@ -199,103 +210,167 @@ $pics = array(get_field(''));
                 <div class="detail_item">
                     <h3 class="subtitle">連絡先</h3>
                     <div>
-                        <p>電話番号:000-000-0000</p>
-                        <p>メールアドレス:sample@sample.com</p>
-                        <p>LINE:shokudou@LINE</p>
+                        <p><?php echo '電話番号：'.get_field('tel'); ?></p>
+                        <p><?php echo 'メールアドレス：'.get_field('email'); ?></p>
+                        <p><?php echo 'LINE：'.get_field('line_id'); ?></p>
                     </div>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">LINE QRコード</h3>
-                    <img src="#" alt="LINEQRコード" />
+                    <img src="<?php the_field('line_qr'); ?>" alt="LINEQRコード" />
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">SNS</h3>
                     <div>
-                        <p>instagram:インスタアカウント</p>
-                        <p>twitter:ツイッターアカウント</p>
-                        <p>facebook:フェイスブックアカウント</p>
+                        <p><a href="<?php echo 'instagram：'.get_field('instagram'); ?>"><?php echo 'instagram：'.get_field('instagram'); ?></a></p>
+                        <p><a href="<?php echo 'facebook：'.get_field('facebook'); ?>"><?php echo 'facebook：'.get_field('facebook'); ?></a></p>
                     </div>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">公式WEBサイト</h3>
-                    <p>http/example</p>
+                    <p><?php the_field('site_url'); ?></p>
                 </div>
                 <div class="detail_item">
                     <h3 class="subtitle">
-                                        Amazonみんなで応援プログラム
-                                    </h3>
-                    <p>Amazon/url/urlurl</p>
+                        Amazonみんなで応援プログラム
+                    </h3>
+                    <p><?php the_field('amapro'); ?></p>
                 </div>
                 <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>
                 <?php endif;?>
             </div>
-            <!-- スクロール -->
-            <div class="scroll"></div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波" class="wave_img gbottom" />
+
+            <!-- <div class="beige color"> -->
+            <!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/beigetop.png" alt="波" class="wave_img btop" /> -->
+            <!-- <div class="beige_inner m1024">
+                    <?php //foreach( $events as $event): ?>
+                    <div class="detail_item">
+                        <?php //if (! empty($event['value'])) : ?>
+                        <h3 class="subtitle">
+                        <?php //echo $event['label']; ?>
+                    </h3>
+                        <?php //if (! is_array($event['value'])) : ?>
+                        <p>
+                        <?php //echo $event['value']; ?>
+                    </p>
+                        <?php //else: ?>
+                        <?php //foreach( $event['value'] as $value ): ?>
+                        <p>
+                        <?php //echo $value; ?>
+                    </p>
+                        <?php //endforeach; ?>
+                        <?php //endif; ?>
+                        <?php //endif; ?>
+                    </div>
+                    <?php //endforeach; ?>
+                </div>
+                <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/beigebottom.png" alt="波" class="wave_img bbottom" /> -->
         </div>
-        <div class="bgcolor color">
-            <div class="bgcolor_inner m1024">
-                <div class="bgcolor_flex">
-                    <div class="others">
-                        <h3 class="subtitle others_subtitle">
-                                            取り扱いのあるもの
-                                        </h3>
-                        <div class="others_item">
-                            <?php foreach($service_array as $service): ?>
+        <!-- <div class="green color">
+                <div class="green_inner m1024">
+                    <?php //foreach( $infos as $label => $info): ?>
+                    <?php //$show_label = true; ?>
+                    <?php //foreach($info as $key => $value): ?>
+                    <?php //if (!empty($value)) : ?>
+
+                    <?php //$info = array_filter($info); // 空の要素を削除する ?>
+                    <?php //foreach($info as $key => $value): ?>
+                    <?php //if ($show_label): ?>
+                    <?php //if (!empty($value)) : ?>
+                    <div class="detail_item">
+                        <h3 class="subtitle">
+                        <?php //echo $label; ?>
+                    </h3>
+                        <div>
+                            <?php //$show_label = false; ?>
+                            <?php //endif; ?>
+                            <?php //endif; ?>
+                            <?php //endforeach; ?>
+
+                            <?php //foreach($info as $key => $value): ?>
+                            <?php //if (!empty($value)) : ?>
+                            <?php //if (@exif_imagetype($value) == true) : ?>
+                            <img src="<?php //echo $value ?>" alt="LINEQRコード">
+                            <?php //elseif(filter_var($value, FILTER_VALIDATE_URL )): ?>
+                            <a href="<?php //echo $value ?>"><?php //echo $value ?></a>
+                            <?php //else: ?>
                             <p>
-                                <?php
-                                if ($service == 'その他資格者') {
-                                    the_field('license',$event_id);
-                                } else {
-                                    echo $service;
-                                }
-                                ?>
-                            </p>
-                            <?php endforeach; ?>
+                        <?php //echo $key . $value; ?>
+                        </p>
+                            <?php //endif; ?>
+                            <?php //endif; ?>
+                            <?php //endforeach; ?>
                         </div>
                     </div>
-                    <div class="addressmap">
-                        <h3 class="subtitle">アクセス</h3>
-                        <?php the_field('place_map',$event_id); ?>
+                    <?php //endforeach; ?>
+                    <?php //if(get_field('recruitment')=== true) :?>
+                    <p class="volunteer">ボランティア募集中</p>
+                    <?php //endif;?>
+                </div> -->
+
+        <!-- スクロール -->
+        <div class="scroll"></div>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波" class="wave_img gbottom" />
+    </div>
+    <div class="bgcolor color">
+        <div class="bgcolor_inner m1024">
+            <div class="bgcolor_flex">
+                <div class="others">
+                    <h3 class="subtitle others_subtitle">
+                        取り扱いのあるもの
+                    </h3>
+                    <div class="others_item">
+                        <?php foreach($service_array as $service): ?>
+                        <p>
+                            <?php
+                            if ($service == 'その他資格者') {
+                                the_field('license',$event_id);
+                            } else {
+                                echo $service;
+                            }
+                            ?>
+                        </p>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <h3 class="subtitle_ulineorange">開催情報</h3>
-                <div class="bgcolor_news">
-                    <div class="text_box">
-                        <p>
+                <div class="addressmap">
+                    <h3 class="subtitle">アクセス</h3>
+                    <?php the_field('place_map',$event_id); ?>
+                </div>
+            </div>
+            <h3 class="subtitle_ulineorange">開催情報</h3>
+            <div class="bgcolor_news">
+                <div class="text_box">
+                    <?php if ($the_query->have_posts()) : ?>
+                    <?php while($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+                    <p>
                                             <a href="#"
                                                 >3/1　徳島市　山田花子食堂　開催情報</a
                                             >
                                         </p>
-                        <p>
-                                            <a href="#"
-                                                >3/2　小松島市　山田花子食堂　開催情報</a
-                                            >
-                                        </p>
-                        <p>
-                                            <a href="#"
-                                                >3/3　北島町　山田花子食堂　開催情報</a
-                                            >
-                                        </p>
-                    </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
                 </div>
-
-                <h3 class="subtitle_ulineorange">活動の様子</h3>
-                <ul class="ac_slide">
-                    <li>
-                        <img src="../assets/images/delete/kv1_kari.jpg" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/delete/kv2_kari.jpg" alt="#" />
-                    </li>
-                    <li>
-                        <img src="../assets/images/delete/kv3_kari.jpg" alt="#" />
-                    </li>
-                </ul>
             </div>
+
+            <h3 class="subtitle_ulineorange">活動の様子</h3>
+            <ul class="ac_slide">
+                <li>
+                    <img src="../assets/images/delete/kv1_kari.jpg" alt="#" />
+                </li>
+                <li>
+                    <img src="../assets/images/delete/kv2_kari.jpg" alt="#" />
+                </li>
+                <li>
+                    <img src="../assets/images/delete/kv3_kari.jpg" alt="#" />
+                </li>
+            </ul>
         </div>
-        <!-- メインインナー終わり -->
+    </div>
+    <!-- メインインナー終わり -->
     </div>
     <?php endwhile; ?>
     <?php endif; ?>
