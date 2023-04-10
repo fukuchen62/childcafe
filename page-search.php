@@ -32,17 +32,17 @@ $volunteer = $_GET['volunteer']; //searchform.phpの<input>のname属性の値�
 
 $event_metaquerysp = ['relation' => 'AND'];
 
-// $reserve ='';
-if (isset($_GET['reserve'])) {
-$reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合わせる
+$adult_price = null;
+if (isset($_GET['adult_price'])) {
+$adult_price = $_GET['adult_price']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
-        'key' => 'reserve',
-        'value' => $reserve,
+        'key' => 'adult_price',
+        'value' => $adult_price,
         'compare' => '='
     ];
 }
 
-// $free ='';
+$child_price = null;
 if (isset($_GET['child_price'])) {
 $child_price = $_GET['child_price']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -101,8 +101,8 @@ $hoge = [
     'post_status' => 'publish', // 公開された投稿を指定
     // 'meta_query' => [
     //     [
-    //     'key' => 'reserve',
-    //     'value' => $reserve,
+    //     'key' => 'adult_price',
+    //     'value' => $adult_price,
     //     'compare' => '='
     //     ]
     // ],
@@ -115,7 +115,7 @@ $hoge['meta_query'] = $event_metaquerysp;
 
 $event_query = new WP_Query($hoge);
 
-if (!is_null($child_price) || !empty($reserve) || !empty($parking) || !empty($person) || !empty($food_pantry) || !empty($learning_support)){
+if (!is_null($child_price) || !is_null($adult_price) || !empty($parking) || !empty($person) || !empty($food_pantry) || !empty($learning_support)){
 
     // $empty_check = 'イベントチェックがされています';
 
@@ -166,7 +166,7 @@ if (!is_null($child_price) || !empty($reserve) || !empty($parking) || !empty($pe
 
 
 // $post__in = '';
-// if ($free || $reserve || $parking || $person || $food_pantry || $learning_support){
+// if ($free || $adult_price || $parking || $person || $food_pantry || $learning_support){
 //     if (!$event_query->have_posts()) {
 
 //         $args = [];
@@ -233,9 +233,9 @@ $the_query = new WP_Query($args);
         <?php //print_r($args); ?>
         <?php //print_r($cafeinfo_ids); ?>
 
-        <form action="#" method="get">
+        <form action="<?php echo home_url('/search'); ?>" method="get">
             <section class="form">
-                <h3 class="subtitle">子供食堂をさがす</h3>
+                <h3 class="subtitle">チェックしてさがしてみよう！</h3>
                 <div class="form_wrap">
                     <!-- エリア検索欄 -->
                     <div class="form_item">
@@ -245,11 +245,25 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">東部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="east_all" name="area[]" value="tokushima" /><label for="east_all">東部</label>
+                                    <input type="checkbox" id="east_all" /><label for="east_all">東部すべて</label>
                                 </li>
                                 <?php foreach ($east as $town) :  ?>
                                 <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="east_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <!-- 南部 -->
+                        <div class="item_wrap">
+                            <div class="ac_label">南部</div>
+                            <ul class="ac_list">
+                                <li>
+                                    <input type="checkbox" id="south_all" /><label for="south_all">南部すべて</label>
+                                </li>
+                                <?php foreach ($south as $town) :  ?>
+                                <li>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="south_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -259,23 +273,11 @@ $the_query = new WP_Query($args);
                             <div class="ac_label">西部</div>
                             <ul class="ac_list">
                                 <li>
-                                    <input type="checkbox" id="west_all" name="area[]" value="tokushima" /><label for="west_all">西部</label>
+                                    <input type="checkbox" id="west_all" /><label for="west_all">西部すべて</label>
                                 </li>
                                 <?php foreach ($west as $town) :  ?>
                                 <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                        <!-- 南部 -->
-                        <div class="item_wrap">
-                            <div class="ac_label">南部</div>
-                            <ul class="ac_list">
-                                <input type="checkbox" id="south_all" /><label for="south_all">南部</label>
-                                <?php foreach ($south as $town) :  ?>
-                                <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="west_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -286,16 +288,16 @@ $the_query = new WP_Query($args);
                     <div class="form_wrap">
                         <div class="checkbox-001">
                             <label>
-                                <input type="checkbox" name="child_price" value="0" />完全無料
+                                <input type="checkbox" name="child_price" value="0" />こども完全無料
                             </label>
                             <label>
-                                <input type="checkbox" name="reserve" value="1" />事前予約
+                                <input type="checkbox" name="adult_price" value="0" />おとな完全無料
                             </label>
                             <label>
-                                <input type="checkbox" name="parking" value="有り" />駐車場
+                                <input type="checkbox" name="parking" value="有り" />駐車場あり
                             </label>
                             <label>
-                                <input type="checkbox" name="person" value="こどもだけで行ける" />子供だけでいける
+                                <input type="checkbox" name="person" value="こどもだけで行ける" />こどもだけで行ける
                             </label>
                             <label>
                                 <input type="checkbox" name="volunteer" value="1" />ボランティア募集中
@@ -313,8 +315,8 @@ $the_query = new WP_Query($args);
             </section>
             <!-- ボタン -->
             <div class="form_btns flex">
-                <input class="btn submit_btn" type="submit" value="さがす" />
-                <input class="btn reset_btn" type="reset" value="リセット" />
+                <input class="submit_btn" type="submit" value="さがす" />
+                <input class="reset_btn" type="reset" value="リセット" />
             </div>
         </form>
 
@@ -328,9 +330,14 @@ $the_query = new WP_Query($args);
                 <?php $the_query->the_post(); ?>
                 <a href="<?php the_permalink() ?>">
                     <div class="result_img_card">
-                        <img src="<?php the_field('eye_catching'); ?>" alt="" />
+                        <?php $eye_catching = get_field('eye_catching');?>
+                        <?php if(!empty($eye_catching)): ?>
+                        <img src="<?php the_field('eye_catching'); ?>" alt="">
+                        <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+                        <?php endif; ?>
                         <p><?php the_field('name') ?></p>
-                        <?php 'ボランティアは'.the_field('recruitment'); ?>
+                        <?php //'ボランティアは'.the_field('recruitment'); ?>
                         <?php echo get_the_terms($post->ID, 'area')[1]->name; ?>
                     </div>
                 </a>
@@ -362,30 +369,30 @@ $the_query = new WP_Query($args);
         </div>
         <!-- 検索結果表示 終了-->
         <!-- 検索結果表示 -->
-        <div class="result_img">
+        <!-- <div class="result_img">
             <h2 class="title">検証用イベント一覧</h2>
             <div class="result_img_wrap flex">
-                <?php if ($event_query->have_posts()) : ?>
-                <?php while ($event_query->have_posts()) : ?>
-                <?php $event_query->the_post(); ?>
-                <a href="<?php the_permalink() ?>">
+                <?php //if ($event_query->have_posts()) : ?>
+                <?php //while ($event_query->have_posts()) : ?>
+                <?php //$event_query->the_post(); ?>
+                <a href="<?php //the_permalink() ?>">
                     <div class="result_img_card">
-                        <img src="<?php the_field('eye_catching'); ?>" alt="" />
-                        <p><?php the_field('title') ?></p>
+                        <img src="<?php //the_field('eye_catching'); ?>" alt="" />
+                        <p><?php //the_field('title') ?></p>
                         <p><?php //print_r(get_field('service')) ?></p>
                         <p><?php //print_r(get_field('person')) ?></p>
-                        <p><?php echo '予約必要性は'.get_field('reserve') ?></p>
-                        <p><?php echo '子ども料金は'.get_field('child_price') ?></p>
+                        <p><?php //echo 'おとな料金は'.get_field('adult_price') ?></p>
+                        <p><?php //echo 'こども料金は'.get_field('child_price') ?></p>
                         <p><?php //print_r(get_field('parking')) ?></p>
                         <?php //print_r(get_field_object('parking')); ?>
                         <?php //print_r(get_field_object('starttime')); ?>
                     </div>
                 </a>
-                <?php endwhile; ?>
-                <?php endif;?>
-                <?php wp_reset_postdata(); ?>
+                <?php //endwhile; ?>
+                <?php //endif;?>
+                <?php //wp_reset_postdata(); ?>
             </div>
-        </div>
+        </div> -->
         <!-- 検索結果表示 終了-->
 
     </div>
