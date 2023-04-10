@@ -3,6 +3,8 @@
 $this_terms = get_the_terms($post->ID,'area');
 
 $event_id = get_field('event_id');
+$cafeinfo_id = get_field('id', $event_id);
+
 $service_array = get_field('service', $event_id);
 
 $child_price = get_field('child_price',$event_id);
@@ -59,10 +61,21 @@ $pics = array(get_field(''));
 
 $args = array(
 		'post_type' => 'event',
-        'meta_key' => 'class',
-        //不定期のもの
-        'meta_value' => 2,
-		'posts_per_page' => 3,
+        'posts_per_page' => 3,
+        'post_status' => 'publish', // 公開された投稿を指定
+        'meta_query' => array(
+            'relation' => 'AND',
+        array(
+        'key' => 'class',
+        'value' => 2,
+        'compare' => '='
+        ),
+        array(
+        'key' => 'id',
+        'value' => $cafeinfo_id,
+        'compare' => '='
+        )
+        ),
 	);
 $the_query = new WP_Query($args);
 
@@ -346,10 +359,10 @@ $the_query = new WP_Query($args);
                     <?php while($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
                     <p>
-                                            <a href="#"
-                                                >3/1　徳島市　山田花子食堂　開催情報</a
-                                            >
-                                        </p>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </p>
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_postdata(); ?>
