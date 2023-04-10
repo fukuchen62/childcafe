@@ -339,7 +339,7 @@ $the_query = new WP_Query($args);
                         <div class="others_item">
                             <?php foreach($service_array as $service): ?>
                             <?php if ($service == 'その他資格者') : ?>
-                            <?php if (!empty($license[0])) : ?>
+                            <?php if (!empty($license[0])): ?>
                             <?php foreach( $license as $value): ?>
                             <p>
                                 <?php echo $value; ?>

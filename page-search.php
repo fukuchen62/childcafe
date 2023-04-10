@@ -25,14 +25,14 @@ $west = get_terms(array(
 $area_slug = get_query_var('area');
 
 
-$volunteer ='';
+// $volunteer ='';
 if (isset($_GET['volunteer'])) {
 $volunteer = $_GET['volunteer']; //searchform.phpの<input>のname属性の値と合わせる
 }
 
 $event_metaquerysp = ['relation' => 'AND'];
 
-$reserve ='';
+// $reserve ='';
 if (isset($_GET['reserve'])) {
 $reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -42,17 +42,17 @@ $reserve = $_GET['reserve']; //searchform.phpの<input>のname属性の値と合
     ];
 }
 
-$free ='';
+// $free ='';
 if (isset($_GET['child_price'])) {
-$free = $_GET['child_price']; //searchform.phpの<input>のname属性の値と合わせる
+$child_price = $_GET['child_price']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
         'key' => 'child_price',
-        'value' => $free,
+        'value' => $child_price,
         'compare' => '='
     ];
 }
 
-$parking ='';
+// $parking ='';
 if (isset($_GET['parking'])) {
 $parking = $_GET['parking']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -62,7 +62,7 @@ $parking = $_GET['parking']; //searchform.phpの<input>のname属性の値と合
     ];
 }
 
-$person ='';
+// $person ='';
 if (isset($_GET['person'])) {
 $person = $_GET['person']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -72,7 +72,7 @@ $person = $_GET['person']; //searchform.phpの<input>のname属性の値と合�
     ];
 }
 
-$learning_support ='';
+// $learning_support ='';
 if (isset($_GET['learning_support'])) {
 $learning_support = $_GET['learning_support']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -84,7 +84,7 @@ $learning_support = $_GET['learning_support']; //searchform.phpの<input>のname
 
 
 
-$food_pantry ='';
+// $food_pantry ='';
 if (isset($_GET['food_pantry'])) {
 $food_pantry = $_GET['food_pantry']; //searchform.phpの<input>のname属性の値と合わせる
     $event_metaquerysp[] = [
@@ -115,15 +115,30 @@ $hoge['meta_query'] = $event_metaquerysp;
 
 $event_query = new WP_Query($hoge);
 
-if ($event_query->have_posts()) {
-while ($event_query->have_posts()) {
-$event_query->the_post(); {
-    $cafeinfo_ids[] = get_field('id');
-}
-}
-wp_reset_postdata();
+if (!is_null($child_price) || !empty($reserve) || !empty($parking) || !empty($person) || !empty($food_pantry) || !empty($learning_support)){
 
+    // $empty_check = 'イベントチェックがされています';
+
+    if ($event_query->have_posts()) {
+    while ($event_query->have_posts()) {
+    $event_query->the_post(); {
+        $cafeinfo_ids[] = get_field('id');
+        }
+    }
+        wp_reset_postdata();
+
+    // if (!empty($cafeinfo_ids)) {
         $post__in = $cafeinfo_ids;
+        // $check = 'イベント記事で該当があります！！';
+    }else{
+        $post__in = [1,2];
+        // $check = 'イベント該当記事がありません！！';
+
+    }
+
+
+
+        // $post__in = $cafeinfo_ids;
     // クエリ作成
     $args = [
         'post_type' => 'cafeinfo',
@@ -136,34 +151,27 @@ wp_reset_postdata();
 
 
 
+    //エリアとボランティアだけチェックされたら
 } else {
     $args = [
+        'post_type' => 'cafeinfo',
+        'posts_per_page' => -1,
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+        'post_status' => 'publish', // 公開された投稿を指定
     ];
-
+    // $check = '初期状態です！！';
 }
 
+
+
+
 // $post__in = '';
-// if (empty($cafeinfo_ids)
-// // && ($free || $reserve || $parking || $person || $food_pantry || $learning_support)
-// ) {
+// if ($free || $reserve || $parking || $person || $food_pantry || $learning_support){
+//     if (!$event_query->have_posts()) {
 
-//         $args = [
-//         'post_type' => 'cafeinfo',
-//         'posts_per_page' => 1,
-//     ];
+//         $args = [];
 
-// }else {
-
-
-//         $post__in = $cafeinfo_ids;
-//     // クエリ作成
-//     $args = [
-//         'post_type' => 'cafeinfo',
-//         'posts_per_page' => -1,
-//         //該当イベント記事の親食堂ID
-//         'post__in' => $post__in,
-//     ];
-
+//     }
 // }
 
 
@@ -216,6 +224,8 @@ $the_query = new WP_Query($args);
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">詳細検索</h2>
+        <?php //echo $check; ?>
+        <?php //echo $empty_check; ?>
         <?php //print_r($learning_support); ?>
         <?php //echo $volunteer; ?>
         <?php //echo $free; ?>
