@@ -1,12 +1,11 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 	$args = array(
 		'post_type' => 'interview',
 		'posts_per_page' => -1, //全件表示
         'orderby' => 'date',
         'order' => 'ASC',
-        'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
 	);
 	$the_query = new WP_Query($args);
 
@@ -18,6 +17,7 @@
 ?>
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="pickup_title">
             <h2 class="title">特集記事　一覧</h2>
             <div class="text">
@@ -54,18 +54,34 @@
                     </p>
                 </a>
             </div>
-
             <?php endwhile; ?>
             <?php endif ?>
             <?php wp_reset_postdata(); ?>
+            <?php
+            // 元のクエリを復元する
+            $wp_query = $original_query;
+            ?>
         </div>
+
         <?php
-            if (function_exists('wp_pagenavi')) {
-                wp_pagenavi();
-            }
+            // if(function_exists('wp_paginate')) { wp_paginate(); }
         ?>
+
+        <div class="page_nav flex">
+            <?php original_pagenation(); ?>
+        </div>
+        <style>
+        .page-numbers {
+            width: 37px;
+            height: 37px;
+            padding-top: 3px;
+            background-color: #f7dd94;
+            border-radius: 50px;
+            text-align: center;
+        }
+        </style>
+
     </div>
 </main>
-
-
+</div>
 <?php get_footer(); ?>

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <main>
     <div class="main_inner mt">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="concept">
-            <h2 class="title">子供食堂とは</h2>
+            <h2 class="title">こども食堂とは</h2>
             <div class="text">
                 <p>
                     こども食堂と聞くと、”貧困層のための場所”や、”こどもや子育て世代向けのもの”といったイメージを抱く方も多いと思います。実際はそうではなく、こどもの為の場であることはもちろんですが、地域の人や大人、様々な世代の人が集まって、一緒にごはんを食べて交流できる場です。地域とのつながりや、多世代交流をする地域コミュニティとしての役割も担っています。
@@ -29,6 +29,7 @@
         </div>
     </div>
 </main>
+</div>
 
 
 <?php get_footer(); ?>

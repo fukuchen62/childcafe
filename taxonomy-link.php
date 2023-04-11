@@ -24,9 +24,9 @@
     <div class="main_inner">
         <!-- 項目タブ -->
         <ul class="tab flex">
-            <li class="tab_1"><a href="<?php echo home_url('/link/cafe'); ?>">子供食堂関連</a></li>
-            <li class="tab_2"><a href="<?php echo home_url('/link/care'); ?>">子育て支援関連</a></li>
-            <li class="tab_3"><a href="<?php echo home_url('/link/third'); ?>">第三支援関連</a></li>
+            <li class="tab_1 tab_js childcafe"><a href="<?php echo home_url('/link/cafe'); ?>">こども食堂関連</a></li>
+            <li class="tab_2  tab_js childsupport"><a href="<?php echo home_url('/link/care'); ?>">子育て支援関連</a></li>
+            <li class="tab_3  tab_js childplace"><a href="<?php echo home_url('/link/third'); ?>">こども居場所関連</a></li>
         </ul>
         <!-- 関連リンク -->
         <section class="link_<?php echo $link->slug; ?>">
@@ -49,6 +49,7 @@
         </section>
     </div>
 </main>
+</div>
 <!-- リンクエリア終了 -->
 
 <?php get_footer(); ?>

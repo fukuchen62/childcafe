@@ -92,7 +92,7 @@
 }
 
 .support_subtitle {
-    width: 100%;
+    width: 90%;
     height: auto;
     font-weight: 500;
     padding-top: 8px;
@@ -106,6 +106,12 @@
 .support_help p {
     width: 195px;
     margin: 20px auto;
+}
+
+.support_btn {
+    width: 50%;
+    height: 60px;
+    padding: 13px;
 }
 
 /* .support_supplies a {
@@ -135,7 +141,14 @@
     }
 
     .support_btn {
+        width: 30%;
+        height: 100px;
+        padding: 35px;
         margin-top: 50px;
+    }
+
+    .support_btn:hover {
+        background: #f7c331;
     }
 
     .support_supplies p,
@@ -146,6 +159,10 @@
 
     .btn_center {
         width: 350px;
+    }
+
+    .title {
+        margin-top: 120px;
     }
 }
 
