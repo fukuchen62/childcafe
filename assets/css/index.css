@@ -292,7 +292,7 @@ html {
     margin: 0 auto;
 }
 
-.pickup_slider li a::before {
+.pickup_slider li::before {
     content: "";
     background-image: url(../images/index/orange_tab_fold1.png);
     width: 100%;
