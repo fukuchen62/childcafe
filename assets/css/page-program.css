@@ -5,8 +5,9 @@
  **************************/
 
 .title {
+    display: inline;
     width: 250px;
-    /* margin: 0 auto 50px auto; */
+    margin: 0 auto 50px auto;
 }
 
 .text {
@@ -54,5 +55,10 @@
         height: 300px;
         top: 50px;
         left: -70px;
+    }
+
+    .amazon_title {
+        width: 405px;
+        margin: 70px auto;
     }
 }

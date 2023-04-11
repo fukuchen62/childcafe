@@ -51,10 +51,6 @@
     人的・物的・金銭的詳細
  **************************/
 
-.title {
-    width: 170px;
-    margin: 50px auto;
-}
 .support_content {
     max-width: 100%;
     margin-top: 50px;
@@ -159,10 +155,6 @@
 
     .btn_center {
         width: 350px;
-    }
-
-    .title {
-        margin-top: 120px;
     }
 }
 

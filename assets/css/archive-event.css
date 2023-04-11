@@ -67,9 +67,6 @@
     .event_flex {
         display: flex;
     }
-    .title {
-        margin: 100px auto 95px;
-    }
 
     .event_item {
         width: 65%;

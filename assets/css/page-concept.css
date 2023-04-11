@@ -6,7 +6,6 @@
 
 .title {
     width: 180px;
-    margin: 50px auto;
     z-index: 10;
     position: relative;
 }
@@ -22,7 +21,6 @@
 }
 .concept {
     position: relative;
-    padding-bottom: 200px;
     overflow: hidden;
 }
 
@@ -51,8 +49,6 @@
 @media (min-width: 770px) {
     .concept {
         overflow: visible;
-        padding-bottom: 320px;
-        padding-top: 150px;
     }
     .rice {
         width: 650px;
@@ -63,7 +59,7 @@
     .curry {
         width: 826px;
         height: 826px;
-        top: 400px;
+        top: 100px;
         right: -40%;
     }
 }

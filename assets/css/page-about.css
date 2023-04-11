@@ -4,10 +4,6 @@
     このサイトについて
  **********************/
 
-.title {
-    margin: 50px auto 90px auto;
-}
-
 .subtitle {
     font-size: 20px;
     font-weight: 500;
@@ -53,10 +49,6 @@
 }
 
 @media screen and (min-width: 770px) {
-    .title {
-        margin-top: 120px;
-        margin-bottom: 75px;
-    }
     .onigiri {
         width: 455px;
         height: 455px;
