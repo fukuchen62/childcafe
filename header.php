@@ -10,12 +10,10 @@
     <meta name="format-detection" content="telephone=no">
 
     <!--favicon設定-->
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="http://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16" href="http://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
 
     <!--description設定-->
-    <meta name="description"
-        content="徳島県下のこども食堂の情報まとめサイトです。子ども食堂はこどもも大人も誰でも行ける多世代交流拠点です。興味がある人、行ってみたい人、支援したい人に役立つ情報を掲載しています。">
+    <meta name="description" content="徳島県下のこども食堂の情報まとめサイトです。子ども食堂はこどもも大人も誰でも行ける多世代交流拠点です。興味がある人、行ってみたい人、支援したい人に役立つ情報を掲載しています。">
 
     <?php wp_head(); ?>
 </head>
@@ -25,9 +23,7 @@
     <div class="body_inner">
         <!-- トップページへ戻るボタン -->
         <div class="toppage_btn">
-            <a href="<?php echo home_url('/'); ?>"><img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png"
-                    alt="トップへ戻るボタン" /></a>
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
         </div>
         <!-- トップページへ戻るボタン 終了-->
         <header class="header">
@@ -57,17 +53,14 @@
                 <!-- PC版キーワード -->
                 <form class="btn_header_search_pc" action="<?php echo home_url('/'); ?>" method="get">
                     <input type="hidden" name="search_type" value="keywords" />
-                    <input class="hbg_form" size="20" type="search" name="s" value="<?php the_search_query(); ?>"
-                        placeholder="キーワードを入力" id="" />
+                    <input class="hbg_form" size="20" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" id="" />
                     <input class="hbg_submit_pc" type="submit" value="" />
                 </form>
             </div>
             <nav class="menu">
                 <ul>
                     <li>
-                        <a class="a_menu" href="<?php echo home_url(); ?>"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
-                                alt="ホームボタン" /></a>
+                        <a class="a_menu" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="ホームボタン" /></a>
                     </li>
                     <li class="btn_header">
                         <a href="<?php echo home_url('/concept'); ?>">こども食堂とは</a>
@@ -91,8 +84,7 @@
                     <li class="btn_header menu_search">
                         <form class="hbg_search" action="<?php echo home_url('/'); ?>" method="get">
                             <input type="hidden" name="search_type" value="keywords" />
-                            <input class="hbg_form" size="25" type="search" name="s"
-                                value="<?php the_search_query(); ?>" placeholder="キーワードを入力" />
+                            <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" />
                             <input class="hbg_submit fas" type="submit" value="" />
                         </form>
                     </li>

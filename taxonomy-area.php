@@ -28,7 +28,7 @@
     );
 
     // カスタムクエリを追加する前に、元のクエリを保存しておく
-    $original_query = $wp_query;
+    // $original_query = $wp_query;
 
     $the_query = new WP_Query($args);
 
@@ -89,23 +89,25 @@
                     <?php wp_reset_postdata(); ?>
                     <?php
                         // 元のクエリを復元する
-                        $wp_query = $original_query;
+                        // $wp_query = $original_query;
                     ?>
                 </div>
             </section>
         </div>
         <!-- ページナビ -->
-        <div class="page_nav flex">
-            <?php original_pagenation(); ?>
-        </div>
+        <?php original_pagenation(); ?>
         <style>
+        .page-numbers.current {
+            background-color: #d7f794;
+        }
+
         .page-numbers {
-            width: 37px;
-            height: 37px;
-            padding-top: 3px;
-            background-color: #f7dd94;
-            border-radius: 50px;
-            text-align: center;
+            margin: 10px;
+        }
+
+        .page_nav {
+            width: unset;
+            justify-content: center;
         }
         </style>
     </div>
