@@ -4,14 +4,9 @@
     Amazonプログラムとは
  **************************/
 
-/* comoncssの追加 */
-.amazon_title {
-    margin: 0 25% 30px;
-}
-
 .title {
     width: 250px;
-    margin-bottom: 10px;
+    /* margin: 0 auto 50px auto; */
 }
 
 .text {
@@ -50,17 +45,14 @@
         width: 100%;
     }
 
-    .amazon_title {
-        margin: 150px 30% 50px;
-    }
     .program_btn {
         margin-top: 50px;
     }
 
     .vegetable {
-        width: 455px;
-        height: 455px;
-        top: -150px;
+        width: 300px;
+        height: 300px;
+        top: 50px;
         left: -70px;
     }
 }
