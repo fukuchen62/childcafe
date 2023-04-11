@@ -33,15 +33,16 @@
                 <?php while($myquery->have_posts()): $myquery->the_post(); ?>
                 <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 <?php endwhile; ?>
+                <?php endif; ?>
+                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
-        <?php endif; ?>
-        <?php endif; ?>
-        <?php endforeach; ?>
         <?php endforeach; ?>
         <?php wp_reset_postdata(); ?>
     </div>
 </main>
+</div>
 
 
 <?php get_footer(); ?>
