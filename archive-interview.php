@@ -79,6 +79,14 @@
             border-radius: 50px;
             text-align: center;
         }
+
+        .prev.page-numbers {
+            background-color: unset;
+        }
+
+        .next.page-numbers {
+            background-color: unset;
+        }
         </style>
 
     </div>

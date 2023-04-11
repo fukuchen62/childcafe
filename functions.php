@@ -205,6 +205,7 @@ function wpcf7_autop_return_false() {
 //         return;
 //     }
 
+    //     return;
     // //トップページの場合
     // if ($query->is_front_page()) {
     //     $query->set('posts_per_page', 2);
