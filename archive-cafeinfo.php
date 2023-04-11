@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
+
 
 <?php
   $taxonomy_slug = 'area'; // タクソノミースラッグを指定
@@ -10,9 +10,11 @@
 
 <main>
     <div class="main_inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">こども食堂一覧</h2>
-        <?php foreach ( $parents as $parent ) : // 親タームのループを開始 ?>
-        <div class="cafeinfo_tab orange"><?php echo $parent->name; ?></div>
+        <?php
+        foreach ( $parents as $parent ) : // 親タームのループを開始 ?>
+        <div class="cafeinfo_tab <?php echo $parent->slug; ?>"><?php echo $parent->name; ?></div>
         <div class="cafeinfo_section">
             <div class="cafeinfo">
                 <?php $children = get_terms($taxonomy_slug,'hierarchical=0&parent='.$parent->term_id); ?>
@@ -33,15 +35,16 @@
                 <?php while($myquery->have_posts()): $myquery->the_post(); ?>
                 <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 <?php endwhile; ?>
+                <?php endif; ?>
+                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
-        <?php endif; ?>
-        <?php endif; ?>
-        <?php endforeach; ?>
         <?php endforeach; ?>
         <?php wp_reset_postdata(); ?>
     </div>
 </main>
+</div>
 
 
 <?php get_footer(); ?>

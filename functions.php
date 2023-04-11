@@ -47,10 +47,6 @@ function add_my_files() {
     wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/css/slick.css',array('reset'));
     wp_enqueue_style('slick-theme', get_template_directory_uri() . '/assets/slick/css/slick-theme.css',array('slick'));
 
-    //index.phpに適用
-    wp_enqueue_style('single-event', get_template_directory_uri() . '/assets/css/single-event.css', array('my-common')
-        );
-
     //TOPページのみ出力
     if (is_front_page()) {
         wp_enqueue_style('index',get_template_directory_uri() . '/assets/css/index.css',array('my-common')
@@ -180,6 +176,11 @@ function add_my_files() {
         );
     }
 
+        //index.phpのみ出力
+    if (is_singular('event')) {
+        wp_enqueue_style('single-event',get_template_directory_uri() . '/assets/css/single-event.css',array('my-common')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
@@ -192,11 +193,11 @@ function wpcf7_autop_return_false() {
 
 
 //投稿表示件数を変更する
-function my_pre_get_posts($query) {
-    //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || $query->is_main_query()) {
-        return;
-    }
+// function my_pre_get_posts($query) {
+//     //管理画面、メインクエリには設定しない(サブクエリに設定する)
+//     if (is_admin() || $query->is_main_query()) {
+//         return;
+//     }
 
     // //トップページの場合
     // if ($query->is_front_page()) {
@@ -212,11 +213,11 @@ function my_pre_get_posts($query) {
     // }
 
     // インタビュー一覧ページの場合
-    if ($query->is_post_type_archive('interview')) {
-        $query->set('posts_per_page', 6);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_post_type_archive('interview')) {
+    //     $query->set('posts_per_page', 6);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
         // 開催情報一覧ページの場合
     // if ($query->is_post_type_archive('event')) {
@@ -227,21 +228,21 @@ function my_pre_get_posts($query) {
 
 
     // エリア検索ページの場合
-    if ($query->is_tax('area')) {
-        $query->set('posts_per_page', 9);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_tax('area')) {
+    //     $query->set('posts_per_page', 9);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
     // 条件検索ページの場合
-    if ($query->is_page('search')) {
-        $query->set('posts_per_page', 9);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_page('search')) {
+    //     $query->set('posts_per_page', 9);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
-}
-add_action('pre_get_posts', 'my_pre_get_posts');
+// }
+// add_action('pre_get_posts', 'my_pre_get_posts');
 
 
 //自作ページネーションを読み込ませる

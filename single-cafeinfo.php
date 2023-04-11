@@ -250,7 +250,7 @@ $the_query = new WP_Query($args);
                     <h3 class="subtitle">
                         Amazonみんなで応援プログラム
                     </h3>
-                    <p><?php the_field('amapro'); ?></p>
+                    <p><a href="<?php get_field('amapro'); ?>"><?php ethe_field('amapro'); ?></a></p>
                 </div>
                 <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>

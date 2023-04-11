@@ -10,7 +10,7 @@
             <?php the_field('title'); ?>
         </p>
         <p>
-            <?php echo get_field('name') . 'さん'; ?>
+            <?php echo get_field('name'); ?>
         </p>
         <p>
             <?php

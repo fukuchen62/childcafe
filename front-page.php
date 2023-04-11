@@ -341,6 +341,11 @@ $event_query = new WP_Query($fuga);
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contacttop.png" alt="波" class="contact_wave" />
         <div class="section_inner">
             <h2 class="title">お問い合わせ</h2>
+            <div class="text">
+                <p>
+                    こども食堂やサイトに関して、問い合わせたいことがある方はコチラから！
+                </p>
+            </div>
             <a href="<?php echo home_url('/contact'); ?>" class="btn_item">お問い合わせはこちら</a>
         </div>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="波" class="contact_wave" />
