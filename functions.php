@@ -47,10 +47,6 @@ function add_my_files() {
     wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/css/slick.css',array('reset'));
     wp_enqueue_style('slick-theme', get_template_directory_uri() . '/assets/slick/css/slick-theme.css',array('slick'));
 
-    //index.phpに適用
-    wp_enqueue_style('single-event', get_template_directory_uri() . '/assets/css/single-event.css', array('my-common')
-        );
-
     //TOPページのみ出力
     if (is_front_page()) {
         wp_enqueue_style('index',get_template_directory_uri() . '/assets/css/index.css',array('my-common')
@@ -180,6 +176,11 @@ function add_my_files() {
         );
     }
 
+        //index.phpのみ出力
+    if (is_singular('event')) {
+        wp_enqueue_style('single-event',get_template_directory_uri() . '/assets/css/single-event.css',array('my-common')
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
