@@ -1,10 +1,16 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <main>
     <div class="main_inner">
+<<<<<<< HEAD
         <h2 class="amazon_title title">
             Amazonみんなで応援プログラムとは
+=======
+        <?php get_template_part('template-parts/breadcrumb'); ?>
+        <h2 class="amazon_title">
+            <span class="title sp">Amazonみんなで</span>
+            <span class="title sp">応援プログラムとは</span>
+>>>>>>> 0ca3abb600593feb9bde2de6e1d7737becf85756
         </h2>
         <div class="text">
             <p>
@@ -25,12 +31,10 @@
             <p>ご支援を宜しくお願いいたします。</p>
         </div>
 
-        <div class="btn program_btn"><a href="<?php echo home_url('programlist'); ?>">参加食堂一覧へ</a></div>
+        <div class="btn program_btn"><a href="<?php echo home_url('/programlist'); ?>">参加食堂一覧へ</a></div>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/vegetable.png" alt="背景の野菜"
-            class="amazon_img vegetable" />
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/family.png" alt="背景の親子"
-            class="amazon_img family" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/vegetable.png" alt="背景の野菜" class="amazon_img vegetable" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/family.png" alt="背景の親子" class="amazon_img family" />
     </div>
 </main>
 
