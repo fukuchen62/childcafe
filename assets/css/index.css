@@ -19,7 +19,7 @@ body {
 
 @media (min-width: 770px) {
     .title {
-        margin-top: 0;
+        margin-top: 15px;
     }
 }
 
@@ -163,7 +163,7 @@ html {
     .rainbow {
         width: 650px;
         height: 650px;
-        top: -340px;
+        top: -300px;
     }
 }
 
@@ -175,10 +175,11 @@ html {
     text-align: center;
     background-color: rgba(255, 255, 255, 1);
     margin: 0 auto;
-    padding: 5px 0 5px;
+    padding: 5px 0 100px;
     border: 3px solid #ffb700;
     border-radius: 35px;
     position: relative;
+    overflow: hidden;
 }
 
 .info .section_inner {
@@ -196,6 +197,13 @@ html {
     z-index: 10;
 }
 
+.pudding {
+    position: absolute;
+    width: 236px;
+    height: 236px;
+    top: 50%;
+    right: -5%;
+}
 @keyframes calender {
     0%,
     50%,
@@ -210,11 +218,6 @@ html {
     }
 }
 
-.text_box img {
-    width: 95%;
-    opacity: 0.7;
-}
-
 .text_box p {
     text-decoration: underline dashed 1.5px #a5a4a4;
     text-underline-offset: 8px;
@@ -225,10 +228,12 @@ html {
         width: 60%;
         height: 80%;
     }
-
-    .text_box img {
-        width: 80%;
-        opacity: 0.5;
+    .pudding {
+        width: 250px;
+        height: 250px;
+        top: 120px;
+        right: 0;
+        left: -20px;
     }
     .info .btn_item {
         margin-bottom: 30px;
@@ -682,6 +687,14 @@ html {
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
+.link_text {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
 .link_flex {
     display: flex;
     flex-direction: column;
@@ -693,6 +706,15 @@ html {
         justify-content: center;
         margin-bottom: 30px;
     }
+    /* .link_flex {
+        flex-direction: column;
+    }
+    .link_item {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } */
 }
 
 /* お知らせ */
