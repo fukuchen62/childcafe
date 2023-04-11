@@ -7,8 +7,6 @@
             /> -->
     <div class="footer_inner">
         <nav class="footer_container with_girl">
-            <!-- 女の子の画像 -->
-            <img src="<?php echo get_template_directory_uri();?>/assets/images/girl.png" alt="" class="footer_girl" />
             <?php
             $hoge = array(
             'menu' => 'footer-navigation',  //管理画面で作成したメニューの名前
@@ -27,4 +25,5 @@
 </footer>
 <?php wp_footer(); ?>
 </body>
+
 </html>

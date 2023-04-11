@@ -42,7 +42,7 @@
                     <?php else: ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
                     <?php endif; ?>
-                    <p><?php the_field('title'); ?>　<?php echo get_field('name') . 'さん'; ?></p>
+                    <p><?php the_field('title'); ?>　<?php echo get_field('name'); ?></p>
                     <p>
                         <?php
                         if (!empty(get_field('excerpt'))) {

@@ -151,7 +151,7 @@ main {
     }
 
     .title {
-        margin-top: 120px;
+        margin-top: 70px;
         margin-bottom: 75px;
     }
 
@@ -243,6 +243,10 @@ main {
     left: 5px;
 }
 
+.btn_header_search_pc {
+    display: none;
+}
+
 /* メニュー画面 */
 
 .menu {
@@ -324,7 +328,7 @@ main {
 
 .hbg_submit {
     background-image: url(../images/serch.svg);
-    width: 27px;
+    width: 16px;
 }
 
 /* PC版nav消去 */
@@ -489,6 +493,12 @@ main {
         text-align: center;
         text-decoration: underline dashed 1.5px #a5a4a4;
         text-underline-offset: 3px;
+    }
+
+    .btn_header_search_pc {
+        display: block;
+        height: 50px;
+        margin: 25px 0;
     }
 }
 
