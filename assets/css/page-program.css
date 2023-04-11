@@ -47,7 +47,7 @@
 
 @media screen and (min-width: 770px) {
     .title {
-        width: auto;
+        width: 100%;
     }
 
     .amazon_title {

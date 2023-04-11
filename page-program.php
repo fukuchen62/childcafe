@@ -3,9 +3,8 @@
 
 <main>
     <div class="main_inner">
-        <h2 class="amazon_title">
-            <span class="title sp">Amazonみんなで</span>
-            <span class="title sp">応援プログラムとは</span>
+        <h2 class="amazon_title title">
+            Amazonみんなで応援プログラムとは
         </h2>
         <div class="text">
             <p>
