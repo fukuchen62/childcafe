@@ -206,11 +206,11 @@ function my_pre_get_posts($query) {
     // }
 
     // 固定ページの場合
-    // if ($query->is_page('post')) {
-    //     $query->set('posts_per_page',5);
-    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-    //     return;
-    // }
+    if ($query->is_page('post')) {
+        $query->set('posts_per_page',5);
+        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+        return;
+    }
 
     // インタビュー一覧ページの場合
     if ($query->is_post_type_archive('interview')) {

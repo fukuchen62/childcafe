@@ -12,8 +12,7 @@
 
 .event_appeal {
     width: 283px;
-    height: 200px;
-    margin: 30px auto;
+    margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
     background-color: #f7dd94;
@@ -192,7 +191,7 @@ td {
 
     .event_appeal {
         width: 70%;
-        margin: 80px auto;
+        margin: 60px auto;
     }
     .event_table {
         width: 65%;
