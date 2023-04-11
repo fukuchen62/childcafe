@@ -270,6 +270,37 @@
     border-left: solid 20px rgb(149, 158, 155); /*折り返し部分*/
 }
 
+/* 点滅 */
+.volunteer_text {
+    -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+    -moz-animation: blink 1.5s ease-in-out infinite alternate;
+    animation: blink 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* 標準の背景 */
 .bgcolor_inner {
     text-align: center;
