@@ -63,7 +63,7 @@ function add_my_files() {
 
     //taxonomy-linkページのみ出力
     if (is_tax('link')) {
-        wp_enqueue_style('taxonomy-link',get_template_directory_uri() . '/assets/css/page-links.css',array('my-common')
+        wp_enqueue_style('taxonomy-link',get_template_directory_uri() . '/assets/css/taxonomy-link.css',array('my-common')
         );
         //tab.jsの読み込み
         wp_enqueue_script('tab',get_template_directory_uri().'/assets/js/tab.js',array('header'),'1.0',true);
@@ -101,6 +101,12 @@ function add_my_files() {
     // page-contactのみ出力
     if (is_page('contact')) {
         wp_enqueue_style('page-contact', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
+        );
+    }
+
+    // page-confirmationのみ出力
+    if (is_page('confirmation')) {
+        wp_enqueue_style('page-confirmation', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
         );
     }
 
@@ -199,6 +205,7 @@ function wpcf7_autop_return_false() {
 //         return;
 //     }
 
+    //     return;
     // //トップページの場合
     // if ($query->is_front_page()) {
     //     $query->set('posts_per_page', 2);
@@ -269,3 +276,12 @@ function custom_the_posts_pagination( $template ) {
 	return $template;
 }
 add_filter( 'navigation_markup_template', 'custom_the_posts_pagination' );
+
+function my_custom_mime_types( $mimes ) {
+// New allowed mime types.
+$mimes['ico'] = 'image/vnd.microsoft.icon';
+// Optional. Remove a mime type.
+unset( $mimes['exe'] );
+return $mimes;
+}
+add_filter( 'upload_mimes', 'my_custom_mime_types' );

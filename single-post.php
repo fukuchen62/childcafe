@@ -19,8 +19,6 @@ $cat = $cat[0];
             <?php get_sidebar('categories'); ?>
         </div>
         <div class="s-p_column">
-            <!-- モバイル版のページ分割の必要 -->
-            <a href="#" class="btn">もっと見る</a>
             <a href="<?php echo home_url('/post'); ?>" class="news_btn">最新記事一覧</a>
         </div>
     </div>
