@@ -275,3 +275,12 @@ function custom_the_posts_pagination( $template ) {
 	return $template;
 }
 add_filter( 'navigation_markup_template', 'custom_the_posts_pagination' );
+
+function my_custom_mime_types( $mimes ) {
+// New allowed mime types.
+$mimes['ico'] = 'image/vnd.microsoft.icon';
+// Optional. Remove a mime type.
+unset( $mimes['exe'] );
+return $mimes;
+}
+add_filter( 'upload_mimes', 'my_custom_mime_types' );
