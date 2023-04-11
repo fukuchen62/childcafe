@@ -510,10 +510,6 @@ main {
     background-color: #f8b600;
 }
 
-.footer_wave {
-    background-color: #fff8e6;
-}
-
 .footer_inner {
     width: 100%;
 }
@@ -526,16 +522,19 @@ main {
 
 .footer_nav_title_concept p {
     font-weight: bold;
+    font-size: 20px;
     margin: 80px auto 12px;
 }
 
 .footer_nav_title_taxonomy_area p {
     font-weight: bold;
+    font-size: 20px;
     margin: 30px auto 12px;
 }
 
 .footer_nav_title_other p {
     font-weight: bold;
+    font-size: 20px;
     margin: 30px auto 12px;
 }
 
@@ -548,34 +547,8 @@ main {
     position: relative;
 }
 
-.footer_girl {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    right: 10px;
-    bottom: 40px;
-    z-index: 1;
-    /* object-fit: contain;
-    animation-name: anim_s;
-    animation: anim_s 10s infinite alternate; */
-    overflow: hidden;
-}
-
-@keyframes anim_s {
-    0% {
-        transform: rotate(10deg);
-    }
-    20% {
-        transform: rotate(-10deg);
-    }
-    50% {
-        transform: rotate(-20deg);
-    }
-    60% {
-    }
-    100% {
-        transform: rotate(20deg);
-    }
+.footer_nav_menu_item {
+    margin: 20px 0;
 }
 
 @media (min-width: 770px) {

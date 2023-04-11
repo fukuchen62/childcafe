@@ -12,7 +12,7 @@ main {
  **********************/
 
 .tab {
-    max-width: 980px;
+    width: 100%;
     height: 75px;
     margin: 15px auto;
     justify-content: space-between;
@@ -128,15 +128,18 @@ main {
         margin-top: 160px;
     }
     .list_area {
+        width: 100%;
         flex-direction: row-reverse;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .area_east,
     .area_south,
     .area_west {
         width: 300px;
-        margin: 50px 50px 0 50px;
+        margin: 0;
+        margin-top: 50px;
+        /* margin: 50px 50px 0 50px; */
     }
 
     .title {
@@ -155,6 +158,27 @@ main {
 
     .area_list_wrap li:nth-child(1) {
         margin-top: 0px;
+    }
+}
+
+/***********************
+    検索結果一覧img
+ **********************/
+
+@media screen and (min-width: 770px) {
+    .result_img_wrap {
+        width: 650px;
+    }
+
+    .result_img_card {
+        width: 40%;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .result_img_card img {
+        width: 100%;
+        height: 100%;
     }
 }
 

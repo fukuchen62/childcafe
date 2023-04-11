@@ -30,13 +30,18 @@
     font-size: 20px;
 }
 
-.cafeinfo p {
-    text-align: center;
-    margin: 10px 0;
+.cafeinfo_flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.cafeinfo a {
-    padding: 10px 0;
+/* 最後のコンテンツを左寄せにする指定 */
+.cafeinfo_flex:after {
+    content: "";
+    display: block;
+    width: 25%; /* .boxに指定したwidthと同じ幅を指定する */
+    height: 0;
 }
 
 @media screen and (min-width: 770px) {
@@ -50,6 +55,6 @@
 
     .cafeinfo p {
         display: inline-block;
-        margin: 20px 40px;
+        margin: 20px 15px;
     }
 }
