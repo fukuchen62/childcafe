@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="徳島,こども食堂,支援,地域コミュニティ,こどもの居場所">
+    <!-- 電話番号の自動リンク化を無効 -->
+    <meta name="format-detection" content="telephone=no">
     <?php wp_head(); ?>
 </head>
 
-<body <?php //body_class(); ?>>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <div class="body_inner">
-        <?php wp_body_open(); ?>
         <!-- トップページへ戻るボタン -->
         <div class="toppage_btn">
             <a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
