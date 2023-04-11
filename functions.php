@@ -63,7 +63,7 @@ function add_my_files() {
 
     //taxonomy-linkページのみ出力
     if (is_tax('link')) {
-        wp_enqueue_style('taxonomy-link',get_template_directory_uri() . '/assets/css/page-links.css',array('my-common')
+        wp_enqueue_style('taxonomy-link',get_template_directory_uri() . '/assets/css/taxonomy-link.css',array('my-common')
         );
         //tab.jsの読み込み
         wp_enqueue_script('tab',get_template_directory_uri().'/assets/js/tab.js',array('header'),'1.0',true);
