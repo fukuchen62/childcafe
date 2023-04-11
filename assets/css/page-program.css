@@ -5,9 +5,8 @@
  **************************/
 
 .title {
-    display: inline;
+    /* display: inline; */
     width: 250px;
-    margin: 0 auto 50px auto;
 }
 
 .text {
