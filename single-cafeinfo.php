@@ -88,12 +88,12 @@ $the_query = new WP_Query($args);
 
 <main>
     <div class="main_inner">
-        <?php get_template_part('template-parts/breadcrumb'); ?>
         <!-- ページトップ -->
         <?php if (have_posts()) : ?>
         <?php while(have_posts()) : ?>
         <?php the_post(); ?>
         <div class="yellow color">
+            <?php get_template_part('template-parts/breadcrumb'); ?>
             <div class="yellow_inner m1024">
                 <h2 class="title"><?php the_field('name'); ?></h2>
                 <div class="pc_flex">
@@ -250,7 +250,7 @@ $the_query = new WP_Query($args);
                     <h3 class="subtitle">
                         Amazonみんなで応援プログラム
                     </h3>
-                    <p><a href="<?php get_field('amapro'); ?>"><?php ethe_field('amapro'); ?></a></p>
+                    <p><a href="<?php get_field('amapro'); ?>"><?php the_field('amapro'); ?></a></p>
                 </div>
                 <?php if(get_field('recruitment')=== true) :?>
                 <p class="volunteer">ボランティア募集中</p>
