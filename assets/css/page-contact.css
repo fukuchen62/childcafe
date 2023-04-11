@@ -6,7 +6,7 @@
 }
 
 .contact2 .subtitle {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .text {
@@ -15,6 +15,14 @@
 
 .contact1_text_p1 {
     text-decoration: underline solid black;
+}
+
+.contact1_text_p2 {
+    background-color: #f5deb3;
+    font-size: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .form {
@@ -91,9 +99,6 @@
     /* text-align: center; */
     flex-direction: column;
     align-items: center;
-}
-
-.contact_message label {
 }
 
 .contact_message textarea {
