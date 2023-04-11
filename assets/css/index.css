@@ -728,9 +728,6 @@ html {
     border-radius: 35px;
     position: relative;
     overflow: hidden;
-    /* line-height: 60px; */
-    /* width: 242px; */
-    /* padding-bottom: 40px; */
 }
 
 .sun {
@@ -740,8 +737,6 @@ html {
     opacity: 70%;
     bottom: -200px;
     left: -50%;
-    /* bottom: -190px; */
-    /* left: -115px; */
 }
 
 @keyframes suzumemove {
@@ -768,7 +763,6 @@ html {
     .notice .news {
         width: 633px;
         padding: 40px 40px 100px 40px;
-        /* padding-bottom: 60px; */
     }
     .notice .btn_item {
         margin-bottom: 30px;
