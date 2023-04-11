@@ -163,9 +163,9 @@ $event_query = new WP_Query($fuga);
                 <input class="hbg_submit fas" type="submit" value="">
             </form> -->
             <ul class="kv_slider">
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_1.jpg" alt="KV画像">
-                </li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_2.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_1.jpg" alt="KV画像">
                 </li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_3.jpg" alt="KV画像">
                 </li>
@@ -377,7 +377,6 @@ $event_query = new WP_Query($fuga);
         </div>
     </div>
     <!-- メインインナー終わり -->
-    </div>
 </main>
 </div>
 <?php get_footer(); ?>

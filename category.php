@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/breadcrumb'); ?>
 <?php
 $cat = get_the_category();
 $cat = $cat[0];
@@ -7,6 +6,7 @@ $cat = $cat[0];
 
 <main>
     <div class="main_inner relative">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title"><?php echo $cat->cat_name; ?>記事一覧</h2>
         <div class="news_flex">
             <div class="tcenter column">
@@ -20,11 +20,21 @@ $cat = $cat[0];
             </div>
             <?php get_sidebar('categories'); ?>
         </div>
-    </div>
-    <?php
-    if (function_exists('wp_pagenavi')) {
-						wp_pagenavi();
+        <!-- ページナビ -->
+        <div class="page_nav flex">
+            <?php original_pagenation(); ?>
+        </div>
+        <style>
+        .page-numbers {
+            width: 37px;
+            height: 37px;
+            padding-top: 3px;
+            background-color: #f7dd94;
+            border-radius: 50px;
+            text-align: center;
         }
-    ?>
+        </style>
+    </div>
 </main>
+</div>
 <?php get_footer(); ?>
