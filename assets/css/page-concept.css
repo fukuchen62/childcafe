@@ -31,10 +31,10 @@
 }
 
 .rice {
-    width: 379px;
-    height: 379px;
-    top: -40px;
-    left: -30%;
+    width: 200px;
+    height: 200px;
+    top: -5px;
+    left: -10%;
     opacity: 40%;
     z-index: 1;
 }
@@ -55,10 +55,10 @@
         padding-top: 150px;
     }
     .rice {
-        width: 875px;
-        height: 900px;
-        top: -50px;
-        left: -52%;
+        width: 650px;
+        height: 650px;
+        top: -5px;
+        left: -40%;
     }
     .curry {
         width: 826px;
