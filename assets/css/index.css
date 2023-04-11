@@ -32,7 +32,7 @@ body {
 .btn_item {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #ffd466;
+    background-color: darkgreen;
     border-radius: 10px;
     font-weight: bolder;
     color: whitesmoke;
@@ -63,7 +63,7 @@ html {
 }
 @keyframes shad26 {
     0% {
-        box-shadow: 0 0 0 0 #ffb700;
+        box-shadow: 0 0 0 0 darkgreen;
     }
     70% {
         box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);
@@ -706,7 +706,20 @@ html {
         justify-content: center;
         margin-bottom: 30px;
     }
-    /* .link_flex {
+    .link_item + .link_item {
+        margin-left: 30px;
+    }
+    /* 縦並び */
+    /* .link_item + .link_item {
+        margin-top: 20px;
+    }
+    .link_sample {
+        margin-right: 70px;
+    }
+    .btntest {
+        margin-right: 38px;
+    }
+    .link_flex {
         flex-direction: column;
     }
     .link_item {
