@@ -123,6 +123,53 @@ main {
     width: 250px;
 }
 
+/* カード*/
+.pickup_item a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.pickup_item {
+    max-width: 320px;
+    margin: 60px auto;
+}
+
+.pickup_item_card {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+.pickup_item_card img {
+    height: 200px;
+    margin-top: 13px;
+    border: 1px solid #665a3d;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.pickup_item_card_title {
+    font-weight: bolder;
+}
+
+.border {
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #665a3d;
+}
+
+.pickup_item_card + .pickup_item_card {
+    margin-top: 54px;
+}
+
+.pickup_item_card p + p {
+    margin-top: 5px;
+}
+
 @media screen and (min-width: 770px) {
     .tab {
         margin-top: 70px;
