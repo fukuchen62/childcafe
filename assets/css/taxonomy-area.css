@@ -86,7 +86,7 @@ main {
     cursor: pointer;
 }
 
-.title {
+.area_title {
     text-align: center;
     width: 210px;
     height: 50px;
@@ -95,6 +95,7 @@ main {
     border-radius: 10px;
     margin: 0 auto;
     text-decoration: 0;
+    font-size: 20px;
 }
 
 .area_list_wrap {
@@ -126,12 +127,12 @@ main {
 /* カード*/
 .pickup_item a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .pickup_item {
     max-width: 320px;
-    margin: 60px auto;
+    margin: 20px auto;
 }
 
 .pickup_item_card {
