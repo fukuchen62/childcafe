@@ -51,5 +51,8 @@ $events = $event_fields;
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
     </div>
+    <div class="btn_item">
+        <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">こども食堂詳細へ</a>
+    </div>
 </main>
 <?php get_footer(); ?>
