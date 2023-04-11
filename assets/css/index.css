@@ -292,14 +292,27 @@ html {
     margin: 0 auto;
 }
 
-.orangetabs {
+.pickup_slider li::before {
+    content: "";
+    background-image: url(../images/index/orange_tab.png);
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    position: absolute;
+    background-size: cover;
+    z-index: 10;
+    left: -10px;
+    top: 80px;
+}
+
+/* .orangetabs {
     position: absolute;
     left: 85px;
     top: -35px;
     z-index: 10;
-}
+} */
 
-.orangetab {
+/* .orangetab {
     width: 150px;
     height: 80px;
 }
@@ -307,7 +320,7 @@ html {
 .orange1,
 .orange2 {
     display: none;
-}
+} */
 
 .pickup_slider {
     width: 255px;
