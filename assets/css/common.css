@@ -677,11 +677,21 @@ main {
     border-right: 0;
 }
 
-.page_number {
+/* PHP用ページナビ */
+
+.page_numbers {
     width: 37px;
     height: 37px;
     padding-top: 3px;
     background-color: #f7dd94;
     border-radius: 50px;
     text-align: center;
+}
+
+.prev.page-numbers {
+    background-color: unset;
+}
+
+.next.page-numbers {
+    background-color: unset;
 }

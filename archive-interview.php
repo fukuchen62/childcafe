@@ -70,24 +70,6 @@
         <div class="page_nav flex">
             <?php original_pagenation(); ?>
         </div>
-        <style>
-        .page-numbers {
-            width: 37px;
-            height: 37px;
-            padding-top: 3px;
-            background-color: #f7dd94;
-            border-radius: 50px;
-            text-align: center;
-        }
-
-        .prev.page-numbers {
-            background-color: unset;
-        }
-
-        .next.page-numbers {
-            background-color: unset;
-        }
-        </style>
 
     </div>
 </main>
