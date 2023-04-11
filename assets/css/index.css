@@ -179,7 +179,6 @@ html {
     border: 3px solid #ffb700;
     border-radius: 35px;
     position: relative;
-    z-index: 10;
 }
 
 .info .section_inner {
@@ -194,6 +193,7 @@ html {
     top: -10px;
     animation: calender 5s linear infinite normal;
     opacity: 70%;
+    z-index: 10;
 }
 
 @keyframes calender {
@@ -284,6 +284,7 @@ html {
     position: relative;
     padding: 10px;
     padding-bottom: 30px;
+    overflow: visible;
 }
 
 .pickup_slide {
@@ -292,7 +293,7 @@ html {
     margin: 0 auto;
 }
 
-.pickup_slider li::before {
+.pickup_slide a::before {
     content: "";
     background-image: url(../images/index/orange_tab_fold1.png);
     width: 100%;
@@ -300,7 +301,7 @@ html {
     position: absolute;
     background-size: cover;
     left: 0px;
-    top: -60px;
+    top: -50px;
 }
 
 /* .orangetabs {
