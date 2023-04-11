@@ -442,7 +442,7 @@ html {
     top: 40px;
     z-index: 10;
     transition: 0.5s;
-    border-radius: 20% 40% / 30% 70%;
+    border-radius: 50% 50%;
     background-color: rgba(247, 221, 148, 0.66);
 }
 
@@ -452,7 +452,7 @@ html {
     top: 135px;
     z-index: 10;
     transition: 0.5s;
-    border-radius: 20% 40% / 30% 70%;
+    border-radius: 50% 50%;
     background-color: rgba(215, 247, 148, 0.66);
 }
 
@@ -462,7 +462,7 @@ html {
     top: 70px;
     z-index: 10;
     transition: 0.5s;
-    border-radius: 20% 40% / 30% 70%;
+    border-radius: 50% 50%;
     background-color: rgba(253, 255, 176, 0.66);
 }
 
@@ -479,6 +479,7 @@ html {
         width: 100px;
         height: 60px;
         line-height: 62px;
+        transition: 0.3s;
     }
     .north {
         right: 20%;
@@ -486,7 +487,10 @@ html {
     }
     .north:hover {
         box-shadow: 0px 10px 19px 2px #000;
-        border-radius: 50% 20% / 80% 30%;
+        width: 120px;
+        height: 80px;
+        line-height: 82px;
+        transform: translateY(-15px);
         box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
     }
     .south {
@@ -495,7 +499,10 @@ html {
     }
     .south:hover {
         box-shadow: 0px 10px 19px 2px #000;
-        border-radius: 50% 20% / 80% 30%;
+        width: 120px;
+        height: 80px;
+        line-height: 82px;
+        transform: translateY(-15px);
         box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
     }
     .west {
@@ -505,8 +512,11 @@ html {
     .west:hover {
         left: 25%;
         top: 150px;
+        width: 120px;
+        height: 80px;
+        line-height: 82px;
+        transform: translateY(-15px);
         box-shadow: 0px 10px 19px 2px #000;
-        border-radius: 50% 20% / 80% 30%;
         box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
     }
     .map .btn_item {
