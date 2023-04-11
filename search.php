@@ -16,19 +16,19 @@ $args = [
 // $query = $wp_query;
 
 // $args = $wp_query->query_vars;
-// $wp_query->query_vars['posts_per_page'] = -1;
-// $wp_query->tax_query->queries[] = array(
-//     'taxonomy' => 'area',
-//     'field'    => 'slug',
-//     'terms'    => get_search_query(),
-//     'compare' => 'LIKE',
-// );
+$wp_query->query_vars['posts_per_page'] = 2;
+$wp_query->tax_query->queries[] = array(
+    'taxonomy' => 'area',
+    'field'    => 'name',
+    'terms'    => get_search_query(),
+    // 'compare' => 'LIKE',
+);
 
 // $wp_query-> WP_Tax_Query Object['tax_query'] = [['taxonomy' => 'area']];
 // 'taxonomy' => 'area'
 // $wp_query['tax_query'] = [['taxonomy' => 'area']];
 
-$the_query = new WP_Query($args);
+new WP_Query($wp_query);
 
 ?>
 
@@ -41,7 +41,7 @@ $the_query = new WP_Query($args);
             </h2>
             <?php
             // echo '<pre>';
-            // print_r($query);
+            // print_r($wp_query);
             // echo '</pre>';
             ?>
             <div class="result_img_wrap flex">
