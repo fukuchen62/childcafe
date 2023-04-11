@@ -193,11 +193,11 @@ function wpcf7_autop_return_false() {
 
 
 //投稿表示件数を変更する
-function my_pre_get_posts($query) {
-    //管理画面、メインクエリには設定しない(サブクエリに設定する)
-    if (is_admin() || $query->is_main_query()) {
-        return;
-    }
+// function my_pre_get_posts($query) {
+//     //管理画面、メインクエリには設定しない(サブクエリに設定する)
+//     if (is_admin() || $query->is_main_query()) {
+//         return;
+//     }
 
     // //トップページの場合
     // if ($query->is_front_page()) {
@@ -206,18 +206,18 @@ function my_pre_get_posts($query) {
     // }
 
     // 固定ページの場合
-    if ($query->is_page('post')) {
-        $query->set('posts_per_page',5);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_page('post')) {
+    //     $query->set('posts_per_page',5);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
     // インタビュー一覧ページの場合
-    if ($query->is_post_type_archive('interview')) {
-        $query->set('posts_per_page', 6);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_post_type_archive('interview')) {
+    //     $query->set('posts_per_page', 6);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
         // 開催情報一覧ページの場合
     // if ($query->is_post_type_archive('event')) {
@@ -228,21 +228,21 @@ function my_pre_get_posts($query) {
 
 
     // エリア検索ページの場合
-    if ($query->is_tax('area')) {
-        $query->set('posts_per_page', 9);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_tax('area')) {
+    //     $query->set('posts_per_page', 9);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
     // 条件検索ページの場合
-    if ($query->is_page('search')) {
-        $query->set('posts_per_page', 9);
-        $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-        return;
-    }
+    // if ($query->is_page('search')) {
+    //     $query->set('posts_per_page', 9);
+    //     $query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
+    //     return;
+    // }
 
-}
-add_action('pre_get_posts', 'my_pre_get_posts');
+// }
+// add_action('pre_get_posts', 'my_pre_get_posts');
 
 
 //自作ページネーションを読み込ませる

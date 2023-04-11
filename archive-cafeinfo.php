@@ -12,8 +12,9 @@
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">こども食堂一覧</h2>
-        <?php foreach ( $parents as $parent ) : // 親タームのループを開始 ?>
-        <div class="cafeinfo_tab orange"><?php echo $parent->name; ?></div>
+        <?php
+        foreach ( $parents as $parent ) : // 親タームのループを開始 ?>
+        <div class="cafeinfo_tab <?php echo $parent->slug; ?>"><?php echo $parent->name; ?></div>
         <div class="cafeinfo_section">
             <div class="cafeinfo">
                 <?php $children = get_terms($taxonomy_slug,'hierarchical=0&parent='.$parent->term_id); ?>
