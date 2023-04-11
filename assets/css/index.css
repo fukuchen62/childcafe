@@ -691,7 +691,10 @@ html {
     border-radius: 35px;
     position: relative;
     overflow: hidden;
+    /* 3つ目のリンクのために高さ追加 */
+    height: 270px;
 }
+
 .sun {
     position: absolute;
     width: 200%;
