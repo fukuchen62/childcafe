@@ -175,24 +175,13 @@
 
 .reset_btn {
     background-color: #fdffb0;
-    border: 1px solid gray;
-    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
-    padding: 10px 50px;
-    border-radius: 10px;
-}
-
-.submit_btn {
-    background-color: #f7dd94;
-    border: 1px solid gray;
-    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px 0;
 }
 
 .btn {
     width: 180px;
     margin-top: 0px;
+    padding: 10px;
+    border: 1px solid gray;
 }
 
 @media screen and (min-width: 770px) {
@@ -221,12 +210,6 @@
         flex-direction: row;
         width: 500px;
         justify-content: space-around;
-    }
-
-    /* モバイル版の余白を削除 */
-    .submit_btn,
-    .reset_btn {
-        margin: 0;
     }
 }
 
