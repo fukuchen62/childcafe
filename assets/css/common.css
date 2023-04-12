@@ -404,11 +404,19 @@ main {
         border-radius: 5px;
         padding: 10px;
         background-color: #d7f794;
+        position: relative;
+    }
+
+    .hbg_form {
+        margin-right: 40px;
     }
 
     .hbg_submit_pc {
         background-image: url(../images/serch.svg);
         width: 27px;
+        position: absolute;
+        right: 10px;
+        top: 12px;
     }
 
     .btn_header_pc_1 {
