@@ -11,6 +11,7 @@
 
 .text {
     width: 80%;
+
 }
 
 .contact1_text_p1 {
@@ -21,8 +22,13 @@
     background-color: #f5deb3;
     font-size: 15px;
     margin-top: 15px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
+}
+
+.btn_item{
+    display: block;
+    width: 180px;
 }
 
 .form {
@@ -180,7 +186,7 @@
     background-color: #f7dd94;
     border: 1px solid gray;
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
-    padding: 10px 55px;
+    padding: 10px;
     border-radius: 10px;
     margin: 20px 0;
 }
