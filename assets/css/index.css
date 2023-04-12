@@ -34,9 +34,8 @@ body {
     padding: 10px 15px;
     background-color: #f8b600;
     border-radius: 10px;
-    font-weight: bolder;
     color: black;
-    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
+    /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11; */
     text-align: center;
     margin: 50px 50px 0;
 }
@@ -63,7 +62,7 @@ html {
 }
 @keyframes shad26 {
     0% {
-        box-shadow: 0 0 0 0 darkgreen;
+        box-shadow: 0 0 0 0 orange;
     }
     70% {
         box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);
