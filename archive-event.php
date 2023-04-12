@@ -41,6 +41,8 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     <p class="event_text">
                         <?php if (!empty(get_field('appeal'))): ?>
                         <?php echo get_field('appeal'); ?>
+                        <?php else : ?>
+                        <?php echo get_field('features',$cafeinfo_id) ?>
                         <?php endif; ?>
                     </p>
                 </a>
