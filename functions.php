@@ -154,6 +154,12 @@ function add_my_files() {
         );
     }
 
+        // programlistのみ出力
+        if (is_page('programlist')) {
+            wp_enqueue_style('programlist', get_template_directory_uri() . '/assets/css/page-programlist.css', array('my-common')
+            );
+        }
+
     // 404のみ出力
     if (is_404()) {
         wp_enqueue_style('404', get_template_directory_uri() . '/assets/css/404.css', array('my-common')

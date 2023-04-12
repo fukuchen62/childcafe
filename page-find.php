@@ -357,7 +357,9 @@ $the_query = new WP_Query($args);
                 ?>
             <!-- ページナビ -->
             <div class="page_nav flex">
-
+                <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                ?>
                 <?php
                     global $wp_rewrite;
                     $paginate_base = get_pagenum_link(1);
