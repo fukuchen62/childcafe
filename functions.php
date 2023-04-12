@@ -104,9 +104,9 @@ function add_my_files() {
         );
     }
 
-    // page-confirmationのみ出力
-    if (is_page('confirmation')) {
-        wp_enqueue_style('page-confirmation', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
+    // page-confirmのみ出力
+    if (is_page('confirm')) {
+        wp_enqueue_style('page-confirm', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
         );
     }
 
