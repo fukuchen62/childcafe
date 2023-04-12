@@ -181,6 +181,17 @@
     border: 1px solid gray;
 }
 
+/* 送信確認画面CSS */
+
+.subtitle_text {
+    text-align: center;
+}
+
+/* 送信画面送信ボタン */
+.return_btn {
+    width: 200px;
+}
+
 @media screen and (min-width: 770px) {
     .contact_item {
         flex-direction: row;
