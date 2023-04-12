@@ -71,12 +71,12 @@
         <div class="pickup_title">
             <h2 class="title">
                 特集記事 <br />
-                Pickupインタビュー　一覧
+                Pick upインタビュー　一覧
             </h2>
             <div class="text">
                 <div class="intro">
                     <p class="subtitle left">
-                        Pickupインタビューとは
+                        Pick upインタビューとは
                     </p>
                     <p>
                         Pick up
