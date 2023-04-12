@@ -652,8 +652,9 @@ main {
  **********************/
 
 .page_nav {
-    width: 200px;
-    justify-content: space-between;
+    /* width: 200px; */
+    /* justify-content: space-between; */
+    justify-content: center;
     margin: 40px auto;
 }
 
@@ -686,6 +687,7 @@ main {
     background-color: #f7dd94;
     border-radius: 50px;
     text-align: center;
+    margin: 8px;
 }
 
 .prev.page-numbers {
@@ -694,4 +696,8 @@ main {
 
 .next.page-numbers {
     background-color: unset;
+}
+
+.page-numbers.current {
+    background-color: #d7f794;
 }

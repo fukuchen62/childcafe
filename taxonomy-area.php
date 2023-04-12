@@ -14,7 +14,7 @@
 
     $args = array(
         'post_type' => 'cafeinfo',
-        'posts_per_page' => 6, //全件表示
+        'posts_per_page' => 6,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'tax_query' => array(
             array(
@@ -96,20 +96,6 @@
         </div>
         <!-- ページナビ -->
         <?php original_pagenation(); ?>
-        <style>
-        .page-numbers.current {
-            background-color: #d7f794;
-        }
-
-        .page-numbers {
-            margin: 10px;
-        }
-
-        .page_nav {
-            width: unset;
-            justify-content: center;
-        }
-        </style>
     </div>
 </main>
 </div>
