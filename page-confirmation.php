@@ -29,7 +29,7 @@
         <!-- 各子供食堂 終了-->
 
         <!-- 全体への問い合わせ -->
-        <?php echo do_shortcode('[contact-form-7 id="532" title="確認画面用"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="777" title="確認画面用"]'); ?>
         <!-- 全体への問い合わせ 終了-->
     </div>
 </main>
