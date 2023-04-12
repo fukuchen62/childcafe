@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-.text {
+.text p {
     max-width: 320px;
 }
 
