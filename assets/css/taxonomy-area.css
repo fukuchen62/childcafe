@@ -131,18 +131,23 @@ main {
 }
 
 /* カード*/
-.pickup_item a {
+.area_text {
+    text-align: left;
+}
+
+.area_item a {
     display: inline-block;
     margin-top: 20px;
 }
 
-.pickup_item {
-    max-width: 320px;
+.area_item {
+    max-width: 330px;
     margin: 20px auto;
 }
 
-.pickup_item_card {
+.area_item_card {
     width: 100%;
+    max-width: 320px;
     background-color: white;
     padding: 10px;
     margin: 0 auto;
@@ -151,7 +156,7 @@ main {
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
-.pickup_item_card img {
+.area_item_card img {
     height: 200px;
     margin-top: 13px;
     border: 1px solid #665a3d;
@@ -159,7 +164,7 @@ main {
     object-fit: cover;
 }
 
-.pickup_item_card_title {
+.area_item_card_title {
     font-weight: bolder;
 }
 
@@ -169,11 +174,11 @@ main {
     border-bottom: 1px solid #665a3d;
 }
 
-.pickup_item_card + .pickup_item_card {
+.area_item_card + .area_item_card {
     margin-top: 54px;
 }
 
-.pickup_item_card p + p {
+.area_item_card p + p {
     margin-top: 5px;
 }
 
@@ -214,8 +219,22 @@ main {
         margin-top: 0px;
     }
 
-    .pickup_item {
+    /* カード */
+    .area_item {
+        display: flex;
         max-width: 750px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .area_item_card {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .area_item_card:hover {
+        opacity: 0.8;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
     }
 }
 
