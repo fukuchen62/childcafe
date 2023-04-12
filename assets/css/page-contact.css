@@ -190,6 +190,7 @@
 /* 送信画面送信ボタン */
 .return_btn {
     width: 200px;
+    padding: 10px;
 }
 
 @media screen and (min-width: 770px) {
