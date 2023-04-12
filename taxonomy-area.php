@@ -14,7 +14,7 @@
 
     $args = array(
         'post_type' => 'cafeinfo',
-        'posts_per_page' => 9, //全件表示
+        'posts_per_page' => 6, //全件表示
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'tax_query' => array(
             array(
