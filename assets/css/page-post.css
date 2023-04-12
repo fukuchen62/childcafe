@@ -13,7 +13,6 @@
 }
 
 .news_title {
-    margin: 0 auto;
     text-decoration: underline solid #f8b600;
 }
 
@@ -24,6 +23,10 @@
 .tcenter {
     position: relative;
     max-width: 320px;
+}
+
+.tcenter a {
+    text-align: left;
 }
 
 /* カテゴリー一覧 */
@@ -77,10 +80,17 @@
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 50px auto;
+}
+
+.sp_none {
+    display: none;
 }
 
 @media (min-width: 770px) {
+    .main_inner {
+        margin-bottom: 180px;
+    }
     /* カテゴリー一覧 */
     .bgcnone {
         margin: 0 auto;
@@ -119,10 +129,19 @@
     }
 
     /* ページナビ */
+    .sp_none {
+        display: inline-block;
+        display: flex;
+    }
+
     .page_nav {
         position: initial;
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 100px;
+    }
+
+    .pc_none {
+        display: none;
     }
 
     /* 項目フレックス */
@@ -133,7 +152,7 @@
     }
 
     .tcenter {
-        max-width: 600px;
+        max-width: 450px;
     }
 
     /* 記事題名ホバーアクション */
