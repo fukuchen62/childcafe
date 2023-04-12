@@ -277,6 +277,7 @@ function custom_the_posts_pagination( $template ) {
 }
 add_filter( 'navigation_markup_template', 'custom_the_posts_pagination' );
 
+//ico画像を追加できるようにする
 function my_custom_mime_types( $mimes ) {
 // New allowed mime types.
 $mimes['ico'] = 'image/vnd.microsoft.icon';
