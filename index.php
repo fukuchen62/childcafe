@@ -9,7 +9,7 @@ $events = $event_fields;
         <?php if (have_posts()) : ?>
         <?php while(have_posts()) : ?>
         <?php the_post(); ?>
-        <div class="ivent_title">
+        <div class="event_title">
             <h2 class="title"><?php the_field('title'); ?></h2>
             <?php if(! empty(get_field('eye_catching'))): ?>
             <img src="<?php the_field('eye_catching'); ?>" alt="" class="main_visual" />
@@ -17,23 +17,23 @@ $events = $event_fields;
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
             <?php endif; ?>
         </div>
-        <div class="ivent_appeal">
-            <p class="ivent_appeal_text">食堂から一言</p>
+        <div class="event_appeal">
+            <p class="event_appeal_text">食堂から一言</p>
             <p><?php the_field('appeal'); ?></p>
         </div>
-        <table class="ivent_table">
+        <table class="event_table">
             <?php foreach( $events as $event): ?>
             <tr>
                 <?php if (! empty($event['value'])) : ?>
-                <td class="ivent_table_tdtitle">
+                <td class="event_table_tdtitle">
                     <?php echo $event['label']; ?>
                 </td>
                 <?php if (! is_array($event['value'])) : ?>
-                <td class="ivent_table_tdtext">
+                <td class="event_table_tdtext">
                     <?php echo $event['value']; ?>
                 </td>
                 <?php else: ?>
-                <td class="ivent_table_tdtext">
+                <td class="event_table_tdtext">
                     <?php foreach( $event['value'] as $value ): ?>
                     <?php echo $value; ?>
                     <?php endforeach; ?>
@@ -43,7 +43,7 @@ $events = $event_fields;
             </tr>
             <?php endforeach; ?>
         </table>
-        <div class="ivent_map">
+        <div class="event_map">
             <?php the_field('place_map'); ?>
         </div>
         <?php get_sidebar('categories'); ?>
