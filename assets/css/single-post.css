@@ -37,6 +37,12 @@
     max-width: 320px;
 }
 
+/* ボタン */
+
+.sp_none {
+    display: none;
+}
+
 .news_btn {
     margin: 0 auto;
     margin-top: 20px;
@@ -178,6 +184,13 @@
     }
 
     /* ボタン */
+    .pc_none {
+        display: none;
+    }
+
+    .sp_none {
+        display: block;
+    }
     .news_btn {
         margin: 90px auto 50px;
     }
