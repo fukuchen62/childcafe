@@ -142,7 +142,7 @@ if (!is_null($child_price) || !is_null($adult_price) || !empty($parking) || !emp
     // クエリ作成
     $args = [
         'post_type' => 'cafeinfo',
-        'posts_per_page' => -1,
+        'posts_per_page' => 6,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'post_status' => 'publish', // 公開された投稿を指定
         //該当イベント記事の親食堂ID
@@ -155,7 +155,7 @@ if (!is_null($child_price) || !is_null($adult_price) || !empty($parking) || !emp
 } else {
     $args = [
         'post_type' => 'cafeinfo',
-        'posts_per_page' => -1,
+        'posts_per_page' => 6,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'post_status' => 'publish', // 公開された投稿を指定
     ];
@@ -227,7 +227,7 @@ $the_query = new WP_Query($args);
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="title">詳細検索</h2>
+        <h2 class="title">条件からさがす</h2>
         <?php //echo $check; ?>
         <?php //echo $empty_check; ?>
         <?php //print_r($learning_support); ?>
@@ -237,7 +237,7 @@ $the_query = new WP_Query($args);
         <?php //print_r($args); ?>
         <?php //print_r($cafeinfo_ids); ?>
 
-        <form action="<?php echo home_url('/search'); ?>" method="get">
+        <form action="<?php echo home_url('/find'); ?>" method="get">
             <section class="form">
                 <h3 class="subtitle">チェックしてさがしてみよう！</h3>
                 <div class="form_wrap">
@@ -304,13 +304,13 @@ $the_query = new WP_Query($args);
                                 <input type="checkbox" name="person" value="こどもだけで行ける" />こどもだけで行ける
                             </label>
                             <label>
+                                <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリーあり
+                            </label>
+                            <label>
+                                <input type="checkbox" name="learning_support" value="学習支援" />学習支援あり
+                            </label>
+                            <label>
                                 <input type="checkbox" name="volunteer" value="1" />ボランティア募集中
-                            </label>
-                            <label>
-                                <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリー
-                            </label>
-                            <label>
-                                <input type="checkbox" name="learning_support" value="学習支援" />学習支援
                             </label>
                         </div>
                     </div>
@@ -383,16 +383,6 @@ $the_query = new WP_Query($args);
                 <?php //original_pagenation(); ?>
 
             </div>
-            <style>
-            .page-numbers {
-                width: 37px;
-                height: 37px;
-                padding-top: 3px;
-                background-color: #f7dd94;
-                border-radius: 50px;
-                text-align: center;
-            }
-            </style>
 
         </div>
         <!-- 検索結果表示 終了-->

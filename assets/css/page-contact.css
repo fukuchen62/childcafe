@@ -21,15 +21,20 @@
     background-color: #f5deb3;
     font-size: 15px;
     margin-top: 15px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
+}
+
+.btn_item {
+    display: block;
+    width: 180px;
 }
 
 .form {
     width: 90%;
-    /* height: 1000px; */
+    height: auto;
     background-color: #f7dd94;
-    padding-top: 20px;
+    padding: 20px 0;
     margin: 0 auto;
     border-radius: 10px;
 }
@@ -65,8 +70,6 @@
 .contact_item select {
     width: 200px;
     height: 45px;
-    /* margin-top: 20px; */
-    margin-left: 10px;
     padding-right: 15px;
     border: 2px solid orange;
     border-radius: 10px;
@@ -116,13 +119,13 @@
 }
 
 .checkbox-001 label {
-    width: 70%;
+    width: 120px;
     margin: 10px auto;
-    display: flex;
-    align-items: center;
-    gap: 0 0.5em;
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .checkbox-001 label::before,
@@ -147,7 +150,7 @@
     /* チェック */
     position: absolute;
     top: 2px;
-    left: 8px;
+    left: 14px;
     transform: rotate(45deg);
     width: 15px;
     height: 20px;
@@ -160,7 +163,6 @@
 }
 
 /* ボタン */
-
 .form_btns {
     width: 100%;
     margin: 0 auto;
@@ -168,17 +170,33 @@
     align-items: center;
 }
 
-.form_btns .btn {
-    border: 1px solid black;
-}
-
 .reset_btn {
     background-color: #fdffb0;
-    margin-bottom: 30px;
 }
 
 .btn {
-    margin-top: 30px;
+    width: 180px;
+    margin-top: 0px;
+    padding: 10px 40px;
+    border: 1px solid gray;
+}
+
+/* 送信確認画面CSS */
+
+.subtitle_text {
+    text-align: center;
+}
+
+/* 送信画面送信ボタン */
+.return_btn {
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.message_text {
+    font-weight: 500;
+    text-align: center;
 }
 
 @media screen and (min-width: 770px) {
@@ -187,13 +205,17 @@
         justify-content: space-around;
     }
 
+    .contact_item:nth-child(1) {
+        flex-direction: column;
+    }
+
     .contact_item select {
-        width: 250px;
+        width: 350px;
     }
 
     input[type="text"],
     input[type="email"] {
-        width: 250px;
+        width: 350px;
     }
 
     .contact_message textarea {
@@ -203,10 +225,7 @@
     .form_btns {
         flex-direction: row;
         width: 500px;
-    }
-
-    .submit_btn {
-        margin-bottom: 30px;
+        justify-content: space-around;
     }
 }
 

@@ -6,8 +6,11 @@
 }
 
 .event_title img {
+    width: 100%;
     border-radius: 22px;
     margin: 0 auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
 }
 
 .event_appeal {
@@ -150,7 +153,7 @@ td {
     }
 
     .event_title img {
-        width: 100%;
+        width: 75%;
     }
 
     .bgcnone {

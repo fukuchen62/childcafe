@@ -110,6 +110,12 @@ function add_my_files() {
         );
     }
 
+    // page-thanksのみ出力
+    if (is_page('thanks')) {
+        wp_enqueue_style('page-thanks', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
+        );
+    }
+
     // page-conceptのみ出力
     if (is_page('concept')) {
         wp_enqueue_style('page-concept', get_template_directory_uri() . '/assets/css/page-concept.css', array('my-common')
@@ -155,7 +161,7 @@ function add_my_files() {
     }
 
     // 詳細検索ページのみ出力
-    if (is_page('search')) {
+    if (is_page('find')) {
         wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search.css', array('my-common')
         );
         //tab.jsの読み込み

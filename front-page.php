@@ -181,7 +181,8 @@ $event_query = new WP_Query($fuga);
             <div class="section_inner niji_re">
                 <h2 class="title">このサイトについて</h2>
                 <div class="text niji">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/rainbow.png" alt="虹" class="rainbow">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/rainbow.png" alt="虹"
+                        class="rainbow">
                     <p>
                         徳島県には、こども食堂がたくさんあります。
                         ”こども食堂って何なの？という人”や、”こども食堂へ行ってみたい人・手伝いたい人・支援したい人”へ分かりやすく情報をお届けする！をスローガンにこのサイトを作りました。ぜひ、自分の家の近くのこども食堂を探して行ってみてください！
@@ -190,7 +191,8 @@ $event_query = new WP_Query($fuga);
                 <a href="<?php echo home_url('/about'); ?>" class="btn_item">もっと見る</a>
             </div>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/rainbowbottom.png" alt="#" class="about_wave" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/rainbowbottom.png" alt="#"
+            class="about_wave" />
     </div>
     <!-- 今月の開催一覧 -->
     <div class="info w100">
@@ -198,7 +200,8 @@ $event_query = new WP_Query($fuga);
             <div class="title">
                 <h2>開催情報</h2>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/calender.png" alt="カレンダー" class="calender" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/calender.png" alt="カレンダー"
+                class="calender" />
             <div class="text_box">
                 <?php if ($event_query->have_posts()) : ?>
                 <?php while($event_query->have_posts()) : ?>
@@ -218,20 +221,25 @@ $event_query = new WP_Query($fuga);
     </div>
     <!-- Pick Upインタビュー一覧 -->
     <div class="interviews w100">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/interviewtop.png" alt="波" class="interview" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/interviewtop.png" alt="波"
+            class="interview" />
         <div class="section_inner">
             <div class="title taleft">
                 <h2>
-                特集記事 <br />
-                Pick Upインタビュー一覧
-            </h2>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pink_marker.png" alt="マーカー" class="crayon" />
+                    特集記事 <br />
+                    Pick upインタビュー一覧
+                </h2>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pink_marker.png" alt="マーカー"
+                    class="crayon" />
             </div>
             <div class="pickup_slide">
                 <div class="orangetabs">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ" class="orangetab" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ" class="orangetab orange1" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ" class="orangetab orange2" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
+                        class="orangetab" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
+                        class="orangetab orange1" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
+                        class="orangetab orange2" />
                 </div>
                 <ul class="pickup_slider flex">
                     <?php if ($custom_query->have_posts()) : ?>
@@ -245,41 +253,46 @@ $event_query = new WP_Query($fuga);
             </div>
             <a href="<?php echo home_url('/interview'); ?>" class="btn_item">もっと見る</a>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/interviewbottom.png" alt="波" class="interview" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/interviewbottom.png" alt="波"
+            class="interview" />
     </div>
     <!-- MAP -->
     <div class="map w100">
         <div class="section_inner">
             <h2 class="title">エリアからこども食堂をさがす</h2>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/map_serch.png" alt="虫眼鏡" class="serch_map_img" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/map_serch.png" alt="虫眼鏡"
+                class="serch_map_img" />
             <div class="map_pic">
                 <!-- クラス名をeastに変更依頼 -->
                 <a href="<?php echo home_url('/area/east'); ?>" class="serch_btn north">東部</a>
                 <a href="<?php echo home_url('/area/south'); ?>" class="serch_btn south">南部</a>
                 <a href="<?php echo home_url('/area/west'); ?>" class="serch_btn west">西部</a>
-                <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/tokushima_map.png" alt="地図" />
+                <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/tokushima_map.png"
+                    alt="地図" />
             </div>
             <a href="<?php echo home_url('/search'); ?>" class="btn_item">条件からさがす</a>
         </div>
     </div>
     <!-- 子ども食堂とは -->
     <div class="childcafe w100">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiriup.png" alt="波" class="onigiriup" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiriup.png" alt="波"
+            class="onigiriup" />
         <div class="section_inner">
             <div class="title">
                 <h2>子ども食堂とは</h2>
             </div>
             <div class="with_onigiri">
                 <div class="text">
-                    <p>
-                        こども食堂は、子どもたちが安心して食事ができる場所で、食材を提供し、食事を作る場所です。多くは、地域のボランティアや市民団体などが運営しており、家庭の事情によって十分な食事を摂れない子どもたちに、無料または低額で食事を提供しています。
+                    <p>こども食堂と聞くと、”貧困層のための場所”や、”こどもや子育て世代向けのもの”といったイメージを抱く方も多いと思います。実際はそうではなく、こどもの為の場であることはもちろんですが、地域の人や大人、様々な世代の人が集まって、一緒にごはんを食べて交流できる場です。地域とのつながりや、多世代交流をする地域コミュニティとしての役割も担っています。
                     </p>
                 </div>
-                <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiri.png" alt="おにぎり">
+                <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiri.png"
+                    alt="おにぎり">
                 <a href="<?php echo home_url('/concept'); ?>" class="btn_item">もっと見る</a>
             </div>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiribottom.png" alt="波" class="onigiribottom" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiribottom.png" alt="波"
+            class="onigiribottom" />
     </div>
     <!-- 支援したい方へ -->
     <div class="surporters w100">
@@ -294,15 +307,19 @@ $event_query = new WP_Query($fuga);
                         一言に”支援”と言っても、いくつかの方法があります。
                     </p>
                 </div>
-                <img class="mobile_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_mobile.png" alt="野菜を収穫した人" />
-                <img class="pc_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_pc.png" alt="野菜を収穫した人">
+                <img class="mobile_pic"
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_mobile.png"
+                    alt="野菜を収穫した人" />
+                <img class="pc_pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/yasai_pc.png"
+                    alt="野菜を収穫した人">
             </div>
             <a href="<?php echo home_url('/support'); ?>" class="btn_item">もっと見る</a>
         </div>
     </div>
     <!-- リンク集 -->
     <div class="link w100">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linktop.png" alt="波" class="link_wave" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linktop.png" alt="波"
+            class="link_wave" />
         <div class="section_inner">
             <h2 class="title link_title">リンク集</h2>
             <div class="link_flex">
@@ -311,13 +328,16 @@ $event_query = new WP_Query($fuga);
                 <a href="<?php echo home_url('/link/third'); ?>" class="btn_item">こどもの居場所関連</a>
             </div>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linkbottom.png" alt="波" class="link_wave" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linkbottom.png" alt="波"
+            class="link_wave" />
     </div>
     <!-- おしらせ -->
     <div class="notice w100">
         <div class="section_inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/noticeimg.png" alt="お知らせ画像" class="noticeimg" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/suzume.png" alt="すずめ" class="notice_suzume" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/noticeimg.png" alt="お知らせ画像"
+                class="noticeimg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/suzume.png" alt="すずめ"
+                class="notice_suzume" />
             <h2 class="title">おしらせ</h2>
             <div class="news">
                 <?php if ($the_query->have_posts()) : ?>
@@ -331,14 +351,16 @@ $event_query = new WP_Query($fuga);
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/sun.png" alt="太陽" class="sun" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/sun.png" alt="太陽"
+                    class="sun" />
             </div>
             <a href="<?php echo home_url('/post'); ?>" class="btn_item">もっとみる</a>
         </div>
     </div>
     <!-- お問い合わせ -->
     <div class="contact w100">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contacttop.png" alt="波" class="contact_wave" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contacttop.png" alt="波"
+            class="contact_wave" />
         <div class="section_inner">
             <h2 class="title">お問い合わせ</h2>
             <div class="text">
@@ -348,7 +370,8 @@ $event_query = new WP_Query($fuga);
             </div>
             <a href="<?php echo home_url('/contact'); ?>" class="btn_item">お問い合わせはこちら</a>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="波" class="contact_wave" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="波"
+            class="contact_wave" />
     </div>
     <!-- 活動風景 -->
     <div class="activity w100">
