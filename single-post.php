@@ -13,13 +13,16 @@ $cat = $cat[0];
             </div>
         </div>
         <div class="s-p_between">
-            <p class="text">
+            <div class="text">
                 <?php the_content(); ?>
-            </p>
+            </div>
+            <div class="s-p_column pc_none">
+                <a href="<?php echo home_url('/post'); ?>" class="btn_item">最新記事一覧</a>
+            </div>
             <?php get_sidebar('categories'); ?>
         </div>
-        <div class="s-p_column">
-            <a href="<?php echo home_url('/post'); ?>" class="news_btn">最新記事一覧</a>
+        <div class="s-p_column sp_none">
+            <a href="<?php echo home_url('/post'); ?>" class="btn_item">最新記事一覧</a>
         </div>
     </div>
 </main>
