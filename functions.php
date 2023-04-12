@@ -205,6 +205,7 @@ function wpcf7_autop_return_false() {
 //         return;
 //     }
 
+    //     return;
     // //トップページの場合
     // if ($query->is_front_page()) {
     //     $query->set('posts_per_page', 2);
@@ -276,6 +277,7 @@ function custom_the_posts_pagination( $template ) {
 }
 add_filter( 'navigation_markup_template', 'custom_the_posts_pagination' );
 
+//ico画像を追加できるようにする
 function my_custom_mime_types( $mimes ) {
 // New allowed mime types.
 $mimes['ico'] = 'image/vnd.microsoft.icon';

@@ -1,7 +1,12 @@
 @charset "utf-8";
 
+.pickup_item a {
+    display: inline-block;
+    margin: 10px auto;
+}
+
 .pickup_item {
-    max-width: 1024px;
+    max-width: 330px;
     margin: 60px auto;
 }
 
@@ -70,13 +75,16 @@
 @media (min-width: 770px) {
     .pickup_flex {
         display: flex;
+        flex-direction: row;
     }
 
-    .pickup_title {
-        /* margin-top: 120px; */
+    .pickup_item a {
+        display: inline-block;
+        margin: 10px;
     }
 
     .pickup_item {
+        max-width: 1024px;
         margin: 80px auto 80px;
         align-content: space-between;
         row-gap: 50px;
@@ -104,12 +112,12 @@
         height: 240px;
     }
 
-    .pickup_item_card a {
+    .pickup_item_card {
         display: inline-block;
         transition: 0.3s;
     }
-    .pickup_item_card a:hover {
-        opacity: 0.6;
+    .pickup_item_card:hover {
+        opacity: 0.8;
         transform: translateY(5px);
         box-shadow: 0 0 0 #333;
     }

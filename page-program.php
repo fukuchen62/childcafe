@@ -3,9 +3,7 @@
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="title">
-            Amazonみんなで応援プログラムとは
-        </h2>
+        <h2 class="title">Amazonみんなで応援プログラムとは</h2>
         <div class="text">
             <p>
                 物資の支援を必要としている団体がAmazon「ほしい物リスト」を作成し、公開することで、支援したい人が遠隔地にいながら、記名または匿名で支援が行える制度です。

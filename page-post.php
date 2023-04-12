@@ -3,7 +3,7 @@
 
 $args = array(
 		'post_type' => 'post',
-		'posts_per_page' => 5,
+		'posts_per_page' => -1,
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
 	);
 $the_query = new WP_Query($args);
@@ -29,16 +29,6 @@ $the_query = new WP_Query($args);
         <div class="page_nav flex">
             <?php original_pagenation(); ?>
         </div>
-        <style>
-        .page-numbers {
-            width: 37px;
-            height: 37px;
-            padding-top: 3px;
-            background-color: #f7dd94;
-            border-radius: 50px;
-            text-align: center;
-        }
-        </style>
     </div>
 </main>
 </div>
