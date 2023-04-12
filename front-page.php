@@ -227,7 +227,7 @@ $event_query = new WP_Query($fuga);
             <div class="title taleft">
                 <h2>
                     特集記事 <br />
-                    Pick Upインタビュー一覧
+                    Pick upインタビュー一覧
                 </h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pink_marker.png" alt="マーカー"
                     class="crayon" />
