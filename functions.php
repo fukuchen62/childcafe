@@ -161,7 +161,7 @@ function add_my_files() {
     }
 
     // 詳細検索ページのみ出力
-    if (is_page('search')) {
+    if (is_page('find')) {
         wp_enqueue_style('page-search', get_template_directory_uri() . '/assets/css/page-search.css', array('my-common')
         );
         //tab.jsの読み込み
