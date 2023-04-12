@@ -1,1 +1,73 @@
 @charset "utf-8";
+
+.amazon_text {
+    text-align: left;
+}
+
+.amazon_item a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.amazon_item {
+    max-width: 330px;
+    margin: 20px auto;
+}
+
+.amazon_item_card {
+    width: 100%;
+    max-width: 320px;
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+.amazon_item_card img {
+    height: 200px;
+    margin-top: 13px;
+    border: 1px solid #665a3d;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.amazon_item_card_title {
+    font-weight: bolder;
+}
+
+.border {
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #665a3d;
+}
+
+.amazon_item_card + .amazon_item_card {
+    margin-top: 54px;
+}
+
+.amazon_item_card p + p {
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 770px) {
+    /* カード */
+    .amazon_item {
+        display: flex;
+        max-width: 1024px;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 200px;
+    }
+
+    .amazon_item_card {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .amazon_item_card:hover {
+        opacity: 0.8;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
+    }
+}
