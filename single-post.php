@@ -13,7 +13,7 @@ $cat = $cat[0];
             </div>
         </div>
         <div class="s-p_between">
-            <p class="text mt50">
+            <p class="text">
                 <?php the_content(); ?>
             </p>
             <?php get_sidebar('categories'); ?>
