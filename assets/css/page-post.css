@@ -21,12 +21,15 @@
     margin-top: 30px;
 }
 
+.tcenter {
+    max-width: 320px;
+}
+
+/* カテゴリー一覧 */
 .category_title {
     font-size: 24px;
     display: inline-block;
     width: 304px;
-    margin-bottom: 47px;
-    margin-top: 130px;
     background-color: #d9cdb0;
     border-radius: 10px;
     border-top: 5px dotted white;
@@ -44,19 +47,43 @@
 }
 
 .bgcnone {
-    margin: 0 auto;
+    margin: 120px auto;
+    background-color: white;
+    border: 3px solid #ffdf8c;
+    width: 265px;
+    border-radius: 37px;
+    padding-top: 80px;
+    padding-bottom: 10px;
 }
+
+.category_list {
+    position: relative;
+    width: 265px;
+}
+
+.category_title {
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: 0;
+    left: -20px;
+    right: 0;
+    top: 15px;
+}
+
+/* ページナビ */
 
 .page_nav {
     position: absolute;
-    top: 400px;
+    top: 500px;
     left: 0;
     right: 0;
     margin: auto;
 }
 
 @media (min-width: 770px) {
+    /* カテゴリー一覧 */
     .bgcnone {
+        margin: 0 auto;
         background-color: white;
         border: 3px solid #ffdf8c;
         width: 265px;
@@ -78,15 +105,7 @@
         border-top: 5px dotted white;
         border-bottom: 5px dotted white;
     }
-    .page_nav {
-        position: initial;
-        margin: 0 auto;
-        margin-top: 80px;
-    }
-    .news_flex {
-        display: flex;
-        justify-content: space-between;
-    }
+
     .category_list {
         position: relative;
     }
@@ -99,6 +118,25 @@
         top: 15px;
     }
 
+    /* ページナビ */
+    .page_nav {
+        position: initial;
+        margin: 0 auto;
+        margin-top: 80px;
+    }
+
+    /* 項目フレックス */
+    .news_flex {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .tcenter {
+        max-width: 600px;
+    }
+
+    /* 記事題名ホバーアクション */
     .news_title {
         display: inline-block;
         font-size: 120%;
@@ -118,5 +156,14 @@
     }
     .news_title:hover::after {
         width: 100%;
+    }
+
+    /* カテゴリー一覧ホバーアクション */
+    .category_list {
+        text-decoration: none;
+    }
+
+    .category_item:hover {
+        color: #f8b600;
     }
 }
