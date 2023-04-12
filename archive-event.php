@@ -75,11 +75,11 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 'next_text' => '<div class="page_triangle_right"></div>',
                 ));
             ?>
-
-                <?php get_sidebar('categories'); ?>
             </div>
-            <div class="page_nav flex sp_none">
-                <?php
+            <?php get_sidebar('categories'); ?>
+        </div>
+        <div class="page_nav flex sp_none">
+            <?php
                 global $wp_rewrite;
                 $paginate_base = get_pagenum_link(1);
                 if(strpos($paginate_base, '?') || !$wp_rewrite->using_permalinks()){
@@ -100,7 +100,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 'next_text' => '<div class="page_triangle_right"></div>',
                 ));
             ?>
-            </div>
+        </div>
 </main>
 </div>
 
