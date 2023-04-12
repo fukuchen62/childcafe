@@ -64,15 +64,12 @@
 
 .required_item {
     width: 190px;
-    /* margin: 0 auto; */
     align-items: center;
 }
 
 .contact_item select {
     width: 200px;
     height: 45px;
-    /* margin-top: 20px; */
-    margin-left: 10px;
     padding-right: 15px;
     border: 2px solid orange;
     border-radius: 10px;
@@ -180,26 +177,27 @@
 .btn {
     width: 180px;
     margin-top: 0px;
-    padding: 10px 40px;
+    padding: 10px 20px;
     border: 1px solid gray;
 }
 
 @media screen and (min-width: 770px) {
-    .contact2_inner {
-    }
-
     .contact_item {
         flex-direction: row;
         justify-content: space-around;
     }
 
+    .contact_item:nth-child(1) {
+        flex-direction: column;
+    }
+
     .contact_item select {
-        width: 250px;
+        width: 350px;
     }
 
     input[type="text"],
     input[type="email"] {
-        width: 250px;
+        width: 350px;
     }
 
     .contact_message textarea {
