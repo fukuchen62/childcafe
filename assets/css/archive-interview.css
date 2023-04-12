@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.pickup_text {
+    text-align: left;
+}
+
 .pickup_item a {
     display: inline-block;
     margin: 10px auto;

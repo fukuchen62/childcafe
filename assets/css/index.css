@@ -297,17 +297,6 @@ html {
     margin: 0 auto;
 }
 
-.pickup_slide li::before {
-    content: "aaa";
-    background-image: url(../images/index/orange_tab_fold1.png);
-    width: 50%;
-    height: 180px;
-    position: absolute;
-    background-size: cover;
-    left: 60px;
-    top: -50px;
-}
-
 /* .orangetabs {
     position: absolute;
     left: 85px;
@@ -344,7 +333,9 @@ html {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
-
+.slick-prev {
+    left: -35px;
+}
 /* スリック矢印ここまで */
 
 .pickup_slider img {
