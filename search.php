@@ -35,6 +35,42 @@ new WP_Query($wp_query);
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
+
+
+
+        <div class="search_inner">
+            <h2 class="title"><?php echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2>
+            <div class="search_item search_flex">
+                <?php if (have_posts()) : ?>
+                <?php while(have_posts()) : ?>
+                <?php the_post(); ?>
+
+                <a href="<?php the_permalink(); ?>">
+                    <div class="search_item_card">
+                        <?php if(! empty(get_field('eye_catching'))): ?>
+                        <img src="<?php the_field('eye_catching'); ?>" alt="">
+                        <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+                        <?php endif; ?>
+                        <p class="search_item_card_title">
+                                        <?php the_title(); ?>
+                                    </p>
+                        <p class="search_item_card_title border">
+                                        徳島市
+                                    </p>
+                        <p class="search_text">
+                                        すべての子どもたちが未来への希望を持ち、生き抜く力を育む居場所をつくる活動の一つ・・
+                                    </p>
+                    </div>
+                </a>
+                <?php endwhile; ?>
+                <?php endif; ?>
+
+            </div>
+        </div>
+
+
+
         <div class="result_img">
             <h2 class="title">
                 <?php echo '「'. get_search_query() . '」の検索結果一覧'; ?>
