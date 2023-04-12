@@ -30,21 +30,23 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
             ?>
             <div class="event_item">
                 <a href="<?php the_permalink(); ?>">
-                    <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
-                    <p class="event_item_card_title">
-                        <!-- 日付表示加工予定 ◯月◯日-->
-                        <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
-                    </p>
-                    <p class="event_item_card_title border">
-                        <?php echo get_field('name',$cafeinfo_id); ?>
-                    </p>
-                    <p class="event_text">
-                        <?php if (!empty(get_field('appeal'))): ?>
-                        <?php echo get_field('appeal'); ?>
-                        <?php else : ?>
-                        <?php echo get_field('features',$cafeinfo_id) ?>
-                        <?php endif; ?>
-                    </p>
+                    <div class="event_item_card">
+                        <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
+                        <p class="event_item_card_title">
+                            <!-- 日付表示加工予定 ◯月◯日-->
+                            <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
+                        </p>
+                        <p class="event_item_card_title border">
+                            <?php echo get_field('name',$cafeinfo_id); ?>
+                        </p>
+                        <p class="event_text">
+                            <?php if (!empty(get_field('appeal'))): ?>
+                            <?php echo get_field('appeal'); ?>
+                            <?php else : ?>
+                            <?php echo get_field('features',$cafeinfo_id) ?>
+                            <?php endif; ?>
+                        </p>
+                    </div>
                 </a>
             </div>
             <?php endwhile; ?>
