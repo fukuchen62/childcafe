@@ -242,6 +242,35 @@
     background-color: #d7f794;
 }
 
+.qrcode {
+    width: 66px;
+    height: 66px;
+}
+
+.sns_items {
+    display: flex;
+    flex-direction: column;
+}
+.sns_items a {
+    color: mediumblue;
+}
+
+.sns_items a + a {
+    margin-top: 20px;
+}
+@media (min-width: 770px) {
+    .qrcode {
+        width: 88px;
+        height: 88px;
+    }
+    .sns_items {
+        text-align: left;
+    }
+    .sns_items a:hover {
+        color: skyblue;
+    }
+}
+
 /* ボランティアリボン*/
 .volunteer {
     display: inline-block;
