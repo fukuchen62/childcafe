@@ -11,7 +11,6 @@
 
 .text {
     width: 80%;
-
 }
 
 .contact1_text_p1 {
@@ -26,7 +25,7 @@
     border-radius: 10px;
 }
 
-.btn_item{
+.btn_item {
     display: block;
     width: 180px;
 }
@@ -65,7 +64,7 @@
 
 .required_item {
     width: 190px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     align-items: center;
 }
 
@@ -193,11 +192,13 @@
 
 .btn {
     width: 180px;
-    /* padding: 20px; */
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 @media screen and (min-width: 770px) {
+    .contact2_inner {
+    }
+
     .contact_item {
         flex-direction: row;
         justify-content: space-around;
@@ -222,11 +223,12 @@
         justify-content: space-around;
     }
 
-/* モバイル版の余白を削除 */
-    .submit_btn,.reset_btn {
+    /* モバイル版の余白を削除 */
+    .submit_btn,
+    .reset_btn {
         margin: 0;
     }
-
+}
 
 /***********************
     ユーティリティ
