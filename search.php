@@ -16,12 +16,12 @@ $args = [
 // $query = $wp_query;
 
 // $args = $wp_query->query_vars;
-$wp_query->query_vars['posts_per_page'] = 2;
-$wp_query->tax_query->queries[] = array(
+$wp_query->query_vars['posts_per_page'] = 6;
+$wp_query->tax_query->queries = array(
     'taxonomy' => 'area',
     'field'    => 'name',
     'terms'    => get_search_query(),
-    // 'compare' => 'LIKE',
+    'compare' => 'LIKE',
 );
 
 // $wp_query-> WP_Tax_Query Object['tax_query'] = [['taxonomy' => 'area']];
@@ -40,9 +40,9 @@ new WP_Query($wp_query);
                 <?php echo '「'. get_search_query() . '」の検索結果一覧'; ?>
             </h2>
             <?php
-            // echo '<pre>';
-            // print_r($wp_query);
-            // echo '</pre>';
+            echo '<pre>';
+            print_r($wp_query);
+            echo '</pre>';
             ?>
             <div class="result_img_wrap flex">
                 <?php if (have_posts()) : ?>
