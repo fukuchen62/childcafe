@@ -304,13 +304,13 @@ $the_query = new WP_Query($args);
                                 <input type="checkbox" name="person" value="こどもだけで行ける" />こどもだけで行ける
                             </label>
                             <label>
+                                <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリーあり
+                            </label>
+                            <label>
+                                <input type="checkbox" name="learning_support" value="学習支援" />学習支援あり
+                            </label>
+                            <label>
                                 <input type="checkbox" name="volunteer" value="1" />ボランティア募集中
-                            </label>
-                            <label>
-                                <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリー
-                            </label>
-                            <label>
-                                <input type="checkbox" name="learning_support" value="学習支援" />学習支援
                             </label>
                         </div>
                     </div>

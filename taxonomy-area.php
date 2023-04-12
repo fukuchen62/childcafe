@@ -16,6 +16,8 @@
         'post_type' => 'cafeinfo',
         'posts_per_page' => 6,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+        // 'orderby' => 'date', //子項目の順序で並べる
+        // 'order' => 'DESC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'area',
@@ -24,7 +26,6 @@
                 'include_children' => true,
             ),
         ),
-        // orderby => ,
     );
 
     // カスタムクエリを追加する前に、元のクエリを保存しておく
@@ -48,6 +49,7 @@
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
+        <h2 class="title"><?php echo $parent_term->name.'こども食堂一覧'; ?></h2>
 
         <!-- 地域別タブ -->
         <ul class="tab flex">
@@ -58,7 +60,6 @@
         <!-- 市町村別一覧 -->
         <div class="list_area flex">
             <div class="area_<?php echo $parent_term->slug; ?> panel east is-show">
-                <h2 class="title"><?php echo $parent_term->name.'市町村一覧'; ?></h2>
                 <ul class="area_list_wrap flex">
                     <?php foreach ($towns as $town) :  ?>
                     <li>
@@ -75,10 +76,6 @@
             </div>
             <!-- 地域別食堂一覧 -->
             <section class="result_img">
-                <h2 class="title result_title">
-                    <!-- 市町村名が選択された時は市町村名にするようにする -->
-                    <?php echo $area->name; ?>こども食堂一覧
-                </h2>
                 <div class="result_img_wrap flex">
                     <?php if ($the_query->have_posts()) : ?>
                     <?php while($the_query->have_posts()) : ?>
