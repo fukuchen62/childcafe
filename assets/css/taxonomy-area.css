@@ -213,6 +213,10 @@ main {
     .area_list_wrap li:nth-child(1) {
         margin-top: 0px;
     }
+
+    .pickup_item {
+        max-width: 750px;
+    }
 }
 
 /***********************
