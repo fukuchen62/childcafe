@@ -28,6 +28,7 @@ $the_query = new WP_Query($args);
             <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             ?>
+            <?php if ($paged != 1): ?>
             <div class="page_nav flex pc_none">
                 <?php
                 global $wp_rewrite;
@@ -51,13 +52,14 @@ $the_query = new WP_Query($args);
                 ));
             ?>
             </div>
+            <?php endif ?>
             <?php get_sidebar('categories'); ?>
 
         </div>
         <!-- ページナビ -->
         <?php //original_pagenation(); ?>
 
-
+        <?php if ($paged != 1): ?>
         <div class="page_nav flex sp_none">
             <?php
                 global $wp_rewrite;
@@ -81,6 +83,7 @@ $the_query = new WP_Query($args);
                 ));
             ?>
         </div>
+        <?php endif ?>
     </div>
 </main>
 </div>

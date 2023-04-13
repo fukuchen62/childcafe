@@ -18,7 +18,19 @@ $this_terms = get_the_terms($post->ID,'area');
             ?>
         </p>
         <p class="area_text">
-            <?php echo get_field('features');?>
+            <?php
+            //整形したい文字列
+            if (!empty(get_field('features'))) {
+                $features = get_field('features');
+                //40文字にする
+                if(mb_strlen($features) > 40) {
+                    $features = mb_substr($features,0,40);
+                    echo $features . '・・・' ;
+                } else {
+                    echo $features;
+                }
+            }
+            ?>
         </p>
     </article>
 </a>

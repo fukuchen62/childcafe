@@ -16,7 +16,10 @@
 
 .event_item_card {
     width: 100%;
+    min-width: 320px;
     max-width: 320px;
+    min-height: 396px;
+    max-height: 396px;
     background-color: white;
     padding: 10px;
     margin: 0 auto;
@@ -26,7 +29,10 @@
 }
 
 .event_item_card img {
-    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 299px;
+    max-width: 299px;
     margin-top: 13px;
     border: 1px solid #665a3d;
     border-radius: 10px;
