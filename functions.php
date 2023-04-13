@@ -104,9 +104,9 @@ function add_my_files() {
         );
     }
 
-    // page-confirmationのみ出力
-    if (is_page('confirmation')) {
-        wp_enqueue_style('page-confirmation', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
+    // page-confirmのみ出力
+    if (is_page('confirm')) {
+        wp_enqueue_style('page-confirm', get_template_directory_uri() . '/assets/css/page-contact.css', array('my-common')
         );
     }
 
@@ -154,6 +154,12 @@ function add_my_files() {
         );
     }
 
+        // programlistのみ出力
+        if (is_page('programlist')) {
+            wp_enqueue_style('programlist', get_template_directory_uri() . '/assets/css/page-programlist.css', array('my-common')
+            );
+        }
+
     // 404のみ出力
     if (is_404()) {
         wp_enqueue_style('404', get_template_directory_uri() . '/assets/css/404.css', array('my-common')
@@ -193,6 +199,12 @@ function add_my_files() {
         wp_enqueue_style('single-event',get_template_directory_uri() . '/assets/css/single-event.css',array('my-common')
         );
     }
+
+        //search.phpのみ出力
+            if (is_search()) {
+                wp_enqueue_style('search',get_template_directory_uri() . '/assets/css/search.css',array('my-common')
+                );
+            }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');

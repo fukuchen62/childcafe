@@ -49,7 +49,7 @@
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="title"><?php echo $parent_term->name.'こども食堂一覧'; ?></h2>
+        <h2 class="title result_title"><?php echo $parent_term->name.'こども食堂一覧'; ?></h2>
 
         <!-- 地域別タブ -->
         <ul class="tab flex">
@@ -75,8 +75,8 @@
                 </ul>
             </div>
             <!-- 地域別食堂一覧 -->
-            <section class="result_img">
-                <div class="result_img_wrap flex">
+            <section class="area_item_inner">
+                <div class="area_item">
                     <?php if ($the_query->have_posts()) : ?>
                     <?php while($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
