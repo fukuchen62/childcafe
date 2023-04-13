@@ -70,7 +70,7 @@
                     こども食堂ごとに参加条件がありますが、誰でも来ていいというところが多いです。条件検索から探してみてください。
                 </p>
             </div>
-            <div class="btn">
+            <div class="btn_faq">
                 <a href="<?php echo home_url('/contact'); ?>">お問い合わせはこちら</a>
             </div>
 
