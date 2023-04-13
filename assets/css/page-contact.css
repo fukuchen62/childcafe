@@ -163,7 +163,8 @@
 }
 
 .link {
-    width: 270px;
+    display: inline-block;
+    width: 300px;
     margin: 0 auto;
     text-decoration: underline dotted 1px gray;
     text-underline-offset: 5px;
