@@ -718,3 +718,15 @@ main {
 .page-numbers.current {
     background-color: #d7f794;
 }
+
+/* パンくずリスト */
+
+.breadcrumb {
+    display: none;
+}
+
+@media screen and (min-width: 770px) {
+    .breadcrumb {
+        display: block;
+    }
+}
