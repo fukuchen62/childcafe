@@ -21,12 +21,12 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     <img src="<?php the_field('eye_catching'); ?>" alt="PickUp画像" />
                 </div>
                 <div class="underimg text cafeinfo_flex flex">
-                    <p class="address">
+                    <span class="address">
                         <?php echo $this_terms[1]->name; ?>
-                    </p>
-                    <p>
+                    </span>
+                    <span>
                         <?php echo do_shortcode('[wp_ulike]'); ?>
-                    </p>
+                    </span>
                 </div>
             </div>
             <div class="pickup_single">
