@@ -6,7 +6,7 @@ $args = array(
         'meta_key' => 'class',
         //不定期のもの
         'meta_value' => 2,
-		'posts_per_page' => -1,
+		'posts_per_page' => 6,
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
 	);
 $the_query = new WP_Query($args);
@@ -32,7 +32,12 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
 
                 <a href="<?php the_permalink(); ?>">
                     <div class="event_item_card">
-                        <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
+                        <?php $eye_catching = get_field('eye_catching');?>
+                        <?php if(!empty($eye_catching)): ?>
+                        <img src="<?php the_field('eye_catching'); ?>" alt="">
+                        <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                        <?php endif; ?>
                         <p class="event_item_card_title">
                             <!-- 日付表示加工予定 ◯月◯日-->
                             <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
