@@ -40,11 +40,28 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                             <?php echo get_field('name',$cafeinfo_id); ?>
                         </p>
                         <p class="event_text">
-                            <?php if (!empty(get_field('appeal'))): ?>
-                            <?php echo get_field('appeal'); ?>
-                            <?php else : ?>
-                            <?php echo get_field('features',$cafeinfo_id) ?>
-                            <?php endif; ?>
+                            <?php
+                            //整形したい文字列
+                            if (!empty(get_field('appeal'))) {
+                                $appeal = get_field('appeal');
+                                //40文字にする
+                                if(mb_strlen($appeal) > 40) {
+                                    $appeal = mb_substr($appeal,0,40);
+                                    echo $appeal . '・・・' ;
+                                } else {
+                                    echo $appeal;
+                                }
+                            } else{
+                                $features = get_field('features',$cafeinfo_id);
+                                //40文字にする
+                                if(mb_strlen($features) > 40) {
+                                    $features = mb_substr($features,0,40);
+                                    echo $features . '・・・' ;
+                                } else {
+                                    echo $features;
+                                }
+                            }
+                            ?>
                         </p>
                     </div>
                 </a>
