@@ -49,14 +49,26 @@ $the_query = new WP_Query($args);
                     <?php if(!empty($eye_catching)): ?>
                     <img src="<?php the_field('eye_catching'); ?>" alt="">
                     <?php else: ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
                     <?php endif; ?>
 
                     <p class="amazon_item_card_title"><?php the_field('name'); ?></p>
                     <?php $this_terms = get_the_terms($post->ID,'area'); ?>
                     <p class="amazon_item_card_title border"><?php echo '(' . $this_terms[1]-> name . ')' ; ?></p>
                     <p class="amazon_text">
-                        <?php the_field('features'); ?>
+                        <?php
+                            //整形したい文字列
+                            if (!empty(get_field('features'))) {
+                                $features = get_field('features');
+                                //40文字にする
+                                if(mb_strlen($features) > 40) {
+                                    $features = mb_substr($features,0,40);
+                                    echo $features . '・・・' ;
+                                } else {
+                                    echo $features;
+                                }
+                            }
+                        ?>
                     </p>
                 </div>
             </a>
@@ -66,10 +78,13 @@ $the_query = new WP_Query($args);
             <?php endif ?>
             <?php wp_reset_postdata(); ?>
         </div>
-        <div class="page_nav flex">
-            <?php
+
+        <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 ?>
+
+        <?php if ($paged != 1): ?>
+        <div class="page_nav flex">
             <?php
                     global $wp_rewrite;
                     $paginate_base = get_pagenum_link(1);
@@ -95,8 +110,11 @@ $the_query = new WP_Query($args);
             <?php //original_pagenation(); ?>
 
         </div>
+        <?php endif ?>
+
     </div>
 </main>
+</div>
 <!-- 参加食堂一覧 終了-->
 
 <?php get_footer(); ?>
