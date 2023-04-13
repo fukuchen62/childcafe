@@ -16,7 +16,8 @@
 
 .event_item_card {
     width: 100%;
-    max-width: 320px;
+    min-width: 320px;
+    min-height: 436px;
     background-color: white;
     padding: 10px;
     margin: 0 auto;
