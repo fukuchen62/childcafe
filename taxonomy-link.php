@@ -29,7 +29,7 @@
             <li class="tab_3  tab_js childplace"><a href="<?php echo home_url('/link/third'); ?>">こども居場所関連</a></li>
         </ul>
         <!-- 関連リンク -->
-        <section class="link_<?php echo $link->slug; ?>" panel is-show>
+        <section class="link_<?php echo $link->slug; ?> panel is-show" >
             <h2 class="title"><?php echo $link->name; ?></h2>
             <div class="link_wrap">
                 <?php if (have_posts()) : ?>
