@@ -1,13 +1,21 @@
 <?php get_header(); ?>
 <?php
-
+$current_time = date_i18n('Y-m-d');
 $args = array(
 		'post_type' => 'event',
         'meta_key' => 'class',
         //不定期のもの
         'meta_value' => 2,
 		'posts_per_page' => 6,
-        'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+        'meta_query' => array(
+		array(
+			'key' => 'datetime', // 記事の日付を表すカスタムフィールドのキーを指定
+			'value' => $current_time, // 現在の日付以降の記事を表示するために、現在の日付を指定
+			'compare' => '>=', // 指定した値以上のものを取得する
+			'type' => ' DATETIME', // カスタムフィールドの値が日付形式であることを指定
+        )
+        )
 	);
 $the_query = new WP_Query($args);
 
@@ -126,6 +134,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 ));
             ?>
         </div>
+    </div>
 </main>
 </div>
 

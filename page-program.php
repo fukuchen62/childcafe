@@ -23,7 +23,7 @@
             <p>ご支援を宜しくお願いいたします。</p>
         </div>
 
-        <div class="btn program_btn"><a href="<?php echo home_url('/programlist'); ?>">参加食堂一覧へ</a></div>
+        <div class="program_btn"><a href="<?php echo home_url('/programlist'); ?>">参加食堂一覧へ</a></div>
 
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/vegetable.png" alt="背景の野菜"
             class="amazon_img vegetable" />

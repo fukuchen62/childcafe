@@ -13,10 +13,6 @@
     margin-bottom: 20px;
 }
 
-.program_btn {
-    background-color: #e9fcc1;
-}
-
 .main_inner {
     position: relative;
 }
@@ -60,4 +56,21 @@
         width: 405px;
         margin: 70px auto;
     }
+}
+
+.program_btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    border: none;
+}
+
+.program_btn a {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #e9fcc1;
+    border-radius: 10px;
+    color: black;
+    /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11; */
+    text-align: center;
 }

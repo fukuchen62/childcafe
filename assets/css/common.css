@@ -95,8 +95,13 @@ main {
     margin-bottom: 50px;
     text-align: center;
     text-decoration: underline dotted 5px #008000;
+    -webkit-text-decoration: underline dotted 5px #008000;
     text-underline-offset: 10px;
 }
+
+/* .title {
+    -webkit-text-decoration: underline dotted 5px #008000;
+} */
 
 /* h3 */
 .subtitle {

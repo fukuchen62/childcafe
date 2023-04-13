@@ -49,18 +49,19 @@
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="title result_title"><?php echo $parent_term->name.'こども食堂一覧'; ?></h2>
+        <h2 class="title result_title"><?php echo $area->name.'こども食堂一覧'; ?></h2>
 
         <!-- 地域別タブ -->
-        <ul class="tab flex">
+        <ul class="tab area_flex">
             <li class="tab_east tab_js east"><a href="<?php echo home_url('/area/east'); ?>">東部</a></li>
             <li class="tab_south tab_js south"><a href="<?php echo home_url('/area/south'); ?>">南部</a></li>
             <li class="tab_west tab_js west"><a href="<?php echo home_url('/area/west'); ?>">西部</a></li>
         </ul>
         <!-- 市町村別一覧 -->
-        <div class="list_area flex">
+        <div class="list_area area_flex">
             <div class="area_<?php echo $parent_term->slug; ?> panel east is-show">
-                <ul class="area_list_wrap flex">
+                <h3 class="area_title"><?php echo $parent_term->name.'市町村一覧' ;?></h3>
+                <ul class="area_list_wrap area_flex">
                     <?php foreach ($towns as $town) :  ?>
                     <li>
                         <?php if(! $town->count == 0) :?>
