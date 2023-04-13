@@ -5,13 +5,22 @@
     margin: 0 auto;
 }
 
-.event_title img {
+.event_img img {
+    width: 50%;
+}
+
+.event_img {
+    text-align: center;
+}
+
+/* category一覧ありの場合 */
+/* .event_title img {
     width: 100%;
     border-radius: 22px;
     margin: 0 auto;
     object-fit: cover;
     aspect-ratio: 4/3;
-}
+} */
 
 .event_appeal {
     width: 283px;
@@ -137,6 +146,29 @@ td {
     margin: 30px auto 0;
 }
 
+.btn_event {
+    background-color: #d7f794;
+}
+
+.btn_event:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: shad25 1.5s infinite;
+}
+
+@keyframes shad25 {
+    0% {
+        box-shadow: 0 0 0 0 #008000;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
+    }
+}
+
 @media (min-width: 770px) {
     .main_inner {
         position: relative;
@@ -152,9 +184,9 @@ td {
         width: 100%;
     }
 
-    .event_title img {
+    /* .event_title img {
         width: 75%;
-    }
+    } */
 
     .bgcnone {
         background-color: white;
@@ -219,7 +251,6 @@ td {
 
     .btn_item {
         width: 350px;
-        margin-top: 100px;
-        margin-bottom: 200px;
+        margin-top: 50px;
     }
 }
