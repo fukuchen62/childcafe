@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$current_time = date_i18n('Y-m-d H:i:s');
+$current_time = date_i18n('Y-m-d');
 $args = array(
 		'post_type' => 'event',
         'meta_key' => 'class',
