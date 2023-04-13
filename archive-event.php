@@ -6,7 +6,7 @@ $args = array(
         'meta_key' => 'class',
         //不定期のもの
         'meta_value' => 2,
-		'posts_per_page' => -1,
+		'posts_per_page' => 6,
         'paged' => get_query_var('paged') //何ページ目の情報を表示すれば良いか
 	);
 $the_query = new WP_Query($args);
@@ -21,17 +21,23 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">開催情報一覧</h2>
         <div class="event_flex">
-            <?php if ($the_query->have_posts()) : ?>
-            <?php while($the_query->have_posts()) : ?>
-            <?php $the_query->the_post(); ?>
-            <?php
-            $cafeinfo_id = get_field('id');
-            $this_terms = get_the_terms($cafeinfo_id,'area');
-            ?>
             <div class="event_item">
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+                <?php
+                    $cafeinfo_id = get_field('id');
+                    $this_terms = get_the_terms($cafeinfo_id,'area');
+                    ?>
+
                 <a href="<?php the_permalink(); ?>">
                     <div class="event_item_card">
-                        <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
+                        <?php $eye_catching = get_field('eye_catching');?>
+                        <?php if(!empty($eye_catching)): ?>
+                        <img src="<?php the_field('eye_catching'); ?>" alt="">
+                        <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                        <?php endif; ?>
                         <p class="event_item_card_title">
                             <!-- 日付表示加工予定 ◯月◯日-->
                             <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
@@ -40,19 +46,36 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                             <?php echo get_field('name',$cafeinfo_id); ?>
                         </p>
                         <p class="event_text">
-                            <?php if (!empty(get_field('appeal'))): ?>
-                            <?php echo get_field('appeal'); ?>
-                            <?php else : ?>
-                            <?php echo get_field('features',$cafeinfo_id) ?>
-                            <?php endif; ?>
+                            <?php
+                            //整形したい文字列
+                            if (!empty(get_field('appeal'))) {
+                                $appeal = get_field('appeal');
+                                //40文字にする
+                                if(mb_strlen($appeal) > 40) {
+                                    $appeal = mb_substr($appeal,0,40);
+                                    echo $appeal . '・・・' ;
+                                } else {
+                                    echo $appeal;
+                                }
+                            } else{
+                                $features = get_field('features',$cafeinfo_id);
+                                //40文字にする
+                                if(mb_strlen($features) > 40) {
+                                    $features = mb_substr($features,0,40);
+                                    echo $features . '・・・' ;
+                                } else {
+                                    echo $features;
+                                }
+                            }
+                            ?>
                         </p>
                     </div>
                 </a>
-            </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
 
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+            </div>
             <div class="page_nav flex pc_none">
                 <?php
                 global $wp_rewrite;
@@ -74,10 +97,12 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 'prev_text' => '<div class="page_triangle_left"></div>',
                 'next_text' => '<div class="page_triangle_right"></div>',
                 ));
-            ?>
+                ?>
             </div>
             <?php get_sidebar('categories'); ?>
         </div>
+
+
         <div class="page_nav flex sp_none">
             <?php
                 global $wp_rewrite;

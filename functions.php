@@ -199,6 +199,12 @@ function add_my_files() {
         wp_enqueue_style('single-event',get_template_directory_uri() . '/assets/css/single-event.css',array('my-common')
         );
     }
+
+        //search.phpのみ出力
+            if (is_search()) {
+                wp_enqueue_style('search',get_template_directory_uri() . '/assets/css/search.css',array('my-common')
+                );
+            }
 }
 
 add_action('wp_enqueue_scripts' ,'add_my_files');
