@@ -22,7 +22,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 </div>
                 <div class="underimg text cafeinfo_flex flex">
                     <p class="address">
-                            <?php echo $this_terms[1]->name; ?>
+                        <?php echo $this_terms[1]->name; ?>
                     </p>
                     <p>
                         <?php echo do_shortcode('[wp_ulike]'); ?>
@@ -33,7 +33,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 <?php the_field('message'); ?>
             </div>
             <div class="btn btn_item">
-                <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂詳細へ</a>
+                <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
             </div>
         </div>
     </div>

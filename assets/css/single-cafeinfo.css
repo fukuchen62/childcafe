@@ -423,8 +423,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 600px;
+        width: 700px;
         margin: 0 auto;
+    }
+
+    .detail_item p {
+        width: 300px;
+        text-align: left;
+    }
+
+    .detail_item img {
+        width: 300px;
+        text-align: left;
+    }
+
+    .detail_item a {
+        width: 300px;
+        text-align: left;
+    }
+
+    .subtitle {
+        width: 300px;
+        text-align: left;
+    }
+
+    .others_subtitle {
+        text-align: center;
     }
 
     .bgcolor_flex {
@@ -440,6 +464,7 @@
         margin-top: 0;
     }
     .addressmap .subtitle {
+        margin: 0 auto;
         display: block;
     }
 

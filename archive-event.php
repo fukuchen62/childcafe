@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$current_time = date('Y-m-d H:i:s');
+$current_time = date_i18n('Y-m-d');
 $args = array(
 		'post_type' => 'event',
         'meta_key' => 'class',
@@ -28,7 +28,6 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">開催情報一覧</h2>
-        <?php echo $current_time; ?>
         <div class="event_flex">
             <div class="event_item">
                 <?php if ($the_query->have_posts()) : ?>
