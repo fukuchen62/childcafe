@@ -21,14 +21,15 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">開催情報一覧</h2>
         <div class="event_flex">
-            <?php if ($the_query->have_posts()) : ?>
-            <?php while($the_query->have_posts()) : ?>
-            <?php $the_query->the_post(); ?>
-            <?php
-            $cafeinfo_id = get_field('id');
-            $this_terms = get_the_terms($cafeinfo_id,'area');
-            ?>
             <div class="event_item">
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+                <?php
+                    $cafeinfo_id = get_field('id');
+                    $this_terms = get_the_terms($cafeinfo_id,'area');
+                    ?>
+
                 <a href="<?php the_permalink(); ?>">
                     <div class="event_item_card">
                         <img src="<?php the_field('eye_catching'); ?>" alt="pickup画像" />
@@ -65,11 +66,11 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                         </p>
                     </div>
                 </a>
-            </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
 
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+            </div>
             <div class="page_nav flex pc_none">
                 <?php
                 global $wp_rewrite;
@@ -91,10 +92,12 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 'prev_text' => '<div class="page_triangle_left"></div>',
                 'next_text' => '<div class="page_triangle_right"></div>',
                 ));
-            ?>
+                ?>
             </div>
             <?php get_sidebar('categories'); ?>
         </div>
+
+
         <div class="page_nav flex sp_none">
             <?php
                 global $wp_rewrite;
