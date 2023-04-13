@@ -12,7 +12,8 @@ $(function () {
 
 $(function () {
     $(".ac_label").on("click", function () {
-        $(this).next().slideToggle(400);
+        // $(this).next().slideToggle(400);
+        $(this).next().addClass("show");
         $(this).toggleClass("open", 400);
     });
 });

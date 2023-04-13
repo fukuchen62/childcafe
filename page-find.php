@@ -247,49 +247,57 @@ $the_query = new WP_Query($args);
                         <!-- 東部 -->
                         <div class="item_wrap">
                             <div class="ac_label">東部</div>
-                            <ul class="ac_list">
-                                <li>
-                                    <input type="checkbox" id="east_all" /><label for="east_all">東部すべて</label>
-                                </li>
+                            <div class="ac_list east_list">
+                                <label for="east_all">
+                                    <input type="checkbox" id="east_all" />東部全て
+                                </label>
                                 <?php foreach ($east as $town) :  ?>
-                                <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="east_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
-                                </li>
+                                <label for="<?php echo $town->slug; ?>">
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]"
+                                        value="<?php echo $town->slug; ?>"
+                                        class="east_list" /><?php echo $town->name; ?>
+                                </label>
                                 <?php endforeach; ?>
-                            </ul>
+                            </div>
                         </div>
+
                         <!-- 南部 -->
                         <div class="item_wrap">
-                            <div class="ac_label">南部</div>
-                            <ul class="ac_list">
-                                <li>
-                                    <input type="checkbox" id="south_all" /><label for="south_all">南部すべて</label>
-                                </li>
+                            <div class="ac_label south_label">南部</div>
+                            <div class="ac_list">
+                                <label for="south_all">
+                                    <input type="checkbox" id="south_all" />南部全て
+                                </label>
                                 <?php foreach ($south as $town) :  ?>
-                                <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="south_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
-                                </li>
+                                <label for="<?php echo $town->slug; ?>">
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]"
+                                        value="<?php echo $town->slug; ?>"
+                                        class="south_list" /><?php echo $town->name; ?>
+                                </label>
                                 <?php endforeach; ?>
-                            </ul>
+                            </div>
                         </div>
                         <!-- 西部 -->
                         <div class="item_wrap">
-                            <div class="ac_label">西部</div>
-                            <ul class="ac_list">
-                                <li>
-                                    <input type="checkbox" id="west_all" /><label for="west_all">西部すべて</label>
-                                </li>
+                            <div class="ac_label west_label">西部</div>
+                            <div class="ac_list west_list">
+                                <label for="west_all">
+                                    <input type="checkbox" id="west_all" />西部全て
+                                </label>
                                 <?php foreach ($west as $town) :  ?>
-                                <li>
-                                    <input type="checkbox" id="<?php echo $town->slug; ?>" class="west_list" name="area[]" value="<?php echo $town->slug; ?>" /><label for="<?php echo $town->slug; ?>"><?php echo $town->name; ?></label>
-                                </li>
+                                <label for="<?php echo $town->slug; ?>">
+                                    <input type="checkbox" id="<?php echo $town->slug; ?>" name="area[]"
+                                        value="<?php echo $town->slug; ?>"
+                                        class="west_list" /><?php echo $town->name; ?>
+                                </label>
                                 <?php endforeach; ?>
-                            </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- エリア検索欄終了 -->
                     <!-- チェックボックス欄 -->
-                    <div class="form_wrap">
+                    <div class="form_item">
+                        <h3 class="item_title02">こだわり条件</h3>
                         <div class="checkbox-001">
                             <label>
                                 <input type="checkbox" name="child_price" value="0" />こども完全無料
