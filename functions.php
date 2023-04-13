@@ -304,3 +304,24 @@ unset( $mimes['exe'] );
 return $mimes;
 }
 add_filter( 'upload_mimes', 'my_custom_mime_types' );
+
+// page-contactのみセッション・キャッシュ・cookie削除
+// if (is_page('contacgt')) {
+//     session_start();
+//     //連想配列の中身を空にする
+//     $_SESSION = []; //$_SESSION = array()と同じ意味
+//     //連想配列の中身を空にする
+//     if(isset($_COOKIE[session_name()])){
+//         $cparam = session_get_cookie_params();
+//         setcookie(session_name(),"",
+//         time() - 60 *60, //時間さかのぼり削除をここでしている
+//         $cparam['path'],
+//         $cparam['domain'],
+//         $cparam['secure'],
+//         $cparam['httponly'],
+
+//     );
+//     //sessionを切る
+//     session_destroy();
+//     }
+// }
