@@ -20,7 +20,7 @@
                 <?php $children = get_terms($taxonomy_slug,'hierarchical=0&parent='.$parent->term_id); ?>
                 <?php foreach ( $children as $child ) : // 子タームのループを開始 ?>
                 <?php if( $child->count != 0 ):?>
-                <div class="cafeinfo_subtitle"><?php echo $child->name; ?></div>
+                <div class="cafeinfo_subtitle subtitle_<?php echo $parent->slug; ?>"><?php echo $child->name; ?></div>
                 <?php $term_slug = $child->slug; // 以下子タームに紐づく一覧のクエリを設定 ?>
                 <?php
                 $args = array(

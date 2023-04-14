@@ -26,8 +26,28 @@
     margin: 50px 20%;
 }
 
+/* 市町村装飾 */
 .cafeinfo_subtitle {
     font-size: 20px;
+    margin-top: 10px;
+}
+
+.subtitle_east {
+    text-align: left;
+    text-decoration: underline 5px #f7dd94;
+    text-underline-offset: 10px;
+}
+
+.subtitle_south {
+    text-align: left;
+    text-decoration: underline 5px #d7f794;
+    text-underline-offset: 10px;
+}
+
+.subtitle_west {
+    text-align: left;
+    text-decoration: underline 5px #faff66;
+    text-underline-offset: 10px;
 }
 
 .cafeinfo_flex {
@@ -56,5 +76,15 @@
     .cafeinfo p {
         display: inline-block;
         margin: 20px 15px;
+    }
+
+    /* ホバーアクション */
+
+    .category_list {
+        text-decoration: none;
+    }
+
+    .category_item:hover {
+        color: #f8b600;
     }
 }

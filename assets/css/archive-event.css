@@ -181,4 +181,13 @@
         right: 0;
         top: 15px;
     }
+
+    /* カテゴリーホバー */
+    .category_list {
+        text-decoration: none;
+    }
+
+    .category_item:hover {
+        color: #f8b600;
+    }
 }
