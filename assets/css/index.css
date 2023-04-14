@@ -662,7 +662,26 @@ html {
 }
 
 .link_title {
-    margin-bottom: 0;
+    margin-bottom: 50px;
+}
+
+.link_cover {
+    display: block;
+}
+
+.link_item {
+    width: 80%;
+    margin: 0 auto 20px auto;
+    padding: 0 30px 30px 30px;
+    border: 1px solid orange;
+    background-color: #fff8e6;
+    border-radius: 10px;
+}
+
+.link_sample,
+.btntest {
+    margin: 0;
+    margin-top: 30px;
 }
 
 .btn_link {
@@ -678,7 +697,7 @@ html {
 }
 
 .link_text {
-    width: 280px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 25px;
     text-align: left;
@@ -692,13 +711,23 @@ html {
 
 @media (min-width: 900px) {
     .link_flex {
+        width: 90%;
+        margin: 0 auto;
         flex-direction: row;
         justify-content: center;
         margin-bottom: 30px;
     }
-    .link_item + .link_item {
+    /* .link_item + .link_item {
         margin-left: 30px;
     }
+
+    .link_item {
+        margin-left: 30px;
+    }
+
+    .link_item + .link_item + .link_item {
+        margin-right: 30px;
+    } */
     /* 縦並び */
     /* .link_item + .link_item {
         margin-top: 20px;

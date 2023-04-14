@@ -321,22 +321,27 @@ $event_query = new WP_Query($fuga);
             <div class="section_inner">
                 <h2 class="title link_title">リンク集</h2>
                 <div class="link_flex">
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                        <div class="link_item">
+                            <div class="btn_item link_sample">こども食堂関連</div>
+                            <div class="link_text">
+                                <p>
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                </p>
+                            </div>
+                    </a>
+                </div>
+                <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
                     <div class="link_item">
-                        <a href="<?php echo home_url('/link/cafe'); ?>" class="btn_item link_sample">こども食堂関連</a>
+                        <div class="btn_item link_sample">子育て支援関連</div>
                         <div class="link_text">
                             <p>
                                 テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                             </p>
                         </div>
                     </div>
-                    <div class="link_item">
-                        <a href="<?php echo home_url('/link/care'); ?>" class="btn_item link_sample">子育て支援関連</a>
-                        <div class="link_text">
-                            <p>
-                                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                            </p>
-                        </div>
-                    </div>
+                </a>
+                <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
                     <div class="link_item">
                         <a href="<?php echo home_url('/link/third'); ?>" class="btn_item btntest">こどもの居場所関連</a>
                         <div class="link_text">
@@ -345,81 +350,82 @@ $event_query = new WP_Query($fuga);
                             </p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linkbottom.png" alt="波"
-                class="link_wave" />
         </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linkbottom.png" alt="波"
+            class="link_wave" />
+    </div>
 
-        <!-- おしらせ -->
-        <div class="notice w100">
-            <div class="section_inner">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/noticeimg.png" alt="お知らせ画像"
-                    class="noticeimg" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/suzume.png" alt="すずめ"
-                    class="notice_suzume" />
-                <h2 class="title">おしらせ</h2>
-                <div class="news">
-                    <?php if ($the_query->have_posts()) : ?>
-                    <?php while($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>
-                    <p>
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                    </p>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/sun.png" alt="太陽"
-                        class="sun" />
-                </div>
-                <a href="<?php echo home_url('/post'); ?>" class="btn_item">もっとみる</a>
+    <!-- おしらせ -->
+    <div class="notice w100">
+        <div class="section_inner">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/noticeimg.png" alt="お知らせ画像"
+                class="noticeimg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/suzume.png" alt="すずめ"
+                class="notice_suzume" />
+            <h2 class="title">おしらせ</h2>
+            <div class="news">
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+                <p>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </p>
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/sun.png" alt="太陽"
+                    class="sun" />
+            </div>
+            <a href="<?php echo home_url('/post'); ?>" class="btn_item">もっとみる</a>
+        </div>
+    </div>
+    <!-- お問い合わせ -->
+    <div class="contact w100">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contacttop.png" alt="波"
+            class="contact_wave" />
+        <div class="section_inner">
+            <h2 class="title">お問い合わせ</h2>
+            <a href="<?php echo home_url('/contact'); ?>" class="btn_item">お問い合わせはこちら</a>
+        </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="波"
+            class="contact_wave" />
+    </div>
+    <!-- 活動風景 -->
+    <div class="activity w100">
+        <h2 class="title">活動の様子</h2>
+        <!-- 活動風景スライド -->
+        <div class="activity_slide">
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
+            </div>
+            <div class="activity_slider">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
             </div>
         </div>
-        <!-- お問い合わせ -->
-        <div class="contact w100">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contacttop.png" alt="波"
-                class="contact_wave" />
-            <div class="section_inner">
-                <h2 class="title">お問い合わせ</h2>
-                <a href="<?php echo home_url('/contact'); ?>" class="btn_item">お問い合わせはこちら</a>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="波"
-                class="contact_wave" />
-        </div>
-        <!-- 活動風景 -->
-        <div class="activity w100">
-            <h2 class="title">活動の様子</h2>
-            <!-- 活動風景スライド -->
-            <div class="activity_slide">
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- メインインナー終わり -->
+    </div>
+    <!-- メインインナー終わり -->
     </div>
 </main>
 </div>
