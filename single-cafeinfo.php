@@ -158,6 +158,7 @@ $events['駐車場'] = $parking;
 }
 
 
+
 //連絡先・SNSなど
 $infos = array();
 
@@ -166,59 +167,86 @@ if (!empty(get_field('staff'))) {
 }
 
 if (!empty(get_field('tel'))) {
-    $contact[] = '電話番号:'.get_field('tel');
+    $tel = '電話番号:'.get_field('tel');
 }
 
 if (!empty(get_field('email'))) {
-    $contact[] = 'メールアドレス:'.get_field('email');
+    $email = 'メールアドレス:'.get_field('email');
 }
 
 if (!empty(get_field('line_id'))) {
-    $contact[] = 'LINE:'.get_field('line_id');
+    $line_id = 'LINE:'.get_field('line_id');
 }
 
 if (!empty($contact)) {
-    $infos['連絡先'] = $contact;
+    // $infos['連絡先'] = $contact;
 }
 
 if (!empty(get_field('line_qr'))) {
-    $line[] = get_field('line_qr');
+    $line_qr = get_field('line_qr');
 }
 
 if (!empty(get_field('line_url'))) {
-    $line[] = get_field('line_url');
+    $line_url = get_field('line_url');
+    $line_url = '<a href="'.$line_url.'">'.$line_url .'</a>';
+
 }
 
 if (!empty($line)) {
-    $infos['LINE QRコード'] = $line;
+    // $infos['LINE QRコード'] = $line;
 }
 
 if (!empty(get_field('instagram'))) {
-    $sns[] = 'instagram:'.get_field('instagram');
+$instagram_url = get_field('instagram');
+
+//
+$instagram_account = substr($instagram_url, strpos($instagram_url, "/", strpos($instagram_url, "//") + 2) + 1);
+if(strpos($instagram_account, '/') !== false){
+    $instagram_account = substr($instagram_account, 0, strpos($instagram_account, "/"));
+}elseif(strpos($instagram_account, '?') !== false){
+    $instagram_account = substr($instagram_account, 0, strpos($instagram_account, "?"));
+}
+    $instagram_url = 'https://www.instagram.com/' . $instagram_account;
+    $instagram = '<a href="'.$instagram_url.'">instagram: @'.$instagram_account .'</a>';
+
 }
 
 if (!empty(get_field('facebook'))) {
-    $sns[] = 'facebook:'.get_field('facebook');
+    $facebook_url = get_field('facebook');
+$facebook_account = substr($facebook_url, strpos($facebook_url, "/", strpos($facebook_url, "//") + 2) + 1);
+if(strpos($facebook_account, '/') !== false){
+    $facebook_account = substr($facebook_account, 0, strpos($facebook_account, "/"));
+}elseif(strpos($facebook_account, '?') !== false){
+    $facebook_account = substr($facebook_account, 0, strpos($facebook_account, "?"));
+}
+    $facebook_url = 'https://www.facebook.com/' . $facebook_account;
+    $facebook = '<a href="'.$facebook_url.'">facebook: @'.$facebook_account .'</a>';
+
 }
 
 if (!empty($sns)) {
-    $infos['SNS'] = $sns;
+    // $infos['SNS'] = $sns;
 }
 
 if (!empty(get_field('site_url'))) {
-    $infos['公式WEBサイト'] = get_field('site_url');
+    $site_url = get_field('site_url');
+    $site_url = '<a href="'.$site_url.'">'.$site_url .'</a>';
+}
+
+if (!empty(get_field('note'))) {
+    $note = get_field('note');
 }
 
 if (!empty(get_field('amapro'))) {
-    $infos['Amazonみんなで応援プログラム'] = get_field('amapro');
+    $amapro = get_field('amapro');
+    $amapro = '<a href="'.$amapro.'">支援したい方はこちらから</a>';
 }
 
 if (get_field('recruitment')=== true) {
-    $volunteer[]= '現在、募集中！';
+    $volunteer= '現在、募集中！';
     if (!empty(get_field('recruitment_info'))) {
-        $volunteer[] = get_field('recruitment_info') ;
+        $volunteer_info = get_field('recruitment_info') ;
     }
-    $infos['ボランティア募集'] = $volunteer;
 }
 
 
@@ -257,9 +285,8 @@ $the_query = new WP_Query($args);
         <?php the_post(); ?>
         <div class="yellow color">
             <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php print_r($infos); ?>
+            <?php //print_r($infos); ?>
             <div class="yellow_inner m1024">
-
                 <h2 class="title"><?php the_field('name'); ?></h2>
                 <div class="pc_flex">
                     <div>
@@ -293,9 +320,14 @@ $the_query = new WP_Query($args);
                                 </p>
                             </div>
                         </div>
-                        <?php if (!empty(get_field('id'))) : ?>
+                        <?php if (!empty(get_field('interview_id'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
+                        </div>
+                        <?php endif; ?>
+                        <?php if (!empty(get_field('interview_id_2'))) : ?>
+                        <div class="pc_pickup">
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2はこち'; ?></a>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -340,43 +372,92 @@ $the_query = new WP_Query($args);
         <div class="green color">
             <div class="green_inner m1024">
                 <h3 class="beige_categorytitle beige_access">
-                    連絡先・SNSなど
-                </h3>
-                <?php foreach( $infos as $key => $info): ?>
-                <?php if (!empty($info)) : ?>
+                                    連絡先・SNSなど
+                                </h3>
                 <div class="detail_item">
-                    <h4 class="subtitle">
-                        <?php echo $key; ?>
-                    </h4>
-                    <?php if (!is_array($info)) : ?>
-                    <?php if (!@exif_imagetype($value) == true) : ?>
-                    <?php if(filter_var($value, FILTER_VALIDATE_URL )): ?>
-                    <a href="<?php echo $value ?>"><?php echo $value ?></a>
-                    <?php else: ?>
-                    <p>
-                        <?php echo $info; ?>
-                    </p>
-                    <?php endif; ?>
-                    <?php endif; ?>
-                    <?php else: ?>
+                    <h4 class="subtitle">連絡先</h4>
                     <div>
-                        <?php foreach( $info as $value): ?>
-                        <?php if (@exif_imagetype($value) == true) : ?>
-                        <img src="<?php echo $value ?>" alt="LINEQRコード">
-                        <?php else: ?>
-                        <p>
-                        <?php echo $value; ?>
-                        </p>
+                        <?php if (!empty($tel)) : ?>
+                        <p><?php echo $tel; ?></p>
                         <?php endif; ?>
-                        <?php endforeach; ?>
+                        <?php if (!empty($email)) : ?>
+                        <p><?php echo $email; ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($line_id)) : ?>
+                        <p><?php echo $line_id; ?></p>
+                        <?php endif; ?>
                     </div>
-                    <?php endif; ?>
+                </div>
+                <?php if (!empty($line_qr)) : ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">LINE QRコード</h4>
+                    <div class="sns_items">
+                        <img src="<?php echo $line_qr; ?>" alt="LINEQRコード" class="qrcode" />
+                        <?php if (!empty($line_url)) : ?>
+                        <p><?php echo $line_url; ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <?php endif; ?>
-                <?php endforeach; ?>
-                <?php if(get_field('recruitment')=== true) :?>
-                <p class="volunteer">ボランティア募集中</p>
-                <?php endif;?>
+                <?php if (!empty($instagram) || !empty($facebook)) : ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">SNS</h4>
+                    <div class="sns_items">
+                        <?php if (!empty($instagram)): ?>
+                        <p>
+                            <?php echo $instagram; ?>
+                        </p>
+                        <?php endif; ?>
+                        <?php if (!empty($facebook)): ?>
+                        <p>
+                            <?php echo $facebook; ?>
+                        </p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($site_url)): ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">公式WEBサイト</h4>
+                    <div class="sns_items">
+                        <p><?php echo $site_url; ?></p>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($note)): ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">備考</h4>
+                    <p><?php echo $note; ?></p>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($amapro)): ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">
+                        Amazonみんなで応援プログラム
+                    </h4>
+                    <div class="sns_items">
+                        <?php echo $amapro; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($volunteer)): ?>
+                <div class="detail_item">
+                    <h4 class="subtitle">
+                        ボランティア募集
+                    </h4>
+                    <div>
+                        <?php echo $volunteer; ?>
+                        <?php if (!empty($volunteer_info)): ?>
+                        <p><?php echo $volunteer_info; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <p class="volunteer">
+                    <span class="volunteer_text">
+                        ボランティア募集中
+                    </span>
+                </p>
+                <?php endif; ?>
             </div>
             <!-- スクロール -->
             <div class="scroll"></div>
@@ -432,22 +513,32 @@ $the_query = new WP_Query($args);
                         <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
-                <?php if (!empty($pic)) :?>
+                <?php if (!empty($pics)) :?>
                 <h3 class="subtitle_ulineorange">活動の様子</h3>
                 <ul class="ac_slide">
                     <?php foreach( $pics as $pic): ?>
+                    <?php if (!empty($pic)) :?>
                     <li>
-                        <img src="<?php echo  $pic; ?>" alt="#" />
+                        <?php
+                        $pic_id = attachment_url_to_postid( $pic );
+                        $pic_alt = get_post_meta(  $pic_id, '_wp_attachment_image_alt', true );
+                    ?>
+                        <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
                     </li>
+                    <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
+                <?php if (!empty(get_field('video'))) :?>
+                <video controls>
+                    <source src="<?php the_field('video') ?>>" type="video/mp4">
+                </video>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
+            <!-- メインインナー終わり -->
         </div>
-        <!-- メインインナー終わり -->
-    </div>
-    <?php endwhile; ?>
-    <?php endif; ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 </main>
 </div>
