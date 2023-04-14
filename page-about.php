@@ -8,9 +8,10 @@
             <p class="text_title">開催情報について</p>
             <p>
                 今後の開催日が決まっている食堂の情報は、<a href="<?php echo home_url('event'); ?>">【開催情報】</a>からご覧いただけます。 不定期開催の食堂も多いので、
-                <a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a><a
-                    href="<?php echo home_url('/search'); ?>">【条件からさがす】</a>
-                でお近くの食堂を探してみてください。
+                下記からお近くの食堂を探してみてください。<br>
+            <p> <a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a> </p>
+
+            <p> <a href="<?php echo home_url('/search'); ?>">【条件からさがす】</a> </p>
             </p>
         </div>
         <div class="text">
