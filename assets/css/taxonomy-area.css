@@ -244,7 +244,12 @@ main {
         box-shadow: 0 0 0 #333;
     }
 }
-
+/* 4/14追加　１列になったときに中央寄せする */
+@media (min-width: 940px) {
+    .area_item {
+        justify-content: start;
+    }
+}
 /***********************
     検索結果一覧img
  **********************/
@@ -266,11 +271,6 @@ main {
     }
 }
 
-@media (min-width: 940px) {
-    .area_item {
-        justify-content: start;
-    }
-}
 /***********************
     ユーティリティ
  **********************/
