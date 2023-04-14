@@ -33,16 +33,26 @@
     margin-top: 22px;
 }
 
-.main_visual {
-    width: 286px;
-    height: 258px;
-    margin: 0 auto;
-}
-
 .intro {
     width: 320px;
     margin: 0 auto;
     text-align: left;
+}
+/* ボタンの色 */
+.btn_item {
+    color: black;
+}
+
+/* 画像 */
+
+.pc_flex img {
+    width: 100%;
+    width: 350px;
+    height: 258px;
+    margin: 0 auto;
+    margin-top: 20px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 @media (min-width: 770px) {
@@ -59,16 +69,10 @@
         font-size: 24px;
         margin-top: 60px;
     }
-    .main_visual {
-        width: 380px;
+    .pc_flex img {
+        max-width: 387px;
+        min-width: 387px;
     }
-}
-
-.pc_flex img {
-    margin-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 15px;
 }
 
 /* 黄色の背景 */
@@ -235,6 +239,27 @@
 .baige .flex {
     display: flex;
     justify-content: space-around;
+}
+
+/* 項目見出し*/
+
+.beige_categorytitle {
+    width: 300px;
+    font-size: 20px;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.beige_basic {
+    background: #f7eac6;
+    box-shadow: 0px 0px 0px 5px #f7eac6;
+}
+
+.beige_access {
+    background: #e8f7c6;
+    box-shadow: 0px 0px 0px 5px #e8f7c6;
 }
 
 /* グリーンの背景 */
@@ -421,9 +446,10 @@
 @media (min-width: 770px) {
     .detail_item {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        gap: 50px;
         align-items: center;
-        width: 700px;
+        width: 800px;
         margin: 0 auto;
     }
 

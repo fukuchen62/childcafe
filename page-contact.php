@@ -1,5 +1,41 @@
-<?php get_header(); ?>
+<?php
+// session_start();
+// //連想配列の中身を空にする
+// $_SESSION = []; //$_SESSION = array()と同じ意味
+// //連想配列の中身を空にする
+// if(isset($_COOKIE[session_name()])){
+//     $cparam = session_get_cookie_params();
+//     setcookie(session_name(),"",
+//     time() - 60 *60, //時間さかのぼり削除をここでしている
+//     $cparam['path'],
+//     $cparam['domain'],
+//     $cparam['secure'],
+//     $cparam['httponly'],
+// );
+// //sessionを切る
+// session_destroy();
+// }
 
+// if(isset($_COOKIE["cookie"])) {
+//     // クッキー名"cookie"に値がセットされていたら削除する
+//     echo"クッキーの値：".$_COOKIE["cookie"]."<br />";
+//     setcookie("cookie", "", time() - 30);
+//     echo"クッキーを削除しました";
+
+//     // 削除確認用メッセージをクッキーにセット
+//     setcookie("cookie_delete", "cookieは削除されています", time() + 1800);
+// } else if(isset($_COOKIE["cookie_delete"])) {
+//     // クッキー削除確認メッセージ出力
+//     echo $_COOKIE["cookie_delete"];
+// } else {
+//     // クッキーをセット
+//     setcookie("cookie", "cookie_info", time() + 1800);
+//     echo"クッキーをセットしました";
+// }
+
+?>
+
+<?php get_header(); ?>
 
 <main>
     <div class="main_inner">
