@@ -7,7 +7,7 @@
     position: fixed;
     bottom: 30px;
     right: 10px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .toppage_btn img {

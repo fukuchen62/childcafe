@@ -271,7 +271,7 @@ $event_query = new WP_Query($fuga);
         <div class="childcafe w100">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiriup.png" alt="波"
                 class="onigiriup" />
-            <div class="section_inner">
+            <div class="section_inner onigiri_inner">
                 <div class="title">
                     <h2>子ども食堂とは</h2>
                 </div>

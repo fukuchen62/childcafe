@@ -589,6 +589,10 @@ html {
 }
 
 /* 子ども食堂とは */
+.onigiri_inner {
+    padding-bottom: 80px;
+}
+
 .childcafe {
     background-color: #d7f794;
 }
@@ -601,7 +605,7 @@ html {
     position: absolute;
     width: 99px;
     height: 95px;
-    bottom: 3px;
+    bottom: -120px;
     left: -100px;
     z-index: 1;
     animation: korogari 6s linear infinite alternate;
@@ -611,8 +615,8 @@ html {
     position: absolute;
     width: 49px;
     height: 45px;
-    bottom: 0;
-    left: -120px;
+    bottom: -120px;
+    left: -140px;
     z-index: 1;
     animation: korogari_small 6s linear infinite alternate;
 }
