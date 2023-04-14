@@ -12,17 +12,25 @@
     width: 100%;
     text-align: center;
 }
-.qbtn {
+.btn_item {
+    display: block;
+    width: 325px;
+    margin: 0 auto;
+    color: black;
+    padding: 10px 80px;
+}
+
+/* .qbtn {
     display: inline-block;
     padding: 10px 50px;
     background-color: #f8b600;
     border-radius: 10px;
     color: black;
     /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11; */
-    margin: 50px 50px 0;
+/* margin: 50px 50px 0;
 }
-.qbtn:hover {
-    background-position: right center;
+.qbtn:hover { */
+/* background-position: right center;
     background-size: 200% auto;
     -webkit-animation: pulse 2s infinite;
     animation: shad26 1.5s infinite;
@@ -36,8 +44,8 @@
     }
     100% {
         box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
-    }
-}
+    } } */
+
 .text {
     z-index: 10;
     position: relative;
@@ -47,6 +55,13 @@
         margin-top: 50px;
         position: relative;
         z-index: 10;
+    }
+
+    .btn_item {
+        color: black;
+        padding: 10px 80px;
+        margin-top: 70px;
+        margin-bottom: 40px;
     }
 }
 .concept {
@@ -67,19 +82,23 @@
     z-index: 1;
 }
 
-.curry {
+/* .curry {
     width: 316px;
     height: 316px;
     right: -90px;
     top: 720px;
     z-index: 1;
     opacity: 30%;
+} */
+
+.curry {
+    display: none;
 }
 
 @media (min-width: 770px) {
     .concept {
         overflow: visible;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
     main {
         margin-bottom: 0;
@@ -96,10 +115,13 @@
         left: -20%;
     }
     .curry {
+        display: block;
         width: 526px;
         height: 526px;
         top: 50px;
         right: -40%;
+        z-index: 1;
+        opacity: 30%;
     }
 }
 @media (min-width: 1024px) {

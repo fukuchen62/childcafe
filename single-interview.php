@@ -18,15 +18,24 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
         <div class="pickup_single">
             <div class="pickup_top_img">
                 <div class="pickup_single_img">
-                    <img src="<?php the_field('eye_catching'); ?>" alt="PickUp画像" />
+                    <?php
+                        $eye_catching = get_field('eye_catching');
+                        $image_id = attachment_url_to_postid( $eye_catching );
+                        $image_alt = get_post_meta(  $image_id, '_wp_attachment_image_alt', true );
+                    ?>
+                    <?php if(!empty($eye_catching)): ?>
+                    <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
+                    <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                    <?php endif; ?>
                 </div>
                 <div class="underimg text cafeinfo_flex flex">
-                    <p class="address">
+                    <span class="address">
                         <?php echo $this_terms[1]->name; ?>
-                    </p>
-                    <p>
+                    </span>
+                    <span>
                         <?php echo do_shortcode('[wp_ulike]'); ?>
-                    </p>
+                    </span>
                 </div>
             </div>
             <div class="pickup_single">

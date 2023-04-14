@@ -57,7 +57,9 @@
 
 .subtitle {
     text-align: left;
-    text-decoration: underline 5px #d7f794;
+    text-decoration: underline;
+    text-decoration-color: #d7f794;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
@@ -69,7 +71,9 @@
 .adult_text {
     font-size: 18px;
     width: 80px;
-    text-decoration: underline 3px #ffe0ff;
+    text-decoration: underline;
+    text-decoration-color: #ffe0ff;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
     margin: 20px 0;
 }
@@ -108,6 +112,8 @@
 
     .subtitle {
         font-size: 20px;
+        font-weight: bolder;
+        margin-bottom: 20px;
     }
     /* .title {
         margin: 10px auto;
