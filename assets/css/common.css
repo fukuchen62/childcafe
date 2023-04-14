@@ -190,7 +190,7 @@ main {
     line-height: 1.7;
     z-index: 999;
     font-family: "Zen Maru Gothic", sans-serif;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
 }
 
