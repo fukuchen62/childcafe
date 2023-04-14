@@ -94,8 +94,12 @@ main {
     margin: 0 auto;
     margin-bottom: 50px;
     text-align: center;
-    text-decoration: underline dotted 5px #008000;
-    -webkit-text-decoration: underline dotted 5px #008000;
+    text-decoration-line: underline;
+    text-decoration-color: #008000;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 5px;
+    /* text-decoration: underline dotted 5px #008000;
+    -webkit-text-decoration: underline dotted 5px #008000; */
     text-underline-offset: 10px;
 }
 
