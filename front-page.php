@@ -154,7 +154,7 @@ $event_query = new WP_Query($fuga);
 <main class="main_index">
     <div class="main_inner">
         <!-- headerがposition fixedなのでheader分の余白調整のためblock -->
-        <div class="block"></div>
+        <!-- <div class="block"></div> -->
         <!-- キービジュアル -->
         <section>
             <!-- <form class="hbg_search_pc" action="<?php //echo home_url('/'); ?>" method="get">
