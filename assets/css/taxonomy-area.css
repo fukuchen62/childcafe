@@ -227,13 +227,16 @@ main {
     .area_item {
         display: flex;
         max-width: 750px;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
+        column-gap: 30px;
     }
 
     .area_item_card {
         display: inline-block;
         transition: 0.3s;
+        margin: 0 auto;
     }
     .area_item_card:hover {
         opacity: 0.8;
@@ -263,6 +266,11 @@ main {
     }
 }
 
+@media (min-width: 940px) {
+    .area_item {
+        justify-content: start;
+    }
+}
 /***********************
     ユーティリティ
  **********************/
