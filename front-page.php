@@ -214,7 +214,8 @@ $event_query = new WP_Query($fuga);
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/mountain.png" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pudding.png" alt="pudding"
+                    class="pudding" />
             </div>
             <a href="<?php echo home_url('/event'); ?>" class="btn_item">もっと見る</a>
         </div>
