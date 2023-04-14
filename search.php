@@ -4,25 +4,25 @@
 // $eye_catching = get_field('eye_catching');
 
 $args = [
-    'post_type' => 'post',
-    'posts_per_page' => -1,
+    'post_type' => array('cafeinfo', 'page', 'interview') ,
+    'posts_per_page' => 6,
     'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
     'post_status' => 'publish', // 公開された投稿を指定
     // 'post__in' => $post__in,
 ];
 
-// $the_query = new WP_Query($args);
+$wp_query = new WP_Query($args);
 
 // $query = $wp_query;
 
 // $args = $wp_query->query_vars;
-$wp_query->query_vars['posts_per_page'] = 6;
-$wp_query->tax_query->queries = array(
-    'taxonomy' => 'area',
-    'field'    => 'name',
-    'terms'    => get_search_query(),
-    'compare' => 'LIKE',
-);
+// $wp_query->query_vars['posts_per_page'] = 6;
+// $wp_query->tax_query->queries = array(
+//     'taxonomy' => 'area',
+//     'field'    => 'name',
+//     'terms'    => get_search_query(),
+//     'compare' => 'LIKE',
+// );
 
 // $wp_query-> WP_Tax_Query Object['tax_query'] = [['taxonomy' => 'area']];
 // 'taxonomy' => 'area'
@@ -66,10 +66,25 @@ new WP_Query($wp_query);
                             <?php endif; ?>
                         </p>
                         <p class="search_text">
-                            <?php if (is_search()):?>
-                                <?php the_post();?>
-                            <?php //the_content();?>
-                            <?php elseif (is_post_type_archive('cafeinfo')): ?>
+                            <?php if (get_post_type()=='page' || get_post_type()=='post'):?>
+                                <?php
+                                $content = get_the_content();
+                                //「改行」を削除するコード
+                                // $content = str_replace("¥n", "", $content);
+                                // $content = str_replace("\r\n", '', $content);
+                                // $content = str_replace(array("\r\n", "\r", "\n"), '', $content);
+                                // $content = str_replace(array("\r", "\n"), '', $content);
+                                // $content = str_replace("<br>", "", $content);
+                                $content = strip_tags($content);
+                                //40文字にする
+                                if(mb_strlen($content) > 40) {
+                                    $content = mb_substr($content,0,40);
+                                    echo $content . '・・・' ;
+                                } else {
+                                    echo $content;
+                                }
+                                ?>
+                            <?php elseif (get_post_type() =='cafeinfo'): ?>
                             <?php $features = get_field('features');
                                 //40文字にする
                                 if(mb_strlen($features) > 40) {
@@ -77,7 +92,41 @@ new WP_Query($wp_query);
                                     echo $features . '・・・' ;
                                 } else {
                                     echo $features;
-                                } ?>
+                                }
+                            ?>
+                            <?php elseif (get_post_type() =='interview'): ?>
+                            <?php $excerpt = get_field('excerpt');
+                                //40文字にする
+                                if(mb_strlen($excerpt) > 40) {
+                                    $excerpt = mb_substr($excerpt,0,40);
+                                    echo $excerpt . '・・・' ;
+                                } else {
+                                    echo $excerpt;
+                                }
+                            ?>
+                            <?php elseif (get_post_type() =='event'): ?>
+                            <?php
+                            if (!empty(get_field('appeal'))) {
+                                $appeal = get_field('appeal');
+                                //40文字にする
+                                if(mb_strlen($appeal) > 40) {
+                                    $appeal = mb_substr($appeal,0,40);
+                                    echo $appeal . '・・・' ;
+                                } else {
+                                    echo $appeal;
+                                }
+                            }else{
+                                $features = get_field('features',get_field('id'));
+                                //40文字にする
+                                if(mb_strlen($features) > 40) {
+                                    $features = mb_substr($features,0,40);
+                                    echo $features . '・・・' ;
+                                } else {
+                                    echo $features;
+                                }
+                            }
+
+                            ?>
                             <?php endif; ?>
                         </p>
                     </div>
@@ -86,10 +135,15 @@ new WP_Query($wp_query);
                 <?php else: ?>
                 <h3>（仮表示）結果に一致するものはありませんでした</h3>
                 <?php endif; ?>
+                <div class="page_nav flex">
+                    <?php original_pagenation(); ?>
+                </div>
 
             </div>
+
         </div>
 </main>
+</div>
 
 
 
