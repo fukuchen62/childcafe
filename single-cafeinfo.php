@@ -298,7 +298,8 @@ $the_query = new WP_Query($args);
                         <?php if(!empty($eye_catching)): ?>
                         <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                         <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
+                            alt="">
                         <?php endif; ?>
                         <div class="underimg text cafeinfo_flex flex">
                             <p class="address">
@@ -322,12 +323,14 @@ $the_query = new WP_Query($args);
                         </div>
                         <?php if (!empty(get_field('interview_id'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
+                            <a class="btn_item"
+                                href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
                         </div>
                         <?php endif; ?>
                         <?php if (!empty(get_field('interview_id_2'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2はこち'; ?></a>
+                            <a class="btn_item"
+                                href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2はこち'; ?></a>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -335,11 +338,14 @@ $the_query = new WP_Query($args);
             </div>
             <!-- スクロール -->
             <div class="scroll"></div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shabondama01.png" alt="シャボン玉" class="shingle-cafeinfo_img shabondama01" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shabondama02.png" alt="シャボン玉" class="shingle-cafeinfo_img shabondama02" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shabondama01.png" alt="シャボン玉"
+                class="shingle-cafeinfo_img shabondama01" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shabondama02.png" alt="シャボン玉"
+                class="shingle-cafeinfo_img shabondama02" />
         </div>
         <div class="beige color">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/beigetop.png" alt="波" class="wave_img btop" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/beigetop.png" alt="波"
+                class="wave_img btop" />
             <div class="beige_inner m1024">
                 <h3 class="beige_categorytitle beige_basic">
                     基本情報
@@ -351,14 +357,14 @@ $the_query = new WP_Query($args);
                         <?php echo $key; ?>
                     </h4>
                     <?php if (!is_array($event)) : ?>
-                    <p>
+                    <p class="subtitle_text">
                         <?php echo $event; ?>
                     </p>
                     <?php else: ?>
                     <div>
                         <?php foreach( $event as $value): ?>
-                        <p>
-                        <?php echo $value; ?>
+                        <p class=" subtitle_text">
+                            <?php echo $value; ?>
                         </p>
                         <?php endforeach; ?>
                     </div>
@@ -367,49 +373,50 @@ $the_query = new WP_Query($args);
                 <?php endif; ?>
                 <?php endforeach; ?>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/beigebottom.png" alt="波" class="wave_img bbottom" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/beigebottom.png" alt="波"
+                class="wave_img bbottom" />
         </div>
         <div class="green color">
             <div class="green_inner m1024">
-                <h3 class="beige_categorytitle beige_access">
-                                    連絡先・SNSなど
-                                </h3>
+                <h3 class="beige_categorytitle beige_address">
+                    連絡先・SNSなど
+                </h3>
                 <div class="detail_item">
                     <h4 class="subtitle">連絡先</h4>
                     <div>
                         <?php if (!empty($tel)) : ?>
-                        <p><?php echo $tel; ?></p>
+                        <p class="subtitle_text"><?php echo $tel; ?></p>
                         <?php endif; ?>
                         <?php if (!empty($email)) : ?>
-                        <p><?php echo $email; ?></p>
+                        <p class=" subtitle_text"><?php echo $email; ?></p>
                         <?php endif; ?>
                         <?php if (!empty($line_id)) : ?>
-                        <p><?php echo $line_id; ?></p>
+                        <p class="subtitle_text"><?php echo $line_id; ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
                 <?php if (!empty($line_qr)) : ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">LINE QRコード</h4>
                     <div class="sns_items">
                         <img src="<?php echo $line_qr; ?>" alt="LINEQRコード" class="qrcode" />
                         <?php if (!empty($line_url)) : ?>
-                        <p><?php echo $line_url; ?></p>
+                        <p class="subtitle_text"><?php echo $line_url; ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($instagram) || !empty($facebook)) : ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">SNS</h4>
                     <div class="sns_items">
                         <?php if (!empty($instagram)): ?>
-                        <p>
+                        <p class="subtitle_text">
                             <?php echo $instagram; ?>
                         </p>
                         <?php endif; ?>
                         <?php if (!empty($facebook)): ?>
-                        <p>
+                        <p class=" subtitle_text">
                             <?php echo $facebook; ?>
                         </p>
                         <?php endif; ?>
@@ -420,22 +427,22 @@ $the_query = new WP_Query($args);
                 <div class="detail_item">
                     <h4 class="subtitle">公式WEBサイト</h4>
                     <div class="sns_items">
-                        <p><?php echo $site_url; ?></p>
+                        <p class="subtitle_text"><?php echo $site_url; ?></p>
                     </div>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($note)): ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">備考</h4>
-                    <p><?php echo $note; ?></p>
+                    <p class="subtitle_text"><?php echo $note; ?></p>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($amapro)): ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">
                         Amazonみんなで応援プログラム
                     </h4>
-                    <div class="sns_items">
+                    <div class="sns_items subtitle_text">
                         <?php echo $amapro; ?>
                     </div>
                 </div>
@@ -445,7 +452,7 @@ $the_query = new WP_Query($args);
                     <h4 class="subtitle">
                         ボランティア募集
                     </h4>
-                    <div>
+                    <div class="subtitle_text">
                         <?php echo $volunteer; ?>
                         <?php if (!empty($volunteer_info)): ?>
                         <p><?php echo $volunteer_info; ?></p>
@@ -461,13 +468,14 @@ $the_query = new WP_Query($args);
             </div>
             <!-- スクロール -->
             <div class="scroll"></div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波" class="wave_img gbottom" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/greenbottmo.png" alt="波"
+                class="wave_img gbottom" />
         </div>
         <div class="bgcolor color">
             <div class="bgcolor_inner m1024">
                 <div class="bgcolor_flex">
                     <div class="others">
-                        <h3 class="subtitle others_subtitle">
+                        <h3 class="beige_categorytitle beige_other">
                             取り扱いのあるもの
                         </h3>
                         <div class="others_item">
@@ -489,7 +497,7 @@ $the_query = new WP_Query($args);
                         </div>
                     </div>
                     <div class="addressmap">
-                        <h3 class="subtitle">アクセス</h3>
+                        <h3 class="beige_categorytitle beige_access">アクセス</h3>
                         <?php the_field('place_map',$event_id); ?>
                     </div>
                 </div>
