@@ -35,9 +35,6 @@ new WP_Query($wp_query);
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-
-
-
         <div class="search_inner">
             <h2 class="title"><?php echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2>
             <div class="search_item search_flex">
@@ -47,10 +44,15 @@ new WP_Query($wp_query);
 
                 <a href="<?php the_permalink(); ?>">
                     <div class="search_item_card">
-                        <?php if(! empty(get_field('eye_catching'))): ?>
-                        <img src="<?php the_field('eye_catching'); ?>" alt="">
+                        <?php
+                        $eye_catching = get_field('eye_catching');
+                        $image_id = attachment_url_to_postid( $eye_catching );
+                        $image_alt = get_post_meta(  $image_id, '_wp_attachment_image_alt', true );
+                    ?>
+                        <?php if(!empty($eye_catching)): ?>
+                        <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                         <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
                         <?php endif; ?>
                         <p class="search_item_card_title">
                             <?php the_title(); ?>
@@ -64,10 +66,10 @@ new WP_Query($wp_query);
                             <?php endif; ?>
                         </p>
                         <p class="search_text">
-                            <?php //if (is_page()):?>
-                            <?php the_content();?>
-                            <?php echo 'テスト';?>
-                            <?php //elseif (is_post_type_archive('cafeinfo')): ?>
+                            <?php if (is_search()):?>
+                                <?php the_post();?>
+                            <?php //the_content();?>
+                            <?php elseif (is_post_type_archive('cafeinfo')): ?>
                             <?php $features = get_field('features');
                                 //40文字にする
                                 if(mb_strlen($features) > 40) {
@@ -76,11 +78,13 @@ new WP_Query($wp_query);
                                 } else {
                                     echo $features;
                                 } ?>
-                            <?php //endif; ?>
+                            <?php endif; ?>
                         </p>
                     </div>
                 </a>
                 <?php endwhile; ?>
+                <?php else: ?>
+                <h3>（仮表示）結果に一致するものはありませんでした</h3>
                 <?php endif; ?>
 
             </div>

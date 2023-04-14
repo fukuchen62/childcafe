@@ -3,8 +3,9 @@
 	$args = array(
 		'post_type' => 'interview',
 		'posts_per_page' => 6,
-        'orderby' => 'date',
-        'order' => 'ASC',
+        // 'orderby' => 'date',
+        'orderby' => 'rand',
+        // 'order' => 'ASC',
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
 	);
 	$the_query = new WP_Query($args);
