@@ -673,27 +673,29 @@ html {
     width: 80%;
     margin: 0 auto 20px auto;
     padding: 0 30px 30px 30px;
-    border: 1px solid orange;
+    border: 1.5px solid orange;
     background-color: #fff8e6;
     border-radius: 10px;
 }
 
-.link_sample,
-.btntest {
-    margin: 0;
-    margin-top: 30px;
+.btn_item {
+    background-color: #f7dd94;
 }
 
-.btn_link {
-    margin: 0 auto;
-    width: 200px;
-    height: 45px;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #ffdf8c;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+.link_sample02 {
+    background-color: #d7f794;
+}
+
+.btntest {
+    background-color: #fdffb0;
+}
+
+.link_sample,
+.link_sample02,
+.btntest {
+    width: 90%;
+    margin: 0;
+    margin-top: 30px;
 }
 
 .link_text {
@@ -705,29 +707,26 @@ html {
 }
 
 .link_flex {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 900px) {
     .link_flex {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         flex-direction: row;
         justify-content: center;
         margin-bottom: 30px;
     }
-    /* .link_item + .link_item {
-        margin-left: 30px;
+
+    .link_item:hover {
+        opacity: 0.8;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
     }
 
-    .link_item {
-        margin-left: 30px;
-    }
-
-    .link_item + .link_item + .link_item {
-        margin-right: 30px;
-    } */
     /* 縦並び */
     /* .link_item + .link_item {
         margin-top: 20px;
@@ -898,6 +897,11 @@ html {
     object-fit: cover;
 }
 
+.slick-dots {
+    bottom: 0;
+    top: 135px;
+}
+
 @media (min-width: 770px) {
     .activity_slide {
         max-width: 1024px;
@@ -906,6 +910,10 @@ html {
     }
     .activity_slider img {
         height: 150px;
+    }
+
+    .slick-dots {
+        top: 150px;
     }
 }
 
