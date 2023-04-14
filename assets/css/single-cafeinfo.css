@@ -477,7 +477,7 @@
     }
 
     .detail_item p {
-        width: 300px;
+        /* width: 300px; */
         text-align: left;
     }
 

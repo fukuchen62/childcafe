@@ -732,5 +732,7 @@ main {
 @media screen and (min-width: 770px) {
     .breadcrumb {
         display: block;
+        margin: 15px 0;
+        margin-left: 20px;
     }
 }

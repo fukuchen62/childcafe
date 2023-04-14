@@ -440,7 +440,7 @@ $the_query = new WP_Query($args);
                 <?php if (!empty($amapro)): ?>
                 <div class=" detail_item">
                     <h4 class="subtitle">
-                        Amazonみんなで応援プログラム
+                        Amazonみんなで <br> 応援プログラム
                     </h4>
                     <div class="sns_items subtitle_text">
                         <?php echo $amapro; ?>
