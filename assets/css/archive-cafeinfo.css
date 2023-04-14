@@ -34,19 +34,25 @@
 
 .subtitle_east {
     text-align: left;
-    text-decoration: underline 5px #f7dd94;
+    text-decoration: underline;
+    text-decoration-color: #f7dd94;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
 .subtitle_south {
     text-align: left;
-    text-decoration: underline 5px #d7f794;
+    text-decoration: underline;
+    text-decoration-color: #d7f794;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
 .subtitle_west {
     text-align: left;
-    text-decoration: underline 5px #faff66;
+    text-decoration: underline;
+    text-decoration-color: #faff66;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
