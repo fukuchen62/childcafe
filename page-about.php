@@ -31,7 +31,7 @@
         </div>
         <div class="text">
             <p class="text_title">支援したい方へ</p>
-            <p>
+            <p class="text_item">
                 徳島県のこども食堂を支援したい方に向けて幾つかの支援の方法を紹介しています。
                 詳しくは<a href="<?php echo home_url('/support'); ?>">【支援したい方へ】</a>のページをご覧ください。
             </p>
