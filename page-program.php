@@ -16,7 +16,7 @@
         </div>
         <div class="text">
             <p>
-                ここでは、Amazonみんなで応援プログラムに登録しているこども食堂と、各こども食堂のAmazonみんなで応援プログラムURLを掲載しています。
+                ここでは、Amazonみんなで応援プログラムに参加しているこども食堂と、各こども食堂のAmazonみんなで応援プログラムURLを掲載しています。
             </p>
         </div>
         <div class="text">
@@ -25,10 +25,8 @@
 
         <div class="program_btn"><a href="<?php echo home_url('/programlist'); ?>">参加食堂一覧へ</a></div>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/vegetable.png" alt="背景の野菜"
-            class="amazon_img vegetable" />
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/family.png" alt="背景の親子"
-            class="amazon_img family" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/vegetable.png" alt="背景の野菜" class="amazon_img vegetable" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/amazon/family.png" alt="背景の親子" class="amazon_img family" />
     </div>
 </main>
 
