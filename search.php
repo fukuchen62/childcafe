@@ -5,29 +5,71 @@
 
 
 if (isset($_GET['s'])) {
-$keywords = $_GET['s']; //searchform.phpの<input>のname属性の値と合わせる
+$keywords = $_GET['s'];
 }
 
+$eventbase = array(
+    'post_type' => 'event',
+    'fields' => 'ids',
+    'posts_per_page' => -1,
+    'meta_query' => array(
+        array(
+            'key' => 'class',
+            'value' => 1,
+            // 'compare' => '=',
+        ),
+    )
+);
 
-$args = [
-'post_type' => array('cafeinfo', 'page', 'interview') ,
-'posts_per_page' => 6,
-'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
-'post_status' => 'publish', // 公開された投稿を指定
-'s' => $keywords,
-];
+$eventbase_query = new WP_Query($eventbase);
 
-$taxquerysp = ['relation' => 'OR'];
+$eventbase_ids = array(); // IDを格納する配列を用意する
 
-$taxquerysp[] = [
-        'taxonomy' => 'area',           //タクソノミー：『エリア』
-        'field' => 'name',
-        'terms' => $keywords,
-        // 'compare' => 'LIKE',
-];
+if ($eventbase_query->have_posts()) {
+    $event_ids = $eventbase_query->posts; // $postsプロパティからIDを取得して配列に格納する
+}
+
+$post__not_in = $event_ids;
+$post__not_in[] = 771;
+$post__not_in[] = 774;
 
 
-    $args['tax_query'] = $taxquerysp;
+$args = array(
+// 'post_type' => array('page','cafeinfo','interview','event') ,
+// 'posts_per_page' => 6,
+// 'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+// 'post_status' => 'publish', // 公開された投稿を指定
+// 's' => $keywords,
+// // 'post__not_in' => array(771,774,$event_ids),
+// 'post__not_in' =>  $post__not_in,
+    // 'relation' => 'OR',
+    //     array(
+            'post_type' => 'cafeinfo' ,
+            'tax_query' => array(
+                // 'relation' => 'AND',
+                    array(
+                        'taxonomy' => 'area',           //タクソノミー：『エリア』
+                        'field' => 'name',
+                        'terms' => $keywords,
+                        // 'include_children' => true,
+                        'operator' => 'LIKE',
+                    ),
+                )
+                    // )
+
+);
+
+// $taxquerysp = ['relation' => 'OR'];
+
+// $taxquerysp[] = [
+//         'taxonomy' => 'area',           //タクソノミー：『エリア』
+//         'field' => 'name',
+//         'terms' => $keywords,
+//         // 'compare' => 'LIKE',
+// ];
+
+
+    // $args['tax_query'] = $taxquerysp;
 
 $wp_query = new WP_Query($args);
 
@@ -55,6 +97,8 @@ new WP_Query($wp_query);
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="search_inner">
             <?php print_r($args) ;?>
+            <?php print_r( $eventbase) ;?>
+
             <h2 class="title"><?php echo '「'. $keywords . '」の検索結果一覧'; ?></h2>
             <!-- <h2 class="title"><?php //echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2> -->
             <div class="search_item search_flex">
