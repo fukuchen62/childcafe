@@ -207,15 +207,15 @@ $event_query = new WP_Query($fuga);
                     <?php while($event_query->have_posts()) : ?>
                     <?php $event_query->the_post(); ?>
                     <p>
-                        <a href="<?php the_permalink(); ?>">
+                        <a class="info_icon" href="<?php the_permalink(); ?>">
                             <?php the_title(); ?>
                         </a>
                     </p>
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_postdata(); ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pudding.png" alt="pudding"
-                        class="pudding" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/flug.png" alt="pudding"
+                        class="flug" />
                 </div>
                 <a href="<?php echo home_url('/event'); ?>" class="btn_item">もっと見る</a>
             </div>
