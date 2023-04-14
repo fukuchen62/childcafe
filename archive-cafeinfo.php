@@ -31,7 +31,7 @@
                 );
                 $myquery = new WP_Query( $args ); // クエリのセット
                 ?>
-                <div class="flex cafeinfo_flex">
+                <div class="cafeinfo_flex">
                     <?php if ( $myquery->have_posts()): ?>
                     <?php while($myquery->have_posts()): $myquery->the_post(); ?>
                     <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
