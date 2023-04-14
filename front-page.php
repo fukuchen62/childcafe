@@ -270,7 +270,7 @@ $event_query = new WP_Query($fuga);
                 <img class="pic" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/tokushima_map.png"
                     alt="地図" />
             </div>
-            <a href="<?php echo home_url('/search'); ?>" class="btn_item">条件からさがす</a>
+            <a href="<?php echo home_url('/find'); ?>" class="btn_item">条件からさがす</a>
         </div>
     </div>
     <!-- 子ども食堂とは -->
