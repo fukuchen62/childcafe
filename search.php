@@ -3,13 +3,31 @@
 // $eye_catching = get_post_meta($post->ID, 'eye_catching', true);
 // $eye_catching = get_field('eye_catching');
 
+
+if (isset($_GET['s'])) {
+$keywords = $_GET['s']; //searchform.phpの<input>のname属性の値と合わせる
+}
+
+
 $args = [
-    'post_type' => array('cafeinfo', 'page', 'interview') ,
-    'posts_per_page' => 6,
-    'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
-    'post_status' => 'publish', // 公開された投稿を指定
-    // 'post__in' => $post__in,
+'post_type' => array('cafeinfo', 'page', 'interview') ,
+'posts_per_page' => 6,
+'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+'post_status' => 'publish', // 公開された投稿を指定
+'s' => $keywords,
 ];
+
+$taxquerysp = ['relation' => 'OR'];
+
+$taxquerysp[] = [
+        'taxonomy' => 'area',           //タクソノミー：『エリア』
+        'field' => 'name',
+        'terms' => $keywords,
+        // 'compare' => 'LIKE',
+];
+
+
+    $args['tax_query'] = $taxquerysp;
 
 $wp_query = new WP_Query($args);
 
@@ -18,10 +36,10 @@ $wp_query = new WP_Query($args);
 // $args = $wp_query->query_vars;
 // $wp_query->query_vars['posts_per_page'] = 6;
 // $wp_query->tax_query->queries = array(
-//     'taxonomy' => 'area',
-//     'field'    => 'name',
-//     'terms'    => get_search_query(),
-//     'compare' => 'LIKE',
+// 'taxonomy' => 'area',
+// 'field' => 'name',
+// 'terms' => get_search_query(),
+// 'compare' => 'LIKE',
 // );
 
 // $wp_query-> WP_Tax_Query Object['tax_query'] = [['taxonomy' => 'area']];
@@ -36,7 +54,9 @@ new WP_Query($wp_query);
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="search_inner">
-            <h2 class="title"><?php echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2>
+            <?php print_r($args) ;?>
+            <h2 class="title"><?php echo '「'. $keywords . '」の検索結果一覧'; ?></h2>
+            <!-- <h2 class="title"><?php //echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2> -->
             <div class="search_item search_flex">
                 <?php if (have_posts()) : ?>
                 <?php while(have_posts()) : ?>
