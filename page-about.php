@@ -8,7 +8,7 @@
             <p class="text_title">開催情報について</p>
             <p>
                 今後の開催日が決まっている食堂の情報は、<a href="<?php echo home_url('event'); ?>">【開催情報】</a>からご覧いただけます。 不定期開催の食堂も多いので、
-                <a href="<?php echo home_url('/area/east'); ?>">【MAPからさがす】</a><a
+                <a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a><a
                     href="<?php echo home_url('/search'); ?>">【条件からさがす】</a>
                 でお近くの食堂を探してみてください。
             </p>
@@ -25,7 +25,7 @@
         <div class="text">
             <p class="text_title">こども食堂のさがしかた</p>
             <p>
-                <a href="<?php echo home_url('/area/east'); ?>">【MAPからさがす】</a>を使うと、地図からお近くのこども食堂をさがす事ができます。
+                <a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>を使うと、地図からお近くのこども食堂をさがす事ができます。
                 <a href="<?php echo home_url('/search'); ?>">【条件からさがす】</a>を使うと、いろいろなこだわり条件で絞り込めます。
             </p>
         </div>
@@ -48,7 +48,8 @@
             <p><a href="<?php echo home_url('/link/care'); ?>">【子育て支援関連】</a></p>
             <p><a href="<?php echo home_url('/link/third'); ?>">【こどもの居場所関連】</a></p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/onigiri.png" alt="背景のおにぎり" class="about_img onigiri" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/onigiri.png" alt="背景のおにぎり"
+            class="about_img onigiri" />
     </div>
 </main>
 </div>
