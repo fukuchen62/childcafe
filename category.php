@@ -15,7 +15,7 @@ $cat = $cat[0];
                 <?php if (have_posts()) : ?>
                 <?php while(have_posts()) : ?>
                 <?php the_post(); ?>
-                <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>" class="news_title">
                     <?php the_title(); ?>
                 </a>
                 <?php endwhile; ?>
