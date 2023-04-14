@@ -321,35 +321,42 @@ $event_query = new WP_Query($fuga);
             <div class="section_inner">
                 <h2 class="title link_title">リンク集</h2>
                 <div class="link_flex">
-                    <div class="link_item">
-                        <a href="<?php echo home_url('/link/cafe'); ?>" class="btn_item link_sample">こども食堂関連</a>
-                        <div class="link_text">
-                            <p>
-                                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                            </p>
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                        <div class="link_item">
+                            <div class="btn_item link_sample">こども食堂関連</div>
+                            <div class="link_text">
+                                <p>
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="link_item">
-                        <a href="<?php echo home_url('/link/care'); ?>" class="btn_item link_sample">子育て支援関連</a>
-                        <div class="link_text">
-                            <p>
-                                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                            </p>
+                    </a>
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                        <div class="link_item">
+                            <div class="btn_item link_sample02">子育て支援関連</div>
+                            <div class="link_text">
+                                <p>
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="link_item">
-                        <a href="<?php echo home_url('/link/third'); ?>" class="btn_item btntest">こどもの居場所関連</a>
-                        <div class="link_text">
-                            <p>
-                                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                            </p>
+                    </a>
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                        <div class="link_item">
+                            <div class="btn_item btntest">こどもの居場所関連</div>
+                            <div class="link_text">
+                                <p>
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/linkbottom.png" alt="波"
                 class="link_wave" />
         </div>
+
 
         <!-- おしらせ -->
         <div class="notice w100">

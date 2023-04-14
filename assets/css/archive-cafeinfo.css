@@ -34,26 +34,37 @@
 
 .subtitle_east {
     text-align: left;
-    text-decoration: underline 5px #f7dd94;
+    text-decoration: underline;
+    text-decoration-color: #f7dd94;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
 .subtitle_south {
     text-align: left;
-    text-decoration: underline 5px #d7f794;
+    text-decoration: underline;
+    text-decoration-color: #d7f794;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
 .subtitle_west {
     text-align: left;
-    text-decoration: underline 5px #faff66;
+    text-decoration: underline;
+    text-decoration-color: #faff66;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
+/* 文字間隔調整・アンダーライン */
+
+.cafeinfo_flex p {
+    margin: 15px 0;
+}
+
 .cafeinfo_flex {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    text-decoration: underline;
+    text-decoration-color: #c0c0c0;
 }
 
 /* 最後のコンテンツを左寄せにする指定 */
@@ -65,6 +76,16 @@
 }
 
 @media screen and (min-width: 770px) {
+    .cafeinfo_flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .cafeinfo_flex p {
+        margin: 0 0;
+    }
+
     .cafeinfo_tab {
         width: 70%;
     }
@@ -80,11 +101,11 @@
 
     /* ホバーアクション */
 
-    .category_list {
+    .cafeinfo_flex {
         text-decoration: none;
     }
 
-    .category_item:hover {
+    .cafeinfo_flex p:hover {
         color: #f8b600;
     }
 }
