@@ -69,7 +69,7 @@
                         <a href="<?php echo home_url('/area/east'); ?>">エリアからさがす</a>
                     </li>
                     <li class="btn_header">
-                        <a href="<?php echo home_url('/search'); ?>">条件からさがす</a>
+                        <a href="<?php echo home_url('/find'); ?>">条件からさがす</a>
                     </li>
                     <li class="btn_header">
                         <a href="<?php echo home_url('/support'); ?>">支援したい方へ</a>
