@@ -234,14 +234,6 @@ $event_query = new WP_Query($fuga);
                     class="crayon" />
             </div>
             <div class="pickup_slide">
-                <div class="orangetabs">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
-                        class="orangetab" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
-                        class="orangetab orange1" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/orange_tab.png" alt="タブ"
-                        class="orangetab orange2" />
-                </div>
                 <ul class="pickup_slider flex">
                     <?php if ($custom_query->have_posts()) : ?>
                     <?php while($custom_query->have_posts()) : ?>
@@ -284,11 +276,14 @@ $event_query = new WP_Query($fuga);
             </div>
             <div class="with_onigiri">
                 <div class="text">
-                    <p>こども食堂と聞くと、”貧困層のための場所”や、”こどもや子育て世代向けのもの”といったイメージを抱く方も多いと思います。実際はそうではなく、こどもの為の場であることはもちろんですが、地域の人や大人、様々な世代の人が集まって、一緒にごはんを食べて交流できる場です。地域とのつながりや、多世代交流をする地域コミュニティとしての役割も担っています。
+                    <p>
+                        こども食堂と聞くと、”貧困層のための場所”や、”こどもや子育て世代向けのもの”といったイメージを抱く方も多いと思います。実際はそうではなく、こどもの為の場であることはもちろんですが、地域の人や大人、様々な世代の人が集まって、一緒にごはんを食べて交流できる場です。地域とのつながりや、多世代交流をする地域コミュニティとしての役割も担っています。
                     </p>
                 </div>
                 <img class="onigiri" src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiri.png"
-                    alt="おにぎり">
+                    alt="おにぎり" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/onigiri.png"
+                    class="onigiri_small" aria-hidden="true" />
                 <a href="<?php echo home_url('/concept'); ?>" class="btn_item">もっと見る</a>
             </div>
         </div>
