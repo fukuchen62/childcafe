@@ -33,16 +33,26 @@
     margin-top: 22px;
 }
 
-.main_visual {
-    width: 286px;
-    height: 258px;
-    margin: 0 auto;
-}
-
 .intro {
     width: 320px;
     margin: 0 auto;
     text-align: left;
+}
+/* ボタンの色 */
+.btn_item {
+    color: black;
+}
+
+/* 画像 */
+
+.pc_flex img {
+    width: 100%;
+    width: 350px;
+    height: 258px;
+    margin: 0 auto;
+    margin-top: 20px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 @media (min-width: 770px) {
@@ -59,16 +69,10 @@
         font-size: 24px;
         margin-top: 60px;
     }
-    .main_visual {
-        width: 380px;
+    .pc_flex img {
+        max-width: 387px;
+        min-width: 387px;
     }
-}
-
-.pc_flex img {
-    margin-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 15px;
 }
 
 /* 黄色の背景 */
