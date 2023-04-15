@@ -286,8 +286,8 @@ html {
     border: solid 1px #665a3d;
     box-shadow: 3px 3px 3px #999;
     position: relative;
-    padding: 10px;
-    padding-bottom: 30px;
+    /* padding: 10px;
+    padding-bottom: 30px; */
     overflow: visible;
 }
 
@@ -299,6 +299,12 @@ html {
 
 .pickup_slider li p:nth-child(3) {
     text-decoration: underline dotted 1px;
+}
+
+.pickup_slider li a {
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 30px;
 }
 
 /* .orangetabs {
