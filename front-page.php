@@ -149,6 +149,18 @@ $fuga = array(
 	);
 $event_query = new WP_Query($fuga);
 
+$piyo = array(
+    'post_type' =>'cafeinfo',
+    'posts_per_page' =>  9,
+    'orderby' => 'rand',
+    // 'meta_query' => array(
+    //     array(
+    //         'key'   => 'pic1',
+    //         'compare' => 'EXISTS',
+    //     ),
+    );
+$pic_query = new WP_Query($piyo);
+
 ?>
 
 <main class="main_index">
@@ -163,11 +175,23 @@ $event_query = new WP_Query($fuga);
                 <input class="hbg_submit fas" type="submit" value="">
             </form> -->
             <ul class="kv_slider">
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_2.jpg" alt="KV画像">
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv1.jpg" alt="KV画像">
                 </li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_1.jpg" alt="KV画像">
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv2.jpg" alt="KV画像">
                 </li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv_3.jpg" alt="KV画像">
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv3.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv4.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv5.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv6.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv7.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv8.jpg" alt="KV画像">
+                </li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv9.jpg" alt="KV画像">
                 </li>
             </ul>
             <p class="kvphrase">
@@ -375,30 +399,22 @@ $event_query = new WP_Query($fuga);
             <h2 class="title">活動の様子</h2>
             <!-- 活動風景スライド -->
             <div class="activity_slide">
+                <?php if ($pic_query->have_posts()) : ?>
+                <?php while($pic_query->have_posts()) : ?>
+                <?php $pic_query->the_post(); ?>
                 <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
+                    <?php
+                        $pic = get_field('pic1');
+                        $pic_id = attachment_url_to_postid( $pic );
+                        $pic_alt = get_post_meta(  $pic_id, '_wp_attachment_image_alt', true );
+                    ?>
+                    <?php if (!empty($pic)) : ?>
+                    <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
+                    <?php endif; ?>
                 </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv1_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv2_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/kv3_kari.jpg" alt="">
-                </div>
-                <div class="activity_slider">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/delete/slide4_kari.jpg" alt="">
-                </div>
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
         <!-- メインインナー終わり -->

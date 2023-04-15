@@ -7,11 +7,21 @@ $cafeinfo_id = get_field('id', $event_id);
 
 $service_array = get_field('service', $event_id);
 
-$events = array(
+
+if (empty(get_field('postcode',$event_id))) {
+    $events = array(
 '開催住所' => ['〒'. get_field('postcode',$event_id),get_field('address',$event_id)],
 '会場' => get_field('place_name',$event_id),
 '参加条件' => get_field('conditions',$event_id),
 );
+}else{
+$events = array(
+'開催住所' => ['〒'. get_field('postcode',$event_id),get_field('address',$event_id)],
+'開催住所2' => ['〒'. get_field('postcode_2',$event_id),get_field('address_2',$event_id)],
+'会場' => get_field('place_name',$event_id),
+'参加条件' => get_field('conditions',$event_id),
+);
+}
 
 if (!empty(get_field('date',$event_id))) {
     $date = get_field('date',$event_id);
@@ -157,7 +167,11 @@ $parking = $parking. ' 【' . get_field('parking_info',$event_id). '】';
 $events['駐車場'] = $parking;
 }
 
+if (!empty(get_field('note'))) {
+    $note = get_field('note');
 
+    $events['備考'] = $note;
+}
 
 //連絡先・SNSなど
 $infos = array();
@@ -231,10 +245,6 @@ if (!empty($sns)) {
 if (!empty(get_field('site_url'))) {
     $site_url = get_field('site_url');
     $site_url = '<a href="'.$site_url.'">'.$site_url .'</a>';
-}
-
-if (!empty(get_field('note'))) {
-    $note = get_field('note');
 }
 
 if (!empty(get_field('amapro'))) {
@@ -422,12 +432,6 @@ $the_query = new WP_Query($args);
                     <div class="sns_items">
                         <p class="subtitle_text"><?php echo $site_url; ?></p>
                     </div>
-                </div>
-                <?php endif; ?>
-                <?php if (!empty($note)): ?>
-                <div class=" detail_item">
-                    <h4 class="subtitle">備考</h4>
-                    <p class="subtitle_text"><?php echo $note; ?></p>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($amapro)): ?>
