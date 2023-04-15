@@ -150,17 +150,19 @@ $fuga = array(
 $event_query = new WP_Query($fuga);
 
 $piyo = array(
-    'post_type' =>'cafeinfo',
-    'posts_per_page' =>  -1,
-    'orderby' => 'rand',
-    'meta_query' => array(
+    'post_type'      => 'cafeinfo',
+    'posts_per_page' => -1,
+    // 'orderby'        => 'rand',
+    //なぜか紬だけ出てしまう・・・
+    // 'post__not_in'   => 448,
+    'meta_query'     => array(
         array(
-            'name'   => 'pic1',
-            'value' => 'http',
+            'name'    => 'pic1',
+            'value'   => 'http',
             'compare' => 'LIKE',
         ),
-    )
-    );
+    ),
+);
 $pic_query = new WP_Query($piyo);
 
 ?>
@@ -425,7 +427,13 @@ $pic_query = new WP_Query($piyo);
             <?php if ($pic_query->have_posts()) : ?>
             <?php while($pic_query->have_posts()) : ?>
             <?php $pic_query->the_post(); ?>
-            <p><?php print_r(get_field_object('pic1')) ?></p>
+            <p>
+                <?php
+            //     echo '<pre>';
+            //  print_r(get_field_objects());
+            //  echo '</pre>';
+             ?>
+             </p>
             <?php endwhile; ?>
             <?php endif; ?>
 
