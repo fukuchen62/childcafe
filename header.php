@@ -1,3 +1,12 @@
+<?php
+if (is_tax('area')) {
+    $title_area_slug = get_query_var('area');
+    $title_area = get_term_by('slug', $title_area_slug, 'area');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,10 +19,14 @@
     <meta name="format-detection" content="telephone=no">
 
     <!--favicon設定-->
-    <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16" href="http://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16" href="https://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
 
     <!--description設定-->
     <meta name="description" content="徳島県下のこども食堂の情報まとめサイトです。子ども食堂はこどもも大人も誰でも行ける多世代交流拠点です。興味がある人、行ってみたい人、支援したい人に役立つ情報を掲載しています。">
+
+    <?php if (is_tax('area')) :?>
+    <title><?php echo 'エリアからさがす '.$title_area->name.' &#8211; 徳島こども食堂ナビ' ?></title>
+    <?php endif; ?>
 
     <?php wp_head(); ?>
 </head>
@@ -84,7 +97,7 @@
                     <li class="btn_header menu_search">
                         <form class="hbg_search" action="<?php echo home_url('/'); ?>" method="get">
                             <input type="hidden" name="search_type" value="keywords" />
-                            <input class="hbg_form" size="25" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" />
+                            <input class="hbg_form" size="20" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力" />
                             <input class="hbg_submit fas" type="submit" value="" />
                         </form>
                     </li>

@@ -13,9 +13,11 @@ add_filter( 'script_loader_src', 'remove_cssjs_ver2', 9999 );
 
 //after_setup_themeアクションフックを使用する関数をまとめる
 function my_theme_setup() {
-    add_theme_support('title-tag'); //<title>タグを出力する
     add_theme_support('post-thumbnails'); //アイキャッチ画像を使用可能にする
     add_theme_support('menus'); //カスタムメニュー機能を使用可能にする
+    if (!is_tax('area')) {
+        add_theme_support('title-tag'); //<title>タグを出力する
+    }
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
@@ -34,9 +36,9 @@ function add_my_files() {
 
     //以下はheaderに出力
     //Google fonts
-    wp_enqueue_style('Google-fonts-Kosugi+Maru', 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+    // wp_enqueue_style('Google-fonts-Kosugi+Maru', 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
     wp_enqueue_style('Google-fonts-Zen+Maru+Gothic', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
-    wp_enqueue_style('Google-fonts-Noto+Sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&display=swap');
+    // wp_enqueue_style('Google-fonts-Noto+Sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&display=swap');
     //font awesomeの読み込み
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
     //リセットCSSの読み込み

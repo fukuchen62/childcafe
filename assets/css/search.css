@@ -11,7 +11,10 @@
 }
 
 .search_item_card {
+    min-width: 320px;
     max-width: 320px;
+    min-height: 396px;
+    max-height: 396px;
     width: 100%;
     background-color: white;
     padding: 10px;
@@ -22,7 +25,10 @@
 }
 
 .search_item_card img {
-    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 299px;
+    max-width: 299px;
     margin-top: 13px;
     border: 1px solid #665a3d;
     border-radius: 10px;
@@ -65,19 +71,7 @@
         row-gap: 50px;
         flex-wrap: wrap;
     }
-    .search_item:after {
-        content: "";
-        width: 341px;
-        margin-top: 20px;
-        color: aliceblue;
-        /* background-color: #f44336; */
-    }
 
-    /* .search_item_card::before {
-        content: "";
-        width: 287px;
-        height: 50px;
-    } */
     .search_item_card + .search_item_card {
         margin-top: 0;
     }
@@ -95,5 +89,9 @@
         opacity: 0.8;
         transform: translateY(5px);
         box-shadow: 0 0 0 #333;
+    }
+
+    .page_nav {
+        margin: 20px auto;
     }
 }

@@ -7,7 +7,7 @@
     position: fixed;
     bottom: 30px;
     right: 10px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .toppage_btn img {
@@ -97,7 +97,7 @@ main {
     text-decoration-line: underline;
     text-decoration-color: #008000;
     text-decoration-style: dotted;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: 0.2em;
     /* text-decoration: underline dotted 5px #008000;
     -webkit-text-decoration: underline dotted 5px #008000; */
     text-underline-offset: 10px;
@@ -264,7 +264,7 @@ main {
     background-color: #fef4d9;
     z-index: 999;
     position: fixed;
-    top: -100%;
+    top: -100vh;
     left: 0;
     transition: all 0.7s;
 }
@@ -327,12 +327,19 @@ main {
     padding: 10px 0;
     border-radius: 5px;
     background-color: #d7f794;
+    margin: 0 auto;
+    position: absolute;
 }
 
 .hbg_form {
     background-color: white;
     border-radius: 2px;
     margin-right: 5px;
+    width: 40vw;
+}
+
+.hbg_search {
+    position: relative;
 }
 
 .hbg_submit {
@@ -536,9 +543,9 @@ main {
 }
 
 .footer_nav {
-    width: 80%;
     margin: 0 auto;
     flex-direction: column;
+    padding-left: 15px;
 }
 
 .footer_nav_title_concept p {
@@ -562,6 +569,7 @@ main {
 .footer_copyright p {
     margin-top: 40px;
     text-align: center;
+    padding: 20px 0;
 }
 
 .with_girl {
@@ -574,7 +582,8 @@ main {
 
 @media (min-width: 770px) {
     .footer_nav {
-        padding: 50px 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
         max-width: 1024px;
         flex-direction: row;
         margin: 0 auto;
@@ -732,5 +741,7 @@ main {
 @media screen and (min-width: 770px) {
     .breadcrumb {
         display: block;
+        margin: 15px 0;
+        margin-left: 20px;
     }
 }

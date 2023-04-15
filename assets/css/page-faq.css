@@ -21,8 +21,16 @@
 .text p:nth-child(1) {
     font-weight: 500;
     margin-bottom: 20px;
-    text-decoration: underline dotted 1px gray;
-    text-underline-offset: 5px;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-color: #c8f763;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+    /* text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-decoration-color: gray; */
+    /* text-underline-offset: 5px; */
 }
 
 .text p:nth-child(2) {
@@ -30,13 +38,19 @@
 }
 
 .text a {
-    text-decoration: underline dotted 1px gray;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-decoration-color: gray;
     text-underline-offset: 5px;
 }
 
 .text a:hover {
-    color: red;
-    text-decoration: underline dotted 1px red;
+    color: #f8b600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #f8b600;
     text-underline-offset: 5px;
 }
 

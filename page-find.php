@@ -237,7 +237,7 @@ $the_query = new WP_Query($args);
         <?php //print_r($args); ?>
         <?php //print_r($cafeinfo_ids); ?>
 
-        <form action="<?php echo home_url('/find'); ?>" method="get">
+        <form action="<?php echo home_url('/find'); ?>" method="get" class="search_form">
             <section class="form">
                 <h3 class="subtitle">チェックしてさがしてみよう！</h3>
                 <div class="form_wrap">
@@ -361,14 +361,16 @@ $the_query = new WP_Query($args);
                                     echo $features . '・・・' ;
                                 } else {
                                     echo $features;
-                                } 
+                                }
                             ?>
                         </p>
                     </div>
                 </a>
                 <?php endwhile; ?>
                 <?php else:?>
-                <h3>当てはまるこども食堂はありません</h3>
+                <h3>お探しのこども食堂が見つかりませんでした。</h3>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt=""
+                    class="searcharea_404" />
                 <?php endif;?>
                 <?php wp_reset_postdata(); ?>
             </div>

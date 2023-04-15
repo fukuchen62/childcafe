@@ -7,11 +7,21 @@ $cafeinfo_id = get_field('id', $event_id);
 
 $service_array = get_field('service', $event_id);
 
-$events = array(
+
+if (empty(get_field('address_2',$event_id))) {
+    $events = array(
 '開催住所' => ['〒'. get_field('postcode',$event_id),get_field('address',$event_id)],
 '会場' => get_field('place_name',$event_id),
 '参加条件' => get_field('conditions',$event_id),
 );
+}else{
+$events = array(
+'開催住所' => ['〒'. get_field('postcode',$event_id),get_field('address',$event_id)],
+'開催住所2' => ['〒'. get_field('postcode_2',$event_id),get_field('address_2',$event_id)],
+'会場' => get_field('place_name',$event_id),
+'参加条件' => get_field('conditions',$event_id),
+);
+}
 
 if (!empty(get_field('date',$event_id))) {
     $date = get_field('date',$event_id);
@@ -37,7 +47,7 @@ if ($child_price == '0') {
 }
 
 if (!empty(get_field('child_price_info',$event_id))) {
-    $child_price = $child_price.' ('.get_field('child_price_info',$event_id).')';
+    $child_price = $child_price.'【'.get_field('child_price_info',$event_id).'】';
 }
 
 $price = array('こども '.$child_price);
@@ -51,7 +61,7 @@ if (!empty(get_field('adult_price',$event_id))) {
         $adult_price = $adult_price.'円';
     }
     if (!empty(get_field('adult_price_info',$event_id))) {
-    $adult_price = $adult_price.' ('.get_field('adult_price_info',$event_id).')';
+    $adult_price = $adult_price.'【'.get_field('adult_price_info',$event_id).'】';
     }
     $price[] = 'おとな '.$adult_price;
 }
@@ -59,7 +69,7 @@ if (!empty(get_field('adult_price',$event_id))) {
 if (!empty(get_field('any',$event_id))) {
     $any = '募金制';
     if (!empty(get_field('any_info',$event_id))) {
-    $any = $any.' ('.get_field('any_info',$event_id).')';
+    $any = $any.' ('.get_field('any_info',$event_id).'】';
     $price = $any;
 }
 }
@@ -74,37 +84,37 @@ if (!empty(get_field('person',$event_id))) {
 
         if ($value == '誰でも行ける') {
             if (!empty(get_field('everyone',$event_id))) {
-                $value = $value. ' (' . get_field('everyone',$event_id). ')';
+                $value = $value. '【' . get_field('everyone',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == 'こどもは保護者同伴') {
             if (!empty(get_field('accompanied',$event_id))) {
-                $value = $value. ' (' . get_field('accompanied',$event_id). ')';
+                $value = $value. '【' . get_field('accompanied',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == 'こどもだけで行ける') {
             if (!empty(get_field('child_only',$event_id))) {
-                $value = $value. ' (' . get_field('child_only',$event_id). ')';
+                $value = $value. '【' . get_field('child_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '大人だけで行ける') {
             if (!empty(get_field('adult_only',$event_id))) {
-                $value = $value. ' (' . get_field('adult_only',$event_id). ')';
+                $value = $value. '【' . get_field('adult_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '大人は保護者だけ') {
             if (!empty(get_field('guardian_only',$event_id))) {
-                $value = $value. ' (' . get_field('guardian_only',$event_id). ')';
+                $value = $value. '【' . get_field('guardian_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '地域の方だけ') {
             if (!empty(get_field('local_only',$event_id))) {
-                $value = $value. ' (' . get_field('local_only',$event_id). ')';
+                $value = $value. '【' . get_field('local_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '会員登録制') {
             if (!empty(get_field('member',$event_id))) {
-                $value = $value. ' (' . get_field('member',$event_id). ')';
+                $value = $value. '【' . get_field('member',$event_id). '】';
             }
             $person_info[] = $value;
         }
@@ -136,7 +146,7 @@ if ($reserve == '1') {
 }
 
 if (!empty(get_field('reserve_info',$event_id))) {
-$reserve = $reserve. ' (' . get_field('reserve_info',$event_id). ')';
+$reserve = $reserve. '【' . get_field('reserve_info',$event_id). '】';
 }
 
 $events['事前予約'] = $reserve;
@@ -151,13 +161,17 @@ if ($parking == '有り') {
 }
 
 if (!empty(get_field('parking_info',$event_id))) {
-$parking = $parking. ' (' . get_field('parking_info',$event_id). ')';
+$parking = $parking. ' 【' . get_field('parking_info',$event_id). '】';
 }
 
 $events['駐車場'] = $parking;
 }
 
+if (!empty(get_field('note'))) {
+    $note = get_field('note');
 
+    $events['備考'] = $note;
+}
 
 //連絡先・SNSなど
 $infos = array();
@@ -231,10 +245,6 @@ if (!empty($sns)) {
 if (!empty(get_field('site_url'))) {
     $site_url = get_field('site_url');
     $site_url = '<a href="'.$site_url.'">'.$site_url .'</a>';
-}
-
-if (!empty(get_field('note'))) {
-    $note = get_field('note');
 }
 
 if (!empty(get_field('amapro'))) {
@@ -322,12 +332,12 @@ $the_query = new WP_Query($args);
                         </div>
                         <?php if (!empty(get_field('interview_id'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事'; ?></a>
                         </div>
                         <?php endif; ?>
                         <?php if (!empty(get_field('interview_id_2'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2はこち'; ?></a>
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2'; ?></a>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -351,14 +361,14 @@ $the_query = new WP_Query($args);
                         <?php echo $key; ?>
                     </h4>
                     <?php if (!is_array($event)) : ?>
-                    <p>
+                    <p class="subtitle_text">
                         <?php echo $event; ?>
                     </p>
                     <?php else: ?>
                     <div>
                         <?php foreach( $event as $value): ?>
-                        <p>
-                        <?php echo $value; ?>
+                        <p class=" subtitle_text">
+                            <?php echo $value; ?>
                         </p>
                         <?php endforeach; ?>
                     </div>
@@ -371,45 +381,45 @@ $the_query = new WP_Query($args);
         </div>
         <div class="green color">
             <div class="green_inner m1024">
-                <h3 class="beige_categorytitle beige_access">
-                                    連絡先・SNSなど
-                                </h3>
+                <h3 class="beige_categorytitle beige_address">
+                    連絡先・SNSなど
+                </h3>
                 <div class="detail_item">
                     <h4 class="subtitle">連絡先</h4>
                     <div>
                         <?php if (!empty($tel)) : ?>
-                        <p><?php echo $tel; ?></p>
+                        <p class="subtitle_text"><?php echo $tel; ?></p>
                         <?php endif; ?>
                         <?php if (!empty($email)) : ?>
-                        <p><?php echo $email; ?></p>
+                        <p class=" subtitle_text"><?php echo $email; ?></p>
                         <?php endif; ?>
                         <?php if (!empty($line_id)) : ?>
-                        <p><?php echo $line_id; ?></p>
+                        <p class="subtitle_text"><?php echo $line_id; ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
                 <?php if (!empty($line_qr)) : ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">LINE QRコード</h4>
                     <div class="sns_items">
                         <img src="<?php echo $line_qr; ?>" alt="LINEQRコード" class="qrcode" />
                         <?php if (!empty($line_url)) : ?>
-                        <p><?php echo $line_url; ?></p>
+                        <p class="subtitle_text"><?php echo $line_url; ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($instagram) || !empty($facebook)) : ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">SNS</h4>
                     <div class="sns_items">
                         <?php if (!empty($instagram)): ?>
-                        <p>
+                        <p class="subtitle_text">
                             <?php echo $instagram; ?>
                         </p>
                         <?php endif; ?>
                         <?php if (!empty($facebook)): ?>
-                        <p>
+                        <p class=" subtitle_text">
                             <?php echo $facebook; ?>
                         </p>
                         <?php endif; ?>
@@ -420,22 +430,16 @@ $the_query = new WP_Query($args);
                 <div class="detail_item">
                     <h4 class="subtitle">公式WEBサイト</h4>
                     <div class="sns_items">
-                        <p><?php echo $site_url; ?></p>
+                        <p class="subtitle_text"><?php echo $site_url; ?></p>
                     </div>
                 </div>
                 <?php endif; ?>
-                <?php if (!empty($note)): ?>
-                <div class="detail_item">
-                    <h4 class="subtitle">備考</h4>
-                    <p><?php echo $note; ?></p>
-                </div>
-                <?php endif; ?>
                 <?php if (!empty($amapro)): ?>
-                <div class="detail_item">
+                <div class=" detail_item">
                     <h4 class="subtitle">
-                        Amazonみんなで応援プログラム
+                        Amazonみんなで <br> 応援プログラム
                     </h4>
-                    <div class="sns_items">
+                    <div class="sns_items subtitle_text">
                         <?php echo $amapro; ?>
                     </div>
                 </div>
@@ -445,7 +449,7 @@ $the_query = new WP_Query($args);
                     <h4 class="subtitle">
                         ボランティア募集
                     </h4>
-                    <div>
+                    <div class="subtitle_text">
                         <?php echo $volunteer; ?>
                         <?php if (!empty($volunteer_info)): ?>
                         <p><?php echo $volunteer_info; ?></p>
@@ -467,7 +471,7 @@ $the_query = new WP_Query($args);
             <div class="bgcolor_inner m1024">
                 <div class="bgcolor_flex">
                     <div class="others">
-                        <h3 class="subtitle others_subtitle">
+                        <h3 class="beige_categorytitle beige_other">
                             取り扱いのあるもの
                         </h3>
                         <div class="others_item">
@@ -489,7 +493,7 @@ $the_query = new WP_Query($args);
                         </div>
                     </div>
                     <div class="addressmap">
-                        <h3 class="subtitle">アクセス</h3>
+                        <h3 class="beige_categorytitle beige_access">アクセス</h3>
                         <?php the_field('place_map',$event_id); ?>
                     </div>
                 </div>
