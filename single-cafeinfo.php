@@ -8,7 +8,7 @@ $cafeinfo_id = get_field('id', $event_id);
 $service_array = get_field('service', $event_id);
 
 
-if (empty(get_field('postcode',$event_id))) {
+if (empty(get_field('address_2',$event_id))) {
     $events = array(
 '開催住所' => ['〒'. get_field('postcode',$event_id),get_field('address',$event_id)],
 '会場' => get_field('place_name',$event_id),
