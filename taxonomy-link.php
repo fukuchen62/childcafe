@@ -6,6 +6,7 @@
 
     $args = array(
         'post_type' => 'links',
+        'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
         'orderby' => 'menu_order',
         'order' => ' ASC',
         'tax_query' => array(
@@ -56,6 +57,8 @@
             <?php elseif($link->slug == 'third') : ?>
             <img class="veg" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/veg.png" alt="背景野菜" />
             <?php endif; ?>
+            <!-- ページナビ -->
+            <?php original_pagenation(); ?>
         </section>
     </div>
 </main>
