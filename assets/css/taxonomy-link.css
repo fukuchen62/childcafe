@@ -87,8 +87,21 @@
     margin: 20px auto 50px auto;
     text-align: center;
     border: dashed 2px white;
+}
+
+.link_title_cafe {
     background: #f7eac6;
     box-shadow: 0px 0px 0px 5px #f7eac6;
+}
+
+.link_title_care {
+    background: #e8f7c6;
+    box-shadow: 0px 0px 0px 5px #e8f7c6;
+}
+
+.link_title_third {
+    background: #fdffcc;
+    box-shadow: 0px 0px 0px 5px #fdffcc;
 }
 
 .link_text {
