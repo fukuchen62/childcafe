@@ -9,7 +9,10 @@
     line-height: 2.1;
     font-size: 20px;
     font-weight: 500;
-    text-decoration: underline dotted 5px #ffb700;
+    text-decoration-line: underline;
+    text-decoration-color: #ffb700;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 5px;
     text-underline-offset: 10px;
 }
 
