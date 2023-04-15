@@ -6,7 +6,8 @@
 }
 
 .event_img img {
-    width: 50%;
+    width: 70%;
+    border-radius: 10px;
 }
 
 .event_img {
@@ -27,7 +28,7 @@ th {
 } */
 
 .event_appeal {
-    width: 283px;
+    width: 70%;
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
@@ -87,6 +88,7 @@ tr,
 td {
     font-size: 15px;
     border: 1px solid #ffb700;
+    padding: 5px;
 }
 
 .event_table_tdtitle {
@@ -252,11 +254,13 @@ td {
         margin: 0px auto;
         margin-top: 10px;
     }
-}
 
-@media (min-width: 770px) {
     .main_inner {
         position: relative;
+    }
+
+    .event_img img {
+        width: 50%;
     }
 
     .event_title {
@@ -310,14 +314,13 @@ td {
     }
 
     .event_appeal {
-        width: 70%;
         margin: 60px auto;
     }
     .event_table {
         width: 65%;
     }
     .event_table_tdtitle {
-        width: 280px;
+        /* width: 280px; */
         padding: 5px 10px;
     }
 
@@ -335,7 +338,7 @@ td {
     }
 
     .btn_item {
-        width: 350px;
+        width: 200px;
         margin-top: 50px;
     }
 }
