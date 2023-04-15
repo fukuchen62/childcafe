@@ -12,7 +12,7 @@ $the_query = new WP_Query($args);
 <main>
     <div class="main_inner relative">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="title">最新記事一覧</h2>
+        <h2 class="title">おしらせ一覧</h2>
         <div class="news_flex">
             <div class="tcenter column">
                 <?php if ($the_query->have_posts()) : ?>
