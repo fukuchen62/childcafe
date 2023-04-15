@@ -237,7 +237,7 @@ $the_query = new WP_Query($args);
         <?php //print_r($args); ?>
         <?php //print_r($cafeinfo_ids); ?>
 
-        <form action="<?php echo home_url('/find'); ?>" method="get">
+        <form action="<?php echo home_url('/find'); ?>" method="get" class="search_form">
             <section class="form">
                 <h3 class="subtitle">チェックしてさがしてみよう！</h3>
                 <div class="form_wrap">
