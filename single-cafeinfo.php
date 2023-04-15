@@ -490,7 +490,6 @@ $the_query = new WP_Query($args);
                     </div>
                     <div class="addressmap">
                         <h3 class="beige_categorytitle beige_access">アクセス</h3>
-                        <?php echo '表示変わってほしい';?>
                         <?php the_field('place_map',$event_id); ?>
                     </div>
                 </div>
