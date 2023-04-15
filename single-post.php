@@ -17,12 +17,12 @@ $cat = $cat[0];
                 <?php the_content(); ?>
             </div>
             <div class="s-p_column pc_none">
-                <a href="<?php echo home_url('/post'); ?>" class="btn_item">最新記事一覧</a>
+                <a href="<?php echo home_url('/post'); ?>" class="btn_item">おしらせ一覧</a>
             </div>
             <?php get_sidebar('categories'); ?>
         </div>
         <div class="s-p_column sp_none">
-            <a href="<?php echo home_url('/post'); ?>" class="btn_item">最新記事一覧</a>
+            <a href="<?php echo home_url('/post'); ?>" class="btn_item">おしらせ一覧</a>
         </div>
     </div>
 </main>
