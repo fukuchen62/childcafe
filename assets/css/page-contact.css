@@ -27,7 +27,8 @@
 }
 
 .contact1_text_p1 {
-    text-decoration: underline solid black;
+    text-decoration: underline;
+    text-decoration-color: black;
 }
 
 .contact1_text_p2 {
