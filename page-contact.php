@@ -16,21 +16,22 @@
 // session_destroy();
 // }
 
-// if(isset($_COOKIE["cookie"])) {
+// if(isset($_COOKIE["cf7msm_posted_data"])) {
 //     // クッキー名"cookie"に値がセットされていたら削除する
-//     echo"クッキーの値：".$_COOKIE["cookie"]."<br />";
-//     setcookie("cookie", "", time() - 30);
+//     echo"クッキーの値：".$_COOKIE["cf7msm_posted_data"]."<br />";
+//     setcookie("cf7msm_posted_data", "", time() - 30);
 //     echo"クッキーを削除しました";
 
-//     // 削除確認用メッセージをクッキーにセット
-//     setcookie("cookie_delete", "cookieは削除されています", time() + 1800);
-// } else if(isset($_COOKIE["cookie_delete"])) {
-//     // クッキー削除確認メッセージ出力
-//     echo $_COOKIE["cookie_delete"];
-// } else {
-//     // クッキーをセット
-//     setcookie("cookie", "cookie_info", time() + 1800);
-//     echo"クッキーをセットしました";
+// //     // 削除確認用メッセージをクッキーにセット
+// //     setcookie("cookie_delete", "cookieは削除されています", time() + 1800);
+// // } else if(isset($_COOKIE["cookie_delete"])) {
+// //     // クッキー削除確認メッセージ出力
+// //     echo $_COOKIE["cookie_delete"];
+// // } else {
+// //     // クッキーをセット
+// //     setcookie("cookie", "cookie_info", time() + 1800);
+// //     echo"クッキーをセットしました";
+// // }
 // }
 
 ?>
@@ -41,6 +42,14 @@
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">お問い合わせ</h2>
+        <?php
+        if(isset($_COOKIE["cf7msm_posted_data"])) {
+    // クッキー名"cookie"に値がセットされていたら削除する
+    echo"クッキーの値：".$_COOKIE["cf7msm_posted_data"]."<br />";
+    setcookie("cf7msm_posted_data", " ", time()-60);
+    echo"クッキーを削除しました";
+        }
+        ?>
         <!-- 各子供食堂 -->
         <section class="contact1">
             <h3 class="subtitle">
