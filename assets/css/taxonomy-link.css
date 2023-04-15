@@ -77,14 +77,19 @@
 }
 
 .link_title {
+    width: 90%;
     font-size: 24px;
     font-weight: 500;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
     text-align: center;
     border: dashed 2px white;
     background: #f7eac6;
     box-shadow: 0px 0px 0px 5px #f7eac6;
+}
+
+.link_text {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .link_wrap {
@@ -94,7 +99,10 @@
 .link {
     width: 100%;
     margin: 50px auto;
-    text-align: center;
+    padding: 5px;
+    border: 1px solid orange;
+    background-color: #fff8e6;
+    border-radius: 10px;
 }
 
 .link img {
@@ -106,7 +114,7 @@
 .link p {
     width: 90%;
     margin: 0 auto;
-    padding: 5px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -116,8 +124,20 @@
     margin: 0 auto;
     padding: 5px;
     text-align: center;
-    text-decoration: underline dotted 1px gray;
-    text-underline-offset: 10px;
+    text-decoration: underline solid 1px orange;
+    text-underline-offset: 5px;
+}
+
+.link a::after {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/link/link01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
 .link span {
@@ -149,21 +169,22 @@
         width: 700px;
     }
 
-    .title {
-        margin: 0 auto 50px auto;
+    .link_title {
+        width: 40%;
+        margin-top: 30px;
+    }
+
+    .link {
+        width: 80%;
     }
 
     .link img {
-        width: 60%;
+        /* width: 60%; */
     }
 
     .page_link img:hover {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
-
-    .link a {
-        width: 60%;
+        /* transform: scale(1.1);
+        opacity: 0.8; */
     }
 
     .link p {
@@ -171,9 +192,9 @@
     }
 
     .link a:hover {
-        color: red;
+        /* color: red;
         text-decoration: underline dotted 1px red;
-        text-underline-offset: 10px;
+        text-underline-offset: 10px; */
     }
 
     .apple {
