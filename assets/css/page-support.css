@@ -102,6 +102,7 @@
 .support_help p {
     width: 195px;
     margin: 20px auto;
+    text-align: left;
 }
 
 .support_btn {
