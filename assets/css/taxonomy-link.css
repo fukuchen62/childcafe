@@ -191,6 +191,12 @@
         margin-top: 30px;
     }
 
+    .link_a:hover {
+        /* display: block; */
+        /* transform: scale(1.1); */
+        /* opacity: 0.8; */
+    }
+
     .link_item {
         width: 80%;
     }
