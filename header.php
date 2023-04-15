@@ -19,7 +19,7 @@ if (is_tax('area')) {
     <meta name="format-detection" content="telephone=no">
 
     <!--favicon設定-->
-    <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16" href="http://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16" href="https://tks-navi.boo.jp/wordpress/wp-content/uploads/2023/04/favicon.ico">
 
     <!--description設定-->
     <meta name="description" content="徳島県下のこども食堂の情報まとめサイトです。子ども食堂はこどもも大人も誰でも行ける多世代交流拠点です。興味がある人、行ってみたい人、支援したい人に役立つ情報を掲載しています。">

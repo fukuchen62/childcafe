@@ -152,12 +152,12 @@ $event_query = new WP_Query($fuga);
 $piyo = array(
     'post_type' =>'cafeinfo',
     'posts_per_page' =>  -1,
-    // 'orderby' => 'rand',
+    'orderby' => 'rand',
     'meta_query' => array(
         array(
             'name'   => 'pic1',
-            'value' => 'EXISTS',
-            // 'compare' => '='
+            'value' => 'http',
+            'compare' => 'LIKE',
         ),
     )
     );
@@ -406,9 +406,10 @@ $pic_query = new WP_Query($piyo);
                 <?php $pic_query->the_post(); ?>
                 <div class="activity_slider">
                     <?php
-                        $pic = get_field('pic1');
-                        $pic_id = attachment_url_to_postid( $pic );
-                        $pic_alt = get_post_meta(  $pic_id, '_wp_attachment_image_alt', true );
+                        // <?php if ($pic_query->have_posts()) :
+                    $pic = get_field('pic1');
+                    $pic_id = attachment_url_to_postid( $pic );
+                    $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
                     ?>
                     <?php //if (!empty($pic)) : ?>
                     <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
