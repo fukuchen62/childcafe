@@ -23,7 +23,7 @@
                 <p>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aicon.png" alt="aicon" />
                     ボランティアスタッフを募集している食堂はたくさんあります。
-                    条件検索から『ボランティアスタッフ募集中』で絞り込み、
+                    <a href="<?php echo home_url('/find'); ?>">条件からさがす</a>から『ボランティアスタッフ募集中』で絞り込み、
                     支援したいこども食堂にコンタクトを取ってみてください。
                 </p>
             </div>
@@ -34,7 +34,8 @@
                 </p>
                 <p>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aicon.png" alt="aicon" />
-                    こども食堂ごとに参加条件がありますが、誰でも来ていいというところが多いです。条件検索から探してみてください。
+                    こども食堂ごとに参加条件がありますが、誰でも来ていいというところが多いです。
+                    <a href="<?php echo home_url('/find'); ?>">条件からさがす</a>から探してみてください。
                 </p>
             </div>
             <div class="text">
@@ -44,9 +45,8 @@
                 </p>
                 <p>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aicon.png" alt="aicon" />
-                    こども食堂とは？のページで解説しています。また、特集記事
-                    Pick
-                    upインタビューで運営者の想いを記事にしています。ぜひご一読ください。
+                    <a href="<?php echo home_url('/concept'); ?>">こども食堂とは</a>のページで解説しています。
+                    また、 <a href="<?php echo home_url('/interview'); ?>">特集記事 Pickupインタビュー</a>で運営者の想いを記事にしています。ぜひご一読ください。
                 </p>
             </div>
             <div class="text">
@@ -67,7 +67,8 @@
                 </p>
                 <p>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aicon.png" alt="aicon" />
-                    こども食堂ごとに参加条件がありますが、誰でも来ていいというところが多いです。条件検索から探してみてください。
+                    こども食堂ごとに参加条件がありますが、誰でも来ていいというところが多いです。
+                    <a href="<?php echo home_url('/find'); ?>">条件からさがす</a>から探してみてください。
                 </p>
             </div>
             <div class="btn_faq">
