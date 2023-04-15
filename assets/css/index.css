@@ -297,6 +297,10 @@ html {
     margin: 0 auto;
 }
 
+.pickup_slider li p:nth-child(3) {
+    text-decoration: underline dotted 1px;
+}
+
 /* .orangetabs {
     position: absolute;
     left: 85px;
