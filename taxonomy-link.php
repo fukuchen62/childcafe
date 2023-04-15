@@ -30,12 +30,12 @@
         </ul>
         <!-- 関連リンク -->
         <section class="link_<?php echo $link->slug; ?>" panel is-show>
-            <h2 class="link_title"><?php echo $link->name; ?></h2>
+            <h2 class="link_title link_title_<?php echo $link->slug; ?>"><?php echo $link->name; ?></h2>
             <div class="link_wrap">
                 <?php if (have_posts()) : ?>
                 <?php while(have_posts()) : ?>
                 <?php the_post(); ?>
-                <div class="link">
+                <div class="link_item">
                     <a href="<?php the_field('l_url'); ?>">
                         <?php the_field('l_name'); ?>
                     </a>
