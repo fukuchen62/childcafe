@@ -16,9 +16,9 @@
         'post_type' => 'cafeinfo',
         'posts_per_page' => 6,
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
-        'orderby' => 'rand',
-        // 'orderby' => 'date',
-        // 'order' => 'ASC',
+        // 'orderby' => 'rand',
+        'orderby' => 'date',
+        'order' => 'ASC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'area',

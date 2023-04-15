@@ -151,13 +151,15 @@ $event_query = new WP_Query($fuga);
 
 $piyo = array(
     'post_type' =>'cafeinfo',
-    'posts_per_page' =>  9,
-    'orderby' => 'rand',
-    // 'meta_query' => array(
-    //     array(
-    //         'key'   => 'pic1',
-    //         'compare' => 'EXISTS',
-    //     ),
+    'posts_per_page' =>  -1,
+    // 'orderby' => 'rand',
+    'meta_query' => array(
+        array(
+            'name'   => 'pic1',
+            'value' => 'EXISTS',
+            // 'compare' => '='
+        ),
+    )
     );
 $pic_query = new WP_Query($piyo);
 
@@ -408,14 +410,22 @@ $pic_query = new WP_Query($piyo);
                         $pic_id = attachment_url_to_postid( $pic );
                         $pic_alt = get_post_meta(  $pic_id, '_wp_attachment_image_alt', true );
                     ?>
-                    <?php if (!empty($pic)) : ?>
+                    <?php //if (!empty($pic)) : ?>
                     <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
-                    <?php endif; ?>
+                    <?php //endif; ?>
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
+            <!-- テスト -->
+            <?php if ($pic_query->have_posts()) : ?>
+            <?php while($pic_query->have_posts()) : ?>
+            <?php $pic_query->the_post(); ?>
+            <p><?php print_r(get_field_object('pic1')) ?></p>
+            <?php endwhile; ?>
+            <?php endif; ?>
+
         </div>
         <!-- メインインナー終わり -->
     </div>
