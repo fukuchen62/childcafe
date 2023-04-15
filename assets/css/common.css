@@ -545,6 +545,7 @@ main {
 .footer_nav {
     margin: 0 auto;
     flex-direction: column;
+    padding-left: 15px;
 }
 
 .footer_nav_title_concept p {
