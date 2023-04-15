@@ -39,14 +39,19 @@
                     <a href="<?php the_field('l_url'); ?>">
                         <?php the_field('l_name'); ?>
                     </a>
+                    <p>
+                        説明分テキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
             </div>
             <?php if ($link->slug == 'cafe') : ?>
-            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png" alt="背景画像りんご" />
+            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png"
+                alt="背景画像りんご" />
             <?php elseif($link->slug == 'care') : ?>
-            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png" alt="背景女の子" />
+            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png"
+                alt="背景女の子" />
             <?php elseif($link->slug == 'third') : ?>
             <img class="veg" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/veg.png" alt="背景野菜" />
             <?php endif; ?>

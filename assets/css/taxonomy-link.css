@@ -97,11 +97,18 @@
 }
 
 .link p {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    padding: 5px;
+    text-align: left;
 }
 
 .link a {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
     text-decoration: underline dotted 1px gray;
     text-underline-offset: 10px;
 }
@@ -146,6 +153,14 @@
     .page_link img:hover {
         transform: scale(1.1);
         opacity: 0.8;
+    }
+
+    .link a {
+        width: 60%;
+    }
+
+    .link p {
+        width: 60%;
     }
 
     .link a:hover {
