@@ -38,22 +38,26 @@
                 <?php if ($the_query->have_posts()) : ?>
                 <?php while($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
-                <div class="link_item">
-                    <a href="<?php the_field('l_url'); ?>">
-                        <?php the_field('l_name'); ?>
-                    </a>
-                    <p>
-                        <?php the_field('l_desc'); ?>
+                <a href="<?php the_field('l_url'); ?>">
+                    <div class="link_item">
+                        <p class="link_item_name">
+                            <?php the_field('l_name'); ?>
                         </p>
-                </div>
+                        <p>
+                            <?php the_field('l_desc'); ?>
+                        </p>
+                    </div>
+                </a>
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
             <?php if ($link->slug == 'cafe') : ?>
-            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png" alt="背景画像りんご" />
+            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png"
+                alt="背景画像りんご" />
             <?php elseif($link->slug == 'care') : ?>
-            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png" alt="背景女の子" />
+            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png"
+                alt="背景女の子" />
             <?php elseif($link->slug == 'third') : ?>
             <img class="veg" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/veg.png" alt="背景野菜" />
             <?php endif; ?>
