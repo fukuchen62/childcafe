@@ -5,9 +5,10 @@
 	$args = array(
 		'post_type' => 'interview',
 		'posts_per_page' => 6,
-        // 'orderby' => 'date',
-        'orderby' => 'rand',
-        // 'order' => 'ASC',
+        'orderby' => 'date',
+        //ランダムにすると、ページを進めた時に再度ランダムになってしまう
+        // 'orderby' => 'rand',
+        'order' => 'ASC',
         'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
 	);
 	$the_query = new WP_Query($args);

@@ -1,3 +1,12 @@
+<?php
+if (is_tax('area')) {
+    $title_area_slug = get_query_var('area');
+    $title_area = get_term_by('slug', $title_area_slug, 'area');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -14,6 +23,10 @@
 
     <!--description設定-->
     <meta name="description" content="徳島県下のこども食堂の情報まとめサイトです。子ども食堂はこどもも大人も誰でも行ける多世代交流拠点です。興味がある人、行ってみたい人、支援したい人に役立つ情報を掲載しています。">
+
+    <?php if (is_tax('area')) :?>
+    <title><?php echo 'エリアからさがす '.$title_area->name.' &#8211; 徳島こども食堂ナビ' ?></title>
+    <?php endif; ?>
 
     <?php wp_head(); ?>
 </head>

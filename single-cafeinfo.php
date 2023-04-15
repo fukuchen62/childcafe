@@ -332,12 +332,12 @@ $the_query = new WP_Query($args);
                         </div>
                         <?php if (!empty(get_field('interview_id'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事はこちら'; ?></a>
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id')); ?>"><?php echo get_field('name').'の特集記事'; ?></a>
                         </div>
                         <?php endif; ?>
                         <?php if (!empty(get_field('interview_id_2'))) : ?>
                         <div class="pc_pickup">
-                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2はこち'; ?></a>
+                            <a class="btn_item" href="<?php echo home_url('/interview/' . get_field('interview_id_2')); ?>"><?php echo get_field('name').'の特集記事2'; ?></a>
                         </div>
                         <?php endif; ?>
                     </div>
