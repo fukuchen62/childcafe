@@ -543,7 +543,6 @@ main {
 }
 
 .footer_nav {
-    width: 80%;
     margin: 0 auto;
     flex-direction: column;
 }
@@ -569,6 +568,7 @@ main {
 .footer_copyright p {
     margin-top: 40px;
     text-align: center;
+    padding: 20px 0;
 }
 
 .with_girl {
@@ -581,7 +581,8 @@ main {
 
 @media (min-width: 770px) {
     .footer_nav {
-        padding: 50px 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
         max-width: 1024px;
         flex-direction: row;
         margin: 0 auto;
