@@ -4,17 +4,19 @@
     $link_slug = get_query_var('link');
     $link = get_term_by('slug', $link_slug, 'link');
 
-    // $args = array(
-    //     'post_type' => 'links',
-    //     'tax_query' => array(
-    //         array(
-    //             'taxonomy' => 'link',
-    //             'field' => 'term_id',
-    //             'terms' => $link->term_id,
-    //         ),
-    //     ),
-    // );
-    // $the_query = new WP_Query($args);
+    $args = array(
+        'post_type' => 'links',
+        'orderby' => 'menu_order',
+        'order' => ' ASC',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'link',
+                'field' => 'term_id',
+                'terms' => $link->term_id,
+            ),
+        ),
+    );
+    $the_query = new WP_Query($args);
 
 ?>
 
@@ -32,26 +34,25 @@
         <section class="link_<?php echo $link->slug; ?>" panel is-show>
             <h2 class="link_title link_title_<?php echo $link->slug; ?>"><?php echo $link->name; ?></h2>
             <div class="link_wrap">
-                <?php if (have_posts()) : ?>
-                <?php while(have_posts()) : ?>
-                <?php the_post(); ?>
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
                 <div class="link_item">
                     <a href="<?php the_field('l_url'); ?>">
                         <?php the_field('l_name'); ?>
                     </a>
                     <p>
-                        説明分テキストテキストテキストテキストテキストテキストテキストテキスト
-                    </p>
+                        <?php the_field('l_desc'); ?>
+                        </p>
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
             <?php if ($link->slug == 'cafe') : ?>
-            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png"
-                alt="背景画像りんご" />
+            <img class="apple" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/apple.png" alt="背景画像りんご" />
             <?php elseif($link->slug == 'care') : ?>
-            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png"
-                alt="背景女の子" />
+            <img class="girl" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/girl.png" alt="背景女の子" />
             <?php elseif($link->slug == 'third') : ?>
             <img class="veg" src="<?php echo get_template_directory_uri(); ?>/assets/images/link/veg.png" alt="背景野菜" />
             <?php endif; ?>

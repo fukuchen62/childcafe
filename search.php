@@ -35,26 +35,26 @@ $post__not_in[] = 774;
 
 
 $args = array(
-// 'post_type' => array('page','cafeinfo','interview','event') ,
-// 'posts_per_page' => 6,
-// 'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
-// 'post_status' => 'publish', // 公開された投稿を指定
-// 's' => $keywords,
-// // 'post__not_in' => array(771,774,$event_ids),
-// 'post__not_in' =>  $post__not_in,
+'post_type' => array('page','cafeinfo','interview','event') ,
+'posts_per_page' => 6,
+'paged' => get_query_var('paged'), //何ページ目の情報を表示すれば良いか
+'post_status' => 'publish', // 公開された投稿を指定
+'s' => $keywords,
+'post__not_in' => array(771,774,$event_ids),
+'post__not_in' =>  $post__not_in,
     // 'relation' => 'OR',
     //     array(
-            'post_type' => 'cafeinfo' ,
-            'tax_query' => array(
-                // 'relation' => 'AND',
-                    array(
-                        'taxonomy' => 'area',           //タクソノミー：『エリア』
-                        'field' => 'name',
-                        'terms' => $keywords,
-                        // 'include_children' => true,
-                        'operator' => 'LIKE',
-                    ),
-                )
+            // 'post_type' => 'cafeinfo' ,
+            // 'tax_query' => array(
+            //     // 'relation' => 'AND',
+            //         array(
+            //             'taxonomy' => 'area',           //タクソノミー：『エリア』
+            //             'field' => 'name',
+            //             'terms' => $keywords,
+            //             // 'include_children' => true,
+            //             'operator' => 'LIKE',
+            //         ),
+            //     )
                     // )
 
 );
@@ -96,8 +96,8 @@ new WP_Query($wp_query);
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <div class="search_inner">
-            <?php print_r($args) ;?>
-            <?php print_r( $eventbase) ;?>
+            <?php //print_r($args) ;?>
+            <?php //print_r( $eventbase) ;?>
 
             <h2 class="title"><?php echo '「'. $keywords . '」の検索結果一覧'; ?></h2>
             <!-- <h2 class="title"><?php //echo '「'. get_search_query() . '」の検索結果一覧'; ?></h2> -->

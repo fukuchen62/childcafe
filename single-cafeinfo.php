@@ -37,7 +37,7 @@ if ($child_price == '0') {
 }
 
 if (!empty(get_field('child_price_info',$event_id))) {
-    $child_price = $child_price.' ('.get_field('child_price_info',$event_id).')';
+    $child_price = $child_price.'【'.get_field('child_price_info',$event_id).'】';
 }
 
 $price = array('こども '.$child_price);
@@ -51,7 +51,7 @@ if (!empty(get_field('adult_price',$event_id))) {
         $adult_price = $adult_price.'円';
     }
     if (!empty(get_field('adult_price_info',$event_id))) {
-    $adult_price = $adult_price.' ('.get_field('adult_price_info',$event_id).')';
+    $adult_price = $adult_price.'【'.get_field('adult_price_info',$event_id).'】';
     }
     $price[] = 'おとな '.$adult_price;
 }
@@ -59,7 +59,7 @@ if (!empty(get_field('adult_price',$event_id))) {
 if (!empty(get_field('any',$event_id))) {
     $any = '募金制';
     if (!empty(get_field('any_info',$event_id))) {
-    $any = $any.' ('.get_field('any_info',$event_id).')';
+    $any = $any.' ('.get_field('any_info',$event_id).'】';
     $price = $any;
 }
 }
@@ -74,37 +74,37 @@ if (!empty(get_field('person',$event_id))) {
 
         if ($value == '誰でも行ける') {
             if (!empty(get_field('everyone',$event_id))) {
-                $value = $value. ' (' . get_field('everyone',$event_id). ')';
+                $value = $value. '【' . get_field('everyone',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == 'こどもは保護者同伴') {
             if (!empty(get_field('accompanied',$event_id))) {
-                $value = $value. ' (' . get_field('accompanied',$event_id). ')';
+                $value = $value. '【' . get_field('accompanied',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == 'こどもだけで行ける') {
             if (!empty(get_field('child_only',$event_id))) {
-                $value = $value. ' (' . get_field('child_only',$event_id). ')';
+                $value = $value. '【' . get_field('child_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '大人だけで行ける') {
             if (!empty(get_field('adult_only',$event_id))) {
-                $value = $value. ' (' . get_field('adult_only',$event_id). ')';
+                $value = $value. '【' . get_field('adult_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '大人は保護者だけ') {
             if (!empty(get_field('guardian_only',$event_id))) {
-                $value = $value. ' (' . get_field('guardian_only',$event_id). ')';
+                $value = $value. '【' . get_field('guardian_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '地域の方だけ') {
             if (!empty(get_field('local_only',$event_id))) {
-                $value = $value. ' (' . get_field('local_only',$event_id). ')';
+                $value = $value. '【' . get_field('local_only',$event_id). '】';
             }
             $person_info[] = $value;
         }elseif ($value == '会員登録制') {
             if (!empty(get_field('member',$event_id))) {
-                $value = $value. ' (' . get_field('member',$event_id). ')';
+                $value = $value. '【' . get_field('member',$event_id). '】';
             }
             $person_info[] = $value;
         }
@@ -136,7 +136,7 @@ if ($reserve == '1') {
 }
 
 if (!empty(get_field('reserve_info',$event_id))) {
-$reserve = $reserve. ' (' . get_field('reserve_info',$event_id). ')';
+$reserve = $reserve. '【' . get_field('reserve_info',$event_id). '】';
 }
 
 $events['事前予約'] = $reserve;
@@ -151,7 +151,7 @@ if ($parking == '有り') {
 }
 
 if (!empty(get_field('parking_info',$event_id))) {
-$parking = $parking. ' (' . get_field('parking_info',$event_id). ')';
+$parking = $parking. ' 【' . get_field('parking_info',$event_id). '】';
 }
 
 $events['駐車場'] = $parking;
