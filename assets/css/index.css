@@ -902,8 +902,8 @@ html {
     margin: 0 5px;
 }
 .activity_slider img {
-    height: 182px;
     width: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
