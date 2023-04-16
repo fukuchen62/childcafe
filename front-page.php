@@ -149,28 +149,31 @@ $fuga = array(
 	);
 $event_query = new WP_Query($fuga);
 
-$piyo = array(
-    'post_type'      => 'cafeinfo',
-    'posts_per_page' => -1,
-    // 'orderby'        => 'rand',
-    //なぜか紬だけ出てしまう・・・
-    // 'post__not_in'   => 448,
-    'meta_query'     => array(
-        array(
-            'name'    => 'pic1',
-            'value'   => 'http',
-            'compare' => 'LIKE',
-        ),
-    ),
-);
-$pic_query = new WP_Query($piyo);
+// $piyo = array(
+    // 'post_type'      => 'cafeinfo',
+    // 'post_in'       => array(480,473,455,459,461),
+    // 'posts_per_page' => 5,
+    // 'orderby'        => 'date',
+        // 'orderby'        => 'rand',
+    // 'order'          => 'ASC',
+    // //なぜか紬だけ出てしまう・・・
+    // // 'post__not_in'   => 448,
+    // 'meta_query'     => array(
+    //     array(
+    //         'name'    => 'pic1',
+    //         'value'   => 'http',
+    //         'compare' => 'LIKE',
+    //     ),
+    // ),
+// );
+// $pic_query = new WP_Query($piyo);
 
 ?>
 
 <main class="main_index">
     <div class="main_inner">
         <!-- headerがposition fixedなのでheader分の余白調整のためblock -->
-        <!-- <div class="block"></div> -->
+        <div class="block"></div>
         <!-- キービジュアル -->
         <section>
             <!-- <form class="hbg_search_pc" action="<?php //echo home_url('/'); ?>" method="get">
@@ -408,15 +411,16 @@ $pic_query = new WP_Query($piyo);
                 <?php $pic_query->the_post(); ?>
                 <div class="activity_slider">
                     <?php
-                    if (!is_null(get_field('pic1'))) : ?>
+                    //if (!is_null(get_field('pic1'))) : ?>
                     <?php
                     $pic = get_field('pic1');
                     $pic_id = attachment_url_to_postid( $pic );
                     $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
                     ?>
                     <?php //if (is_null($pic)) : ?>
-                    <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
-                    <?php endif;?>
+                    <!-- <img src="<?php //echo $pic; ?>" alt="<?php //echo $pic_alt; ?>" /> -->
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="">
+                    <?php //endif;?>
                     <?php //endif; ?>
                 </div>
                 <?php endwhile; ?>
@@ -424,18 +428,18 @@ $pic_query = new WP_Query($piyo);
                 <?php wp_reset_postdata(); ?>
             </div>
             <!-- テスト -->
-            <?php if ($pic_query->have_posts()) : ?>
-            <?php while($pic_query->have_posts()) : ?>
-            <?php $pic_query->the_post(); ?>
+            <?php //if ($pic_query->have_posts()) : ?>
+            <?php //while($pic_query->have_posts()) : ?>
+            <?php //$pic_query->the_post(); ?>
             <p>
                 <?php
             //     echo '<pre>';
             //  print_r(get_field_objects());
             //  echo '</pre>';
-             ?>
-             </p>
-            <?php endwhile; ?>
-            <?php endif; ?>
+            ?>
+            </p>
+            <?php //endwhile; ?>
+            <?php //endif; ?>
 
         </div>
         <!-- メインインナー終わり -->
