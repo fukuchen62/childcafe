@@ -298,7 +298,11 @@ html {
 }
 
 .pickup_slider li p:nth-child(3) {
-    text-decoration: underline dotted 1px;
+    text-decoration-line: underline;
+    text-decoration-color: #ffb700;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
 }
 
 .pickup_slider li a {
