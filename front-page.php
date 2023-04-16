@@ -406,43 +406,43 @@ $event_query = new WP_Query($fuga);
             <h2 class="title">活動の様子</h2>
             <!-- 活動風景スライド -->
             <div class="activity_slide">
-                <?php if ($pic_query->have_posts()) : ?>
-                <?php while($pic_query->have_posts()) : ?>
-                <?php $pic_query->the_post(); ?>
-                <div class="activity_slider">
-                    <?php
+                <?php //if ($pic_query->have_posts()) : ?>
+                <?php //while($pic_query->have_posts()) : ?>
+                <?php //$pic_query->the_post(); ?>
+                <!-- <div class="activity_slider"> -->
+                <?php
                     //if (!is_null(get_field('pic1'))) : ?>
-                    <?php
-                    $pic = get_field('pic1');
-                    $pic_id = attachment_url_to_postid( $pic );
-                    $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
+                <?php
+                    // $pic = get_field('pic1');
+                    // $pic_id = attachment_url_to_postid( $pic );
+                    // $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
                     ?>
-                    <?php //if (is_null($pic)) : ?>
-                    <!-- <img src="<?php //echo $pic; ?>" alt="<?php //echo $pic_alt; ?>" /> -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="">
-                    <?php //endif;?>
-                    <?php //endif; ?>
-                </div>
-                <?php endwhile; ?>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
+                <?php //if (is_null($pic)) : ?>
+                <!-- <img src="<?php //echo $pic; ?>" alt="<?php //echo $pic_alt; ?>" /> -->
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="">
+                <?php //endif;?>
+                <?php //endif; ?>
             </div>
-            <!-- テスト -->
-            <?php //if ($pic_query->have_posts()) : ?>
-            <?php //while($pic_query->have_posts()) : ?>
-            <?php //$pic_query->the_post(); ?>
-            <p>
+            <?php //endwhile; ?>
+            <?php //endif; ?>
+            <?php wp_reset_postdata(); ?>
+        </div>
+        <!-- テスト -->
+        <?php //if ($pic_query->have_posts()) : ?>
+        <?php //while($pic_query->have_posts()) : ?>
+        <?php //$pic_query->the_post(); ?>
+        <p>
                 <?php
             //     echo '<pre>';
             //  print_r(get_field_objects());
             //  echo '</pre>';
             ?>
             </p>
-            <?php //endwhile; ?>
-            <?php //endif; ?>
+        <?php //endwhile; ?>
+        <?php //endif; ?>
 
-        </div>
-        <!-- メインインナー終わり -->
+    </div>
+    <!-- メインインナー終わり -->
     </div>
 </main>
 </div>
