@@ -12,7 +12,7 @@
     text-decoration-line: underline;
     text-decoration-color: #ffb700;
     text-decoration-style: dotted;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: 0.2em;
     text-underline-offset: 10px;
 }
 
