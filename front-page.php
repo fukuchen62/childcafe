@@ -333,7 +333,7 @@ $event_query = new WP_Query($fuga);
             <div class="section_inner">
                 <h2 class="title link_title">リンク集</h2>
                 <div class="link_flex">
-                    <a href="<?php echo home_url('/link/care'); ?>" class="link_cover">
+                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
                         <div class="link_item">
                             <div class="btn_item link_sample">こども食堂関連</div>
                             <div class="link_text">
@@ -343,7 +343,7 @@ $event_query = new WP_Query($fuga);
                             </div>
                         </div>
                     </a>
-                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                    <a href="<?php echo home_url('/link/care'); ?>" class="link_cover">
                         <div class="link_item">
                             <div class="btn_item link_sample02">子育て支援関連</div>
                             <div class="link_text">
@@ -409,17 +409,33 @@ $event_query = new WP_Query($fuga);
                 <?php //if ($pic_query->have_posts()) : ?>
                 <?php //while($pic_query->have_posts()) : ?>
                 <?php //$pic_query->the_post(); ?>
-                <!-- <div class="activity_slider"> -->
-                <?php
+                <div class="activity_slider">
+                    <?php
                     //if (!is_null(get_field('pic1'))) : ?>
-                <?php
+                    <?php
                     // $pic = get_field('pic1');
                     // $pic_id = attachment_url_to_postid( $pic );
                     // $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
                     ?>
-                <?php //if (is_null($pic)) : ?>
-                <!-- <img src="<?php //echo $pic; ?>" alt="<?php //echo $pic_alt; ?>" /> -->
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/contactbottom.png" alt="">
+                    <?php //if (is_null($pic)) : ?>
+                    <!-- <img src="<?php //echo $pic; ?>" alt="<?php //echo $pic_alt; ?>" /> -->
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/kawashima_egaosyokudo_party_06.JPG" alt="">
+                </div>
+                <div class="activity_slider">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/kitajima_kodomosyokudo_party_01.jpg" alt="">
+                </div>
+                <div class="activity_slider">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/kodomonosyokudominasyokudo_party_04.jpg" alt="">
+                </div>
+                <div class="activity_slider">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/manaka_shokudou_party_04.jpg" alt="">
+                </div>
+                <div class="activity_slider">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/nikonikokodomosyokudo_food_01.jpg" alt="">
+                </div>
+                <div class="activity_slider">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/act/pokapoka_shokudou_party_01.png" alt="">
+                </div>
                 <?php //endif;?>
                 <?php //endif; ?>
             </div>
@@ -443,7 +459,6 @@ $event_query = new WP_Query($fuga);
 
     </div>
     <!-- メインインナー終わり -->
-    </div>
 </main>
 </div>
 <?php get_footer(); ?>

@@ -181,15 +181,15 @@ if (!empty(get_field('staff'))) {
 }
 
 if (!empty(get_field('tel'))) {
-    $tel = '電話番号:'.get_field('tel');
+    $tel = get_field('tel');
 }
 
 if (!empty(get_field('email'))) {
-    $email = 'メールアドレス:'.get_field('email');
+    $email = get_field('email');
 }
 
 if (!empty(get_field('line_id'))) {
-    $line_id = 'LINE:'.get_field('line_id');
+    $line_id = get_field('line_id');
 }
 
 if (!empty($contact)) {
@@ -403,13 +403,22 @@ $the_query = new WP_Query($args);
                     <h4 class="subtitle">連絡先</h4>
                     <div>
                         <?php if (!empty($tel)) : ?>
-                        <p class="subtitle_text"><?php echo $tel; ?></p>
+                        <p class="subtitle_text">
+                            電話番号:<br />
+                            <?php echo $tel; ?>
+                        </p>
                         <?php endif; ?>
                         <?php if (!empty($email)) : ?>
-                        <p class=" subtitle_text"><?php echo $email; ?></p>
+                        <p class=" subtitle_text">
+                            メールアドレス:<br />
+                            <?php echo $email; ?>
+                        </p>
                         <?php endif; ?>
                         <?php if (!empty($line_id)) : ?>
-                        <p class="subtitle_text"><?php echo $line_id; ?></p>
+                        <p class="subtitle_text">
+                            LINE: <br />
+                            <?php echo $line_id; ?>
+                        </p>
                         <?php endif; ?>
                     </div>
                 </div>
