@@ -295,6 +295,11 @@ $the_query = new WP_Query($args);
     width: 30px;
     height: 30px;
 }
+
+.wpulike-default button.wp_ulike_btn:hover {
+    width: 30px;
+    height: 30px;
+}
 </style>
 
 <main>
@@ -521,7 +526,7 @@ $the_query = new WP_Query($args);
                         <?php endwhile; ?>
                         <?php else: ?>
                         <p>
-                            （仮表示中）直近の開催情報は、各食堂のSNS等をご覧ください。
+                            直近の開催情報は、各食堂のSNS等をご覧ください。
                         </p>
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
