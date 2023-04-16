@@ -69,7 +69,7 @@ if (!empty(get_field('adult_price',$event_id))) {
 if (!empty(get_field('any',$event_id))) {
     $any = '募金制';
     if (!empty(get_field('any_info',$event_id))) {
-    $any = $any.' ('.get_field('any_info',$event_id).'】';
+    $any = $any.'【'.get_field('any_info',$event_id).'】';
     $price = $any;
 }
 }
