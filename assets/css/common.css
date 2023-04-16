@@ -58,7 +58,7 @@ main {
     margin: 0 auto;
 }
 
-.btn_item:hover {
+.btn_item a:hover {
     background-position: right center;
     background-size: 200% auto;
     -webkit-animation: pulse 2s infinite;
