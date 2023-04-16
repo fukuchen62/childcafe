@@ -43,12 +43,12 @@
         <?php get_template_part('template-parts/breadcrumb'); ?>
         <h2 class="title">お問い合わせ</h2>
         <?php
-        if(isset($_COOKIE["cf7msm_posted_data"])) {
-    // クッキー名"cookie"に値がセットされていたら削除する
-    echo"クッキーの値：".$_COOKIE["cf7msm_posted_data"]."<br />";
-    setcookie("cf7msm_posted_data", " ", time()-60);
-    echo"クッキーを削除しました";
-        }
+    //     if(isset($_COOKIE["cf7msm_posted_data"])) {
+    // // クッキー名"cookie"に値がセットされていたら削除する
+    // echo"クッキーの値：".$_COOKIE["cf7msm_posted_data"]."<br />";
+    // setcookie("cf7msm_posted_data", " ", time()-60);
+    // echo"クッキーを削除しました";
+    //     }
         ?>
         <!-- 各子供食堂 -->
         <section class="contact1">

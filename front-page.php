@@ -150,17 +150,19 @@ $fuga = array(
 $event_query = new WP_Query($fuga);
 
 $piyo = array(
-    'post_type' =>'cafeinfo',
-    'posts_per_page' =>  -1,
-    'orderby' => 'rand',
-    'meta_query' => array(
+    'post_type'      => 'cafeinfo',
+    'posts_per_page' => -1,
+    // 'orderby'        => 'rand',
+    //なぜか紬だけ出てしまう・・・
+    // 'post__not_in'   => 448,
+    'meta_query'     => array(
         array(
-            'name'   => 'pic1',
-            'value' => 'http',
+            'name'    => 'pic1',
+            'value'   => 'http',
             'compare' => 'LIKE',
         ),
-    )
-    );
+    ),
+);
 $pic_query = new WP_Query($piyo);
 
 ?>
@@ -185,7 +187,7 @@ $pic_query = new WP_Query($piyo);
                 </li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv4.jpg" alt="KV画像">
                 </li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv5.jpg" alt="KV画像">
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv5.jpeg" alt="KV画像">
                 </li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kv/kv6.jpg" alt="KV画像">
                 </li>
@@ -328,7 +330,7 @@ $pic_query = new WP_Query($piyo);
             <div class="section_inner">
                 <h2 class="title link_title">リンク集</h2>
                 <div class="link_flex">
-                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                    <a href="<?php echo home_url('/link/care'); ?>" class="link_cover">
                         <div class="link_item">
                             <div class="btn_item link_sample">こども食堂関連</div>
                             <div class="link_text">
@@ -348,7 +350,7 @@ $pic_query = new WP_Query($piyo);
                             </div>
                         </div>
                     </a>
-                    <a href="<?php echo home_url('/link/cafe'); ?>" class="link_cover">
+                    <a href="<?php echo home_url('/link/third'); ?>" class="link_cover">
                         <div class="link_item">
                             <div class="btn_item btntest">こどもの居場所関連</div>
                             <div class="link_text">
@@ -406,13 +408,15 @@ $pic_query = new WP_Query($piyo);
                 <?php $pic_query->the_post(); ?>
                 <div class="activity_slider">
                     <?php
-                        // <?php if ($pic_query->have_posts()) :
+                    if (!is_null(get_field('pic1'))) : ?>
+                    <?php
                     $pic = get_field('pic1');
                     $pic_id = attachment_url_to_postid( $pic );
                     $pic_alt = get_post_meta( $pic_id, '_wp_attachment_image_alt', true );
                     ?>
-                    <?php //if (!empty($pic)) : ?>
+                    <?php //if (is_null($pic)) : ?>
                     <img src="<?php echo $pic; ?>" alt="<?php echo $pic_alt; ?>" />
+                    <?php endif;?>
                     <?php //endif; ?>
                 </div>
                 <?php endwhile; ?>
@@ -423,7 +427,13 @@ $pic_query = new WP_Query($piyo);
             <?php if ($pic_query->have_posts()) : ?>
             <?php while($pic_query->have_posts()) : ?>
             <?php $pic_query->the_post(); ?>
-            <p><?php print_r(get_field_object('pic1')) ?></p>
+            <p>
+                <?php
+            //     echo '<pre>';
+            //  print_r(get_field_objects());
+            //  echo '</pre>';
+             ?>
+             </p>
             <?php endwhile; ?>
             <?php endif; ?>
 

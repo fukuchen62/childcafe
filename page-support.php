@@ -21,7 +21,7 @@
                     Amazonみんなで応援プログラムに参加している食堂はこちら!
                 </p>
                 <div class="font_awsome">
-                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #94aff7"></i>
+                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
                 <a href="<?php echo home_url('programlist'); ?>" class="btn_item">参加食堂一覧へ</a>
             </div>
@@ -35,7 +35,7 @@
                     こども食堂はお住まいの地域から検索できます。
                 </p>
                 <div class="font_awsome">
-                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #94aff7"></i>
+                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
                 <a href="<?php echo home_url('area/east'); ?>" class="btn_item">エリアからさがす</a>
             </div>
@@ -47,7 +47,7 @@
                     スタッフを募集している食堂はこちらのページから条件を絞り込んで検索できます！
                 </p>
                 <div class="font_awsome">
-                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #94aff7"></i>
+                    <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
                 <a href="<?php echo home_url('find'); ?>" class="btn_item">条件からさがす</a>
             </div>
