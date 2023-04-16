@@ -286,6 +286,16 @@ $args = array(
 $the_query = new WP_Query($args);
 
 ?>
+<style>
+.wpulike-default button.wp_ulike_btn {
+    background-color: unset;
+}
+
+.wpulike-default .wp_ulike_put_image:after {
+    width: 30px;
+    height: 30px;
+}
+</style>
 
 <main>
     <div class="main_inner">
