@@ -14,7 +14,7 @@
             <?php echo get_field('name'); ?>
             </p>
             <hr>
-            <p>
+            <p class="index_text">
             <?php
                 $excerpt = get_field('excerpt');
                 echo $excerpt . '・・・' ;

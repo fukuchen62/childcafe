@@ -315,22 +315,22 @@ html {
 
 /* pickupスライドショー */
 .pickup_slide li {
-    background-color: white;
+    /* background-color: white;
     width: 255px;
-    height: 380px;
-    border-radius: 5px;
+    height: 380px; */
+    /* border-radius: 5px;
     border: solid 1px #665a3d;
-    box-shadow: 3px 3px 3px #999;
+    box-shadow: 3px 3px 3px #999; */
     position: relative;
-    padding: 10px;
-    padding-bottom: 30px;
+    /* padding: 10px;
+    padding-bottom: 30px; */
     overflow: visible;
 }
 
 .pickup_slide {
     position: relative;
-    width: 300px;
-    margin: 0 auto;
+    /* width: 300px;
+    margin: 0 auto; */
 }
 
 /* .orangetabs {
@@ -350,11 +350,11 @@ html {
     display: none;
 } */
 
-.pickup_slider {
+/* .pickup_slider {
     width: 255px;
     height: 380px;
     margin: 0 auto;
-}
+} */
 
 /* スリック矢印 */
 .slick-prev:before {
@@ -375,19 +375,53 @@ html {
 /* スリック矢印ここまで */
 
 .pickup_slider img {
-    width: 214px;
-    height: 221px;
-    border-radius: 5px;
+    /* width: 214px;
+    height: 221px; */
+    height: 200px;
+    /* border-radius: 5px; */
+    border-radius: 10px;
     border: solid 1px #665a3d;
     object-fit: cover;
+    aspect-ratio: 4/3;
+    /* margin: 0 auto; */
+}
+
+.index_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.index_item_card {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    padding: 16px;
     margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+}
+
+.index_item_card_title {
+    font-weight: bolder;
+}
+
+hr {
+    width: 100%;
+}
+
+.index_text {
+    text-align: initial;
 }
 
 @media (min-width: 770px) {
     .pickup_slider {
         max-width: 1020px;
         width: 100%;
-        height: 380px;
+        /* height: 380px; */
+        height: 440px;
         margin: 0 auto;
     }
 
@@ -415,10 +449,10 @@ html {
         margin: 0 15px;
     }
 
-    .pickup_slider img {
+    /* .pickup_slider img {
         width: 280px;
         height: 200px;
-    }
+    } */
     .interviews .btn_item {
         margin-bottom: 30px;
     }
