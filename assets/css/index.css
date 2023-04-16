@@ -174,11 +174,31 @@ html {
     text-align: center;
     background-color: rgba(255, 255, 255, 1);
     margin: 0 auto;
-    padding: 5px 0 100px;
+    padding: 110px 0 80px 0;
     border: 3px solid #ffb700;
     border-radius: 35px;
     position: relative;
     overflow: hidden;
+}
+
+.text_box {
+    /* background-image: url(../images/index/rice.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: right -10% bottom; */
+    /* opacity: 0.5; */
+}
+
+.info_icon::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/index/rice.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    /* margin-right: 5px; */
 }
 
 .info .section_inner {
@@ -196,13 +216,14 @@ html {
     z-index: 10;
 }
 
-.pudding {
+.flug {
     position: absolute;
     width: 150px;
     height: 150px;
-    top: 55%;
-    right: 0;
+    top: -10%;
+    left: 0;
     opacity: 0.7;
+    transform: rotate(-30deg);
 }
 @keyframes calender {
     0%,
@@ -219,15 +240,30 @@ html {
 }
 
 .text_box p {
-    text-decoration: underline dashed 1.5px #a5a4a4;
+    text-decoration: underline dotted 3px orange;
     text-underline-offset: 8px;
 }
 
 @media (min-width: 770px) {
     .info .text_box {
-        width: 60%;
-        height: 80%;
+        max-width: 633px;
     }
+
+    .text_box {
+        font-size: 18px;
+    }
+
+    .info_icon::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/index/rice.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+
     .pudding {
         width: 170px;
         height: 170px;
@@ -286,8 +322,8 @@ html {
     border: solid 1px #665a3d;
     box-shadow: 3px 3px 3px #999;
     position: relative;
-    /* padding: 10px;
-    padding-bottom: 30px; */
+    padding: 10px;
+    padding-bottom: 30px;
     overflow: visible;
 }
 
@@ -295,20 +331,6 @@ html {
     position: relative;
     width: 300px;
     margin: 0 auto;
-}
-
-.pickup_slider li p:nth-child(3) {
-    text-decoration-line: underline;
-    text-decoration-color: #ffb700;
-    text-decoration-style: dotted;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 3px;
-}
-
-.pickup_slider li a {
-    display: inline-block;
-    padding: 10px;
-    padding-bottom: 30px;
 }
 
 /* .orangetabs {
@@ -567,6 +589,10 @@ html {
 }
 
 /* 子ども食堂とは */
+.onigiri_inner {
+    padding-bottom: 80px;
+}
+
 .childcafe {
     background-color: #d7f794;
 }
@@ -580,6 +606,7 @@ html {
     width: 99px;
     height: 95px;
     bottom: 3px;
+    bottom: -120px;
     left: -100px;
     z-index: 1;
     animation: korogari 6s linear infinite alternate;
@@ -591,6 +618,8 @@ html {
     height: 45px;
     bottom: 0;
     left: -120px;
+    bottom: -120px;
+    left: -140px;
     z-index: 1;
     animation: korogari_small 6s linear infinite alternate;
 }
@@ -906,8 +935,8 @@ html {
     margin: 0 5px;
 }
 .activity_slider img {
+    aspect-ratio: 4/3;
     width: 100%;
-    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
