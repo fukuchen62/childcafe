@@ -22,6 +22,8 @@
     text-decoration-style: dotted;
     text-decoration-thickness: 5px;
     text-align: center;
+    text-underline-offset: 8px;
+    margin-bottom: 15px;
 }
 
 .subtitle_ulineorange {
@@ -468,6 +470,7 @@
     padding: 20px;
     font-size: 15px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .bgcolor_news p {
@@ -622,3 +625,10 @@ ul img {
 }
 
 /* スリック矢印ここまで */
+
+/* ビデオがあった場合 */
+
+video {
+    margin: 50px autp;
+    width: 80%;
+}
