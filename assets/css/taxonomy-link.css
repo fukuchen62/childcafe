@@ -131,7 +131,10 @@
     margin: 0 auto;
     padding: 5px;
     text-align: center;
-    text-decoration: underline solid 1px orange;
+    text-decoration-line: underline;
+    text-decoration-color: orange;
+    text-decoration-style: solid;
+    text-decoration-thickness: 1px;
     text-underline-offset: 5px;
 }
 
@@ -199,6 +202,7 @@
     }
 
     .link_third {
+        padding-bottom: 110px;
         background-color: #fdffb0;
     }
 

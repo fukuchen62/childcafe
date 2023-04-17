@@ -199,12 +199,11 @@ new WP_Query($wp_query);
                 <?php else: ?>
                 <h3>（仮表示）結果に一致するものはありませんでした</h3>
                 <?php endif; ?>
-                <div class="page_nav flex">
-                    <?php original_pagenation(); ?>
-                </div>
 
             </div>
-
+            <div class="page_nav flex">
+                <?php original_pagenation(); ?>
+            </div>
         </div>
 </main>
 </div>

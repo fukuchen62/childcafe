@@ -20,8 +20,10 @@
     text-decoration-line: underline;
     text-decoration-color: #008000;
     text-decoration-style: dotted;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: 0.2em;
     text-align: center;
+    text-underline-offset: 8px;
+    margin-bottom: 15px;
 }
 
 .subtitle_ulineorange {
@@ -131,6 +133,10 @@
     margin-top: 40px;
 }
 
+.pc_pickup + .pc_pickup {
+    margin-top: 30px;
+}
+
 @media (min-width: 770px) {
     .m1024 {
         max-width: 1024px;
@@ -138,7 +144,8 @@
     .pc_flex {
         margin-top: 30px;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
+        gap: 40px;
         justify-content: space-between;
     }
 
@@ -463,6 +470,7 @@
     padding: 20px;
     font-size: 15px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .bgcolor_news p {
@@ -617,3 +625,19 @@ ul img {
 }
 
 /* スリック矢印ここまで */
+
+/* ビデオがあった場合 */
+
+video {
+    margin: 50px auto;
+    width: 100%;
+    height: 40vh;
+}
+
+@media (min-width: 770px) {
+    video {
+        margin: 100px auto;
+        width: 80%;
+        height: 100%;
+    }
+}

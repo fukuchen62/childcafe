@@ -7,13 +7,20 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-        <h2 class="pickup_title_1">
+        <h2 class="pickup_title_1 pickup_title">
+            <!-- <span class="pickup_title sp">
+                <?php //the_field('title'); ?>
+            </span>
             <span class="pickup_title sp">
+                <?php //echo the_field('organizer'); ?>
+            </span> -->
+            <!-- <span class="pickup_title sp"> -->
+                <nobr>
                 <?php the_field('title'); ?>
-            </span>
-            <span class="pickup_title sp">
+                <wbr>
                 <?php echo the_field('organizer'); ?>
-            </span>
+                </nobr>
+            <!-- </span> -->
         </h2>
         <div class="pickup_single">
             <div class="pickup_top_img">
@@ -42,7 +49,7 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 <?php the_field('message'); ?>
             </div>
             <div class="btn btn_item">
-                <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
+                <a class="btn btn_item" href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
             </div>
         </div>
     </div>
