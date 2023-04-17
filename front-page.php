@@ -136,7 +136,7 @@ $custom_query = new WP_Query( array(
 	// );
 	// $custom_query = new WP_Query($hoge);
 
-
+$current_time = date_i18n('Y-m-d');
 $fuga = array(
 		'post_type' => 'event',
 		'posts_per_page' => 3,
@@ -146,6 +146,15 @@ $fuga = array(
         'meta_key' => 'class',
         //不定期のもの
         'meta_value' => 2,
+        'meta_query' => array(
+		array(
+			'key' => 'datetime', // 記事の日付を表すカスタムフィールドのキーを指定
+			'value' => $current_time, // 現在の日付以降の記事を表示するために、現在の日付を指定
+			'compare' => '>=', // 指定した値以上のものを取得する
+			'type' => ' DATETIME', // カスタムフィールドの値が日付形式であることを指定
+        )
+        )
+
 	);
 $event_query = new WP_Query($fuga);
 
