@@ -10,8 +10,8 @@
 }
 
 .event_item {
-    max-width: 330px;
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
 }
 
 /* カテゴリー一覧 */
@@ -89,7 +89,7 @@
         display: flex;
         max-width: 750px;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
     }
 
     /* カテゴリー一覧 */
