@@ -39,21 +39,22 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     ?>
 
                 <a href="<?php the_permalink(); ?>">
-                    <div class="event_item_card">
+                    <div class="item_card">
                         <?php $eye_catching = get_field('eye_catching');?>
                         <?php if(!empty($eye_catching)): ?>
                         <img src="<?php the_field('eye_catching'); ?>" alt="">
                         <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
+                            alt="">
                         <?php endif; ?>
-                        <p class="event_item_card_title">
+                        <p class="item_card_title">
                             <!-- 日付表示加工予定 ◯月◯日-->
                             <?php echo get_field('datetime').'　'.$this_terms[1]->name; ?>
                         </p>
-                        <p class="event_item_card_title border">
+                        <p class="item_card_title border">
                             <?php echo get_field('name',$cafeinfo_id); ?>
                         </p>
-                        <p class="event_text">
+                        <p class="item_card_text">
                             <?php
                             //整形したい文字列
                             if (!empty(get_field('appeal'))) {

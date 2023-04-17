@@ -112,7 +112,7 @@
                     <p class="item_card_title border">
                         <span class="sp"><?php echo get_field('organizer'); ?></span>
                     </p>
-                    <p>
+                    <p class="item_card_text">
                         <?php
                         if (!empty(get_field('excerpt'))) {
                             echo get_field('excerpt') . '・・・';

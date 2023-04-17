@@ -659,6 +659,10 @@ main {
     aspect-ratio: 4/3;
 }
 
+.item_card_text {
+    text-align: left;
+}
+
 .item_card_title {
     font-weight: bolder;
 }
