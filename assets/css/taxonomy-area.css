@@ -144,17 +144,20 @@ main {
     }
 
     .tab_hover01:hover {
-        background-color: rgb(245, 186, 77);
+        height: 55px;
+        background-color: #fcc800;
         border-radius: 10px;
     }
 
     .tab_hover02:hover {
-        background-color: rgb(37, 166, 5);
+        height: 55px;
+        background-color: #a7d28d;
         border-radius: 10px;
     }
 
     .tab_hover03:hover {
-        background-color: yellow;
+        height: 55px;
+        background-color: #fff462;
         border-radius: 10px;
     }
 
