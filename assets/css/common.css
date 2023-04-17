@@ -635,63 +635,69 @@ main {
 }
 
 /***********************
-    検索結果一覧img
+    カード型、検索一覧img
  **********************/
 
-.result_img {
-    /* margin-top: 25px; */
-    margin-top: 50px;
-}
+/* 一枚のカードCSS */
 
-.result_title {
-    margin-bottom: 50px;
-    border-bottom: 0;
-}
-
-.result_img_wrap {
-    width: 290px;
+.item_card {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    padding: 16px;
     margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* flex-wrap最後の配置を左詰にする */
-.result_img_wrap:after {
-    content: "";
-    width: 135px;
-    margin-top: 20px;
-    color: aliceblue;
-    /* background-color: #f44336; */
-}
-
-.result_img_card {
-    width: 135px;
-    height: 160px;
-    margin-top: 20px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
 }
 
-.result_img_card img {
-    /* width: 100%; */
-    width: 120px;
-    height: 120px;
+.item_card img {
+    height: 200px;
+    border: 1px solid #665a3d;
+    border-radius: 10px;
     object-fit: cover;
+    aspect-ratio: 4/3;
 }
 
-@media screen and (min-width: 770px) {
-    .result_img_wrap {
-        width: 650px;
+.item_card_text {
+    text-align: left;
+}
+
+.item_card_title {
+    font-weight: bolder;
+}
+
+.border {
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #665a3d;
+}
+
+.item_card + .item_card {
+    margin-top: 54px;
+}
+
+.item_card p + p {
+    margin-top: 5px;
+}
+
+@media (min-width: 770px) {
+    .item_card + .item_card {
+        margin-top: 0;
     }
 
-    .result_img_card {
-        width: 200px;
-        height: 245px;
-        margin-top: 50px;
+    .item_card img {
+        width: 100%;
     }
 
-    .result_img_card img {
-        width: 200px;
-        height: 200px;
+    .item_card {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .item_card:hover {
+        opacity: 0.8;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
     }
 }
 

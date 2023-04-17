@@ -94,7 +94,7 @@
             <?php while($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
             <a href="<?php the_permalink(); ?>">
-                <div class="pickup_item_card">
+                <div class="item_card">
                     <?php
                         $eye_catching = get_field('eye_catching');
                         $image_id = attachment_url_to_postid( $eye_catching );
@@ -103,15 +103,16 @@
                     <?php if(!empty($eye_catching)): ?>
                     <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                     <?php else: ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
+                        alt="">
                     <?php endif; ?>
-                    <p class="pickup_item_card_title">
+                    <p class="item_card_title">
                         <?php the_field('title'); ?>
                     </p>
-                    <p class="pickup_item_card_title border">
+                    <p class="item_card_title border">
                         <span class="sp"><?php echo get_field('organizer'); ?></span>
                     </p>
-                    <p>
+                    <p class="item_card_text">
                         <?php
                         if (!empty(get_field('excerpt'))) {
                             echo get_field('excerpt') . '・・・';
