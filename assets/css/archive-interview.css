@@ -10,8 +10,9 @@
 }
 
 .pickup_item {
-    max-width: 330px;
-    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .intro p + p {
@@ -55,7 +56,7 @@
         max-width: 1024px;
         margin: 80px auto 80px;
         align-content: space-between;
-        row-gap: 50px;
+        gap: 20px;
         flex-wrap: wrap;
     }
     .pickup_item:after {
