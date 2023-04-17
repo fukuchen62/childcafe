@@ -233,6 +233,14 @@
     margin-right: 5px;
 }
 
+.contact_text {
+    text-decoration-line: underline;
+    text-decoration-color: orange;
+    text-decoration-style: solid;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+
 /* 送信画面送信ボタン */
 .return_btn {
     width: 200px;
@@ -273,5 +281,10 @@
         flex-direction: row;
         width: 500px;
         justify-content: space-around;
+    }
+
+    /* 送信確認画面CSS */
+    .contact_item02 {
+        width: 50%;
     }
 }
