@@ -133,7 +133,7 @@
     .support_supplies,
     .support_money,
     .support_help {
-        width: 100%;
+        /* width: 100%; */
         margin-top: 85px;
     }
 
