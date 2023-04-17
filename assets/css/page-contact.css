@@ -247,6 +247,10 @@
     padding: 10px;
     margin-top: 20px;
 }
+
+.btn_top {
+    margin: 30px auto;
+}
 /* 送信画面テキスト */
 .message_text {
     font-weight: 500;
