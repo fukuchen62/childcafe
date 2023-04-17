@@ -12,7 +12,7 @@
         </ul>
         <div class="support_content">
             <div class="support_supplies panel tab-a is-show">
-                <h3 class="subtitle support_subtitle">
+                <h3 class="subtitle support_subtitle01">
                     物資を支援する
                 </h3>
                 <p>
@@ -26,7 +26,7 @@
                 <a href="<?php echo home_url('programlist'); ?>" class="btn_item">参加食堂一覧へ</a>
             </div>
             <div class="support_money tab-b panel">
-                <h3 class="subtitle support_subtitle">
+                <h3 class="subtitle support_subtitle02">
                     金銭的に支援する
                 </h3>
                 <p>
@@ -40,7 +40,7 @@
                 <a href="<?php echo home_url('area/east'); ?>" class="btn_item">エリアからさがす</a>
             </div>
             <div class="support_help tab-c panel">
-                <h3 class="subtitle support_subtitle">
+                <h3 class="subtitle support_subtitle03">
                     こども食堂のボランティアスタッフとして手伝う
                 </h3>
                 <p>
