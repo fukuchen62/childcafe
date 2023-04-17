@@ -7,15 +7,14 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
 // $heading = get_term('heading');
 
 //インタビュー一覧
-    $heading = get_terms('heading');
-    // $heading = get_terms(array(
-    // 'taxonomy' => 'heading',
-    //投稿がない場合でも表示させる
-    // 'hide_empty' => false,
+    $heading = get_terms(array(
+    'taxonomy' => 'heading',
+    // 投稿がない場合でも表示させる
+    'hide_empty' => false,
     // 'orderby' => 'modified',
     // 'order' => 'ASC',
-//     )
-// );
+    )
+);
 
 ?>
 
@@ -53,12 +52,10 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 </div>
             </div>
             <!-- インタビュー項目一覧 -->
-            <?php //echo $inter; ?>
-            <?php print_r($heading); ?>
             <div class="list_area area_flex">
-                <div class="area_east panel east is-show">
+                <div class="area_east">
                     <h3 class="area_title">インタビュー項目一覧</h3>
-                    <ul class="area_list_wrap area_flex">
+                    <ul class="area_list_wrap">
                         <?php foreach ($heading as $inter) :  ?>
                         <li>
                             <a href="<?php echo '#'.$inter->slug;?>">
@@ -72,12 +69,9 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                 <div class="pickup_single">
                     <?php the_field('message'); ?>
                 </div>
-                <div class="pickup_single">
-                    <?php the_field('message'); ?>
-                </div>
-                <div class="btn_item">
-                    <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
-                </div>
+            </div>
+            <div class="btn_item">
+                <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
             </div>
         </div>
     </div>
