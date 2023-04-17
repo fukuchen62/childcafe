@@ -43,22 +43,39 @@ main {
 }
 
 /* ボタンのエフェクト */
-.btn_item {
-    /* display: inline-block;*/
-    padding: 10px 15px;
-    /* ボタン本体の色 */
-    background-color: #ffd466;
-    border-radius: 10px;
-    /* font-weight: bolder; */
-    /*文字色*/
+
+.btn_item a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 212, 102, 1);
+    transition: 0.3s;
+    border-radius: 20px;
+    transform: translateY(0);
     color: black;
-    /*文字の影*/
-    /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11; */
-    text-align: center;
-    margin: 0 auto;
 }
 
 .btn_item a:hover {
+    padding: 15px 40px;
+    transform: translateY(-5px);
+    background-color: rgba(255, 212, 102, 0.8);
+}
+
+/* .btn_item {
+    display: inline-block;
+    padding: 10px 15px;
+    ボタン本体の色
+    background-color: #ffd466;
+    border-radius: 10px;
+    font-weight: bolder;
+    文字色
+    color: black;
+    文字の影
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
+    text-align: center;
+    margin: 0 auto;
+} */
+
+/* .btn_item a:hover {
     background-position: right center;
     background-size: 200% auto;
     -webkit-animation: pulse 2s infinite;
@@ -75,7 +92,7 @@ main {
     100% {
         box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
     }
-}
+} */
 
 /* ボタンのエフェクトここまで */
 /* spanで画面幅により改行 */
