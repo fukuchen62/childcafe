@@ -30,7 +30,10 @@
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 5px;
-    text-decoration: underline dotted 5px #f8b600;
+    text-decoration-line: underline;
+    text-decoration-color: #f8b600;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 0.2em;
     text-align: center;
 }
 
@@ -71,6 +74,7 @@
         font-size: 16px;
     }
     .subtitle_ulineorange {
+        margin: 0 auto;
         font-size: 24px;
         margin-top: 60px;
     }
@@ -450,7 +454,7 @@
 /* map */
 .addressmap {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .addressmap .subtitle {
@@ -471,7 +475,7 @@
     padding: 20px;
     font-size: 15px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .bgcolor_news p {
