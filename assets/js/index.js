@@ -47,6 +47,17 @@ $(".pickup_slider").slick({
                 dots: false,
             },
         },
+        {
+            breakpoint: 1000,
+            settings: {
+                arrows: true,
+                autoplaySpeed: 4000,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: false,
+            },
+        },
     ],
 });
 
