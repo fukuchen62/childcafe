@@ -25,6 +25,7 @@
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
+        <h2 class="title">リンク集</h2>
         <!-- 項目タブ -->
         <ul class="tab flex">
             <li class="tab_1 tab_js childcafe"><a href="<?php echo home_url('/link/cafe'); ?>">こども食堂関連</a></li>
@@ -33,7 +34,7 @@
         </ul>
         <!-- 関連リンク -->
         <section class="link_<?php echo $link->slug; ?>" panel is-show>
-            <h2 class="link_title link_title_<?php echo $link->slug; ?>"><?php echo $link->name; ?></h2>
+            <h3 class="link_title link_title_<?php echo $link->slug; ?>"><?php echo $link->name; ?></h3>
             <div class="link_wrap">
                 <?php if ($the_query->have_posts()) : ?>
                 <?php while($the_query->have_posts()) : ?>

@@ -444,6 +444,16 @@ hr {
         width: 100%;
     }
 
+    .index_item_card {
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .index_item_card:hover {
+        opacity: 0.8;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 #333;
+    }
+
     .orangetabs {
         width: 90%;
         left: 5%;
@@ -1017,6 +1027,11 @@ hr {
     }
     .footer {
         top: 0;
+    }
+
+    .slick-dots li button:before {
+        font-size: 18px;
+        top: 6px;
     }
 }
 

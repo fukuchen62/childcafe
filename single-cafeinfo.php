@@ -53,10 +53,10 @@ if (!empty(get_field('child_price_info',$event_id))) {
 $price = array('こども '.$child_price);
 
 
-if (!empty(get_field('adult_price',$event_id))) {
+if (!is_null(get_field('adult_price',$event_id))) {
     $adult_price = get_field('adult_price',$event_id);
     if ($adult_price == '0') {
-    $adult_price = '無料';
+        $adult_price = '無料';
     } else{
         $adult_price = $adult_price.'円';
     }
@@ -330,7 +330,7 @@ $the_query = new WP_Query($args);
                                 <?php echo $this_terms[1]->name; ?>
                             </p>
                             <div class="good cafeinfo_flex flex">
-                                <p><?php echo do_shortcode('[wp_ulike]'); ?></p>
+                                <p><?php echo 'いいね'.do_shortcode('[wp_ulike]'); ?></p>
                             </div>
                         </div>
                     </div>

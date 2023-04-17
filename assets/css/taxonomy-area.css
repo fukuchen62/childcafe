@@ -142,6 +142,22 @@ main {
     .tab {
         margin-top: 70px;
     }
+
+    .tab_hover01:hover {
+        background-color: rgb(245, 186, 77);
+        border-radius: 10px;
+    }
+
+    .tab_hover02:hover {
+        background-color: rgb(37, 166, 5);
+        border-radius: 10px;
+    }
+
+    .tab_hover03:hover {
+        background-color: yellow;
+        border-radius: 10px;
+    }
+
     .list_area {
         width: 100%;
         flex-direction: row-reverse;

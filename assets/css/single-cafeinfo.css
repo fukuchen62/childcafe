@@ -298,6 +298,7 @@
 .sns_items {
     display: flex;
     flex-direction: column;
+    width: 256px;
 }
 
 .sns_items img {

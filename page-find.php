@@ -300,16 +300,16 @@ $the_query = new WP_Query($args);
                         <h3 class="item_title02">こだわり条件</h3>
                         <div class="checkbox-001">
                             <label>
-                                <input type="checkbox" name="child_price" value="0" />こども完全無料
+                                <input type="checkbox" name="child_price" value="0" />こども無料
                             </label>
                             <label>
-                                <input type="checkbox" name="adult_price" value="0" />おとな完全無料
-                            </label>
-                            <label>
-                                <input type="checkbox" name="parking" value="有り" />駐車場あり
+                                <input type="checkbox" name="adult_price" value="0" />おとな無料
                             </label>
                             <label>
                                 <input type="checkbox" name="person" value="こどもだけで行ける" />こどもだけで行ける
+                            </label>
+                            <label>
+                                <input type="checkbox" name="parking" value="有り" />駐車場あり
                             </label>
                             <label>
                                 <input type="checkbox" name="food_pantry" value="フードパントリー" />フードパントリーあり
@@ -324,12 +324,12 @@ $the_query = new WP_Query($args);
                     </div>
                     <!--チェックボックス欄  終了-->
                 </div>
+                <!-- ボタン -->
+                <div class="form_btns flex">
+                    <input class="submit_btn" type="submit" value="さがす" />
+                    <input class="reset_btn" type="reset" value="リセット" />
+                </div>
             </section>
-            <!-- ボタン -->
-            <div class="form_btns flex">
-                <input class="submit_btn" type="submit" value="さがす" />
-                <input class="reset_btn" type="reset" value="リセット" />
-            </div>
         </form>
 
 
@@ -341,19 +341,19 @@ $the_query = new WP_Query($args);
                 <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
                 <a href="<?php the_permalink() ?>">
-                    <div class="searcharea_item_card">
+                    <div class="item_card">
                         <?php $eye_catching = get_field('eye_catching');?>
                         <?php if(!empty($eye_catching)): ?>
                         <img src="<?php the_field('eye_catching'); ?>" alt="">
                         <?php else: ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/text_kakko_kari.png" alt="">
                         <?php endif; ?>
-                        <p class="searcharea_item_card_title"><?php the_field('name') ?></p>
+                        <p class="item_card_title"><?php the_field('name') ?></p>
                         <?php //'ボランティアは'.the_field('recruitment'); ?>
-                        <p class="searcharea_item_card_title border">
+                        <p class="item_card_title border">
                             <?php echo get_the_terms($post->ID, 'area')[1]->name; ?>
                         </p>
-                        <p class="searcharea_text">
+                        <p class="item_card_text">
                             <?php $features = get_field('features');
                                 //40文字にする
                                 if(mb_strlen($features) > 40) {

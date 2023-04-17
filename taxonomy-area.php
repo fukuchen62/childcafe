@@ -54,9 +54,13 @@
 
         <!-- 地域別タブ -->
         <ul class="tab area_flex">
-            <li class="tab_east tab_js east"><a href="<?php echo home_url('/area/east'); ?>">東部</a></li>
-            <li class="tab_south tab_js south"><a href="<?php echo home_url('/area/south'); ?>">南部</a></li>
-            <li class="tab_west tab_js west"><a href="<?php echo home_url('/area/west'); ?>">西部</a></li>
+            <li class="tab_east tab_js east"><a class="tab_hover01" href="<?php echo home_url('/area/east'); ?>">東部</a>
+            </li>
+            <li class="tab_south tab_js south"><a class="tab_hover02"
+                    href="<?php echo home_url('/area/south'); ?>">南部</a>
+            </li>
+            <li class="tab_west tab_js west"><a class="tab_hover03" href="<?php echo home_url('/area/west'); ?>">西部</a>
+            </li>
         </ul>
         <!-- 市町村別一覧 -->
         <div class="list_area area_flex">
