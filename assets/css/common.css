@@ -697,63 +697,6 @@ main {
     }
 }
 
-.result_img {
-    /* margin-top: 25px; */
-    margin-top: 50px;
-}
-
-.result_title {
-    margin-bottom: 50px;
-    border-bottom: 0;
-}
-
-.result_img_wrap {
-    width: 290px;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* flex-wrap最後の配置を左詰にする */
-.result_img_wrap:after {
-    content: "";
-    width: 135px;
-    margin-top: 20px;
-    color: aliceblue;
-    /* background-color: #f44336; */
-}
-
-.result_img_card {
-    width: 135px;
-    height: 160px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.result_img_card img {
-    /* width: 100%; */
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-
-@media screen and (min-width: 770px) {
-    .result_img_wrap {
-        width: 650px;
-    }
-
-    .result_img_card {
-        width: 200px;
-        height: 245px;
-        margin-top: 50px;
-    }
-
-    .result_img_card img {
-        width: 200px;
-        height: 200px;
-    }
-}
-
 /***********************
     ページナビ
  **********************/
