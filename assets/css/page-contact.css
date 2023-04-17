@@ -220,6 +220,19 @@
     text-align: center;
 }
 
+.contact_checkbox::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/contact/checkbox_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-bottom: 7px;
+    margin-right: 5px;
+}
+
 /* 送信画面送信ボタン */
 .return_btn {
     width: 200px;
