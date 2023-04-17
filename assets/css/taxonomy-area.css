@@ -134,8 +134,9 @@ main {
 }
 
 .area_item {
-    max-width: 330px;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media screen and (min-width: 770px) {
@@ -198,12 +199,10 @@ main {
 
     /* カード */
     .area_item {
-        display: flex;
+        flex-direction: row;
         max-width: 750px;
-        justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
-        column-gap: 38px;
     }
 }
 /* 4/14追加　１列になったときに中央寄せする */
