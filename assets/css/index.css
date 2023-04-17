@@ -31,14 +31,29 @@ body {
 
 .btn_item {
     display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffd466;
+    transition: 0.3s;
+    border-radius: 20px;
+    color: black;
+}
+
+.btn_item:hover {
+    padding: 15px 40px;
+    background-color: #ffcc66;
+}
+
+/* 旧ボタン */
+/* .btn_item {
+    display: inline-block;
     padding: 10px 15px;
     background-color: #f8b600;
     border-radius: 10px;
     color: black;
-    /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11; */
+     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.44), 1px 1px 1px #4a0a11;
     text-align: center;
     margin: 50px 50px 0;
-}
+} */
 
 html {
     overflow-y: scroll;
@@ -54,7 +69,7 @@ html {
     width: 100%;
 }
 
-.btn_item:hover {
+/* .btn_item:hover {
     background-position: right center;
     background-size: 200% auto;
     -webkit-animation: pulse 2s infinite;
@@ -70,7 +85,7 @@ html {
     100% {
         box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
     }
-}
+} */
 
 /* キービジュアル */
 
@@ -765,9 +780,9 @@ hr {
     border-radius: 10px;
 }
 
-.btn_item {
+/* .btn_item {
     background-color: #f7dd94;
-}
+} */
 
 .link_sample02 {
     background-color: #d7f794;
