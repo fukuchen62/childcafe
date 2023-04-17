@@ -7,7 +7,6 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
 <main>
     <div class="main_inner">
         <?php get_template_part('template-parts/breadcrumb'); ?>
-
         <div class="pickup_single">
             <h2 class="pickup_title_1 pickup_title">
                 <!-- <span class="pickup_title sp">
@@ -50,8 +49,8 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
             <div class="pickup_single">
                 <?php the_field('message'); ?>
             </div>
-            <div class="btn btn_item">
-                <a class="btn btn_item" href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
+            <div class="btn_item">
+                <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
             </div>
         </div>
     </div>

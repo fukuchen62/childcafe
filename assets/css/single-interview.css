@@ -101,18 +101,12 @@
 /* ボタン */
 
 .btn_item {
-    width: 100%;
+    text-align: center;
 }
 
-.btn_item a {
-    padding: 10px 15px;
-    background-color: #ffd466;
-    border-radius: 10px;
-}
-.btn {
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: none;
+.btn_item:hover {
+    padding: 15px 40px;
+    background-color: #ffcc66;
 }
 
 @media (min-width: 770px) {
