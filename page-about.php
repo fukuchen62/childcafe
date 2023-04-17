@@ -34,7 +34,8 @@
             <p class="text_title">支援したい方へ</p>
             <p>
                 徳島県のこども食堂を支援したい方に向けて幾つかの支援の方法を紹介しています。
-                詳しくは<a href="<?php echo home_url('/support'); ?>">【支援したい方へ】</a>のページをご覧ください。
+                詳しくは<a href="<?php echo home_url('/support'); ?>">【支援したい方へ】</a>のページをご覧ください。<br>
+                このサイトの運営費を支援することもできます。<a href="<?php echo home_url('/contact'); ?>">【お問い合わせ】</a>からご連絡ください。
             </p>
         </div>
         <div class="text">
@@ -49,8 +50,7 @@
             <p><a href="<?php echo home_url('/link/care'); ?>">【子育て支援関連】</a></p>
             <p><a href="<?php echo home_url('/link/third'); ?>">【こどもの居場所関連】</a></p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/onigiri.png" alt="背景のおにぎり"
-            class="about_img onigiri" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/onigiri.png" alt="背景のおにぎり" class="about_img onigiri" />
     </div>
 </main>
 </div>
