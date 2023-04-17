@@ -909,6 +909,7 @@ html {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .slick-dots {
@@ -916,11 +917,18 @@ html {
     top: 135px;
 }
 
+@media (min-width: 485px) {
+    .footer {
+        position: relative;
+        top: 80px;
+    }
+}
 @media (min-width: 770px) {
     .activity_slide {
         max-width: 1024px;
         width: 80%;
         height: 170px;
+        margin-bottom: 0;
     }
     .activity_slider img {
         height: 150px;
@@ -928,6 +936,9 @@ html {
 
     .slick-dots {
         top: 150px;
+    }
+    .footer {
+        top: 0;
     }
 }
 
