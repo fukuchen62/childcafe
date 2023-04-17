@@ -55,24 +55,26 @@ $the_query = new WP_Query($args);
                     <p class="amazon_item_card_title"><?php the_field('name'); ?></p>
                     <?php $this_terms = get_the_terms($post->ID,'area'); ?>
                     <p class="amazon_item_card_title border"><?php echo '(' . $this_terms[1]-> name . ')' ; ?></p>
-                    <p class="amazon_text">
+                    <a href="<?php the_field('amapro'); ?>" class="btn_item">Amazon応援プログラム</a>
+                    <!-- <p class="amazon_text">
                         <?php
                             //整形したい文字列
-                            if (!empty(get_field('features'))) {
-                                $features = get_field('features');
-                                //40文字にする
-                                if(mb_strlen($features) > 40) {
-                                    $features = mb_substr($features,0,40);
-                                    echo $features . '・・・' ;
-                                } else {
-                                    echo $features;
-                                }
-                            }
-                        ?>
-                    </p>
+                        //     if (!empty(get_field('features'))) {
+                        //         $features = get_field('features');
+                        //         //40文字にする
+                        //         if(mb_strlen($features) > 40) {
+                        //             $features = mb_substr($features,0,40);
+                        //             echo $features . '・・・' ;
+                        //         } else {
+                        //             echo $features;
+                        //         }
+                        //     }
+                        // ?>
+                    </p> -->
                 </div>
             </a>
             <?php //endif ?>
+
 
             <?php endwhile; ?>
             <?php endif ?>

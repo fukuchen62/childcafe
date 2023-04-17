@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+.search_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .search_item a {
     display: inline-block;
     margin: 10px auto;
@@ -53,9 +59,22 @@
     margin-top: 5px;
 }
 
+/* キーワードが一致するものが無かった場合の表示 */
+.not_found a {
+    color: red;
+    font-weight: 500;
+    text-decoration: underline dotted 1px red;
+    text-underline-offset: 10px;
+}
+
+.not_found.sp img {
+    width: 200px;
+    display: block;
+}
+
 @media (min-width: 770px) {
     .search_flex {
-        display: flex;
+        /* display: flex; */
         flex-direction: row;
     }
 

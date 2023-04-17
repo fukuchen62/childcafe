@@ -197,7 +197,12 @@ new WP_Query($wp_query);
                 </a>
                 <?php endwhile; ?>
                 <?php else: ?>
-                <h3>（仮表示）結果に一致するものはありませんでした</h3>
+                <span class="sp">申し訳ありません。</span>
+                <span class="sp">キーワードに一致するページが見つかりませんでした。</span>
+                <p class="not_found sp">
+            お手数ですが<a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>や<a href="<?php echo home_url('/find'); ?>">【条件からさがす】</a>より再度お求めのページをお探しください。
+        </p>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt="404画像" class="not_found sp" />
                 <?php endif; ?>
 
             </div>
@@ -205,6 +210,7 @@ new WP_Query($wp_query);
                 <?php original_pagenation(); ?>
             </div>
         </div>
+    </div>
 </main>
 </div>
 
