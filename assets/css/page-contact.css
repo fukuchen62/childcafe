@@ -216,6 +216,10 @@
 }
 
 /* 送信確認画面CSS */
+.contact2 .subtitle02 {
+    margin-top: 50px;
+}
+
 .subtitle_text {
     text-align: center;
 }
@@ -239,6 +243,10 @@
     text-decoration-style: solid;
     text-decoration-thickness: 1px;
     text-underline-offset: 5px;
+}
+
+.wpcf7-spinner {
+    display: none;
 }
 
 /* 送信画面送信ボタン */
