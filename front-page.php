@@ -397,7 +397,7 @@ $event_query = new WP_Query($fuga);
                     </a>
                     <a href="<?php echo home_url('/link/care'); ?>" class="link_cover">
                         <div class="link_item">
-                            <div class="btn_item01 link_sample02">子育て支援関連</div>
+                            <div class="btn_item001  link_sample02">子育て支援関連</div>
                             <div class="link_text">
                                 <p>
                                     子育て支援に繋がる団体のWEBサイトやInstagramのリンク集です。
@@ -407,7 +407,7 @@ $event_query = new WP_Query($fuga);
                     </a>
                     <a href="<?php echo home_url('/link/third'); ?>" class="link_cover">
                         <div class="link_item">
-                            <div class="btn_item01 btntest">こどもの居場所関連</div>
+                            <div class="btn_item001 btntest">こどもの居場所関連</div>
                             <div class="link_text">
                                 <p>
                                     家と学校以外の、第3の居場所になるような団体のリンク集です。

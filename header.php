@@ -37,7 +37,17 @@ if (is_tax('area')) {
     <div class="body_inner">
         <!-- トップページへ戻るボタン -->
         <div class="toppage_btn">
-            <a href="<?php echo home_url(''); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
+            <a href="<?php
+            if (is_archive()) {
+                $post_type = get_post_type();
+                $url = get_post_type_archive_link( $post_type );
+            }elseif (is_front_page()) {
+                echo home_url('');
+            }else{
+                echo get_permalink();
+            }
+            ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/pagetop_btn.png" alt="トップへ戻るボタン" /></a>
         </div>
         <!-- トップページへ戻るボタン 終了-->
         <header class="header">
