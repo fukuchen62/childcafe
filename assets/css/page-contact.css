@@ -245,6 +245,10 @@
     text-underline-offset: 5px;
 }
 
+.wpcf7-spinner {
+    display: none;
+}
+
 /* 送信画面送信ボタン */
 .return_btn {
     display: block;
