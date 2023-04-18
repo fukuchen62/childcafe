@@ -20,9 +20,11 @@
                     こども食堂は、子どもたちの健やかな成長を支援するために、全国各地で展開されています。
                 </p>
             </div>
-            <a href="<?php echo home_url('/faq'); ?>" class="btn_item">
-                FAQ
-            </a>
+            <div class="btn">
+                <a href="<?php echo home_url('/faq'); ?>" class="btn_a">
+                    FAQ
+                </a>
+            </div>
             <img src="<?php echo get_template_directory_uri();?>/assets/images/child/rice.png" alt="背景"
                 class="concept_img rice">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/child/curry.png" alt="背景"
