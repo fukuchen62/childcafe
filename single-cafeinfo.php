@@ -379,7 +379,6 @@ $the_query = new WP_Query($args);
                         ></path>
                     </svg>
             <div class="beige_inner m1024">
-
                 <h3 class="beige_categorytitle beige_basic">
                     基本情報
                 </h3>
