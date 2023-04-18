@@ -44,6 +44,40 @@ body {
     background-color: #ffcc66;
 }
 
+/* 波 */
+.svgwave {
+    position: relative;
+    top: -5px;
+}
+
+.infotop {
+    background-color: #d7f794;
+}
+
+.interviewtop {
+    background-color: #fff8e6;
+}
+.maptop {
+    background-color: #fdffb0;
+}
+.childcafetop {
+    background-color: #fff8e6;
+}
+.surporterstop {
+    background-color: #d7f794;
+}
+.linktop {
+    background-color: #fff8e6;
+}
+.noticetop {
+    background-color: #fdffb0;
+}
+.contacttop {
+    background-color: #fff8e6;
+}
+.activitytop {
+    background-color: #fdffb0;
+}
 /* 旧ボタン */
 /* .btn_item {
     display: inline-block;
