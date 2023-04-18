@@ -57,7 +57,7 @@
             </h3>
             <div class="text">
                 <p class="contact1_text_p1">
-                    こども食堂に関する詳細な情報や
+                    各こども食堂に関する詳細な情報や
                     問い合わせについては、各こども食堂に直接お問い合わせください。
                 </p>
                 <ul class="contact1_text_p2">
