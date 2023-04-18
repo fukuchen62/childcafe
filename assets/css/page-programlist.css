@@ -51,17 +51,13 @@
     margin-top: 5px;
 }
 
-.btn_item_a {
-    display: inline-block;
-    padding: 15px 30px;
+.btn_item {
     background-color: rgba(255, 212, 102, 1);
-    transition: 0.3s;
-    border-radius: 20px;
-    transform: translateY(0);
-    color: black;
+    border-radius: 10px;
+    padding: 10px 0;
 }
 
-.btn_item_a:hover {
+.btn_item:hover {
     padding: 15px 40px;
     transform: translateY(-5px);
     background-color: rgba(255, 212, 102, 0.8);
