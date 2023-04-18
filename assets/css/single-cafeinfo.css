@@ -46,6 +46,22 @@
     margin: 0 auto;
     text-align: left;
 }
+
+/* 波 */
+.baigetop {
+    background-color: #fdffb0;
+}
+
+.greentop {
+    background-color: #f7dd94;
+}
+.bgtop {
+    background-color: #d7f794;
+}
+.svgwave {
+    position: relative;
+    top: -5px;
+}
 /* ボタンの色 */
 .btn_item {
     color: black;
