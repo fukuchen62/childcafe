@@ -26,18 +26,22 @@
     text-underline-offset: 10px;
 }
 
-.not_found.sp img {
+.not_found_inner {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.not_found img {
     width: 200px;
     display: block;
 }
 
 .not_found_img {
     width: 200px;
-    margin: 0px 40%;
 }
 
-.sp {
-    padding: 0 10px;
+.not_found_inner p {
+    text-align: left;
 }
 
 @media (min-width: 770px) {
