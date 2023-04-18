@@ -37,13 +37,13 @@ if (is_tax('area')) {
     <div class="body_inner">
         <!-- トップページへ戻るボタン -->
         <div class="toppage_btn">
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
+            <a href="<?php echo home_url(get_permalink()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
         </div>
         <!-- トップページへ戻るボタン 終了-->
         <header class="header">
             <div class="header_inner flex">
                 <h1 class="header_logo">
-                    <a href="#">
+                    <a href="<?php echo home_url(''); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="徳島こども食堂ナビ">
                     </a>
                 </h1>
