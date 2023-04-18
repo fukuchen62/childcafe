@@ -794,3 +794,19 @@ main {
         margin-left: 20px;
     }
 }
+
+/* いいね機能 */
+.wpulike-default button.wp_ulike_btn {
+    background-color: unset;
+}
+
+.wpulike-default .wp_ulike_put_image:after {
+    width: 30px;
+    height: 30px;
+}
+
+.wpulike-default button.wp_ulike_btn:hover {
+    width: 30px;
+    height: 30px;
+    background-color: unset;
+}
