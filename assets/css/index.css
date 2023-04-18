@@ -76,7 +76,7 @@ body {
     background-color: #fff8e6;
 }
 .activitytop {
-    background-color: #fdffb0;
+    background-color: #d7f794;
 }
 /* 旧ボタン */
 /* .btn_item {
@@ -1045,9 +1045,9 @@ hr {
         height: 170px;
         margin-bottom: 0;
     }
-    .activity_slider img {
+    /* .activity_slider img {
         height: 150px;
-    }
+    } */
 
     .slick-dots {
         top: 150px;

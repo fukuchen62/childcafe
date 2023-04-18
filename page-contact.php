@@ -52,10 +52,11 @@
         ?>
         <!-- 各子供食堂 -->
         <section class="contact1">
-            <h3 class="subtitle">
-                各こども食堂へのお問い合わせについて
-            </h3>
+
             <div class="text">
+                <h3 class="subtitle">
+                    各こども食堂への<wbr>お問い合わせについて
+                </h3>
                 <p class="contact1_text_p1">
                     各こども食堂に関する詳細な情報や
                     問い合わせについては、各こども食堂に直接お問い合わせください。
