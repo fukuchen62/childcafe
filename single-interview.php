@@ -50,6 +50,14 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
                     <?php endif; ?>
                 </div>
+                <div class="underimg text cafeinfo_flex flex">
+                    <span class="address">
+                        <?php echo $this_terms[1]->name; ?>
+                    </span>
+                    <span>
+                        <?php echo do_shortcode('[wp_ulike]'); ?>
+                    </span>
+                </div>
             </div>
             <!-- インタビュー項目一覧 -->
             <div class="list_area area_flex">
