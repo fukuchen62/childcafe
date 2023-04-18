@@ -12,6 +12,7 @@
 .event_item {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 /* カテゴリー一覧 */
@@ -90,6 +91,7 @@
         max-width: 750px;
         flex-wrap: wrap;
         gap: 20px;
+        flex-direction: row;
     }
 
     /* カテゴリー一覧 */
