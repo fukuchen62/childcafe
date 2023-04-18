@@ -12,6 +12,9 @@
         margin-top: 50px;
     }
 }
+.title {
+    margin: 50px auto;
+}
 
 .subtitle {
     font-size: 16px;
@@ -301,13 +304,14 @@
 }
 
 .searcharea_item {
-    max-width: 330px;
-    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
 }
 
 @media (min-width: 770px) {
     .searcharea_flex {
-        display: flex;
         flex-direction: row;
         justify-content: center;
     }
@@ -321,7 +325,7 @@
         max-width: 1024px;
         margin: 80px auto 80px;
         align-content: space-between;
-        row-gap: 50px;
+        gap: 20px;
         flex-wrap: wrap;
     }
     .searcharea_item:after {

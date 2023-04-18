@@ -107,7 +107,7 @@ new WP_Query($wp_query);
                 <?php the_post(); ?>
 
                 <a href="<?php the_permalink(); ?>">
-                    <div class="search_item_card">
+                    <div class="item_card">
                         <?php
                         $eye_catching = get_field('eye_catching');
                         $image_id = attachment_url_to_postid( $eye_catching );
@@ -116,12 +116,13 @@ new WP_Query($wp_query);
                         <?php if(!empty($eye_catching)): ?>
                         <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                         <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
+                            alt="">
                         <?php endif; ?>
-                        <p class="search_item_card_title">
+                        <p class="item_card_title">
                             <?php the_title(); ?>
                         </p>
-                        <p class="search_item_card_title border">
+                        <p class="item_card_title border">
                             <?php $this_terms = get_the_terms($post->ID,'area');?>
                             <?php if(!empty($this_terms)): ?>
                             <?php echo $this_terms[1]->name; ?>
@@ -129,9 +130,9 @@ new WP_Query($wp_query);
                             <?php echo ' '; ?>
                             <?php endif; ?>
                         </p>
-                        <p class="search_text">
+                        <p class="item_card_text">
                             <?php if (get_post_type()=='page' || get_post_type()=='post'):?>
-                                <?php
+                            <?php
                                 $content = get_the_content();
                                 //「改行」を削除するコード
                                 // $content = str_replace("¥n", "", $content);
@@ -200,9 +201,12 @@ new WP_Query($wp_query);
                 <span class="sp">申し訳ありません。</span>
                 <span class="sp">キーワードに一致するページが見つかりませんでした。</span>
                 <p class="not_found sp">
-            お手数ですが<a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>や<a href="<?php echo home_url('/find'); ?>">【条件からさがす】</a>より再度お求めのページをお探しください。
-        </p>
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt="404画像" class="not_found sp" />
+                    お手数ですが<a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>や<a
+                        href="<?php echo home_url('/find'); ?>">【条件からさがす】</a>より再度お求めのページをお探しください。
+                </p>
+                <img class="not_found_img"
+                    src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt="404画像"
+                    class="not_found sp" />
                 <?php endif; ?>
 
             </div>

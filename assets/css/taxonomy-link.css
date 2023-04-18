@@ -187,6 +187,24 @@
 }
 
 @media screen and (min-width: 770px) {
+    .tab_hover01:hover {
+        height: 55px;
+        background-color: #fcc800;
+        border-radius: 10px;
+    }
+
+    .tab_hover02:hover {
+        height: 55px;
+        background-color: #a7d28d;
+        border-radius: 10px;
+    }
+
+    .tab_hover03:hover {
+        height: 55px;
+        background-color: #fff462;
+        border-radius: 10px;
+    }
+
     .link_cafe,
     .link_care,
     .link_third {

@@ -134,8 +134,9 @@ main {
 }
 
 .area_item {
-    max-width: 330px;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media screen and (min-width: 770px) {
@@ -144,17 +145,20 @@ main {
     }
 
     .tab_hover01:hover {
-        background-color: rgb(245, 186, 77);
+        height: 55px;
+        background-color: #fcc800;
         border-radius: 10px;
     }
 
     .tab_hover02:hover {
-        background-color: rgb(37, 166, 5);
+        height: 55px;
+        background-color: #a7d28d;
         border-radius: 10px;
     }
 
     .tab_hover03:hover {
-        background-color: yellow;
+        height: 55px;
+        background-color: #fff462;
         border-radius: 10px;
     }
 
@@ -195,12 +199,10 @@ main {
 
     /* カード */
     .area_item {
-        display: flex;
+        flex-direction: row;
         max-width: 750px;
-        justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
-        column-gap: 38px;
     }
 }
 /* 4/14追加　１列になったときに中央寄せする */

@@ -17,7 +17,7 @@
 }
 
 .pickup_single {
-    width: 300px;
+    /* width: 300px; */
     margin: 0 auto;
 }
 
@@ -98,21 +98,83 @@
     border-radius: 70%;
 }
 
+/***********************
+        市町村別一覧
+ **********************/
+.list_area {
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.area_east,
+.area_south,
+.area_west {
+    /* max-width: 730px; */
+    /* width: 90%; */
+    width: 300px;
+    /* height: auto; */
+    height: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 25px 20px;
+}
+
+.area_east {
+    background-color: #f7dd94;
+}
+
+/* .area_south {
+    background-color: #d7f794;
+}
+
+.area_west {
+    background-color: #fdffb0;
+} */
+
+.area_title {
+    text-align: center;
+    width: 210px;
+    height: 50px;
+    padding-top: 5px;
+    background-color: #fff8e6;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-decoration: 0;
+    font-size: 20px;
+}
+
+.area_list_wrap {
+    width: 100%;
+    padding: 5px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* flex-wrap最後の配置を整える */
+.area_list_wrap:after {
+    content: "";
+    width: 50%;
+    margin-top: 5px 0;
+    color: aliceblue;
+    /* background-color: #f44336; */
+}
+
+.area_list_wrap li {
+    /* text-align: center;
+    width: 50%; */
+    margin: 10px 0;
+}
+
 /* ボタン */
 
 .btn_item {
-    width: 100%;
+    text-align: center;
 }
 
-.btn_item a {
-    padding: 10px 15px;
-    background-color: #ffd466;
-    border-radius: 10px;
-}
-.btn {
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: none;
+.btn_item:hover {
+    padding: 15px 40px;
+    background-color: #ffcc66;
 }
 
 @media (min-width: 770px) {
@@ -134,12 +196,12 @@
     } */
 
     .pickup_single {
-        width: 665px;
+        /* width: 665px; */
     }
 
     .pickup_single_img {
-        width: 481px;
-        height: 367px;
+        /* width: 481px;
+        height: 367px; */
     }
 
     .good {
@@ -150,4 +212,12 @@
     .pickup_single_text {
         margin: 80px auto;
     }
+}
+
+/***********************
+    ユーティリティ
+ **********************/
+.area_flex {
+    display: flex;
+    flex-direction: row-reverse;
 }
