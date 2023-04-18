@@ -277,13 +277,17 @@
 
 /* 項目見出し*/
 
+.beige_inner,
+.green_inner {
+    padding-top: 50px;
+}
+
 .beige_categorytitle {
     width: 260px;
     font-size: 20px;
     border: dashed 2px white;
     padding: 0.2em 0.5em;
     margin: 0 auto;
-    margin-top: 50px;
     margin-bottom: 40px;
 }
 
