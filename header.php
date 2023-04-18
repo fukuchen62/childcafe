@@ -41,6 +41,8 @@ if (is_tax('area')) {
             if (is_archive()) {
                 $post_type = get_post_type();
                 $url = get_post_type_archive_link( $post_type );
+            }elseif (is_front_page()) {
+                echo home_url('');
             }else{
                 echo get_permalink();
             }
