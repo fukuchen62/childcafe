@@ -21,9 +21,11 @@
                 </p>
             </div>
             <!-- <div class="btn"> -->
-            <a href="<?php echo home_url('/faq'); ?>" class="btn_a">
-                FAQ
-            </a>
+            <div class="btn_item">
+                <a href="<?php echo home_url('/faq'); ?>">
+                    FAQ
+                </a>
+            </div>
             <!-- </div> -->
             <img src="<?php echo get_template_directory_uri();?>/assets/images/child/rice.png" alt="背景"
                 class="concept_img rice">

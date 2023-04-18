@@ -45,7 +45,7 @@ main {
 /* ボタンのエフェクト */
 
 .btn_a {
-    display: block;
+    /* display: block;
     padding: 10px 25px;
     background-color: #ffd466;
     transition: 0.3s;
@@ -53,35 +53,36 @@ main {
     color: black;
     margin: 50px auto;
     width: 30%;
-    text-align: center;
+    text-align: center; */
 }
 
 .btn_a:hover {
-    padding: 10px 35px;
-    background-color: #ffcc66;
+    /* padding: 10px 35px;
+    background-color: #ffcc66; */
 }
 
-.btn {
-    /* width: 100%;
+.btn_item {
+    width: 100%;
     text-align: center;
-    margin-top: 50px; */
+    margin-top: 50px;
 }
 
-.btn a {
-    /* display: inline-block;
+.btn_item a {
+    display: inline-block;
     padding: 15px 30px;
     background-color: rgba(255, 212, 102, 1);
     transition: 0.3s;
     border-radius: 20px;
     transform: translateY(0);
-    color: black; */
+    color: black;
 }
 
-.btn a:hover {
-    /* padding: 15px 40px;
+.btn_item a:hover {
+    padding: 15px 40px;
     transform: translateY(-5px);
-    background-color: rgba(255, 212, 102, 0.8); */
+    background-color: rgba(255, 212, 102, 0.8);
 }
+
 /* 新しいボタンここまで */
 
 /* .btn_item {
