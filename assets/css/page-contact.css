@@ -216,6 +216,10 @@
 }
 
 /* 送信確認画面CSS */
+.contact2 .subtitle02 {
+    margin-top: 50px;
+}
+
 .subtitle_text {
     text-align: center;
 }

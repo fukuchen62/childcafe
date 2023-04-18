@@ -69,9 +69,9 @@
                     <p> なお、各こども食堂の開催日時等の運営状況や人員の都合により、返信までに時間がかかる場合があります。予めご了承ください。</p>
                 </ul>
             </div>
-            <div class="btn">
+            <!-- <div class="btn">
                 <a class="btn_a" href="<?php echo home_url('/cafeinfo'); ?>">各こども食堂一覧</a>
-            </div>
+            </div> -->
         </section>
         <!-- 各子供食堂 終了-->
 
