@@ -44,7 +44,7 @@ body {
     background-color: #ffcc66;
 }
 
-.btn_item001 {
+.btn_item_link {
     display: inline-block;
     padding: 15px 30px;
     transition: 0.3s;
