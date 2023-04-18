@@ -70,12 +70,13 @@ $(function () {
         centerMode: true,
         centerPadding: "8%",
         dots: true,
-        slidesToShow: 4,
+        slidesToShow: 3,
         responsive: [
             {
                 breakpoint: 770,
                 settings: {
                     slidesToShow: 1,
+                    dots: false,
                 },
             },
         ],
