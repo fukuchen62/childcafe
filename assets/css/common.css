@@ -45,17 +45,19 @@ main {
 /* ボタンのエフェクト */
 
 .btn_a {
-    display: inline-block;
-    padding: 15px 30px;
+    display: block;
+    padding: 10px 25px;
     background-color: #ffd466;
     transition: 0.3s;
     border-radius: 20px;
     color: black;
-    margin-top: 50px;
+    margin: 50px auto;
+    width: 30%;
+    text-align: center;
 }
 
 .btn_a:hover {
-    padding: 15px 40px;
+    padding: 10px 35px;
     background-color: #ffcc66;
 }
 
