@@ -211,9 +211,9 @@ $event_query = new WP_Query($fuga);
                 </li>
             </ul>
             <p class="kvphrase">
-                誰でもおいで!<br />
+                誰でもおいで！<br />
                 &emsp;みんなでごはん、<br />
-                &emsp;&emsp;食べるんじょ!
+                &emsp;&emsp;食べるんじょ！
             </p>
         </section>
         <!-- このサイトについて -->
