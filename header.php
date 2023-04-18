@@ -43,7 +43,7 @@ if (is_tax('area')) {
         <header class="header">
             <div class="header_inner flex">
                 <h1 class="header_logo">
-                    <a href="#">
+                    <a href="<?php echo home_url(''); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="徳島こども食堂ナビ">
                     </a>
                 </h1>
