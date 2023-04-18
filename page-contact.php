@@ -57,7 +57,7 @@
             </h3>
             <div class="text">
                 <p class="contact1_text_p1">
-                    こども食堂に関する詳細な情報や
+                    各こども食堂に関する詳細な情報や
                     問い合わせについては、各こども食堂に直接お問い合わせください。
                 </p>
                 <ul class="contact1_text_p2">
@@ -69,7 +69,9 @@
                     <p> なお、各こども食堂の開催日時等の運営状況や人員の都合により、返信までに時間がかかる場合があります。予めご了承ください。</p>
                 </ul>
             </div>
-            <a class="btn_item" href="<?php echo home_url('/cafeinfo'); ?>">各こども食堂一覧</a>
+            <div class="btn">
+                <a class="btn_a" href="<?php echo home_url('/cafeinfo'); ?>">各こども食堂一覧</a>
+            </div>
         </section>
         <!-- 各子供食堂 終了-->
 

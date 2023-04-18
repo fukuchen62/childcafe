@@ -23,7 +23,9 @@
                 <div class="font_awsome">
                     <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
-                <a href="<?php echo home_url('programlist'); ?>" class="btn_item">参加食堂一覧へ</a>
+                <div class="btn">
+                    <a href="<?php echo home_url('programlist'); ?>" class="btn_a">参加食堂一覧へ</a>
+                </div>
             </div>
             <div class="support_money tab-b panel">
                 <h3 class="subtitle support_subtitle02">
@@ -37,7 +39,9 @@
                 <div class="font_awsome">
                     <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
-                <a href="<?php echo home_url('area/east'); ?>" class="btn_item">エリアからさがす</a>
+                <div class="btn">
+                    <a href="<?php echo home_url('area/east'); ?>" class="btn_a">エリアからさがす</a>
+                </div>
             </div>
             <div class="support_help tab-c panel">
                 <h3 class="subtitle support_subtitle03">
@@ -49,7 +53,9 @@
                 <div class="font_awsome">
                     <i class="fa-solid fa-circle-arrow-down fa-bounce fa-lg" style="color: #23ac38"></i>
                 </div>
-                <a href="<?php echo home_url('find'); ?>" class="btn_item">条件からさがす</a>
+                <div class="btn">
+                    <a href="<?php echo home_url('find'); ?>" class="btn_a">条件からさがす</a>
+                </div>
             </div>
         </div>
         <a href="<?php echo home_url('contact'); ?>">
