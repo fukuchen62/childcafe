@@ -4,7 +4,6 @@ if (is_tax('area')) {
     $title_area = get_term_by('slug', $title_area_slug, 'area');
 }
 
-get_page_by_path($page_path, $output, $post_type)
 
 ?>
 
