@@ -44,15 +44,6 @@ body {
     background-color: #ffcc66;
 }
 
-.btn_item001 {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #ffd466;
-    transition: 0.3s;
-    border-radius: 20px;
-    color: black;
-    margin-top: 50px;
-}
 /* 波 */
 /* .svgwave {
     position: relative;
@@ -849,7 +840,19 @@ hr {
     display: flex;
     flex-direction: column;
 }
-
+.btn_item001 {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffd466;
+    transition: 0.3s;
+    border-radius: 20px;
+    color: black;
+    margin-top: 50px;
+}
+.btn_item001:hover {
+    padding: 15px 40px;
+    background-color: #ffcc66;
+}
 @media (min-width: 900px) {
     .link_flex {
         width: 100%;
@@ -951,7 +954,8 @@ hr {
         width: 633px;
         padding: 40px 40px 100px 40px;
     }
-    .notice .btn_item01 {
+    .notice .btn_item01,
+    .btn_item001 {
         margin-bottom: 30px;
     }
 
@@ -1014,7 +1018,8 @@ hr {
     background-color: #d7f794;
 }
 
-.contact .btn_item01 {
+.contact .btn_item01,
+.btn_item001 {
     margin: 10px auto 30px;
 }
 
