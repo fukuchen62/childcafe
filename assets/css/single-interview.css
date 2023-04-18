@@ -168,14 +168,14 @@
 
 /* ボタン */
 
-.btn_item {
+/* .btn_item {
     text-align: center;
 }
 
-.btn_item:hover {
+.btn_item a:hover {
     padding: 15px 40px;
     background-color: #ffcc66;
-}
+} */
 
 @media (min-width: 770px) {
     .pickup_title_1 {
