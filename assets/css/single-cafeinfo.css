@@ -58,8 +58,12 @@
 .bgtop {
     background-color: #d7f794;
 }
+.bgtop {
+    background-color: #d7f794;
+}
 .svgwave {
     position: relative;
+    z-index: 15;
     top: -5px;
 }
 /* ボタンの色 */
