@@ -1045,9 +1045,9 @@ hr {
         height: 170px;
         margin-bottom: 0;
     }
-    .activity_slider img {
+    /* .activity_slider img {
         height: 150px;
-    }
+    } */
 
     .slick-dots {
         top: 150px;
