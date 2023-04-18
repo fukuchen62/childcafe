@@ -328,17 +328,36 @@
         gap: 20px;
         flex-wrap: wrap;
     }
-    .searcharea_item:after {
+    /* .searcharea_item:after {
         content: "";
         width: 341px;
         margin-top: 20px;
         color: aliceblue;
         /* background-color: #f44336; */
-    }
+}
 
-    /* .searcharea_item_card::before {
+/* .searcharea_item_card::before {
         content: "";
         width: 287px;
         height: 50px;
     } */
+
+/* 検索が引っ掛からなかった時 */
+
+.not_found_inner {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.not_found img {
+    width: 200px;
+    display: block;
+}
+
+.not_found_img {
+    width: 200px;
+}
+
+.not_found_inner p {
+    text-align: left;
 }
