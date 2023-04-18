@@ -56,7 +56,8 @@ $the_query = new WP_Query($args);
                     <p class="item_card_title"><?php the_field('name'); ?></p>
                     <?php $this_terms = get_the_terms($post->ID,'area'); ?>
                     <p class="item_card_title border"><?php echo '(' . $this_terms[1]-> name . ')' ; ?></p>
-                    <a href="<?php the_field('amapro'); ?>" class="btn_item">Amazon応援プログラム</a>
+                    <div class="btn_item"> <a class="btn_item_a" href="<?php the_field('amapro'); ?>">Amazon応援プログラム</a>
+                    </div>
                     <!-- <p class="amazon_text">
                         <?php
                             //整形したい文字列

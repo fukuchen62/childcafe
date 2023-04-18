@@ -29,18 +29,11 @@
     margin: 50px auto 0 auto;
 }
 
-.pickup_single_img {
-    width: 305px;
-    height: 220px;
-    margin: 50px auto;
-}
-
 .pickup_single_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 200px;
     border-radius: 10px;
-    box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
+    object-fit: cover;
+    aspect-ratio: 4/3;
 }
 
 .good {
@@ -168,14 +161,14 @@
 
 /* ボタン */
 
-.btn_item {
+/* .btn_item {
     text-align: center;
 }
 
-.btn_item:hover {
+.btn_item a:hover {
     padding: 15px 40px;
     background-color: #ffcc66;
-}
+} */
 
 @media (min-width: 770px) {
     .pickup_title_1 {
@@ -195,14 +188,14 @@
         margin: 10px auto;
     } */
 
-    .pickup_single {
-        /* width: 665px; */
+    /* .pickup_single {
+        width: 665px;
     }
 
     .pickup_single_img {
-        /* width: 481px;
-        height: 367px; */
-    }
+        width: 481px;
+        height: 367px;
+    } */
 
     .good {
         margin-top: 10px;
@@ -219,5 +212,4 @@
  **********************/
 .area_flex {
     display: flex;
-    flex-direction: row-reverse;
 }
