@@ -22,7 +22,7 @@
             </div>
             <!-- <div class="btn"> -->
             <div class="btn_item">
-                <a href="<?php echo home_url('/faq'); ?>" class="btn_a">
+                <a href="<?php echo home_url('/faq'); ?>">
                     FAQ
                 </a>
             </div>
