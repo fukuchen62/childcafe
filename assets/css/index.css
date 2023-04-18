@@ -828,14 +828,22 @@ hr {
     background-color: #fdffb0;
 }
 
-.link_sample,
-.link_sample02,
-.btntest {
+.link_sample {
     width: 90%;
     margin: 0;
     margin-top: 30px;
 }
 
+.btntest {
+    width: 90%;
+    margin: 0;
+    margin-top: 30px;
+}
+.link_sample02 {
+    width: 90%;
+    margin: 0;
+    margin-top: 30px;
+}
 .link_text {
     width: 100%;
     margin: 0 auto;
