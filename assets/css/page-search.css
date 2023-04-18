@@ -93,6 +93,8 @@
 }
 
 .reset_btn {
+    display: inline-block;
+    width: 180px;
     background-color: #fdffb0;
     border: 1px solid gray;
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
@@ -101,6 +103,8 @@
 }
 
 .submit_btn {
+    display: inline-block;
+    width: 180px;
     background-color: #f7dd94;
     border: 1px solid gray;
     box-shadow: 0px 4px 7px -3px rgba(24, 24, 24, 0.5);
@@ -282,17 +286,27 @@
     }
 
     .form_btns {
+        width: 90%;
         flex-direction: row;
         justify-content: space-around;
-        width: 500px;
+    }
+
+    .reset_btn,
+    .submit_btn {
+        transition: 0.3s;
+        transform: translateY(0);
     }
 
     .reset_btn:hover {
-        /* transform: scale(1.1); */
+        width: 185px;
+        transform: translateY(-5px);
+        opacity: 0.8;
     }
 
     .submit_btn:hover {
-        /* transform: scale(1.1); */
+        width: 185px;
+        transform: translateY(-5px);
+        opacity: 0.8;
     }
 }
 

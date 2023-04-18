@@ -17,15 +17,16 @@
 }
 
 .pickup_single {
-    /* width: 300px; */
+    max-width: 350px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .pickup_top_img {
-    width: 100%;
+    margin: 0 auto;
 }
 
-.pickup_single_img:nth-child(1) {
+.pickup_single_img {
     margin: 50px auto 0 auto;
 }
 
@@ -34,6 +35,10 @@
     border-radius: 10px;
     object-fit: cover;
     aspect-ratio: 4/3;
+}
+
+.pickup_single_img:nth-child(1) {
+    margin: 50px auto 0 auto;
 }
 
 .good {
@@ -60,7 +65,8 @@
 }
 
 .pickup_single_text {
-    margin: 50px auto;
+    margin: 50px 20px;
+    text-align: left;
 }
 
 .child_text,
@@ -75,7 +81,6 @@
 }
 
 .underimg {
-    width: 80%;
     margin-bottom: 23px;
 }
 
@@ -91,84 +96,9 @@
     border-radius: 70%;
 }
 
-/***********************
-        市町村別一覧
- **********************/
-.list_area {
-    width: 90%;
-    margin: 0 auto;
-    flex-direction: column;
-}
-
-.area_east,
-.area_south,
-.area_west {
-    /* max-width: 730px; */
-    /* width: 90%; */
-    width: 300px;
-    /* height: auto; */
-    height: 100%;
-    border-radius: 10px;
-    margin: 0 auto;
-    padding: 25px 20px;
-}
-
 .area_east {
-    background-color: #f7dd94;
+    display: none;
 }
-
-/* .area_south {
-    background-color: #d7f794;
-}
-
-.area_west {
-    background-color: #fdffb0;
-} */
-
-.area_title {
-    text-align: center;
-    width: 210px;
-    height: 50px;
-    padding-top: 5px;
-    background-color: #fff8e6;
-    border-radius: 10px;
-    margin: 0 auto;
-    text-decoration: 0;
-    font-size: 20px;
-}
-
-.area_list_wrap {
-    width: 100%;
-    padding: 5px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-/* flex-wrap最後の配置を整える */
-.area_list_wrap:after {
-    content: "";
-    width: 50%;
-    margin-top: 5px 0;
-    color: aliceblue;
-    /* background-color: #f44336; */
-}
-
-.area_list_wrap li {
-    /* text-align: center;
-    width: 50%; */
-    margin: 10px 0;
-}
-
-/* ボタン */
-
-/* .btn_item {
-    text-align: center;
-}
-
-.btn_item a:hover {
-    padding: 15px 40px;
-    background-color: #ffcc66;
-} */
 
 @media (min-width: 770px) {
     .pickup_title_1 {
@@ -184,26 +114,98 @@
         font-weight: bolder;
         margin-bottom: 20px;
     }
-    /* .title {
-        margin: 10px auto;
-    } */
-
-    /* .pickup_single {
-        width: 665px;
-    }
-
-    .pickup_single_img {
-        width: 481px;
-        height: 367px;
-    } */
 
     .good {
         margin-top: 10px;
         padding-left: 70%;
     }
 
-    .pickup_single_text {
-        margin: 80px auto;
+    .pickup_single {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1000px) {
+    /***********************
+        項目一覧
+ **********************/
+    .area_east {
+        display: block;
+    }
+
+    .area_inner {
+        max-width: 1024px;
+        margin-top: 70px;
+        gap: 20px;
+    }
+
+    .list_area {
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .area_east {
+        /* max-width: 730px; */
+        /* width: 90%; */
+        width: 300px;
+        /* height: auto; */
+        height: 100%;
+        border-radius: 10px;
+        margin: 0 auto;
+        padding: 25px 20px;
+        background-color: #fdffb0;
+    }
+
+    .area_title {
+        text-align: center;
+        width: 210px;
+        height: 50px;
+        padding-top: 5px;
+        background-color: #fff8e6;
+        border-radius: 10px;
+        margin: 0 auto;
+        text-decoration: 0;
+        font-size: 20px;
+    }
+
+    .area_list_wrap {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    /* flex-wrap最後の配置を整える */
+    .area_list_wrap:after {
+        content: "";
+        width: 50%;
+        margin-top: 5px 0;
+        color: aliceblue;
+        /* background-color: #f44336; */
+    }
+
+    .area_list_wrap li {
+        /* text-align: center;
+width: 50%; */
+        margin: 15px 0;
+    }
+
+    .area_list_wrap a:hover {
+        color: #f8b600;
+    }
+
+    .pickup_single_img img {
+        height: 350px;
+        border-radius: 10px;
+        object-fit: cover;
+        aspect-ratio: 4/3;
+    }
+
+    .pickup_single_img:nth-child(1) {
+        margin: 0 auto;
+    }
+    .text {
+        width: 100%;
     }
 }
 
