@@ -847,7 +847,7 @@ hr {
         margin: 0 auto;
         flex-direction: row;
         justify-content: center;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }
 
     .link_item:hover {
