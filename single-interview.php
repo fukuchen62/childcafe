@@ -29,15 +29,15 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     <?php echo the_field('organizer'); ?>
                 </nobr>
             </h2>
-            <div class="area_flex">
+            <div class="area_inner area_flex">
                 <div>
                     <div class="area_flex pickupimg">
                         <div class="pickup_top_img">
                             <div class="pickup_single_img">
                                 <?php
-                        $eye_catching = get_field('eye_catching');
-                        $image_id = attachment_url_to_postid( $eye_catching );
-                        $image_alt = get_post_meta(  $image_id, '_wp_attachment_image_alt', true );?>
+                                    $eye_catching = get_field('eye_catching');
+                                    $image_id = attachment_url_to_postid( $eye_catching );
+                                    $image_alt = get_post_meta(  $image_id, '_wp_attachment_image_alt', true );?>
                                 <?php if(!empty($eye_catching)): ?>
                                 <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                                 <?php else: ?>
