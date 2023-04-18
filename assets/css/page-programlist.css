@@ -51,6 +51,22 @@
     margin-top: 5px;
 }
 
+.btn_item_a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 212, 102, 1);
+    transition: 0.3s;
+    border-radius: 20px;
+    transform: translateY(0);
+    color: black;
+}
+
+.btn_item_a:hover {
+    padding: 15px 40px;
+    transform: translateY(-5px);
+    background-color: rgba(255, 212, 102, 0.8);
+}
+
 @media screen and (min-width: 770px) {
     /* カード */
     .amazon_item {
