@@ -4,6 +4,8 @@ if (is_tax('area')) {
     $title_area = get_term_by('slug', $title_area_slug, 'area');
 }
 
+get_page_by_path($page_path, $output, $post_type)
+
 ?>
 
 
@@ -36,7 +38,7 @@ if (is_tax('area')) {
     <div class="body_inner">
         <!-- トップページへ戻るボタン -->
         <div class="toppage_btn">
-            <a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
+            <a href="<?php echo get_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/index/toppage_btn.png" alt="トップへ戻るボタン" /></a>
         </div>
         <!-- トップページへ戻るボタン 終了-->
         <header class="header">
