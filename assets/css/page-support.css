@@ -133,6 +133,44 @@
     margin-bottom: 20px;
 }
 
+.btn_item {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn01 a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fdffb0;
+    transition: 0.3s;
+    border-radius: 20px;
+    transform: translateY(0);
+    color: black;
+}
+
+.btn_item a:hover {
+    padding: 15px 40px;
+    transform: translateY(-5px);
+    background-color: #fdffb0;
+}
+
+.btn03 a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #d7f794;
+    transition: 0.3s;
+    border-radius: 20px;
+    transform: translateY(0);
+    color: black;
+}
+
+.btn03 a:hover {
+    padding: 15px 40px;
+    transform: translateY(-5px);
+    background-color: #d7f794;
+}
+
 @media screen and (min-width: 770px) {
     .support_subtitle01,
     .support_subtitle02 {
