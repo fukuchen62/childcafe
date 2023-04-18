@@ -13,11 +13,11 @@
     text-align: center;
 }
 .btn_item {
-    display: block;
+    /* display: block;
     width: 325px;
     margin: 0 auto;
     color: black;
-    padding: 10px 80px;
+    padding: 10px 80px; */
 }
 
 /* .qbtn {
