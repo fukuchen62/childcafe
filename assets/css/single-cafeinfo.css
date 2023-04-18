@@ -48,7 +48,7 @@
 }
 
 /* 波 */
-.beigetop {
+/* .beigetop {
     background-color: #fdffb0;
 }
 
@@ -65,7 +65,7 @@
     position: relative;
     z-index: 15;
     top: -5px;
-}
+} */
 /* ボタンの色 */
 .btn_item {
     color: black;
