@@ -198,15 +198,17 @@ new WP_Query($wp_query);
                 </a>
                 <?php endwhile; ?>
                 <?php else: ?>
-                <span class="sp">申し訳ありません。</span>
-                <span class="sp">キーワードに一致するページが見つかりませんでした。</span>
-                <p class="not_found sp">
-                    お手数ですが<a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>や<a
-                        href="<?php echo home_url('/find'); ?>">【条件からさがす】</a>より再度お求めのページをお探しください。
-                </p>
-                <img class="not_found_img"
-                    src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt="404画像"
-                    class="not_found sp" />
+                <div class="not_found_inner">
+                    <p>申し訳ありません。</p>
+                    <p>キーワードに一致するページが見つかりませんでした。</p>
+                    <p class="not_found">
+                        お手数ですが<a href="<?php echo home_url('/area/east'); ?>">【エリアからさがす】</a>や<a
+                            href="<?php echo home_url('/find'); ?>">【条件からさがす】</a>より再度お求めのページをお探しください。
+                    </p>
+                    <img class="not_found_img"
+                        src="<?php echo get_template_directory_uri();?>/assets/images/index/notfind.png" alt="404画像"
+                        class="not_found sp" />
+                </div>
                 <?php endif; ?>
 
             </div>
