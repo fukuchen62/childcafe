@@ -371,7 +371,6 @@ $the_query = new WP_Query($args);
         <div class="beige color">
             <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/beigetop.png" alt="波"
                 class="wave_img btop" /> -->
-            <div class="beige_inner m1024">
                     <svg class="beigetop svgwave" xmlns="http://www.w3.org/2000/svg" viewBox="0  200 1440 100">
                         <path
                             fill="#f7dd94"
@@ -379,6 +378,8 @@ $the_query = new WP_Query($args);
                             d="M0,256L48,261.3C96,267,192,277,288,282.7C384,288,480,288,576,282.7C672,277,768,267,864,250.7C960,235,1056,213,1152,213.3C1248,213,1344,235,1392,245.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                         ></path>
                     </svg>
+            <div class="beige_inner m1024">
+
                 <h3 class="beige_categorytitle beige_basic">
                     基本情報
                 </h3>
