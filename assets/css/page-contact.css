@@ -179,7 +179,7 @@
 }
 
 .link {
-    display: block;
+    display: inline-block;
     width: 300px;
     margin: 0 auto;
     text-decoration: underline dotted 1px gray;
