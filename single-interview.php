@@ -2,6 +2,20 @@
 <?php
 $cafeinfo_id = get_field('id');
 $this_terms = get_the_terms($cafeinfo_id,'area');
+
+
+// $heading = get_term('heading');
+
+//インタビュー一覧
+    $heading = get_terms(array(
+    'taxonomy' => 'heading',
+    // 投稿がない場合でも表示させる
+    'hide_empty' => false,
+    // 'orderby' => 'modified',
+    // 'order' => 'ASC',
+    )
+);
+
 ?>
 
 <main>
@@ -33,21 +47,28 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                     <?php if(!empty($eye_catching)): ?>
                     <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
                     <?php else: ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
-                        alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png" alt="">
                     <?php endif; ?>
                 </div>
-                <div class="underimg text cafeinfo_flex flex">
-                    <span class="address">
-                        <?php echo $this_terms[1]->name; ?>
-                    </span>
-                    <span>
-                        <?php echo do_shortcode('[wp_ulike]'); ?>
-                    </span>
-                </div>
             </div>
-            <div class="pickup_single">
-                <?php the_field('message'); ?>
+            <!-- インタビュー項目一覧 -->
+            <div class="list_area area_flex">
+                <div class="area_east">
+                    <h3 class="area_title">インタビュー項目一覧</h3>
+                    <ul class="area_list_wrap">
+                        <?php foreach ($heading as $inter) :  ?>
+                        <li>
+                            <a href="<?php echo '#'.$inter->slug;?>">
+                                <?php echo $inter->name; ?>
+                            </a>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <!-- インタビュー部分 -->
+                <div class="pickup_single">
+                    <?php the_field('message'); ?>
+                </div>
             </div>
             <div class="btn_item">
                 <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>">食堂紹介へ</a>
