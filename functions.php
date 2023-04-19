@@ -87,7 +87,7 @@ function add_my_files() {
         wp_enqueue_style('single-interview',get_template_directory_uri() . '/assets/css/single-interview.css',array('my-common')
         );
         //single-interview.jsの読み込み
-        wp_enqueue_script('single-interview',get_template_directory_uri().'/assets/js/single-cinterview.js',array('header'),'1.0',true);
+        wp_enqueue_script('single-interview',get_template_directory_uri().'/assets/js/single-interview.js',array('header'),'1.0',true);
     }
 
     //記事一覧ページのみ出力
