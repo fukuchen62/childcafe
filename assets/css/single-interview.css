@@ -31,7 +31,7 @@
 }
 
 .pickup_single_img img {
-    height: 200px;
+    height: 250px;
     border-radius: 10px;
     object-fit: cover;
     aspect-ratio: 4/3;
@@ -84,7 +84,14 @@
     margin-bottom: 23px;
 }
 
+.good_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .cafeinfo_flex {
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -122,6 +129,10 @@
 
     .pickup_single {
         max-width: 1024px;
+    }
+
+    .pickup_single_img img {
+        height: 300px;
     }
 }
 

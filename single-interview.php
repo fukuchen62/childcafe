@@ -46,12 +46,12 @@ $this_terms = get_the_terms($cafeinfo_id,'area');
                                 <?php endif; ?>
                             </div>
                             <div class="underimg text cafeinfo_flex flex">
-                                <span class="address">
+                                <p class="address">
                                     <?php echo $this_terms[1]->name; ?>
-                                </span>
-                                <span>
-                                    <?php echo do_shortcode('[wp_ulike]'); ?>
-                                </span>
+                                </p>
+                                <div class="good_flex">
+                                    <p><?php echo 'いいね'.do_shortcode('[wp_ulike]'); ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
