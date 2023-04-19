@@ -154,11 +154,11 @@ td {
     color: black;
 }
 
-.btn_event {
+/* .btn_event {
     background-color: #d7f794;
-}
+} */
 
-.btn_event:hover {
+/* .btn_event:hover {
     background-position: right center;
     background-size: 200% auto;
     -webkit-animation: pulse 2s infinite;
@@ -175,7 +175,7 @@ td {
     100% {
         box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);
     }
-}
+} */
 /* ボタンここまで */
 
 .others {
