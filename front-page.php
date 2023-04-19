@@ -329,7 +329,7 @@ $event_query = new WP_Query($fuga);
             </svg> -->
             <div class="section_inner onigiri_inner">
                 <div class="title">
-                    <h2>子ども食堂とは</h2>
+                    <h2>こども食堂とは</h2>
                 </div>
                 <div class="with_onigiri">
                     <div class="text">
