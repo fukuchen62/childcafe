@@ -143,20 +143,12 @@ td {
 
 /* ボタン */
 .btn_item a {
-    display: block;
-    padding: 20px;
-}
-
-.btn_item {
-    padding: 0;
-    width: 200px;
-    margin: 30px auto 0;
-    color: black;
-}
-
-/* .btn_event {
     background-color: #d7f794;
-} */
+}
+
+.btn_item a:hover {
+    opacity: 0.8;
+}
 
 /* .btn_event:hover {
     background-position: right center;
@@ -338,7 +330,7 @@ td {
     }
 
     .btn_item {
-        width: 200px;
-        margin-top: 50px;
+        /* width: 200px;
+        margin-top: 50px; */
     }
 }
