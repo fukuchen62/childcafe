@@ -245,7 +245,7 @@ $service_array = get_field('service');
                 <td class="event_table_tdtext">
                     <?php foreach( $event as $value_key => $value): ?>
                     <p>
-                    <?php echo $value; ?>
+                        <?php echo $value; ?>
                     </p>
                     <?php endforeach; ?>
                 </td>
@@ -266,14 +266,14 @@ $service_array = get_field('service');
                     <?php if (!empty($license[0])): ?>
                     <?php foreach( $license as $value): ?>
                     <p>
-                                <?php echo $value; ?>
-                            </p>
+                        <?php echo $value; ?>
+                    </p>
                     <?php endforeach; ?>
                     <?php endif; ?>
                     <?php else: ?>
                     <p>
-                                <?php echo $service; ?>
-                            </p>
+                        <?php echo $service; ?>
+                    </p>
                     <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
@@ -286,7 +286,7 @@ $service_array = get_field('service');
         <div class="btn_item">
             <a href="<?php echo home_url('/cafeinfo/' . get_field('id')); ?>"> こども食堂紹介へ</a>
         </div>
-        <div class="btn_item btn_event">
+        <div class="btn_item btn_item02">
             <a href="<?php echo home_url('/event'); ?>"> 開催情報一覧へ</a>
         </div>
         <?php endwhile; ?>
