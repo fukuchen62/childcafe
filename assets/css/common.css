@@ -585,6 +585,24 @@ main {
     width: 100%;
 }
 
+.footer_banner {
+    padding-top: 50px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer_banner a {
+    display: inline-block;
+}
+
+.footer_banner img {
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+}
+
 .footer_nav {
     margin: 0 auto;
     flex-direction: column;
@@ -594,7 +612,7 @@ main {
 .footer_nav_title_concept p {
     font-weight: bold;
     font-size: 20px;
-    margin: 80px auto 12px;
+    margin: 70px auto 12px;
 }
 
 .footer_nav_title_taxonomy_area p {
@@ -650,12 +668,11 @@ main {
     .footer_nav_title_concept p {
         margin-top: 30px;
     }
-    /* 女の子のアニメーション */
 
-    .footer_girl {
-        width: 250px;
-        height: 250px;
-        left: 10%;
+    .footer_banner {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
     }
 }
 
