@@ -4,9 +4,294 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <!-- fontawsomeCDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <link rel="stylesheet" href="../assets/css/single-interview.css">
+        <!-- Googlefont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="../assets/js/jquery-3.6.3.min.js"></script>
+        <title>header</title>
     </head>
     <body>
-        テスト
+        <header class="header">
+            <div class="header_inner flex">
+                <div class="header_logo">
+                    <a href="#"
+                        ><img
+                            src="../assets/images/logo.png"
+                            alt="ホームボタン"
+                    /></a>
+                </div>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="menu_pc">
+                    <ul class="menu_pc_ul flex">
+                        <li class="btn_header_pc_1 flex">
+                            <a href="#"> こども食堂とは</a>
+                        </li>
+                        <li class="btn_header_pc_2 flex">
+                            <a href="#"> エリアから<br />さがす</a>
+                        </li>
+                        <li class="btn_header_pc_3 flex">
+                            <a href="#"> 条件から<br />さがす</a>
+                        </li>
+                        <li class="btn_header_pc_4 flex">
+                            <a href="#"> 支援 <br />したい方へ</a>
+                        </li>
+                        <li class="btn_header_pc_5 flex">
+                            <a href="#"> 特集記事</a>
+                        </li>
+                        <li class="btn_header_pc_6 flex">
+                            <a href="#">開催情報</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- PC版キーワード -->
+                <form class="btn_header_search_pc" action="#" method="get">
+                    <input type="hidden" name="search_type" value="" />
+                    <input
+                        class="hbg_form"
+                        size="20"
+                        type="search"
+                        value=""
+                        name="search"
+                        placeholder="キーワードを入力"
+                    />
+                    <input
+                        class="hbg_submit_pc"
+                        type="submit"
+                        value="   "
+                        name=" "
+                    />
+                </form>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a class="a_menu" href="#"
+                            ><img
+                                src="../assets/images/logo.png"
+                                alt="ホームボタン"
+                        /></a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> こども食堂とは</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> エリアからさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 条件からさがす</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 支援したい方へ</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 特集記事</a>
+                    </li>
+                    <li class="btn_header">
+                        <a href="#"> 開催情報</a>
+                    </li>
+                    <!-- 検索機能 -->
+                    <li class="btn_header menu_search">
+                        <form class="hbg_search" action="#" method="get">
+                            <input type="hidden" name="search_type" value="" />
+                            <input
+                                class="hbg_form"
+                                size="25"
+                                type="search"
+                                value=""
+                                name="search"
+                                placeholder="キーワードを入力"
+                            />
+                            <input
+                                class="hbg_submit fas"
+                                type="submit"
+                                value="   "
+                                name=" "
+                            />
+                        </form>
+                    </li>
+                    <!-- 検索機能end -->
+                </ul>
+            </nav>
+            <!-- hamburger中身end -->
+        </header>
+    <body>
+        <main>
+            <div class="main_inner">
+                <div class="pickup_single">
+                    <h2 class="pickup_title_1 pickup_title">
+                        <nobr>
+                           こども食堂
+                            <wbr>
+                           こども食堂野崎野崎
+                        </nobr>
+                    </h2>
+
+                    <div class="area_inner area_flex">
+                        <div>
+                            <div class="area_flex pickupimg">
+                                <div class="pickup_top_img">
+                                    <div class="pickup_single_img">
+                                        <?php
+                                            $eye_catching = get_field('eye_catching');
+                                            $image_id = attachment_url_to_postid( $eye_catching );
+                                            $image_alt = get_post_meta(  $image_id, '_wp_attachment_image_alt', true );?>
+                                        <?php if(!empty($eye_catching)): ?>
+                                        <img src="<?php echo $eye_catching; ?>" alt="<?php echo $image_alt; ?>">
+                                        <?php else: ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage/logo_eye_catch.png"
+                                            alt="">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="underimg text cafeinfo_flex flex">
+                                        <span class="address">
+                                            徳島市
+                                        </span>
+                                        <span>
+                                            いいね
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pickup_single">
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter1">
+                                        こども食堂をはじめたきっかけ
+                                    </h3>
+                                    <p>
+                                        地域での交流が減り、赤ちゃんから若者、お年寄りまで幅広い世代が集まる場所が少なかった。孤立を防ぐためにも、だれもがホットできる地域の居場所を作りたいと思って活動を始めました。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter2">こども食堂への想い</h3>
+                                    <p>
+                                        障がいがあってもなくても、おひとりさまでも、「ここに来たらホッとする」「元気になれる」と思える、そんな居場所にしていきたいです。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter3">こだわりのポイント</h3>
+                                    <p>
+                                        できる限り親御さんがゆっくりできるように、子どもたちは子どもたちで遊べるように、スタッフがサポートさせていただきます。おひとりさまでも気軽に参加していただけるように、いろんな業種のスタッフが在籍しています。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_img">
+                                    <img
+                                        src="https://tks-navi.boo.jp/wp-content/uploads/2023/04/omusubikorokoro_ocyanoma_party_01.jpg"
+                                        alt="お結びコロコロ参加者の様子"
+                                    />
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter4">
+                                        <span class="sp subtitle">うちのこども食堂</span>
+                                        <span class="sp subtitle">ここがおすすめ！！</span>
+                                    </h3>
+                                    <p>
+                                        地域の農家さんからの新米・玄米でおむすびをむすんで食べていただけます。できる限り無農薬・無添加の調味料・野菜を使ったおかずをたくさん用意しております。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter5">
+                                        参加者からもらった嬉しい言葉
+                                    </h3>
+                                    <p class="child_text">こども編</p>
+                                    <p>「おいしかった」「楽しかった」「また来たい」</p>
+                                    <p class="adult_text">おとな編</p>
+                                    <p>
+                                        「下の子をずっとみてもらえたので、久しぶりに上のことゆっくり過ごせた」「こんな場所が欲しかった」「認知症の母と参加できてよかった」「いろんな人と知り合えて話しを聞けてよかった」
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter6">
+                                        <span class="sp subtitle">こども食堂に行きたいけど</span>
+                                        <span class="sp subtitle">足を運んだ事がない方へ</span>
+                                    </h3>
+                                    <p>
+                                        ０歳から８０代の方まで幅広い世代の方が利用してくださっています。学生さんやお一人での参加も大歓迎！ぜひ、一度お越しください。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_img">
+                                    <img
+                                        src="https://tks-navi.boo.jp/wp-content/uploads/2023/04/omusubikorokoro_ocyanoma_party_02.jpg"
+                                        alt="お結びコロコロ参加者が輪になって話をしているところ"
+                                    />
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter7">将来への展望</h3>
+                                    <p>
+                                        現在は２ヶ月に１回のペースで開催していますが、毎月開催できるようにしていきたいです。いろんなイベントも行っていき、楽しむだけではなく学べる、体験できる子ども食堂を目指します。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter8">手伝いたい方へ一言</h3>
+                                    <p>
+                                        会場の運営（声かけ、食器の上げ下げ）、子どもたちの見守り、調理、洗い物など担当を分けてボランティアをお願いしています。得意なことで、お手伝いしていただける方を募集しています。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter9">支援したい方へ一言</h3>
+                                    <p>
+                                        食料や調味料、消耗品のほとんどを寄付でまかなっています。Amazon応援プログラムにも登録しているので、応援していただけたらうれしいです。
+                                    </p>
+                                </div>
+                                <div class="pickup_single_text">
+                                    <h3 class="subtitle" id="inter10">最後に一言</h3>
+                                    <p>
+                                        現在、現役の保育士、助産師、精神保健福祉士がスタッフとして在籍しています。不安がある、話を聞いてほしい、いろんな話をしてみたい、という方もぜひご参加ください。
+                                    </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="area_east">
+                            <h3 class="area_title">インタビュー項目一覧</h3>
+                            <ul class="area_list_wrap">
+                                <li>
+                                    <a href="#inter1">
+                                        こども食堂をはじめたきっかけ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#inter2">
+                                        こども食堂をはじめたきっかけ2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#inter3">
+                                        こども食堂をはじめたきっかけ3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#inter4">
+                                        こども食堂をはじめたきっかけ4
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+        </div>
+        </div>
+        </main>
+        <script src="../assets/js/single-interview.js"></script>
     </body>
 </html>
