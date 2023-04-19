@@ -107,7 +107,7 @@
 }
 
 .slick-dots {
-    position: absolute;
+    /* position: absolute;
     bottom: -25px;
 
     display: block;
@@ -116,7 +116,7 @@
     padding: 0;
     margin: 0;
 
-    list-style: none;
+    list-style: none; */
 
     text-align: center;
 }

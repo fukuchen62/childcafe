@@ -5,7 +5,7 @@
 $(function () {
     $('a[href^="#"]').click(function () {
         // 移動先を0px調整する。0を-30にすると30px下にずらすことができる。
-        var adjust = -80;
+        var adjust = -120;
         // スクロールの速度（ミリ秒）
         var speed = 500;
         // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
