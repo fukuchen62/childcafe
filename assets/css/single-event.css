@@ -142,11 +142,12 @@ td {
 }
 
 /* ボタン */
-.btn_item a {
+.btn_item02 a {
     background-color: #d7f794;
 }
 
-.btn_item a:hover {
+.btn_item02 a:hover {
+    background-color: #d7f794;
     opacity: 0.8;
 }
 
